@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Observatorio Municipal para la Inclusión Social de León | ObservaLE</title>
-  <meta name="description" content="Espacio técnico, académico e innovador para el análisis sistemático de la exclusión e inclusión social en León. Colaboración Ayuntamiento de León y Universidad de León.">
+  <meta name="description" content="Espacio técnico, académico e innovador para la reflexión y análisis sistemático de la inclusión y exclusión social en la ciudad de León.">
   
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -18,14 +18,13 @@
 <body>
 
   <!-- ==========================================================================
-       BARRA DE NAVEGACIÓN MODERNA STICKY
+       BARRA DE NAVEGACIÓN MODERNA STICKY (solo logo, sin texto)
        ========================================================================== -->
   <header class="modern-navbar" id="topNavbar">
     <div class="nav-container">
       <div class="brand-wrapper">
-        <a href="#home" class="brand-title" title="Observatorio de Inclusión Social de León">
-          <span class="brand-highlight">observa</span><span>le</span>
-          <span class="brand-subtitle">León · Ayto &amp; ULE</span>
+        <a href="#home" class="brand-logo-only" title="Observatorio Municipal para la Inclusión Social de León">
+          <img src="assets/images/LOGO4.svg" alt="Logo ObservaLE" class="navbar-observale-logo">
         </a>
       </div>
 
@@ -35,14 +34,14 @@
           <li class="nav-link-item"><a href="#about"><i class="fa fa-info-circle"></i> ¿Qué es?</a></li>
           <li class="nav-link-item"><a href="#features"><i class="fa fa-compass"></i> Ejes</a></li>
           <li class="nav-link-item"><a href="#experience"><i class="fa fa-bullseye"></i> Metas</a></li>
-          <li class="nav-link-item">
-            <a href="#estadisticas" class="active">
-              <i class="fa fa-bar-chart"></i> Análisis Estadístico
-              <span class="nav-badge-new">NUEVO</span>
-            </a>
-          </li>
           <li class="nav-link-item"><a href="#portfolio"><i class="fa fa-folder-open"></i> Proyectos</a></li>
           <li class="nav-link-item"><a href="#publicaciones"><i class="fa fa-book"></i> Publicaciones</a></li>
+          <li class="nav-link-item">
+            <a href="estadisticas.html" class="nav-link-stats-btn" title="Ir a la vista de Análisis Estadístico">
+              <i class="fa fa-bar-chart"></i> Análisis Estadístico
+              <span class="nav-badge-pill">VISTA</span>
+            </a>
+          </li>
           <li class="nav-link-item"><a href="#contact"><i class="fa fa-envelope"></i> Contacto</a></li>
         </ul>
       </nav>
@@ -59,66 +58,89 @@
   </header>
 
   <!-- ==========================================================================
-       HERO PRINCIPAL
+       HERO PRINCIPAL CON LOGOS DE ULE Y AYTO 100% VISIBLES EN PORTADA (SIN SCROLL)
        ========================================================================== -->
-  <section id="home" class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-pill-badge">
-        <i class="fa fa-university"></i> Convenio Ayuntamiento de León &amp; Universidad de León
+  <section id="home" class="hero-creative-section">
+
+    <!-- LOGO UNIÓN EUROPEA Y URL EN FORMATO ORIGINAL -->
+    <div class="original-eu-banner">
+      <a href="https://observale.unileon.es/" target="_blank" rel="noopener noreferrer" class="original-eu-url" title="Web Oficial ObservaLE">
+        www.observa<span class="url-le">le</span>.es
+      </a>
+      <div class="original-eu-flag-box">
+        <img src="assets/images/europa.svg" alt="Unión Europea — Fondo Europeo de Desarrollo Regional (FEDER) — Una manera de hacer Europa" class="original-eu-flag-img">
       </div>
-      <h1 class="hero-title">
-        Observatorio Municipal para la <span>Inclusión Social</span>
+    </div>
+
+    <div class="hero-creative-content">
+      
+      <!-- LOGO DEL OBSERVATORIO PROMINENTE -->
+      <div class="hero-observale-logo-wrap">
+        <img src="assets/images/LOGO4.svg" alt="Logo del Observatorio para la Inclusión Social de León" class="hero-observale-logo">
+      </div>
+
+      <h1 class="hero-creative-title">
+        Observatorio Municipal para la <br>
+        <span class="hero-gradient-text">Inclusión Social de León</span>
       </h1>
-      <p class="hero-subtitle">
-        Espacio técnico, académico y participativo para la investigación aplicada, el diagnóstico sistemático y la transferencia de conocimiento sobre la realidad social de la ciudad de León.
+
+      <p class="hero-creative-subtitle">
+        Espacio técnico, académico y participativo para la investigación aplicada, el diagnóstico multidimensional y la transferencia de conocimiento sobre la realidad social en la ciudad de León.
       </p>
 
-      <div class="hero-buttons">
-        <a href="#estadisticas" class="btn-primary-modern">
-          <i class="fa fa-line-chart"></i> Explorar Análisis Estadístico
+      <!-- LOGOS INSTITUCIONALES AYTO Y ULE PROMINENTES EN VISTA INICIAL (SIN SCROLL) -->
+      <div class="hero-institutional-logos-box">
+        <a href="http://www.aytoleon.es" target="_blank" rel="noopener noreferrer" class="hero-inst-logo-card">
+          <img src="assets/images/aytologo.png" alt="Logotipo Oficial Ayuntamiento de León" class="hero-inst-logo-img">
+          <div class="hero-inst-logo-text">
+            <strong>Ayuntamiento de León</strong>
+            <small>Equipos de Inclusión Social (EDIS)</small>
+          </div>
         </a>
-        <a href="#publicaciones" class="btn-secondary-modern">
-          <i class="fa fa-file-text-o"></i> Repositorio de Informes y Datos
+
+        <div style="height: 38px; width: 1px; background: rgba(255,255,255,0.25);" class="hidden-xs"></div>
+
+        <a href="https://www.unileon.es/" target="_blank" rel="noopener noreferrer" class="hero-inst-logo-card">
+          <img src="assets/images/unilogo.png" alt="Logotipo Oficial Universidad de León" class="hero-inst-logo-img">
+          <div class="hero-inst-logo-text">
+            <strong>Universidad de León</strong>
+            <small>Facultad de Educación · Dpto. Trabajo Social</small>
+          </div>
         </a>
       </div>
 
-      <div class="hero-partners">
-        <a href="http://www.aytoleon.es" target="_blank" rel="noopener noreferrer" class="hero-partner-item">
-          <img src="assets/images/aytologo.png" alt="Logotipo Ayuntamiento de León">
-          <span>Ayuntamiento de León</span>
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="hero-action-buttons">
+        <a href="estadisticas.html" class="btn-hero-stats">
+          <i class="fa fa-line-chart"></i> Explorar Espacio Estadístico
         </a>
-        <a href="https://www.unileon.es/" target="_blank" rel="noopener noreferrer" class="hero-partner-item">
-          <img src="assets/images/unilogo.png" alt="Logotipo Universidad de León">
-          <span>Universidad de León</span>
+        <a href="#publicaciones" class="btn-hero-secondary">
+          <i class="fa fa-file-text-o"></i> Repositorio de Informes
         </a>
-        <div class="hero-partner-item">
-          <img src="assets/images/europa.svg" alt="Bandera Unión Europea">
-          <span>Iniciativa de Cohesión Social</span>
-        </div>
       </div>
+
     </div>
   </section>
 
   <!-- ==========================================================================
        ¿QUÉ ES EL OBSERVATORIO?
        ========================================================================== -->
-  <section id="about" class="section-wrapper">
+  <section id="about" class="section-wrapper reveal-on-scroll">
     <div class="section-container">
       <div class="about-modern-grid">
         <div class="about-photo-card">
           <img src="assets/images/calle.jpg" alt="Calles de la ciudad de León">
           <div class="about-badge-card">
-            <h5><i class="fa fa-handshake-o"></i> Alianza Estratégica</h5>
-            <p>Facultad de Educación de la Universidad de León y Equipos de Inclusión Social (EDIS) del Ayuntamiento de León.</p>
+            <h5><i class="fa fa-users"></i> Alianza por la Inclusión</h5>
+            <p>Facultad de Educación de la Universidad de León &amp; Equipos de Inclusión Social (EDIS) del Ayuntamiento de León.</p>
           </div>
         </div>
 
         <div class="about-text-content">
-          <span class="section-tag">Marco Institucional</span>
-          <h2 class="section-title">¿Qué es el Observatorio?</h2>
-          <p class="section-lead">
-            Esta iniciativa se enmarca en la cooperación activa que mantienen el <b>Ayuntamiento de León y la Universidad de León</b> al amparo de convenios específicos suscritos entre ambas entidades.
+          <span class="section-tag-pill">Marco Institucional</span>
+          <h2 class="section-main-title">¿Qué es el Observatorio?</h2>
+          <p class="section-lead-text">
+            Esta iniciativa se enmarca en la activa cooperación que desde hace años mantienen el <b>Ayuntamiento de León y la Universidad de León</b> en múltiples ámbitos al amparo del Convenio Marco y convenios específicos suscritos entre ambas entidades.
           </p>
 
           <div class="about-highlight-box">
@@ -128,11 +150,11 @@
           </div>
 
           <p style="color: var(--text-muted); font-size: 0.95rem;">
-            Surge de la colaboración en el Prácticum del Grado en Educación Social y se consolida como un laboratorio de datos y propuestas para orientar las políticas públicas y la acción social comunitaria.
+            Surge de la colaboración en el Prácticum del Grado en Educación Social y se consolida como un laboratorio permanente para la investigación de vanguardia, el diagnóstico territorial y la formulación de propuestas de intervención comunitaria.
           </p>
 
           <div style="margin-top: 24px;">
-            <a href="https://drive.google.com/file/d/1MYdqQo-4S5c2RJoaUeosS5BVmN8wsskY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-primary-modern" style="padding: 10px 20px; font-size: 0.9rem;">
+            <a href="https://drive.google.com/file/d/1MYdqQo-4S5c2RJoaUeosS5BVmN8wsskY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-hero-stats" style="padding: 10px 22px; font-size: 0.92rem;">
               <i class="fa fa-file-pdf-o"></i> Leer el Convenio Marco
             </a>
           </div>
@@ -144,239 +166,123 @@
   <!-- ==========================================================================
        AFORISMO INSPIRADOR 1
        ========================================================================== -->
-  <section style="background: var(--bg-surface-alt); padding: 50px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="reveal-on-scroll" style="background: var(--bg-surface-alt); padding: 55px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="section-container" style="max-width: 900px; text-align: center;">
-      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-primary); opacity: 0.7; margin-bottom: 16px; display: inline-block;"></i>
+      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-carmine); opacity: 0.75; margin-bottom: 16px; display: inline-block;"></i>
       <blockquote style="border: none; margin: 0; padding: 0;">
         <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
           “Investigar es ver lo que todo el mundo ha visto, y pensar lo que nadie más ha pensado.”
         </p>
         <footer style="color: var(--text-muted); font-size: 0.95rem;">
-          <strong style="color: var(--brand-primary);">Albert Szent-Györgyi</strong> — Premio Nobel de Fisiología y Medicina (1937)
+          <strong style="color: var(--brand-carmine);">Albert Szent-Györgyi</strong> — Premio Nobel de Fisiología y Medicina (1937)
         </footer>
       </blockquote>
     </div>
   </section>
 
   <!-- ==========================================================================
-       NUEVO ESPACIO: ANÁLISIS ESTADÍSTICO DE LA EXCLUSIÓN EN LEÓN
+       EJES DE DESARROLLO (PESTAÑAS INTERACTIVAS & ICONOS VECTORIALES)
        ========================================================================== -->
-  <section id="estadisticas" class="section-wrapper stats-highlight-section">
+  <section id="features" class="section-wrapper reveal-on-scroll">
     <div class="section-container">
-      <div class="section-header-modern">
-        <span class="section-tag">Portal de Datos e Indicadores</span>
-        <h2 class="section-title">Análisis Estadístico de la Exclusión en León</h2>
-        <p class="section-lead">
-          Espacio técnico para la monitorización cuantitativa, el diagnóstico multidimensional y el seguimiento sistemático de los indicadores de vulnerabilidad y cohesión social en los barrios del municipio de León.
-        </p>
-      </div>
-
-      <!-- Tarjetas de Indicadores Clave (KPI Cards con animación) -->
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-header">
-            <div class="kpi-icon"><i class="fa fa-line-chart"></i></div>
-            <span class="kpi-badge">Municipio de León</span>
-          </div>
-          <div class="kpi-value">
-            <span class="kpi-counter" data-target="21.4" data-decimals="1">0</span>
-            <span class="kpi-value-unit">%</span>
-          </div>
-          <div class="kpi-title">Tasa de Riesgo de Exclusión (AROPE)</div>
-          <p class="kpi-desc">Población municipal en riesgo de pobreza o exclusión según el modelo multidimensional de vulnerabilidad.</p>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-header">
-            <div class="kpi-icon"><i class="fa fa-users"></i></div>
-            <span class="kpi-badge">Atención EDIS</span>
-          </div>
-          <div class="kpi-value">
-            <span class="kpi-counter" data-target="3850" data-decimals="0">0</span>
-            <span class="kpi-value-unit">casos</span>
-          </div>
-          <div class="kpi-title">Personas y Familias Atendidas</div>
-          <p class="kpi-desc">Seguimiento e itinerarios de inserción activa gestionados en colaboración con los Servicios Sociales de León.</p>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-header">
-            <div class="kpi-icon"><i class="fa fa-laptop"></i></div>
-            <span class="kpi-badge">Mayores 65+</span>
-          </div>
-          <div class="kpi-value">
-            <span class="kpi-counter" data-target="71.8" data-decimals="1">0</span>
-            <span class="kpi-value-unit">%</span>
-          </div>
-          <div class="kpi-title">Índice de Brecha Digital Severa</div>
-          <p class="kpi-desc">Porcentaje de personas mayores que experimentan barreras críticas para el acceso a trámites electrónicos.</p>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-header">
-            <div class="kpi-icon"><i class="fa fa-sitemap"></i></div>
-            <span class="kpi-badge">Modelo MATICES</span>
-          </div>
-          <div class="kpi-value">
-            <span class="kpi-counter" data-target="6" data-decimals="0">0</span>
-            <span class="kpi-value-unit">ejes</span>
-          </div>
-          <div class="kpi-title">Dimensiones Monitorizadas</div>
-          <p class="kpi-desc">Empleo, vivienda, brecha digital, salud, redes relacionales y nivel formativo analizados de forma cruzada.</p>
-        </div>
-      </div>
-
-      <!-- Cuadros de Gráficos Estadísticos Interactivos -->
-      <div class="charts-grid">
-        <!-- Gráfico 1: Dimensiones Multidimensionales -->
-        <div class="chart-card" id="chartCardExclusion">
-          <div class="chart-card-header">
-            <div class="chart-title-box">
-              <h4>Dimensiones de la Exclusión en León</h4>
-              <p>Perfil comparativo entre la media municipal y zonas prioritarias de intervención</p>
-            </div>
-            <div class="chart-controls">
-              <button class="chart-btn-filter active" data-chart-filter="global">Comparativa</button>
-              <button class="chart-btn-filter" data-chart-filter="municipio">Municipio</button>
-              <button class="chart-btn-filter" data-chart-filter="edis">Zonas EDIS</button>
-            </div>
-          </div>
-          <div class="chart-container-box">
-            <canvas id="chartExclusionDimensions"></canvas>
-          </div>
-        </div>
-
-        <!-- Gráfico 2: Brecha Digital por Cohortes -->
-        <div class="chart-card" id="chartCardDigital">
-          <div class="chart-card-header">
-            <div class="chart-title-box">
-              <h4>Brecha Digital por Grupos de Edad</h4>
-              <p>Porcentajes de dificultad en tramitación telemática y carencia de dispositivos en León</p>
-            </div>
-            <div class="chart-controls">
-              <button class="chart-btn-filter active">General</button>
-            </div>
-          </div>
-          <div class="chart-container-box">
-            <canvas id="chartDigitalDivide"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ficha de Aviso y Descarga de Datos -->
-      <div class="stats-banner-notice">
-        <div class="stats-banner-text">
-          <h4><i class="fa fa-database" style="color: var(--brand-primary); margin-right: 8px;"></i> Ecosistema de Datos en Desarrollo Activo</h4>
-          <p>
-            El sistema de indicadores estadísticos del Observatorio incorpora de manera continua nuevos microdatos derivados de los proyectos <b>MATICES</b> y las memorias técnicas del Ayuntamiento de León y la Universidad de León.
-          </p>
-        </div>
-        <div class="stats-banner-actions">
-          <a href="#" id="btnExportCsv" class="btn-primary-modern" style="padding: 10px 18px; font-size: 0.88rem;">
-            <i class="fa fa-download"></i> Descargar Datos (.CSV)
-          </a>
-          <a href="docs/InformaObservale.pdf" target="_blank" class="btn-secondary-modern" style="padding: 10px 18px; font-size: 0.88rem; color: var(--text-main) !important; border-color: var(--border-medium);">
-            <i class="fa fa-file-pdf-o"></i> Informe Metodológico
-          </a>
-          <a href="estadisticas.html" class="btn-secondary-modern" style="padding: 10px 18px; font-size: 0.88rem; color: var(--brand-primary) !important; border-color: var(--brand-primary);">
-            <i class="fa fa-external-link"></i> Vista Completa
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       EJES DE DESARROLLO (PESTAÑAS INTERACTIVAS)
-       ========================================================================== -->
-  <section id="features" class="section-wrapper">
-    <div class="section-container">
-      <div class="section-header-modern">
-        <span class="section-tag">Estructura de Trabajo</span>
-        <h2 class="section-title">Ejes de Desarrollo</h2>
-        <p class="section-lead">
-          La actividad ordinaria del Observatorio pivota sobre tres ejes estratégicos interrelacionados que articulan cada investigación y acción formativa.
+      <div class="section-header-innovative">
+        <span class="section-tag-pill">Estructura Estratégica</span>
+        <h2 class="section-main-title">Ejes de Desarrollo</h2>
+        <p class="section-lead-text">
+          La creación del Observatorio pivota sobre tres ideas que sirven como los ejes vertebradores de todas sus acciones investigadoras y formativas.
         </p>
       </div>
 
       <!-- Selector de pestañas -->
-      <div class="features-tabs-nav">
-        <button class="feature-tab-btn active" data-target="tabIID">
+      <div class="tabs-nav-modern">
+        <button class="tab-btn-modern active" data-target="tabIID">
           <i class="fa fa-flask"></i> 1. Innovación, Investigación y Desarrollo (I+I+D)
         </button>
-        <button class="feature-tab-btn" data-target="tabParticipacion">
+        <button class="tab-btn-modern" data-target="tabParticipacion">
           <i class="fa fa-users"></i> 2. Participación Ciudadana e Institucional
         </button>
-        <button class="feature-tab-btn" data-target="tabDifusion">
+        <button class="tab-btn-modern" data-target="tabDifusion">
           <i class="fa fa-bullhorn"></i> 3. Difusión y Transferencia
         </button>
       </div>
 
-      <!-- Contenido de Pestaña 1: I+I+D -->
-      <div id="tabIID" class="tab-pane-content active">
-        <div class="ejes-cards-grid">
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-eye"></i></div>
-            <h4>Modelos de Observación Válidos</h4>
-            <p>Diseño y validación de instrumentos científicos para el diagnóstico permanente de la realidad social y las nuevas dinámicas de vulnerabilidad.</p>
+      <!-- Panel 1: I+I+D -->
+      <div id="tabIID" class="tab-content-panel active">
+        <div class="cards-grid-3">
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-eye"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Modelos Válidos de Observación</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Diseño e implementación de metodologías fiables para el análisis riguroso y la diagnosis sistemática de la realidad social de León.
+            </p>
           </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-desktop"></i></div>
-            <h4>Nuevas Tecnologías y Acción Social</h4>
-            <p>Incorporación de las tecnologías de la información, análisis de datos y cartografía digital para optimizar la intervención social.</p>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-desktop"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Nuevas Tecnologías en Acción Social</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Incorporación de herramientas digitales, analítica de datos y cartografía social para mejorar la eficacia de la intervención.
+            </p>
           </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-lightbulb-o"></i></div>
-            <h4>Propuestas Metodológicas Innovadoras</h4>
-            <p>Estrategias pioneras en planificación, gestión técnica, implementación y evaluación sistemática de programas de inclusión.</p>
-          </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-thumbs-up"></i></div>
-            <h4>Buenas Prácticas</h4>
-            <p>Identificación y promoción de modelos de intervención social eficaces tanto a nivel municipal como en el ámbito autonómico y europeo.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contenido de Pestaña 2: Participación -->
-      <div id="tabParticipacion" class="tab-pane-content">
-        <div class="ejes-cards-grid">
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-comments-o"></i></div>
-            <h4>Entornos Compartidos de Reflexión</h4>
-            <p>Foros de diálogo y debate multidisciplinar sobre inclusión y exclusión social entre profesionales, académicos y agentes comunitarios.</p>
-          </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-cubes"></i></div>
-            <h4>Coordinación Cuádruple Hélice</h4>
-            <p>Articulación conjunta entre Administraciones Públicas, Universidad, Tercer Sector Social y sector privado.</p>
-          </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-gears"></i></div>
-            <h4>Observación Cooperativa Estable</h4>
-            <p>Sistemas continuados de participación técnica que canalizan la experiencia del personal técnico de primera línea.</p>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-lightbulb-o"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Propuestas Metodológicas</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Innovación continua en investigación, diseño, planificación, evaluación y modelos de gestión técnica contra la exclusión.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Contenido de Pestaña 3: Difusión -->
-      <div id="tabDifusion" class="tab-pane-content">
-        <div class="ejes-cards-grid">
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-book"></i></div>
-            <h4>Publicación Rigurosa de Resultados</h4>
-            <p>Difusión periódica de informes técnicos, monográficos, infografías y materiales de divulgación científica en acceso abierto.</p>
+      <!-- Panel 2: Participación -->
+      <div id="tabParticipacion" class="tab-content-panel">
+        <div class="cards-grid-3">
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-comments-o"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Entornos Compartidos</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Espacios de encuentro multidisciplinar para la reflexión conjunta y el debate constructivo sobre los retos sociales de la ciudad.
+            </p>
           </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-graduation-cap"></i></div>
-            <h4>Capacitación Técnica Especializada</h4>
-            <p>Acciones formativas y seminarios dirigidos a profesionales de la intervención social y estudiantes del Grado en Educación Social.</p>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-cubes"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Coordinación Intersectorial</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Colaboración activa entre Administraciones Públicas, Universidad, Tercer Sector Social y tejido asociativo local.
+            </p>
           </div>
-          <div class="eje-card-item">
-            <div class="eje-icon-wrapper"><i class="fa fa-share-alt"></i></div>
-            <h4>Canales Digitales y Acceso Abierto</h4>
-            <p>Transmisión activa del conocimiento generado a través de plataformas web, repositorios institucionales y redes especializadas.</p>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-gears"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Observación Cooperativa</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Sistemas estables de trabajo participativo que integran el conocimiento directo del personal técnico de primera línea.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Difusión -->
+      <div id="tabDifusion" class="tab-content-panel">
+        <div class="cards-grid-3">
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-book"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Publicación Rigurosa</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Divulgación abierta de estudios, informes monográficos, infografías y conclusiones derivadas de las investigaciones del Observatorio.
+            </p>
+          </div>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-graduation-cap"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Capacitación Técnica</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Actividades formativas especializadas para profesionales de la acción social y estudiantes del Grado en Educación Social.
+            </p>
+          </div>
+          <div class="card-dynamic-hover">
+            <div class="svg-icon-circle"><i class="fa fa-share-alt"></i></div>
+            <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Canales Digitales</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+              Aprovechamiento de las TICs y plataformas web para facilitar el acceso universal y transparente a los datos sociales.
+            </p>
           </div>
         </div>
       </div>
@@ -387,32 +293,40 @@
   <!-- ==========================================================================
        METAS DEL OBSERVATORIO
        ========================================================================== -->
-  <section id="experience" class="section-wrapper" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section id="experience" class="section-wrapper reveal-on-scroll" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="section-container">
-      <div class="section-header-modern">
-        <span class="section-tag">Propósito Central</span>
-        <h2 class="section-title">Metas y Objetivos Generales</h2>
-        <p class="section-lead">
-          Los objetivos expresan el horizonte acordado entre el Ayuntamiento de León y la Universidad de León para transformar el conocimiento en impacto real.
+      <div class="section-header-innovative">
+        <span class="section-tag-pill">Propósito Central</span>
+        <h2 class="section-main-title">Metas y Objetivos</h2>
+        <p class="section-lead-text">
+          Los objetivos generales resumen los logros y compromisos consensuados entre el Ayuntamiento de León y la Universidad de León.
         </p>
       </div>
 
-      <div class="metas-grid">
-        <div class="meta-card">
-          <div class="meta-card-num">01</div>
-          <h5>Diseñar un <b>modelo de análisis válido</b> para la obtención de información sistemática sobre la realidad social de León que facilite un análisis fundamentado de la misma.</h5>
+      <div class="metas-innovative-grid">
+        <div class="meta-item-card">
+          <div class="meta-number-badge">01</div>
+          <h5 style="font-size: 1.05rem; line-height: 1.55; margin: 0; color: var(--text-main);">
+            Diseñar un <b>modelo de análisis válido</b> para la obtención de información sistemática sobre la realidad social de León que facilite un análisis fundamentado.
+          </h5>
         </div>
-        <div class="meta-card">
-          <div class="meta-card-num">02</div>
-          <h5>Estructurar un <b>dispositivo permanente de observación cooperativa</b>, estableciendo los cauces de colaboración y participación entre entidades públicas y privadas.</h5>
+        <div class="meta-item-card">
+          <div class="meta-number-badge">02</div>
+          <h5 style="font-size: 1.05rem; line-height: 1.55; margin: 0; color: var(--text-main);">
+            Estructurar un <b>dispositivo permanente de observación cooperativa</b>, estableciendo los cauces de coordinación entre entidades públicas y privadas.
+          </h5>
         </div>
-        <div class="meta-card">
-          <div class="meta-card-num">03</div>
-          <h5>Promocionar el <b>desarrollo de acciones innovadoras</b> que propongan respuestas eficaces y sostenibles a las situaciones de exclusión social existentes en la ciudad de León.</h5>
+        <div class="meta-item-card">
+          <div class="meta-number-badge">03</div>
+          <h5 style="font-size: 1.05rem; line-height: 1.55; margin: 0; color: var(--text-main);">
+            Promocionar el <b>desarrollo de acciones innovadoras</b> que propongan respuestas eficaces a las situaciones de exclusión social existentes en la ciudad de León.
+          </h5>
         </div>
-        <div class="meta-card">
-          <div class="meta-card-num">04</div>
-          <h5>Establecer <b>mecanismos estables para la difusión</b> de los resultados, enriqueciendo tanto el ámbito académico como la práctica profesional cotidiana.</h5>
+        <div class="meta-item-card">
+          <div class="meta-number-badge">04</div>
+          <h5 style="font-size: 1.05rem; line-height: 1.55; margin: 0; color: var(--text-main);">
+            Establecer <b>mecanismos estables para la difusión</b> de los resultados, enriqueciendo tanto la docencia académica como la praxis profesional diaria.
+          </h5>
         </div>
       </div>
     </div>
@@ -421,65 +335,65 @@
   <!-- ==========================================================================
        LOS PROYECTOS
        ========================================================================== -->
-  <section id="portfolio" class="section-wrapper">
+  <section id="portfolio" class="section-wrapper reveal-on-scroll">
     <div class="section-container">
-      <div class="section-header-modern">
-        <span class="section-tag">Desarrollo Programático</span>
-        <h2 class="section-title">Proyectos Emblemáticos</h2>
-        <p class="section-lead">
-          El observatorio se estructura de forma modular a través de proyectos específicos, garantizando eficiencia de recursos, equipos especializados y cronogramas definidos.
+      <div class="section-header-innovative">
+        <span class="section-tag-pill">Desarrollo Modular</span>
+        <h2 class="section-main-title">Proyectos Emblemáticos</h2>
+        <p class="section-lead-text">
+          El funcionamiento ordinario del Observatorio se organiza mediante proyectos independientes con equipos de trabajo específicos, temporalización propia y objetivos orientados al impacto.
         </p>
       </div>
 
-      <div class="projects-grid">
+      <div class="cards-grid-3">
         <!-- Proyecto 1: Germina -->
-        <div class="project-card-modern">
-          <div class="project-card-img" style="background-image: url('assets/images/burbuja.jpg');">
-            <span class="project-card-badge"><i class="fa fa-calendar"></i> Seminarios</span>
+        <div class="card-dynamic-hover" style="display: flex; flex-direction: column;">
+          <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/burbuja.jpg') center/cover; margin-bottom: 20px; position: relative;">
+            <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full);">
+              Seminarios
+            </span>
           </div>
-          <div class="project-card-body">
-            <h4>Proyecto: "GERMINA"</h4>
-            <p>
-              Serie de seminarios técnicos de alto nivel con referentes en investigación social y exclusión. Conforman la base científica y los criterios técnicos compartidos entre entidades.
-            </p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-check-circle" style="color: var(--status-success);"></i> 3 Ciclos Completados</span>
-              <a href="#publicaciones" class="btn-download-doc">Ver Ponencias <i class="fa fa-arrow-right"></i></a>
-            </div>
+          <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Proyecto: "GERMINA"</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+            Serie de seminarios técnicos con ponentes de referencia en intervención e investigación social para unificar criterios y capacitar a los equipos de trabajo.
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+            <span style="font-size: 0.82rem; color: var(--brand-teal); font-weight: 700;"><i class="fa fa-check-circle"></i> Ciclos Completados</span>
+            <a href="#publicaciones" style="font-size: 0.85rem; font-weight: 700; color: var(--brand-carmine);">Ver Ponencias <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Proyecto 2: Observale.es -->
-        <div class="project-card-modern">
-          <div class="project-card-img" style="background-image: url('assets/images/calle.jpg');">
-            <span class="project-card-badge"><i class="fa fa-globe"></i> Ecosistema Online</span>
+        <div class="card-dynamic-hover" style="display: flex; flex-direction: column;">
+          <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/calle.jpg') center/cover; margin-bottom: 20px; position: relative;">
+            <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full);">
+              Ecosistema Web
+            </span>
           </div>
-          <div class="project-card-body">
-            <h4>Proyecto: "observale.es"</h4>
-            <p>
-              Espacio común online para el intercambio ágil de datos, informes, proyectos y recursos técnicos, conectando la comunidad universitaria con la intervención social municipal.
-            </p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-refresh"></i> Plataforma Dinámica</span>
-              <a href="#estadisticas" class="btn-download-doc">Panel de Datos <i class="fa fa-arrow-right"></i></a>
-            </div>
+          <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Proyecto: "observale.es"</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+            Espacio común online para el intercambio ágil de información, ideas, eventos, datos y publicaciones vinculadas a las metas del Observatorio.
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+            <span style="font-size: 0.82rem; color: var(--brand-teal); font-weight: 700;"><i class="fa fa-refresh"></i> Plataforma Activa</span>
+            <a href="estadisticas.html" style="font-size: 0.85rem; font-weight: 700; color: var(--brand-carmine);">Ir a Estadísticas <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- Proyecto 3: MATICES -->
-        <div class="project-card-modern">
-          <div class="project-card-img" style="background-image: url('assets/images/chart.jpg');">
-            <span class="project-card-badge"><i class="fa fa-cubes"></i> Metodología</span>
+        <div class="card-dynamic-hover" style="display: flex; flex-direction: column;">
+          <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/chart.jpg') center/cover; margin-bottom: 20px; position: relative;">
+            <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full);">
+              Metodología
+            </span>
           </div>
-          <div class="project-card-body">
-            <h4>Proyecto: "M.A.T.I.C.E.S."</h4>
-            <p>
-              <b>M</b>odelo de <b>A</b>nálisis <b>T</b>écnico e <b>I</b>nvestigación <b>C</b>ientífica de la <b>E</b>xclusión <b>S</b>ocial. Sistema de indicadores y variables estandarizadas para el diagnóstico leones.
-            </p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-text-o"></i> 10+ Infografías</span>
-              <a href="#publicaciones" class="btn-download-doc">Ver Productos <i class="fa fa-arrow-right"></i></a>
-            </div>
+          <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Proyecto: "M.A.T.I.C.E.S."</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+            <b>M</b>odelo de <b>A</b>nálisis <b>T</b>écnico e <b>I</b>nvestigación <b>C</b>ientífica de la <b>E</b>xclusión <b>S</b>ocial. Marco estructurado para la medición de indicadores en León.
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+            <span style="font-size: 0.82rem; color: var(--brand-teal); font-weight: 700;"><i class="fa fa-file-pdf-o"></i> 10 Infografías</span>
+            <a href="#publicaciones" style="font-size: 0.85rem; font-weight: 700; color: var(--brand-carmine);">Ver Infografías <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -487,177 +401,177 @@
   </section>
 
   <!-- ==========================================================================
-       REPOSITORIO DE PUBLICACIONES E INFOGRAFÍAS (DINÁMICO CON FILTROS Y BÚSQUEDA)
+       REPOSITORIO DE PUBLICACIONES E INFOGRAFÍAS (FILTROS Y BÚSQUEDA)
        ========================================================================== -->
-  <section id="publicaciones" class="section-wrapper" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+  <section id="publicaciones" class="section-wrapper reveal-on-scroll" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
     <div class="section-container">
-      <div class="section-header-modern">
-        <span class="section-tag">Documentos y Evidencias</span>
-        <h2 class="section-title">Repositorio de Publicaciones e Infografías</h2>
-        <p class="section-lead">
-          Acceso libre y descarga directa a todos los informes de investigación, fichas técnicas, infografías analíticas y materiales formativos elaborados por el Observatorio.
+      <div class="section-header-innovative">
+        <span class="section-tag-pill">Acceso Abierto</span>
+        <h2 class="section-main-title">Publicaciones e Infografías</h2>
+        <p class="section-lead-text">
+          Descarga directa de todos los informes técnicos, infografías analíticas, monográficos y presentaciones elaboradas por el Observatorio.
         </p>
       </div>
 
-      <!-- Barra de herramientas con filtros y buscador -->
-      <div class="docs-toolbar">
-        <div class="docs-filters-group">
-          <button class="doc-filter-btn active" data-category="all">Todos (10)</button>
-          <button class="doc-filter-btn" data-category="infografia">Infografías</button>
-          <button class="doc-filter-btn" data-category="informe">Informes Generales</button>
-          <button class="doc-filter-btn" data-category="brecha">Brecha Digital</button>
-          <button class="doc-filter-btn" data-category="seminario">Seminarios Germina</button>
+      <!-- Barra de herramientas interactiva -->
+      <div class="docs-toolbar-innovative">
+        <div class="docs-filter-pills">
+          <button class="doc-pill-btn active" data-category="all">Todos (10)</button>
+          <button class="doc-pill-btn" data-category="infografia">Infografías</button>
+          <button class="doc-pill-btn" data-category="informe">Informes</button>
+          <button class="doc-pill-btn" data-category="brecha">Brecha Digital</button>
+          <button class="doc-pill-btn" data-category="seminario">Seminarios</button>
         </div>
 
-        <div class="docs-search-box">
+        <div class="docs-search-wrapper">
           <i class="fa fa-search docs-search-icon"></i>
-          <input type="text" id="docSearchInput" class="docs-search-input" placeholder="Buscar documento por título o palabra clave...">
+          <input type="text" id="docSearchInput" class="docs-search-input" placeholder="Buscar documento...">
         </div>
       </div>
 
       <!-- Cuadrícula de Documentos -->
-      <div class="docs-cards-grid">
+      <div class="docs-innovative-grid">
 
-        <!-- Documento 1 -->
-        <div class="doc-card" data-category="informe">
-          <div class="doc-thumb-wrapper">
+        <!-- Doc 1 -->
+        <div class="doc-modern-card" data-category="informe">
+          <div class="doc-thumb-box">
             <img src="docs/InformaObservale.png" alt="Informe Observale General">
-            <span class="doc-badge-category">Informe Completo</span>
+            <span class="doc-badge-pill">Informe Marco</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Informa Observale: Diagnóstico Social</h4>
-            <p class="doc-desc">Documento marco sobre la situación de la inclusión social y la estructura técnica del observatorio en León.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (6.2 MB)</span>
-              <a href="docs/InformaObservale.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Informa Observale: Diagnóstico Social</h4>
+            <p class="doc-card-desc">Documento institucional sobre la situación de la inclusión social y la estructura técnica del observatorio en León.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (6.2 MB)</span>
+              <a href="docs/InformaObservale.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 2 -->
-        <div class="doc-card" data-category="brecha">
-          <div class="doc-thumb-wrapper">
-            <img src="docs/BrechaDigital.png" alt="Brecha Digital en León">
-            <span class="doc-badge-category">Brecha Digital</span>
+        <!-- Doc 2 -->
+        <div class="doc-modern-card" data-category="brecha">
+          <div class="doc-thumb-box">
+            <img src="docs/BrechaDigital.png" alt="Brecha Digital">
+            <span class="doc-badge-pill">Brecha Digital</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Estudio sobre la Brecha Digital</h4>
-            <p class="doc-desc">Análisis de los factores de exclusión digital en colectivos vulnerables y propuesta de alfabetización tecnológica.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (451 KB)</span>
-              <a href="docs/BrechaDigital.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Estudio sobre la Brecha Digital</h4>
+            <p class="doc-card-desc">Análisis exhaustivo sobre las barreras de exclusión digital en colectivos en riesgo de exclusión social en León.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (451 KB)</span>
+              <a href="docs/BrechaDigital.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 3 -->
-        <div class="doc-card" data-category="brecha">
-          <div class="doc-thumb-wrapper">
-            <img src="docs/DigitalDivide.png" alt="Digital Divide Report">
-            <span class="doc-badge-category">Digital Divide</span>
+        <!-- Doc 3 -->
+        <div class="doc-modern-card" data-category="brecha">
+          <div class="doc-thumb-box">
+            <img src="docs/DigitalDivide.png" alt="Digital Divide">
+            <span class="doc-badge-pill">Digital Divide</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Digital Divide: Comparative Analysis</h4>
-            <p class="doc-desc">Monográfico complementario sobre el impacto de la digitalización de los servicios públicos en la cohesión comunitaria.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (566 KB)</span>
-              <a href="docs/DigitalDivide.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Digital Divide: Comparative Report</h4>
+            <p class="doc-card-desc">Monográfico complementario sobre el impacto de la administración electrónica en la cohesión comunitaria.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (566 KB)</span>
+              <a href="docs/DigitalDivide.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 4 -->
-        <div class="doc-card" data-category="infografia">
-          <div class="doc-thumb-wrapper">
-            <img src="docs/infografias/info_observale_final.jpg" alt="Infografía Síntesis Observale">
-            <span class="doc-badge-category">Infografía Síntesis</span>
+        <!-- Doc 4 -->
+        <div class="doc-modern-card" data-category="infografia">
+          <div class="doc-thumb-box">
+            <img src="docs/infografias/info_observale_final.jpg" alt="Infografía Observale">
+            <span class="doc-badge-pill">Infografía Síntesis</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Infografía: Observatorio de Inclusión</h4>
-            <p class="doc-desc">Resumen visual de las funciones, metodología de trabajo y alianzas del Observatorio en León.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.1 MB)</span>
-              <a href="docs/infografias/info_observale_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Infografía Síntesis: Observatorio</h4>
+            <p class="doc-card-desc">Resumen visual de las funciones, metodología de trabajo y alianzas del Observatorio en la ciudad de León.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.1 MB)</span>
+              <a href="docs/infografias/info_observale_final.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 5 -->
-        <div class="doc-card" data-category="infografia">
-          <div class="doc-thumb-wrapper">
+        <!-- Doc 5 -->
+        <div class="doc-modern-card" data-category="infografia">
+          <div class="doc-thumb-box">
             <img src="docs/infografias/infografia_1_2_metodologia_final.jpg" alt="Infografía Metodología">
-            <span class="doc-badge-category">Metodología</span>
+            <span class="doc-badge-pill">Metodología</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Infografía Metodológica MATICES</h4>
-            <p class="doc-desc">Esquema metodológico del sistema de captura, depuración y tratamiento de datos sociales.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.0 MB)</span>
-              <a href="docs/infografias/infografia_1_2_metodologia_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Infografía Metodológica MATICES</h4>
+            <p class="doc-card-desc">Diagrama de flujo del sistema de tratamiento de datos, indicadores y depuración de variables sociales.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.0 MB)</span>
+              <a href="docs/infografias/infografia_1_2_metodologia_final.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 6 -->
-        <div class="doc-card" data-category="infografia">
-          <div class="doc-thumb-wrapper">
-            <img src="docs/infografias/infografia_1_descriptivo_final.jpg" alt="Infografía Descriptivo Social">
-            <span class="doc-badge-category">Datos Sociales</span>
+        <!-- Doc 6 -->
+        <div class="doc-modern-card" data-category="infografia">
+          <div class="doc-thumb-box">
+            <img src="docs/infografias/infografia_1_descriptivo_final.jpg" alt="Infografía Descriptiva">
+            <span class="doc-badge-pill">Datos Sociales</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Infografía Descriptiva de Exclusión</h4>
-            <p class="doc-desc">Visualización de variables clave de exclusión social y estratificación demográfica en León.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.6 MB)</span>
-              <a href="docs/infografias/infografia_1_descriptivo_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Infografía Descriptiva de Exclusión</h4>
+            <p class="doc-card-desc">Variables analíticas de vulnerabilidad social y estratificación sociodemográfica en el municipio.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.6 MB)</span>
+              <a href="docs/infografias/infografia_1_descriptivo_final.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 7 -->
-        <div class="doc-card" data-category="infografia">
-          <div class="doc-thumb-wrapper">
-            <img src="docs/infografias/infografia_1_descriptivo_largo_final.jpg" alt="Infografía Descriptivo Extendido">
-            <span class="doc-badge-category">Datos Sociales</span>
+        <!-- Doc 7 -->
+        <div class="doc-modern-card" data-category="infografia">
+          <div class="doc-thumb-box">
+            <img src="docs/infografias/infografia_1_descriptivo_largo_final.jpg" alt="Infografía Descriptiva Extendida">
+            <span class="doc-badge-pill">Datos Sociales</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Infografía Descriptiva Extendida</h4>
-            <p class="doc-desc">Versión completa con análisis de subdimensiones residenciales, económicas y de apoyo comunitario.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.5 MB)</span>
-              <a href="docs/infografias/infografia_1_descriptivo_largo_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Infografía Descriptiva Extendida</h4>
+            <p class="doc-card-desc">Desglose completo de factores residenciales, precariedad económica y aislamiento relacional.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.5 MB)</span>
+              <a href="docs/infografias/infografia_1_descriptivo_largo_final.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 8 -->
-        <div class="doc-card" data-category="infografia">
-          <div class="doc-thumb-wrapper">
+        <!-- Doc 8 -->
+        <div class="doc-modern-card" data-category="infografia">
+          <div class="doc-thumb-box">
             <img src="docs/infografias/infografia_2_brecha_final.jpg" alt="Infografía Brecha Digital">
-            <span class="doc-badge-category">Brecha Digital</span>
+            <span class="doc-badge-pill">Brecha Digital</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Infografía: Brecha Digital en León</h4>
-            <p class="doc-desc">Factores de exclusión digital desglosados por equipamiento, capacitación y competencias digitales.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.2 MB)</span>
-              <a href="docs/infografias/infografia_2_brecha_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Infografía: Brecha Digital en León</h4>
+            <p class="doc-card-desc">Factores de exclusión digital desglosados por equipamiento, capacitación y competencias digitales.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.2 MB)</span>
+              <a href="docs/infografias/infografia_2_brecha_final.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Documento 9 -->
-        <div class="doc-card" data-category="seminario">
-          <div class="doc-thumb-wrapper">
-            <img src="assets/images/protada_presentacion_fresno.png" alt="Seminario José Manuel Fresno">
-            <span class="doc-badge-category">Seminarios Germina</span>
+        <!-- Doc 9 -->
+        <div class="doc-modern-card" data-category="seminario">
+          <div class="doc-thumb-box">
+            <img src="assets/images/protada_presentacion_fresno.png" alt="Seminario Fresno">
+            <span class="doc-badge-pill">Seminarios</span>
           </div>
-          <div class="doc-card-body">
-            <h4 class="doc-title">Ponencia: Políticas Sociales e Inclusión</h4>
-            <p class="doc-desc">Presentación de José Manuel Fresno para la Universidad de León en el ciclo de conferencias GERMINA.</p>
-            <div class="doc-footer-action">
-              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (608 KB)</span>
-              <a href="docs/ppt_JMFresno_UniLeon_politicasocial.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+          <div class="doc-card-content">
+            <h4 class="doc-card-title">Ponencia: Políticas Sociales</h4>
+            <p class="doc-card-desc">Presentación de José Manuel Fresno para la Universidad de León en el ciclo de seminarios GERMINA.</p>
+            <div class="doc-action-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (608 KB)</span>
+              <a href="docs/ppt_JMFresno_UniLeon_politicasocial.pdf" target="_blank" class="btn-doc-download">Descargar <i class="fa fa-download"></i></a>
             </div>
           </div>
         </div>
@@ -669,15 +583,15 @@
   <!-- ==========================================================================
        AFORISMO INSPIRADOR 2
        ========================================================================== -->
-  <section style="background: var(--bg-surface-alt); padding: 50px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="reveal-on-scroll" style="background: var(--bg-surface-alt); padding: 55px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="section-container" style="max-width: 900px; text-align: center;">
-      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-primary); opacity: 0.7; margin-bottom: 16px; display: inline-block;"></i>
+      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-carmine); opacity: 0.75; margin-bottom: 16px; display: inline-block;"></i>
       <blockquote style="border: none; margin: 0; padding: 0;">
         <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
           “Una sociedad no se define como desarrollada por la riqueza que tiene, sino por la pobreza que no tiene.”
         </p>
         <footer style="color: var(--text-muted); font-size: 0.95rem;">
-          <strong style="color: var(--brand-primary);">Jorge Majfud</strong> — Revista Ciencia Política (2008)
+          <strong style="color: var(--brand-carmine);">Jorge Majfud</strong> — Revista Ciencia Política (2008)
         </footer>
       </blockquote>
     </div>
@@ -686,23 +600,23 @@
   <!-- ==========================================================================
        CONTACTO INSTITUCIONAL
        ========================================================================== -->
-  <section id="contact" class="section-wrapper">
-    <div class="section-container" style="max-width: 800px; text-align: center;">
-      <span class="section-tag">Canal de Comunicación</span>
-      <h2 class="section-title">Contacto y Colaboración</h2>
-      <p class="section-lead">
-        ¿Deseas consultar datos específicos, proponer una colaboración académica o trasladar una consulta técnica al equipo del Observatorio?
+  <section id="contact" class="section-wrapper reveal-on-scroll">
+    <div class="section-container" style="max-width: 820px; text-align: center;">
+      <span class="section-tag-pill">Canal Directo</span>
+      <h2 class="section-main-title">Contacto y Colaboración</h2>
+      <p class="section-lead-text">
+        ¿Deseas proponer una colaboración académica, consultar datos específicos o contactar con los equipos técnicos del Observatorio?
       </p>
 
-      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px 24px; box-shadow: var(--shadow-sm); margin-top: 32px;">
-        <div style="width: 60px; height: 60px; border-radius: var(--radius-full); background: var(--brand-primary-light); color: var(--brand-primary); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 20px;">
+      <div class="card-dynamic-hover" style="margin-top: 36px; padding: 40px 24px;">
+        <div class="svg-icon-circle" style="margin: 0 auto 20px;">
           <i class="fa fa-envelope-o"></i>
         </div>
-        <h4 style="font-size: 1.25rem; margin-bottom: 10px;">Equipo Técnico e Investigador</h4>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
-          Coordinación técnica Ayuntamiento de León y Facultad de Educación (Universidad de León)
+        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Equipo Técnico e Investigador</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 26px;">
+          Coordinación técnica Ayuntamiento de León &amp; Facultad de Educación (Universidad de León)
         </p>
-        <a href="mailto:info.observale@gmail.com?cc=luisalberto.gonzalez@aytoleon.es,mmlopa@unileon.es&amp;subject=Consulta%20Observatorio%20Municipal%20para%20la%20Inclusi%C3%B3n%20Social%20de%20Le%C3%B3n" class="btn-primary-modern" style="padding: 12px 28px;">
+        <a href="mailto:info.observale@gmail.com?cc=luisalberto.gonzalez@aytoleon.es,mmlopa@unileon.es&amp;subject=Consulta%20Observatorio%20Municipal%20para%20la%20Inclusi%C3%B3n%20Social%20de%20Le%C3%B3n" class="btn-hero-stats" style="padding: 14px 32px;">
           <i class="fa fa-paper-plane"></i> Enviar Mensaje Directo
         </a>
       </div>
@@ -713,13 +627,13 @@
        PIE DE PÁGINA MODERNO
        ========================================================================== -->
   <footer class="modern-footer">
-    <div class="footer-grid">
+    <div class="footer-grid-container">
       <div class="footer-brand">
-        <h4>observa<span style="color: #ff94b4;">le</span> · LEÓN</h4>
+        <h4>observa<span style="color: #5eead4;">le</span> · LEÓN</h4>
         <p>
-          Observatorio Municipal para la Inclusión Social de León. Plataforma técnica y científica para el análisis y la innovación en políticas sociales.
+          Observatorio Municipal para la Inclusión Social de León. Plataforma técnica y científica para el diagnóstico sistemático y la innovación en políticas sociales.
         </p>
-        <div style="display: flex; gap: 16px; margin-top: 20px;">
+        <div style="display: flex; gap: 20px; margin-top: 22px;">
           <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" style="height: 38px; opacity: 0.9;">
           <img src="assets/images/unilogo.png" alt="Universidad de León" style="height: 38px; opacity: 0.9;">
         </div>
@@ -732,7 +646,7 @@
           <li><a href="#about">¿Qué es el OIS?</a></li>
           <li><a href="#features">Ejes de Desarrollo</a></li>
           <li><a href="#experience">Metas</a></li>
-          <li><a href="#estadisticas">Análisis Estadístico</a></li>
+          <li><a href="estadisticas.html">Espacio Estadístico</a></li>
         </ul>
       </div>
 
@@ -742,15 +656,15 @@
           <li><a href="#portfolio">Proyectos Activos</a></li>
           <li><a href="#publicaciones">Repositorio de Informes</a></li>
           <li><a href="docs/InformaObservale.pdf" target="_blank">Informa Observale (PDF)</a></li>
-          <li><a href="estadisticas.html">Panel Estadístico Ampliado</a></li>
+          <li><a href="estadisticas.html">Análisis Estadístico</a></li>
           <li><a href="#contact">Contacto Directo</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom-bar">
       <div>
-        &copy; 2026 Observatorio Municipal para la Inclusión Social de León. Desarrollado en colaboración Ayuntamiento de León &amp; Universidad de León.
+        &copy; 2026 Observatorio Municipal para la Inclusión Social de León. Ayuntamiento de León &amp; Universidad de León.
       </div>
       <div>
         Accesibilidad WCAG 2.1 AA · Datos Abiertos
@@ -759,7 +673,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/vendor/chart.umd.min.js"></script>
   <script src="assets/js/estadisticas.js"></script>
 </body>
 </html>
