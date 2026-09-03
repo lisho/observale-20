@@ -1,0 +1,378 @@
+/* @import "compass/css3"; */
+
+/*html,body {margin:0; padding:10px; -webkit-backface-visibility:hidden;}*/
+
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+.europa {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #fff;
+  z-index: 300;
+}
+
+.europa div{
+  display: inline-block;
+}
+
+.europadiv{
+  /*height: 3em;*/
+}
+
+.banderaue{
+  height: 4em;
+}
+.cuadros_modal {
+  /*height: 200px;*/
+  /* background-color: rgb(145, 124, 92); */
+  margin: 10px;
+  padding: 15px;
+  color: rgb(13, 15, 52);
+}
+
+.cuadros_modal h3{
+  color: rgb(149, 31, 0);
+}
+
+/* text-based popup styling */
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 25px;
+  width:auto;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.features-item h6{
+  font-size: 2em;
+  font-weight: bold;
+
+}
+
+.definicion {
+    background-color: rgba(79, 50, 68, .7);
+    padding: 15px;
+    font-family: 'robotoregular';
+    font-size: 1em !important ;
+    color: #fff;
+}
+
+.blancosombra {
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
+}
+
+.salmonsombra {
+  color:rgb(219, 68, 44) !important;
+  text-shadow: 2px 2px 2px black;
+}
+
+/*
+
+====== Efecto FLIP ======
+
+*/
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+
+	border: 1px solid #ccc;
+}
+
+	.flip-container:hover .flipper,
+  .flip-container.hover .flipper {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 427px;
+}
+
+.flip-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.flipper {
+	-webkit-transition: 0.8s;
+	-webkit-transform-style: preserve-3d;
+
+	-moz-transition: 0.8s;
+	-moz-transform-style: preserve-3d;
+
+  -o-transition: 0.8s;
+	-o-transform-style: preserve-3d;
+
+	transition: 0.8s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+  /* background: url(../images/proyecto1.jpg) no-repeat center;
+  background-size: 800px auto;" */
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2, 2, 3, #acd7e5
+	/* background: url(http://davidwalsh.name/demo/dwflip.jpg) 0 0 no-repeat;*/
+	z-index: 2;
+
+}
+
+.front-top {
+    padding-top: 10%;
+}
+
+.front-bottom {
+  padding-top: 90%;
+}
+
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	background: #f8f8f8;
+}
+
+.front .name {
+	font-size: 1.5em;
+	/*display: inline-block;*/
+	/*background: rgba(33, 33, 33, 0.9);*/
+	color: #f8f8f8;
+	font-family: Courier;
+	/*padding: 5px 10px;*/
+  padding-left: 15px;
+	/*border-radius: 5px;*/
+	bottom: 60px;
+	/*left: 25%;
+	position: absolute;*/
+	text-shadow: 0.1em 0.1em 0.05em #333;
+
+/*
+	-webkit-transform: rotate(-20deg);
+	-moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+  */
+}
+
+.back-logo {
+	position: absolute;
+	top: 40px;
+	left: 90px;
+	width: 160px;
+	height: 117px;
+
+}
+
+.back-title {
+	font-weight: bold;
+	color: #00304a;
+	position: absolute;
+	top: 170px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	text-shadow: 0.1em 0.1em 0.05em #acd7e5;
+	font-family: Courier;
+	font-size: 2em;
+}
+
+.back p {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 0 20px;
+  font-family: arial;
+  /*line-height: 2em;*/
+  font-size: .8em;
+}
+
+.boton-footer {
+  position: absolute;
+  bottom:0px;
+  display: block;
+  text-align: center;
+  background-color: rgb(78, 26, 50);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  text-decoration:none;
+}
+
+.boton-footer:hover {
+  background-color: rgb(15, 12, 42);
+}
+
+.singnature img{
+  height: 7em;
+}
+
+.project-popup {
+    
+  background: url(../images/pizarra.jpg) 0 0 no-repeat;
+  background-size: cover;
+  color: #fff !important ;
+  position: relative;
+  padding: 25px;
+  width:auto;
+  max-width: 90%;
+  min-height: 800px;
+  margin: 0 auto;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+.fontx15 {
+  font-size: 1.5em;
+  line-height: 3rem;
+}
+
+/*
+
+====== "Hinge" close effect ======
+
+*/
+
+@keyframes hinge {
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }
+	100% { transform: translateY(700px); opacity: 0; }
+}
+
+.hinge {
+  animation-duration: 1s;
+	animation-name: hinge;
+}
+
+.mfp-with-fade {
+  // before-open state
+  .mfp-content,
+  &.mfp-bg {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+  // open state
+  &.mfp-ready {
+    .mfp-content {
+     opacity: 1;
+    }
+    &.mfp-bg {
+      opacity: 0.8; // background opacity
+    }
+  }
+
+  // closed state
+  &.mfp-removing {
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+
+====== Newspaper effect ======
+
+*/
+.mfp-newspaper {
+  /* start state */
+  /* animate in */
+  /* animate out */
+}
+.mfp-newspaper .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.5s;
+  transform: scale(0) rotate(500deg);
+}
+.mfp-newspaper.mfp-bg {
+  opacity: 0;
+  transition: all 0.5s;
+}
+.mfp-newspaper.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+.mfp-newspaper.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-newspaper.mfp-removing .mfp-with-anim {
+  transform: scale(0) rotate(500deg);
+  opacity: 0;
+}
+.mfp-newspaper.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+
+/*
+
+====== Zoom effect ======
+
+*/
+.mfp-zoom-in {
+  /* start state */
+  /* animate in */
+  /* animate out */
+}
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8);
+}
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: scale(1);
+}
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  transform: scale(0.8);
+  opacity: 0;
+}
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+
+/*** Estilos POPUP ***/
+
+.project-popup h1 {   
+  line-height: 8rem;
+
+}
+
