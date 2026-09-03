@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis Estadístico de la Exclusión en León | ObservaLE</title>
+  <meta name="description" content="Cuadro de mando e indicadores estadísticos del Observatorio Municipal para la Inclusión Social de León.">
+  
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Hojas de estilo -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/modern-theme.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header class="modern-navbar">
+    <div class="nav-container">
+      <div class="brand-wrapper">
+        <a href="index.html" class="brand-title" title="Volver a la portada">
+          <span class="brand-highlight">observa</span><span>le</span>
+          <span class="brand-subtitle">León · Datos Estadísticos</span>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-link-item"><a href="index.html"><i class="fa fa-arrow-left"></i> Volver a Portada</a></li>
+          <li class="nav-link-item"><a href="index.html#about">¿Qué es?</a></li>
+          <li class="nav-link-item"><a href="#kpi-section">Indicadores</a></li>
+          <li class="nav-link-item"><a href="#distritos">Barrios de León</a></li>
+          <li class="nav-link-item"><a href="#datasets">Microdatos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro">
+          <i class="fa fa-moon-o"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cabecera de Página de Estadísticas -->
+  <main style="margin-top: calc(var(--header-height) + 40px); padding: 0 24px 80px;">
+    <div class="section-container">
+      
+      <!-- Breadcrumb y Título -->
+      <div style="margin-bottom: 32px;">
+        <nav style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+          <a href="index.html">Inicio</a> &gt; <span style="color: var(--brand-primary); font-weight: 600;">Análisis Estadístico de la Exclusión en León</span>
+        </nav>
+        <span class="section-tag"><i class="fa fa-line-chart"></i> Sistema de Información Social</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px;">
+          Análisis Estadístico de la Exclusión en León
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 860px; line-height: 1.6;">
+          Plataforma de datos cuantitativos sobre las dimensiones de la exclusión e inclusión social en el municipio de León. Módulo en desarrollo continuo derivado del proyecto <b>MATICES</b>.
+        </p>
+      </div>
+
+      <!-- Tarjetas Resumen (KPI) -->
+      <div id="kpi-section" class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-area-chart"></i></div>
+            <span class="kpi-badge">León Capital</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="21.4" data-decimals="1">0</span>
+            <span class="kpi-value-unit">%</span>
+          </div>
+          <div class="kpi-title">Tasa de Exclusión Social Estimada</div>
+          <p class="kpi-desc">Calculada a partir de los indicadores AROPE ajustados a la escala municipal urbana de León.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-home"></i></div>
+            <span class="kpi-badge">Vulnerabilidad</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="16.8" data-decimals="1">0</span>
+            <span class="kpi-value-unit">%</span>
+          </div>
+          <div class="kpi-title">Sobreesfuerzo en Vivienda</div>
+          <p class="kpi-desc">Porcentaje de hogares atendidos que destinan más del 40% de sus ingresos al pago de vivienda y suministros.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-wifi"></i></div>
+            <span class="kpi-badge">Brecha Digital</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="48.2" data-decimals="1">0</span>
+            <span class="kpi-value-unit">%</span>
+          </div>
+          <div class="kpi-title">Dificultad de Conectividad Total</div>
+          <p class="kpi-desc">Población en programas de inclusión con limitaciones de equipamiento, datos o competencias telemáticas.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-map-marker"></i></div>
+            <span class="kpi-badge">Territorio</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="7" data-decimals="0">0</span>
+            <span class="kpi-value-unit">zonas</span>
+          </div>
+          <div class="kpi-title">Distritos en Seguimiento</div>
+          <p class="kpi-desc">Áreas urbanas con presencia activa de los Equipos de Inclusión Social (EDIS) de León.</p>
+        </div>
+      </div>
+
+      <!-- Cuadros de Gráficos de Estadísticas -->
+      <div class="charts-grid">
+        <div class="chart-card" id="chartCardExclusion">
+          <div class="chart-card-header">
+            <div class="chart-title-box">
+              <h4>Perfil Multidimensional de Vulnerabilidad</h4>
+              <p>Valores normalizados (0-100) por dimensión de intervención</p>
+            </div>
+            <div class="chart-controls">
+              <button class="chart-btn-filter active" data-chart-filter="global">Comparativa</button>
+              <button class="chart-btn-filter" data-chart-filter="municipio">Municipio</button>
+              <button class="chart-btn-filter" data-chart-filter="edis">Zonas EDIS</button>
+            </div>
+          </div>
+          <div class="chart-container-box">
+            <canvas id="chartExclusionDimensions"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card" id="distritos">
+          <div class="chart-card-header">
+            <div class="chart-title-box">
+              <h4>Brecha Digital por Grupos de Edad en León</h4>
+              <p>Dificultad en trámites telemáticos vs carencia de dispositivos</p>
+            </div>
+          </div>
+          <div class="chart-container-box">
+            <canvas id="chartDigitalDivide"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de Microdatos de Muestra -->
+      <div id="datasets" style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); margin-top: 40px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 6px;">Indicadores Sintéticos por Dimensión (Muestra MATICES)</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Serie cuantitativa estandarizada para el término municipal de León.</p>
+          </div>
+          <div>
+            <a href="#" id="btnExportCsv" class="btn-primary-modern" style="padding: 10px 18px; font-size: 0.88rem;">
+              <i class="fa fa-file-excel-o"></i> Exportar a CSV
+            </a>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="table" style="margin: 0; font-size: 0.92rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-medium); color: var(--text-main);">
+                <th>Dimensión</th>
+                <th>Media Municipio León</th>
+                <th>Zonas Prioritarias EDIS</th>
+                <th>Nivel de Alerta</th>
+                <th>Fuente Primaria</th>
+              </tr>
+            </thead>
+            <tbody style="color: var(--text-muted);">
+              <tr>
+                <td><strong style="color: var(--text-main);">Vulnerabilidad Laboral</strong></td>
+                <td>68.0 pts</td>
+                <td>84.0 pts</td>
+                <td><span style="background: var(--status-warning-bg); color: var(--status-warning); padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Alto</span></td>
+                <td>Registros EDIS / SEPE</td>
+              </tr>
+              <tr>
+                <td><strong style="color: var(--text-main);">Acceso y Gasto en Vivienda</strong></td>
+                <td>54.0 pts</td>
+                <td>76.0 pts</td>
+                <td><span style="background: var(--status-warning-bg); color: var(--status-warning); padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Medio-Alto</span></td>
+                <td>Servicios Sociales León</td>
+              </tr>
+              <tr>
+                <td><strong style="color: var(--text-main);">Brecha Digital</strong></td>
+                <td>72.0 pts</td>
+                <td>88.0 pts</td>
+                <td><span style="background: rgba(220, 38, 38, 0.15); color: #dc2626; padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Crítico</span></td>
+                <td>Monográfico Brecha Digital</td>
+              </tr>
+              <tr>
+                <td><strong style="color: var(--text-main);">Salud y Dependencia</strong></td>
+                <td>42.0 pts</td>
+                <td>62.0 pts</td>
+                <td><span style="background: var(--status-info-bg); color: var(--status-info); padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Moderado</span></td>
+                <td>Sacyl / ULE</td>
+              </tr>
+              <tr>
+                <td><strong style="color: var(--text-main);">Aislamiento Relacional</strong></td>
+                <td>48.0 pts</td>
+                <td>69.0 pts</td>
+                <td><span style="background: var(--status-warning-bg); color: var(--status-warning); padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Medio</span></td>
+                <td>Encuesta MATICES</td>
+              </tr>
+              <tr>
+                <td><strong style="color: var(--text-main);">Nivel Formativo y Competencias</strong></td>
+                <td>59.0 pts</td>
+                <td>78.0 pts</td>
+                <td><span style="background: var(--status-warning-bg); color: var(--status-warning); padding: 3px 8px; border-radius: 9999px; font-size: 0.76rem; font-weight: 700;">Alto</span></td>
+                <td>Facultad de Educación ULE</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="modern-footer">
+    <div class="footer-bottom">
+      <div>&copy; 2026 Observatorio Municipal para la Inclusión Social de León · Ayuntamiento &amp; ULE</div>
+      <div><a href="index.html" style="color: #ff94b4;">Volver a la Portada Principal</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/vendor/chart.umd.min.js"></script>
+  <script src="assets/js/estadisticas.js"></script>
+</body>
+</html>

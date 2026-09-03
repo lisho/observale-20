@@ -1,930 +1,765 @@
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="es" style=""><!--<![endif]--><head>
-          <meta charset="utf-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-          <title>Observatorio Municipal para la Inclusión Social de León</title>
-          <meta name="description" content="">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="icon" href="favicon.ico">
-          
-          <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observatorio Municipal para la Inclusión Social de León | ObservaLE</title>
+  <meta name="description" content="Espacio técnico, académico e innovador para el análisis sistemático de la exclusión e inclusión social en León. Colaboración Ayuntamiento de León y Universidad de León.">
+  
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-          <!--
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Hojas de estilo esenciales -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/modern-theme.css">
+</head>
+<body>
 
-      
-          <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-          <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN MODERNA STICKY
+       ========================================================================== -->
+  <header class="modern-navbar" id="topNavbar">
+    <div class="nav-container">
+      <div class="brand-wrapper">
+        <a href="#home" class="brand-title" title="Observatorio de Inclusión Social de León">
+          <span class="brand-highlight">observa</span><span>le</span>
+          <span class="brand-subtitle">León · Ayto &amp; ULE</span>
+        </a>
+      </div>
 
-
-          <!--For Plugins external css-->
-          <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-          <link rel="stylesheet" href="assets/css/plugins.css">
-          <link rel="stylesheet" href="assets/css/roboto-railway-webfont.css">
-          <link rel="stylesheet" href="assets/css/linearicons-web-font.css">
-          <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-          <!--Theme custom css -->
-          <link rel="stylesheet" href="assets/css/style.css">
-
-          <link rel="stylesheet" href="assets/css/mis_estilos.css">
-
-          <!--Theme Responsive css-->
-
-          <link rel="stylesheet" href="assets/css/responsive.css">
-
-          <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-          <!-- Enlace al CDN de pdf.js -->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-
-        <!--  <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
-      </head>
-      <body style="" tcap-name="mainman">
-          <!--[if lt IE 8]>
-              <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-          <![endif]-->
-
-      <div class="preloader" style="display: none;"><div class="loaded" style="display: none;">&nbsp;</div></div>
-
-      <nav id="main-nav">
-          <ul>
-              <li><a href="#home"><span>Inicio</span></a></li>
-              <li><a href="#about"><span>¿Qué es?</span></a></li>
-              <li><a href="#features"><span>Ejes</span></a></li>
-              <li><a href="#experience"><span>Metas</span></a></li>
-              <li><a href="#portfolio"><span>Proyectos</span></a></li>
-              <li><a href="#contact"><span>Contacto</span></a></li>
-          </ul>
-          <a href="#0" class="cd-close-menu">Close<span></span></a>
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-link-item"><a href="#home"><i class="fa fa-home"></i> Inicio</a></li>
+          <li class="nav-link-item"><a href="#about"><i class="fa fa-info-circle"></i> ¿Qué es?</a></li>
+          <li class="nav-link-item"><a href="#features"><i class="fa fa-compass"></i> Ejes</a></li>
+          <li class="nav-link-item"><a href="#experience"><i class="fa fa-bullseye"></i> Metas</a></li>
+          <li class="nav-link-item">
+            <a href="#estadisticas" class="active">
+              <i class="fa fa-bar-chart"></i> Análisis Estadístico
+              <span class="nav-badge-new">NUEVO</span>
+            </a>
+          </li>
+          <li class="nav-link-item"><a href="#portfolio"><i class="fa fa-folder-open"></i> Proyectos</a></li>
+          <li class="nav-link-item"><a href="#publicaciones"><i class="fa fa-book"></i> Publicaciones</a></li>
+          <li class="nav-link-item"><a href="#contact"><i class="fa fa-envelope"></i> Contacto</a></li>
+        </ul>
       </nav>
 
-      <!--Logo Europa-->
-      <!--
-      <div class="row europa">
-        <div class="europadiv">
-          <img class="banderaue" src="assets/images/europa.svg" alt="">
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro">
+          <i class="fa fa-moon-o"></i>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Abrir menú móvil">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO PRINCIPAL
+       ========================================================================== -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-pill-badge">
+        <i class="fa fa-university"></i> Convenio Ayuntamiento de León &amp; Universidad de León
+      </div>
+      <h1 class="hero-title">
+        Observatorio Municipal para la <span>Inclusión Social</span>
+      </h1>
+      <p class="hero-subtitle">
+        Espacio técnico, académico y participativo para la investigación aplicada, el diagnóstico sistemático y la transferencia de conocimiento sobre la realidad social de la ciudad de León.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#estadisticas" class="btn-primary-modern">
+          <i class="fa fa-line-chart"></i> Explorar Análisis Estadístico
+        </a>
+        <a href="#publicaciones" class="btn-secondary-modern">
+          <i class="fa fa-file-text-o"></i> Repositorio de Informes y Datos
+        </a>
+      </div>
+
+      <div class="hero-partners">
+        <a href="http://www.aytoleon.es" target="_blank" rel="noopener noreferrer" class="hero-partner-item">
+          <img src="assets/images/aytologo.png" alt="Logotipo Ayuntamiento de León">
+          <span>Ayuntamiento de León</span>
+        </a>
+        <a href="https://www.unileon.es/" target="_blank" rel="noopener noreferrer" class="hero-partner-item">
+          <img src="assets/images/unilogo.png" alt="Logotipo Universidad de León">
+          <span>Universidad de León</span>
+        </a>
+        <div class="hero-partner-item">
+          <img src="assets/images/europa.svg" alt="Bandera Unión Europea">
+          <span>Iniciativa de Cohesión Social</span>
         </div>
       </div>
-      -->
-          <!--Home page style-->
-          <header id="home" class="home home-main-content">
-
-              <div class="overlay sections">
-
-                  <div class="container-fluid text-center">
-                      <div class="row">
-                          <div class="div-menu">
-                              <header class="cd-header">
-                                  <div id="cd-logo">
-                                    <br><br>
-                                      <!-- <a href="index.html"><img src="assets/images/logo.png" alt="Logo"></a> -->
-                                      <a href="http://www.observale.es"><span class="gloria-font"><small>www.observa</small><span style="color:rgb(113, 5, 37)">le</span><small>.es</small></span></a>
-                                      <!--Logo Europa-->
-                                      <div class="row europa">
-                                        <div class="europadiv">
-                                          <img class="banderaue" src="assets/images/europa.svg" alt="">
-                                        </div>
-                                      </div>
-                                  </div>
-                                  <!-- <a class="-menu-trigger" href="#main-nav"><span></span></a> -->
-                              </header>
-                          </div>
-                          <div class="home-wrapper">
-
-                              <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-                                  <div class="home-content">
-
-                                      <img id="logohome" src="assets/images/LOGO4.svg" alt="Logo" width="55%" hidden="" style="display: inline; opacity: 0.565159;">
-                                    <!--  <h1><img src="assets/images/LOGO4.svg" alt="Logo" width="50%"></h1> -->
-                                      <p class="gloria-font">Observatorio Municipal para la Inclusión Social</p>
-                                      <p class="gloria-font">- LEÓN -</p>
-                                      <br>
-                                  </div>
-
-                                  <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <a href="http://www.aytoleon.es" target="_blank" style="color:#fcf8e3"><img src="assets/images/aytologo.png" alt="Logo" height="100em">
-                                        <p></p> <span>Ayuntamiento de León</span>
-                                      </a></div><a href="http://www.aytoleon.es" target="_blank" style="color:#fcf8e3">
-                                      </a><div class="col-lg-6 col-md-6 col-sm-6"><a href="http://www.aytoleon.es" target="_blank" style="color:#fcf8e3">
-                                        </a><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3"><img src="assets/images/unilogo.png" alt="Logo" height="100em">
-                                        <p></p> <span>Universidad de León</span>
-                                      </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-                                  </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-
-                              </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-                          </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-                      </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-                  </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-              </a></div><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-          </a></header><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-
-          <!-- Sections ¿QUÉ ES EL OBSERVATORIO?-->
-          </a><section id="about" class="sections3"><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-              </a><div class="container"><a href="https://www.unileon.es/" target="_blank" style="color:#fcf8e3">
-                  <!-- Example row of columns -->
-                  </a><a class="cd-menu-trigger fijo" href="#main-nav"><span></span></a>
-                  <div class="row">
-                      <div class="about-wrapper">
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="about-photo">
-                                  <img src="assets/images/calle.jpg" alt="About Photo">
-                              </div>
-                          </div>
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="about-content text-left">
-                                  <h3>¿Qué es el <big class="salmonsombra">O.I.S.</big>?</h3>
-                                  <p><big>Esta iniciativa se enmarca en la activa cooperación que desde hace años mantienen el <b>Ayuntamiento de León y
-                                            la Universidad de León</b> en múltiples ámbitos al amparo del Convenio Marco y de los convenios específicos que se
-                                            han suscrito entre ambas entidades.</big></p>
-                                  <p><big>En concreto surge de la colaboración estable durante los últimos años entre la Facultad de Educación de la
-                                            Universidad de León con los Equipos de Inclusión Social (EDIS) del Ayuntamiento de León en el desarrollo y
-                                            supervisión del Prácticum en el Grado en Educación Social así como en otras acciones puntuales.</big></p>
-
-                                  <div class="">
-                                    <img src="assets/images/chincheta.png" alt="" class="pull-right" height="70px" style="margin-top:-40px">
-                                    <p class="definicion"><big> El <b>Observatorio para la Inclusión Social</b> se concibe como un espacio común de trabajo de carácter
-                                      técnico, académico e innovador para la reflexión y análisis sistemático de la realidad del
-                                      complejo fenómeno de la inclusión/exclusión social en la ciudad de León, desde una
-                                      perspectiva amplia y una proyección eminentemente práctica.</big></p>
-                                  </div>
-
-
-                                  <a href="https://drive.google.com/file/d/1MYdqQo-4S5c2RJoaUeosS5BVmN8wsskY/view?usp=sharing" target="_blank" class="btn btn-default"><i class="fa fa-file-pdf-o"></i> &nbsp; Leer el Convenio</a>
-                              </div>
-                          </div>
-
-                      </div>
-                  </div>
-              </div> <!-- /container -->
-          </section>
-
-
-          <!-- Aforismo 1 -->
-          <section id="testimonial1" class="lightbg" style="background-color:#000">
-              <div class="container">
-                  <!-- Example row of columns -->
-                  <div class="row">
-                      <div class="testimonial-wrapper sections4">
-
-                          <div class="col-md-5 col-sm-6 col-xs-12">
-                              <div class="testimonial-content text-left">
-
-                                  <div class="testimonial-quote">
-                                      <i class="fa fa-quote-left"></i>
-                                      <h4>“Investigar es ver lo que todo el mundo ha visto, y pensar lo que nadie más ha pensado.”
-                                  </h4></div>
-                                  <div class="singnature">
-                                      <img src="assets/images/firma1.svg" alt="Signature">
-                                  </div>
-                                  <div class="regards-by">
-                                      <h5>Albert Szent-Györgyi</h5>
-                                      <p>Fisiólogo y Bioquímico, Hungría.</p>
-                                      <small>Premio Nobel en 1937</small>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-7 col-sm-6 col-xs-12">
-                              <div class="profile-photo">
-                                  <img class="pull-right" src="assets/images/man2.png" alt="testimonial">
-                              </div>
-                          </div>
-
-                      </div>
-                  </div>
-              </div> <!-- /container -->
-          </section>
-
-          <!-- EJES DE DESARROLLO -->
-          <section id="features" class="sections lightbg">
-
-              <div class="container text-center">
-              
-                  <div class="heading-content text-center">
-                      <h3>Ejes de Desarrollo</h3>
-                          <p>La creación del Observatorio pivota sobre tres ideas que servirán como los ejes respecto a los cuales se desarrollarán las acciones del mismo.</p>
-                  </div>
-
-                  <!-- Example row of columns -->
-                  <div class="row">
-                      <div class="features-wrapper">
-
-                          <div class="col-md-4 col-sm-4 col-xs-12">
-                            <a href="#test-popup1" class="hinge popup" data-effect="">
-                              <div class="features-bg design w100">
-                                    <div class="features-item">
-                                          <i class="fa fa-flask"></i>
-                                          <h6 class="">I + I + D</h6>
-                                    </div>
-                              </div>
-                            </a>
-                          </div>
-
-                <!-- POPUP I+I+D-->
-
-                          <div id="test-popup1" class="white-popup mfp-with-anim mfp-hide row" width="70%">
-                            <h1 class="text-center">
-                              <i class="fa fa-flask"></i><br>
-                            </h1>
-                            <h2 class="text-center">
-                              <span>Innovación, Investigación y Desarrollo</span>
-                            </h2>
-
-
-                            <div class="col-lg-12" id="iid">
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-eye"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Modelos válidos de observación y análisis de la realidad social.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-desktop"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Incorporación de las Nuevas Tecnologías a la Acción Social.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-lightbulb-o"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Propuestas innovadoras en la investigación, diseño, planificación, gestión, implementación, instrumentos, estrategias, evaluación...</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col-lg-12" id="difusion">
-                              
-                              <div class="col-lg-4 col-sm-6"></div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-thumbs-up"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Promoción de las Buenas Prácticas en Intervención Social</span>
-                                  </p>
-                                </div>
-                              </div>
-
-
-                            </div>
-
-                          </div>
-
-                <!--// FIN POPUP I+I+D -->
-
-                          <div class="col-md-4 col-sm-4 col-xs-12">
-                            <a href="#test-popup2" class="hinge popup" data-effect="">
-                              <div class="features-bg development w100">
-                                  <div class="features-item">
-                                      <i class="fa fa-group"></i>
-                                      <h6>participación</h6>
-                                  </div>
-                              </div>
-                            </a>
-                          </div>
-
-                <!-- POPUP PARTICIPACIÓN-->
-
-                          <div id="test-popup2" class="white-popup mfp-with-anim mfp-hide row" width="70%">
-                            <h1 class="text-center">
-                              <i class="fa fa-group"></i><br>
-                            </h1>
-                            <h2 class="text-center">
-                              <span>Participación</span>
-                            </h2>
-
-
-                            <div class="col-lg-12" id="participacion">
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-comments-o"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Entornos compartidos de reflexión y análisis sobre la Inclusión/Exclusión Social.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-cubes" aria-hidden="true"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Espacios y acciones de colaboración y coordinación(Administraciónes-Universidad-Tercer Sector-Sector Privado) </span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-gears"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Sistemas estables de participación y Observación Cooperativa.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                <!--// FIN POPUP PARTICIPACIÓN -->
-
-                          <div class="col-md-4 col-sm-4 col-xs-12">
-                            <a href="#test-popup3" class="hinge popup" data-effect="">
-                              <div class="features-bg testing w100">
-                                  <div class="features-item">
-                                      <i class="fa fa-bullhorn"></i>
-                                      <!-- <i class="fa fa-volume-up"></i> -->
-                                      <h6>difusión</h6>
-                                  </div>
-                              </div>
-                            </a>
-                          </div>
-
-                <!-- POPUP DIFUSIÓN-->
-
-                          <div id="test-popup3" class="white-popup mfp-with-anim mfp-hide row" width="70%">
-                            <h1 class="text-center">
-                              <i class="fa fa-bullhorn"></i><br>
-                            </h1>
-                            <h2 class="text-center">
-                              <span>Difusión</span>
-                            </h2>
-
-
-                            <div class="col-lg-12" id="difusion">
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-rss-square"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Publicación rigurosa de información relacionada con el objeto del observatorio y de los resultados obtenidos de las acciones del mismo (online/físico)</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-mortar-board" aria-hidden="true"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Acciones complementarias a la formación académica y de capacitación técnica.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-server"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Compilación y sistematización de información, recursos y materiales técnicos sobre la inclusión/exclusión social</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col-lg-12" id="difusion">
-
-                              <div class="col-lg-4 col-sm-6"></div>
-
-                              <div class="col-lg-4 col-sm-6">
-                                <div class="cuadros_modal">
-                                  <h3 class="text-center">
-                                    <i class="fa fa-twitter-square" aria-hidden="true"></i><br>
-                                  </h3>
-                                  <p class="text-center">
-                                    <span>Incorporación de las redes sociales y de las TICs para transmitir la información.</span>
-                                  </p>
-                                </div>
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                <!--// FIN POPUP DIFUSIÓN -->
-                
-                      </div>
-                  </div>
-              </div> <!-- /container -->
-          </section>
-
-          <!-- Sections -->
-          <section id="experience" class="experience">
-              <div class="overlay2 sections" style="background-color: rgba(0,0,0,.8)">
-                  <div class="container">
-
-                    <div class="heading-content text-center">
-                        <h3 class="blancosombra">Metas</h3>
-                        <p class="blancosombra">Los Objetivos Generales expresan el propósito central del proyecto,
-                              han sido consensuados y resumen los logros que por parte de ámbas instituciones se pretenden alcanzar.</p>
-                    </div>
-
-                      <div class="row">
-                          <div class="experience-wrapper">
-
-                              <div class="col-md-6 col-sm-12 col-xs-12">
-                                  <div class="experience-content">
-
-                                      <h2><i class="fa fa-quote-left salmonsombra"></i></h2>
-
-                                      <div class="content-details content-border">
-                                          <h5>Diseñar un <big class="salmonsombra">modelo de análisis válido para la obtención de información
-                                            sistemática </big> sobre la realidad social de León y que facilite un análisis fundamentado
-                                            de la misma.</h5>
-
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                              <div class="col-md-6 col-sm-12 col-xs-12">
-                                  <div class="experience-content">
-
-                                      <h2><i class="fa fa-quote-left salmonsombra"></i></h2>
-
-                                      <div class="content-details content-border">
-                                          <h5>Estructurar un <big class="salmonsombra">dispositivo permanente de observación cooperativa</big>,
-                                            estableciendo los cauces y entornos de trabajo necesarios para generar un clima de colaboración y
-                                            participación desde diferentes entidades públicas y privadas que intervienen en los procesos de inclusión
-                                            social.</h5>
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                              <div class="col-md-6 col-sm-12 col-xs-12">
-                                  <div class="experience-content">
-
-                                      <h2><i class="fa fa-quote-left salmonsombra"></i></h2>
-
-                                      <div class="content-details content-border">
-                                          <h5>Promocionar el <big class="salmonsombra">desarrollo de acciones innovadoras</big> que propongan respuestas más eficaces
-                                            y eficientes a las situaciones de exclusión social existentes en la ciudad de León.</h5>
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                              <div class="col-md-6 col-sm-12 col-xs-12">
-                                  <div class="experience-content">
-
-                                      <h2><i class="fa fa-quote-left salmonsombra"></i></h2>
-
-                                      <div class="content-details content-border">
-                                          <h5>Establecer <big class="salmonsombra">mecanismos estables para la difusión de los resultados</big> obtenidos de la labor
-                                            de análisis e investigación del Observatorio, contribuyendo a un mejor conocimiento de la
-                                            realidad de la exclusión/inclusión social tanto desde el ámbito
-                                            académico como desde los diferentes ámbitos de la práctica profesional.</h5>
-                                      </div>
-
-                                  </div>
-                              </div>
-
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          <!-- Sections -->
-          <section id="portfolio" class="sections">
-              <div class="container">
-
-                  <div class="heading-content text-center">
-                    <div class="row">
-                      <div class="col-lg-8 col-sm-12 col-xs-12">
-                        <h3>Los Proyectos</h3>
-                          <p>El funcionamiento ordinario del Observatorio se organizará mediante proyectos. Cada uno de ellos, si bien debe
-                            responder a los objetivos generales del observatorio, tendrá un desarrollo programático independiente. Este planteamiento modular
-                            permitirá rentabilizar los recursos de los que se disponen, definiendo cada acción con su propio equipo de trabajo, una implementación independiente,
-                            una temporalización propia y un desarrollo presupuestario ajustado a cada proyecto.</p>
-                      </div>
-                      <div class="col-lg-4 hidden-md hidden-sm hidden-xs">
-                        <img src="assets/images/papel2.jpg" alt="" class="pull-right">
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Example row of columns -->
-                  <div class="row">
-                      <div class="portfolio-wrapper center">
-
-                        <!-- 
-                            **** Proyecto 1 GERMINA ****
-                          -->
-
-                        <div class="col-lg-4 flip-col">
-                          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                              <div class="front front-top" style="background: url(assets/images/burbuja.jpg) no-repeat center;background-size: 350px auto;">
-                                <span class="name">Proyecto:</span>
-                                <p class="name"><b>"Germina"</b></p> <!-- reflexiona, la incubadoraz -->
-                                <p class="name"><small>(Serie de seminarios)</small> </p>
-                              </div>
-                              <div class="back">
-                                <div class="back-logo" style="background: url(assets/images/iconos/brote.svg) 0 0 no-repeat;"></div>
-                                <div class="back-title">"Germina"</div>
-
-                                <p>Serie de seminarios sobre Investigación de la Exclusión Social</p>
-                                <!-- <a href="#germina" class="boton-footer" data-effect="mfp-zoom-in">Conoce el proyecto <span class="glyphicon glyphicon-arrow-right"></span></a> -->
-                                <div class="boton-footer"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      <!-- MODAL Germina -->
-                        <div id="germina" class="project-popup mfp-with-anim mfp-hide row text-center" width="90%">
-                          <h1 class="text-center blancosombra">
-                            <img src="assets/images/iconos/brote.svg" alt="" width="100em">
-                            <br> <b><u>Proyecto: "GERMINA"</u> </b> <br>
-                            <div>
-                              <p><big>Los procesos de reflexión y construcción de ideas permiten contrastar las ideas propias expuestas con las de otros y revisar, al mismo tiempo, su coherencia y lógica, cuestionando su adecuación para explicar los fenómenos ("Nuevas tecnologías y aprendizaje significativo de las ciencias".Romero y Quesada, 2014).</big> </p>
-                            </div>
-                          </h1>
-                          <br><br>
-                          <h2 class="blancosombra"><i class="fa fa-info-circle" aria-hidden="true"></i>  Descripción</h2>
-                            <p class="fontx15">Serie de al menos tres Seminarios de carácter técnico con ponentes considerados referentes en su campo. Cada seminario se articulará según la siguiente <u>estructura</u>:</p>
-                          
-                            <ul>
-                              <li><p class="fontx15"><i class="fa fa-rss" aria-hidden="true"></i>  Ponencia pública sobre el tema de su especialidad.</p> </li>
-                              <li><p class="fontx15"><i class="fa fa-users" aria-hidden="true"></i>  Asesoramiento en Grupo de Trabajo para el diseño y puesta en marcha del observatorio o de alguno de los proyectos.</p> </li>
-                            </ul>
-
-                          <img src="assets/images/iconos/restar.svg" alt="">
-                          <br><br>
-                          <h2 class="blancosombra"><i class="fa fa-map-signs" aria-hidden="true"></i>  Objetivos</h2>
-                              <ul>
-                                <li><p class="fontx15"><i class="fa fa-check" aria-hidden="true"></i>  Unificar conceptos, estrategias y criterios técnicos entre las personas implicadas en la puesta en marcha del observatorio.</p> </li>
-                                <li><p class="fontx15"><i class="fa fa-check" aria-hidden="true"></i>  Ofrecer acceso a formación especializada de calidad sobre temas relacionados con Investigación Social y Exclusión/Inclusión.</p> </li>
-                                <li><p class="fontx15"><i class="fa fa-check" aria-hidden="true"></i>  Conformar la base científica y técnica para la puesta en marcha del Observatorio.</p> </li>
-                              </ul>
-
-                          <img src="assets/images/iconos/restar.svg" alt="">
-                          <br><br>
-                          <h2 class="blancosombra"><i class="fa fa-calendar" aria-hidden="true"></i> temporalización</h2>
-                            <p class="fontx15">Enero 2018 - Diciembre 2018</p>
-                          
-                        </div>
-
-                        <!-- 
-                          Proyecto 2 OBSERVALE
-                        -->
-
-                        <div class="col-lg-4 flip-col">
-                          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                              <div class="front front-bottom" style="background: url(assets/images/proyecto1.jpg) no-repeat center;background-size: 800px auto;">
-                                <span class="name">Proyecto:</span>
-                                <p class="name"><b>"observa<span style="color:rgb(85, 7, 45)"><big>le</big></span>.es"</b></p>
-                              </div>
-                              <div class="back">
-                                <div class="back-logo" style="background: url(assets/images/iconos/nube.svg) 0 0 no-repeat;"></div>
-                                <div class="back-title">"observale.es"</div>
-                                <p>Espacio común online para el intercambio de información, ideas, proyectos, eventos y publicaciones relacionados con el objeto y el trabajo del Observatorio.</p>
-                                <!-- <a href="#" class="boton-footer">Conoce el proyecto <span class="glyphicon glyphicon-arrow-right"></span></a> -->
-                                <div class="boton-footer"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Proyecto 3 -->
-                        <div class="col-lg-4 flip-col">
-                          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                              <div class="front front-bottom" style="background: url(assets/images/chart.jpg) no-repeat center;background-size: 800px auto;">
-                                <span class="name">Proyecto:</span>
-                                <p class="name"><b>"M.A.T.I.C.E.S."</b></p>
-                              </div>
-                              <div class="back">
-                                <div class="back-logo" style="background: url(assets/images/iconos/analisis.svg) 0 0 no-repeat;"></div>
-                                <div class="back-title">"M.A.T.I.C.E.S."</div>
-                                <p><b>M</b>odelo de <b>A</b>nálisis <b>T</b>écnico e <b>I</b>nvestigación <b>C</b>ientífica de la <b>E</b>xclusión <b>S</b>ocial.</p>
-                                <!-- <a href="#" class="boton-footer">Conoce el proyecto <span class="glyphicon glyphicon-arrow-right"></span></a> -->
-                                <div class="boton-footer"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                  </div>
-              </div> <!-- /container -->
-
-                          <hr>
-              <div class="container">
-
-                <h4><img src="assets/images/iconos/brote.svg" height="50px" alt="">  Seminarios Proyecto "Germina"</h4>
-                <div class="row">
-                      <div class="portfolio-wrapper center">
-                          <div class="col-lg-4 text-center">
-                            <div class="col-lg-12">
-                              <img id="logo" src="assets/images/germina1.png" alt="">
-                              <br><br>
-                              <!--
-                              <iframe src="https://drive.google.com/file/d/119geZP6s8hHqK_cUAXVoToYkgDXgQhml/preview" height="100%"></iframe>
-                              -->
-                              
-                            </div>
-                        </div>
-                          
-                          <div class="col-lg-4 text-center">
-                            <div class="col-lg-12">
-                              <img id="logo" src="assets/images/germina2.png" alt="">
-                              <br><br>
-                              <!-- <iframe width="100%" src="https://www.youtube.com/embed/1RmVFAb_H1I" frameborder="0" allow="encrypted-media" allowfullscreen></iframe> -->
-                              
-                              
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 text-center">
-                            <div class="col-lg-12">
-                              <img id="logo" src="assets/images/germina3.png" alt="">
-                              <!--
-                              <iframe src="https://drive.google.com/file/d/1mCZOWeoUWHo4nz4qVIdV_Hmswo-7ZKiN/preview" height="100%"></iframe>
-                              -->
-                              <br> <br>
-                              <!-- <a href="docs/ppt_JMFresno_UniLeon_politicasocial.pdf" target="_blank"><img src="assets/images/protada_presentacion_fresno.png" alt=""></a> -->
-                            </div>
-                          </div>
-
-                      </div>
-                </div>
-              </div>
-              <hr>
-              <div class="container mt-5">
-                <!-- Título de la sección -->
-                <h4><img src="assets/images/iconos/analisis.svg" height="50px" alt="">  Productos del Proyecto "MATICES"</h4>
-        
-                <!-- Fila de miniaturas de los PDFs -->
-                <div class="row portfolio-wrapper text-center mt-4">
-                    <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                            <a href="docs/infografias/info_observale_final.pdf"><img id="thumbnail1" class="w-20 img-thumbnail" src="docs/infografias/info_observale_final.jpg" alt="Miniatura Info Observale">
-                              </a>
-                            </div>
-                    <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                            <a href="docs/infografias/infografia_1_2_metodologia_final.pdf"><img id="thumbnail2" class="w-20 img-thumbnail" src="docs/infografias/infografia_1_2_metodologia_final.jpg" alt="Miniatura Infografía Metodología">
-                              </a>
-                            </div>
-                    <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                            <a href="docs/infografias/infografia_1_descriptivo_final.pdf"><img id="thumbnail3" class="w-20 img-thumbnail" src="docs/infografias/infografia_1_descriptivo_final.jpg" alt="Miniatura Infografía Descriptiva">
-                              </a>
-                            </div>
-                </div>
-        
-                <div class="row text-center mt-4">
-                    <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                            <a href="docs/infografias/infografia_1_descriptivo_largo_final.pdf"><img id="thumbnail4" class="w-20 img-thumbnail" src="docs/infografias/infografia_1_descriptivo_largo_final.jpg" alt="Miniatura Infografía Largo Descriptivo">
-                              </a>
-                            </div>
-                    <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                            <a href="docs/infografias/infografia_2_brecha_final.pdf"><img id="thumbnail5" class="w-20 img-thumbnail" src="docs/infografias/infografia_2_brecha_final.jpg" alt="Miniatura Infografía Brecha">
-                              </a>
-                            </div>
-                </div>
-
-                <div class="row portfolio-wrapper text-center mt-4">
-                  <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                          <a href="docs/InformaObservale.pdf"><img id="thumbnail6" class="w-20 img-thumbnail" src="docs/InformaObservale.png" alt="Miniatura Info Observale">
-                            </a>
-                          </div>
-                  <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                          <a href="docs/DigitalDivide.pdf"><img id="thumbnail7" class="w-20 img-thumbnail" src="docs/DigitalDivide.png" alt="Miniatura Infografía Metodología">
-                            </a>
-                          </div>
-                  <div style="margin-top: 2rem" class="col-lg-4 sixteen-nine-image overflow-hidden">
-                          <a href="docs/BrechaDigital.pdf"><img id="thumbnail8" class="w-20 img-thumbnail" src="docs/BrechaDigital.png" alt="Miniatura Infografía Descriptiva">
-                            </a>
-                          </div>
-              </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ¿QUÉ ES EL OBSERVATORIO?
+       ========================================================================== -->
+  <section id="about" class="section-wrapper">
+    <div class="section-container">
+      <div class="about-modern-grid">
+        <div class="about-photo-card">
+          <img src="assets/images/calle.jpg" alt="Calles de la ciudad de León">
+          <div class="about-badge-card">
+            <h5><i class="fa fa-handshake-o"></i> Alianza Estratégica</h5>
+            <p>Facultad de Educación de la Universidad de León y Equipos de Inclusión Social (EDIS) del Ayuntamiento de León.</p>
+          </div>
+        </div>
+
+        <div class="about-text-content">
+          <span class="section-tag">Marco Institucional</span>
+          <h2 class="section-title">¿Qué es el Observatorio?</h2>
+          <p class="section-lead">
+            Esta iniciativa se enmarca en la cooperación activa que mantienen el <b>Ayuntamiento de León y la Universidad de León</b> al amparo de convenios específicos suscritos entre ambas entidades.
+          </p>
+
+          <div class="about-highlight-box">
+            <p>
+              El <b>Observatorio para la Inclusión Social</b> se concibe como un espacio común de trabajo técnico, académico e innovador para la reflexión y análisis sistemático de la realidad del complejo fenómeno de la inclusión/exclusión social en la ciudad de León, desde una perspectiva amplia y una proyección eminentemente práctica.
+            </p>
+          </div>
+
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Surge de la colaboración en el Prácticum del Grado en Educación Social y se consolida como un laboratorio de datos y propuestas para orientar las políticas públicas y la acción social comunitaria.
+          </p>
+
+          <div style="margin-top: 24px;">
+            <a href="https://drive.google.com/file/d/1MYdqQo-4S5c2RJoaUeosS5BVmN8wsskY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-primary-modern" style="padding: 10px 20px; font-size: 0.9rem;">
+              <i class="fa fa-file-pdf-o"></i> Leer el Convenio Marco
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       AFORISMO INSPIRADOR 1
+       ========================================================================== -->
+  <section style="background: var(--bg-surface-alt); padding: 50px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-container" style="max-width: 900px; text-align: center;">
+      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-primary); opacity: 0.7; margin-bottom: 16px; display: inline-block;"></i>
+      <blockquote style="border: none; margin: 0; padding: 0;">
+        <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
+          “Investigar es ver lo que todo el mundo ha visto, y pensar lo que nadie más ha pensado.”
+        </p>
+        <footer style="color: var(--text-muted); font-size: 0.95rem;">
+          <strong style="color: var(--brand-primary);">Albert Szent-Györgyi</strong> — Premio Nobel de Fisiología y Medicina (1937)
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NUEVO ESPACIO: ANÁLISIS ESTADÍSTICO DE LA EXCLUSIÓN EN LEÓN
+       ========================================================================== -->
+  <section id="estadisticas" class="section-wrapper stats-highlight-section">
+    <div class="section-container">
+      <div class="section-header-modern">
+        <span class="section-tag">Portal de Datos e Indicadores</span>
+        <h2 class="section-title">Análisis Estadístico de la Exclusión en León</h2>
+        <p class="section-lead">
+          Espacio técnico para la monitorización cuantitativa, el diagnóstico multidimensional y el seguimiento sistemático de los indicadores de vulnerabilidad y cohesión social en los barrios del municipio de León.
+        </p>
+      </div>
+
+      <!-- Tarjetas de Indicadores Clave (KPI Cards con animación) -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-line-chart"></i></div>
+            <span class="kpi-badge">Municipio de León</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="21.4" data-decimals="1">0</span>
+            <span class="kpi-value-unit">%</span>
+          </div>
+          <div class="kpi-title">Tasa de Riesgo de Exclusión (AROPE)</div>
+          <p class="kpi-desc">Población municipal en riesgo de pobreza o exclusión según el modelo multidimensional de vulnerabilidad.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-users"></i></div>
+            <span class="kpi-badge">Atención EDIS</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="3850" data-decimals="0">0</span>
+            <span class="kpi-value-unit">casos</span>
+          </div>
+          <div class="kpi-title">Personas y Familias Atendidas</div>
+          <p class="kpi-desc">Seguimiento e itinerarios de inserción activa gestionados en colaboración con los Servicios Sociales de León.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-laptop"></i></div>
+            <span class="kpi-badge">Mayores 65+</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="71.8" data-decimals="1">0</span>
+            <span class="kpi-value-unit">%</span>
+          </div>
+          <div class="kpi-title">Índice de Brecha Digital Severa</div>
+          <p class="kpi-desc">Porcentaje de personas mayores que experimentan barreras críticas para el acceso a trámites electrónicos.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <div class="kpi-icon"><i class="fa fa-sitemap"></i></div>
+            <span class="kpi-badge">Modelo MATICES</span>
+          </div>
+          <div class="kpi-value">
+            <span class="kpi-counter" data-target="6" data-decimals="0">0</span>
+            <span class="kpi-value-unit">ejes</span>
+          </div>
+          <div class="kpi-title">Dimensiones Monitorizadas</div>
+          <p class="kpi-desc">Empleo, vivienda, brecha digital, salud, redes relacionales y nivel formativo analizados de forma cruzada.</p>
+        </div>
+      </div>
+
+      <!-- Cuadros de Gráficos Estadísticos Interactivos -->
+      <div class="charts-grid">
+        <!-- Gráfico 1: Dimensiones Multidimensionales -->
+        <div class="chart-card" id="chartCardExclusion">
+          <div class="chart-card-header">
+            <div class="chart-title-box">
+              <h4>Dimensiones de la Exclusión en León</h4>
+              <p>Perfil comparativo entre la media municipal y zonas prioritarias de intervención</p>
             </div>
-        
-          </section>
+            <div class="chart-controls">
+              <button class="chart-btn-filter active" data-chart-filter="global">Comparativa</button>
+              <button class="chart-btn-filter" data-chart-filter="municipio">Municipio</button>
+              <button class="chart-btn-filter" data-chart-filter="edis">Zonas EDIS</button>
+            </div>
+          </div>
+          <div class="chart-container-box">
+            <canvas id="chartExclusionDimensions"></canvas>
+          </div>
+        </div>
 
-          <!-- Sections -->
-          <section id="testimonial" class="lightbg" style="background-color:#000">
-              <div class="container">
-                  <!-- Example row of columns -->
-                  <div class="row">
-                      <div class="testimonial-wrapper sections4">
+        <!-- Gráfico 2: Brecha Digital por Cohortes -->
+        <div class="chart-card" id="chartCardDigital">
+          <div class="chart-card-header">
+            <div class="chart-title-box">
+              <h4>Brecha Digital por Grupos de Edad</h4>
+              <p>Porcentajes de dificultad en tramitación telemática y carencia de dispositivos en León</p>
+            </div>
+            <div class="chart-controls">
+              <button class="chart-btn-filter active">General</button>
+            </div>
+          </div>
+          <div class="chart-container-box">
+            <canvas id="chartDigitalDivide"></canvas>
+          </div>
+        </div>
+      </div>
 
-                          <div class="col-md-5 col-sm-6 col-xs-12">
-                              <div class="testimonial-content text-left">
+      <!-- Ficha de Aviso y Descarga de Datos -->
+      <div class="stats-banner-notice">
+        <div class="stats-banner-text">
+          <h4><i class="fa fa-database" style="color: var(--brand-primary); margin-right: 8px;"></i> Ecosistema de Datos en Desarrollo Activo</h4>
+          <p>
+            El sistema de indicadores estadísticos del Observatorio incorpora de manera continua nuevos microdatos derivados de los proyectos <b>MATICES</b> y las memorias técnicas del Ayuntamiento de León y la Universidad de León.
+          </p>
+        </div>
+        <div class="stats-banner-actions">
+          <a href="#" id="btnExportCsv" class="btn-primary-modern" style="padding: 10px 18px; font-size: 0.88rem;">
+            <i class="fa fa-download"></i> Descargar Datos (.CSV)
+          </a>
+          <a href="docs/InformaObservale.pdf" target="_blank" class="btn-secondary-modern" style="padding: 10px 18px; font-size: 0.88rem; color: var(--text-main) !important; border-color: var(--border-medium);">
+            <i class="fa fa-file-pdf-o"></i> Informe Metodológico
+          </a>
+          <a href="estadisticas.html" class="btn-secondary-modern" style="padding: 10px 18px; font-size: 0.88rem; color: var(--brand-primary) !important; border-color: var(--brand-primary);">
+            <i class="fa fa-external-link"></i> Vista Completa
+          </a>
+        </div>
+      </div>
 
-                                  <div class="testimonial-quote">
-                                      <i class="fa fa-quote-left"></i>
-                                      <h4>“Una sociedad no se define como desarrollada
-                                        por la riqueza que tiene sino por la pobreza que no tiene.”
-                                        <p><small>Revista Ciencia Política, Buenos Aires 2008</small> </p> </h4>
-                                  </div>
-                                  <br>
-                                  <div class="regards-by">
-                                      <h5>Jorge Majfud</h5>
-                                      <p>Escritor y Arquitecto, Uruguay</p>
-                                  </div>
-                              </div>
-                          </div>
+    </div>
+  </section>
 
-                          <div class="col-md-7 col-sm-6 col-xs-12">
-                              <div class="profile-photo">
-                                  <img src="assets/images/man2.jpg" alt="testimonial">
-                              </div>
-                          </div>
+  <!-- ==========================================================================
+       EJES DE DESARROLLO (PESTAÑAS INTERACTIVAS)
+       ========================================================================== -->
+  <section id="features" class="section-wrapper">
+    <div class="section-container">
+      <div class="section-header-modern">
+        <span class="section-tag">Estructura de Trabajo</span>
+        <h2 class="section-title">Ejes de Desarrollo</h2>
+        <p class="section-lead">
+          La actividad ordinaria del Observatorio pivota sobre tres ejes estratégicos interrelacionados que articulan cada investigación y acción formativa.
+        </p>
+      </div>
 
-                      </div>
-                  </div>
-              </div> <!-- /container -->
-          </section>
+      <!-- Selector de pestañas -->
+      <div class="features-tabs-nav">
+        <button class="feature-tab-btn active" data-target="tabIID">
+          <i class="fa fa-flask"></i> 1. Innovación, Investigación y Desarrollo (I+I+D)
+        </button>
+        <button class="feature-tab-btn" data-target="tabParticipacion">
+          <i class="fa fa-users"></i> 2. Participación Ciudadana e Institucional
+        </button>
+        <button class="feature-tab-btn" data-target="tabDifusion">
+          <i class="fa fa-bullhorn"></i> 3. Difusión y Transferencia
+        </button>
+      </div>
 
-          <!-- Sections -->
-          <section id="contact" class="contact">
-              <div class="overlay2 sections">
-                  <div class="container">
-                      <div class="row">
-                          <div class="contact-wrapper">
+      <!-- Contenido de Pestaña 1: I+I+D -->
+      <div id="tabIID" class="tab-pane-content active">
+        <div class="ejes-cards-grid">
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-eye"></i></div>
+            <h4>Modelos de Observación Válidos</h4>
+            <p>Diseño y validación de instrumentos científicos para el diagnóstico permanente de la realidad social y las nuevas dinámicas de vulnerabilidad.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-desktop"></i></div>
+            <h4>Nuevas Tecnologías y Acción Social</h4>
+            <p>Incorporación de las tecnologías de la información, análisis de datos y cartografía digital para optimizar la intervención social.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-lightbulb-o"></i></div>
+            <h4>Propuestas Metodológicas Innovadoras</h4>
+            <p>Estrategias pioneras en planificación, gestión técnica, implementación y evaluación sistemática de programas de inclusión.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-thumbs-up"></i></div>
+            <h4>Buenas Prácticas</h4>
+            <p>Identificación y promoción de modelos de intervención social eficaces tanto a nivel municipal como en el ámbito autonómico y europeo.</p>
+          </div>
+        </div>
+      </div>
 
-                              <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <div class="contact-area text-center">
+      <!-- Contenido de Pestaña 2: Participación -->
+      <div id="tabParticipacion" class="tab-pane-content">
+        <div class="ejes-cards-grid">
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-comments-o"></i></div>
+            <h4>Entornos Compartidos de Reflexión</h4>
+            <p>Foros de diálogo y debate multidisciplinar sobre inclusión y exclusión social entre profesionales, académicos y agentes comunitarios.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-cubes"></i></div>
+            <h4>Coordinación Cuádruple Hélice</h4>
+            <p>Articulación conjunta entre Administraciones Públicas, Universidad, Tercer Sector Social y sector privado.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-gears"></i></div>
+            <h4>Observación Cooperativa Estable</h4>
+            <p>Sistemas continuados de participación técnica que canalizan la experiencia del personal técnico de primera línea.</p>
+          </div>
+        </div>
+      </div>
 
-                                      <h4><u><a style="color:white" href="mailto:info.observale@gmail.com?cc=luisalberto.gonzalez@aytoleon.es mmlopa@unileon.es&amp;subject=Consulta%20Observatorio%20Municipal%20para%20la%20Inclusi%C3%B3n%20Social%20de%20Le%C3%B3n%20">
-                                        DÉJANOS UN MENSAJE</a></u></h4>
+      <!-- Contenido de Pestaña 3: Difusión -->
+      <div id="tabDifusion" class="tab-pane-content">
+        <div class="ejes-cards-grid">
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-book"></i></div>
+            <h4>Publicación Rigurosa de Resultados</h4>
+            <p>Difusión periódica de informes técnicos, monográficos, infografías y materiales de divulgación científica en acceso abierto.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-graduation-cap"></i></div>
+            <h4>Capacitación Técnica Especializada</h4>
+            <p>Acciones formativas y seminarios dirigidos a profesionales de la intervención social y estudiantes del Grado en Educación Social.</p>
+          </div>
+          <div class="eje-card-item">
+            <div class="eje-icon-wrapper"><i class="fa fa-share-alt"></i></div>
+            <h4>Canales Digitales y Acceso Abierto</h4>
+            <p>Transmisión activa del conocimiento generado a través de plataformas web, repositorios institucionales y redes especializadas.</p>
+          </div>
+        </div>
+      </div>
 
-                                      <!--
-                                      <form action="mail.php" method="post" accept-charset="utf-8">
+    </div>
+  </section>
 
-                                          <div class="form-group">
-                                              <input name="nombre" type="text" class="form-control" placeholder="Nombre*">
-                                          </div>
+  <!-- ==========================================================================
+       METAS DEL OBSERVATORIO
+       ========================================================================== -->
+  <section id="experience" class="section-wrapper" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-container">
+      <div class="section-header-modern">
+        <span class="section-tag">Propósito Central</span>
+        <h2 class="section-title">Metas y Objetivos Generales</h2>
+        <p class="section-lead">
+          Los objetivos expresan el horizonte acordado entre el Ayuntamiento de León y la Universidad de León para transformar el conocimiento en impacto real.
+        </p>
+      </div>
 
-                                          <div class="form-group">
-                                              <input name="mail" type="email" class="form-control" placeholder="Email*">
-                                          </div>
+      <div class="metas-grid">
+        <div class="meta-card">
+          <div class="meta-card-num">01</div>
+          <h5>Diseñar un <b>modelo de análisis válido</b> para la obtención de información sistemática sobre la realidad social de León que facilite un análisis fundamentado de la misma.</h5>
+        </div>
+        <div class="meta-card">
+          <div class="meta-card-num">02</div>
+          <h5>Estructurar un <b>dispositivo permanente de observación cooperativa</b>, estableciendo los cauces de colaboración y participación entre entidades públicas y privadas.</h5>
+        </div>
+        <div class="meta-card">
+          <div class="meta-card-num">03</div>
+          <h5>Promocionar el <b>desarrollo de acciones innovadoras</b> que propongan respuestas eficaces y sostenibles a las situaciones de exclusión social existentes en la ciudad de León.</h5>
+        </div>
+        <div class="meta-card">
+          <div class="meta-card-num">04</div>
+          <h5>Establecer <b>mecanismos estables para la difusión</b> de los resultados, enriqueciendo tanto el ámbito académico como la práctica profesional cotidiana.</h5>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                                          <div class="form-group">
-                                              <input name="titulo" type="text" class="form-control" placeholder="Título*">
-                                          </div>
+  <!-- ==========================================================================
+       LOS PROYECTOS
+       ========================================================================== -->
+  <section id="portfolio" class="section-wrapper">
+    <div class="section-container">
+      <div class="section-header-modern">
+        <span class="section-tag">Desarrollo Programático</span>
+        <h2 class="section-title">Proyectos Emblemáticos</h2>
+        <p class="section-lead">
+          El observatorio se estructura de forma modular a través de proyectos específicos, garantizando eficiencia de recursos, equipos especializados y cronogramas definidos.
+        </p>
+      </div>
 
-                                          <div class="form-group">
-                                              <textarea name="mensaje" rows="9" class="form-control" placeholder="Mensaje"></textarea>
-                                          </div>
+      <div class="projects-grid">
+        <!-- Proyecto 1: Germina -->
+        <div class="project-card-modern">
+          <div class="project-card-img" style="background-image: url('assets/images/burbuja.jpg');">
+            <span class="project-card-badge"><i class="fa fa-calendar"></i> Seminarios</span>
+          </div>
+          <div class="project-card-body">
+            <h4>Proyecto: "GERMINA"</h4>
+            <p>
+              Serie de seminarios técnicos de alto nivel con referentes en investigación social y exclusión. Conforman la base científica y los criterios técnicos compartidos entre entidades.
+            </p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-check-circle" style="color: var(--status-success);"></i> 3 Ciclos Completados</span>
+              <a href="#publicaciones" class="btn-download-doc">Ver Ponencias <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
 
-                                          <input class="btn btn-default" name="mySubmit" type="submit" value="Enviar!" />
-                                        
+        <!-- Proyecto 2: Observale.es -->
+        <div class="project-card-modern">
+          <div class="project-card-img" style="background-image: url('assets/images/calle.jpg');">
+            <span class="project-card-badge"><i class="fa fa-globe"></i> Ecosistema Online</span>
+          </div>
+          <div class="project-card-body">
+            <h4>Proyecto: "observale.es"</h4>
+            <p>
+              Espacio común online para el intercambio ágil de datos, informes, proyectos y recursos técnicos, conectando la comunidad universitaria con la intervención social municipal.
+            </p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-refresh"></i> Plataforma Dinámica</span>
+              <a href="#estadisticas" class="btn-download-doc">Panel de Datos <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
 
-                                      </form>
-                                    
+        <!-- Proyecto 3: MATICES -->
+        <div class="project-card-modern">
+          <div class="project-card-img" style="background-image: url('assets/images/chart.jpg');">
+            <span class="project-card-badge"><i class="fa fa-cubes"></i> Metodología</span>
+          </div>
+          <div class="project-card-body">
+            <h4>Proyecto: "M.A.T.I.C.E.S."</h4>
+            <p>
+              <b>M</b>odelo de <b>A</b>nálisis <b>T</b>écnico e <b>I</b>nvestigación <b>C</b>ientífica de la <b>E</b>xclusión <b>S</b>ocial. Sistema de indicadores y variables estandarizadas para el diagnóstico leones.
+            </p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa fa-file-text-o"></i> 10+ Infografías</span>
+              <a href="#publicaciones" class="btn-download-doc">Ver Productos <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                                          <div class="form-group">
-                                              <input id="nombre" type="text" class="form-control" placeholder="Nombre*" style="color:#fff !important;">
-                                          </div>
+  <!-- ==========================================================================
+       REPOSITORIO DE PUBLICACIONES E INFOGRAFÍAS (DINÁMICO CON FILTROS Y BÚSQUEDA)
+       ========================================================================== -->
+  <section id="publicaciones" class="section-wrapper" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+    <div class="section-container">
+      <div class="section-header-modern">
+        <span class="section-tag">Documentos y Evidencias</span>
+        <h2 class="section-title">Repositorio de Publicaciones e Infografías</h2>
+        <p class="section-lead">
+          Acceso libre y descarga directa a todos los informes de investigación, fichas técnicas, infografías analíticas y materiales formativos elaborados por el Observatorio.
+        </p>
+      </div>
 
-                                          <div class="form-group">
-                                              <input id="mail" type="email" class="form-control" placeholder="Email*" style="color:#fff !important;">
-                                          </div>
+      <!-- Barra de herramientas con filtros y buscador -->
+      <div class="docs-toolbar">
+        <div class="docs-filters-group">
+          <button class="doc-filter-btn active" data-category="all">Todos (10)</button>
+          <button class="doc-filter-btn" data-category="infografia">Infografías</button>
+          <button class="doc-filter-btn" data-category="informe">Informes Generales</button>
+          <button class="doc-filter-btn" data-category="brecha">Brecha Digital</button>
+          <button class="doc-filter-btn" data-category="seminario">Seminarios Germina</button>
+        </div>
 
-                                          <div class="form-group">
-                                              <input id="titulo" type="text" class="form-control" placeholder="Título*" style="color:#fff !important;">
-                                          </div>
+        <div class="docs-search-box">
+          <i class="fa fa-search docs-search-icon"></i>
+          <input type="text" id="docSearchInput" class="docs-search-input" placeholder="Buscar documento por título o palabra clave...">
+        </div>
+      </div>
 
-                                          <div class="form-group">
-                                              <textarea id="mensaje" rows="9" class="form-control" placeholder="Mensaje" style="color:#fff !important;"></textarea>
-                                          </div>
+      <!-- Cuadrícula de Documentos -->
+      <div class="docs-cards-grid">
 
-                                          <div id="msj" class="alert"></div>
+        <!-- Documento 1 -->
+        <div class="doc-card" data-category="informe">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/InformaObservale.png" alt="Informe Observale General">
+            <span class="doc-badge-category">Informe Completo</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Informa Observale: Diagnóstico Social</h4>
+            <p class="doc-desc">Documento marco sobre la situación de la inclusión social y la estructura técnica del observatorio en León.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (6.2 MB)</span>
+              <a href="docs/InformaObservale.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-                                          <a class="btn btn-default text-center" id="enviar" type="" value="Enviar!" style="width: 80%;">Enviar!</a>
-                                        -->
+        <!-- Documento 2 -->
+        <div class="doc-card" data-category="brecha">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/BrechaDigital.png" alt="Brecha Digital en León">
+            <span class="doc-badge-category">Brecha Digital</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Estudio sobre la Brecha Digital</h4>
+            <p class="doc-desc">Análisis de los factores de exclusión digital en colectivos vulnerables y propuesta de alfabetización tecnológica.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (451 KB)</span>
+              <a href="docs/BrechaDigital.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-                                          
-                                  </div>
-                              </div>
+        <!-- Documento 3 -->
+        <div class="doc-card" data-category="brecha">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/DigitalDivide.png" alt="Digital Divide Report">
+            <span class="doc-badge-category">Digital Divide</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Digital Divide: Comparative Analysis</h4>
+            <p class="doc-desc">Monográfico complementario sobre el impacto de la digitalización de los servicios públicos en la cohesión comunitaria.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (566 KB)</span>
+              <a href="docs/DigitalDivide.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-                              <!-- 
-                              <div class="col-md-3 col-sm-12 col-xs-12">
-                                  <h2 class="center"><i class="fa fa-twitter"></i> </h2>
-                                  <a class="twitter-timeline" data-lang="es" data-height="550" data-theme="dark" href="https://twitter.com/Observa_LE?ref_src=twsrc%5Etfw">Tweets by Observa_LE</a>
-                                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                  
-                                  <a class="twitter-timeline" href="https://twitter.com/Observa_LE?ref_src=twsrc%5Etfw">Tweets by Observa_LE</a>
-                                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                  
-                                  <a href="https://twitter.com/Observa_LE?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @Observa_LE</a>
-                                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                  <a href="https://twitter.com/intent/tweet?screen_name=Observa_LE&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-size="large" data-lang="es" data-show-count="false">Tweet to @Observa_LE</a>
+        <!-- Documento 4 -->
+        <div class="doc-card" data-category="infografia">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/infografias/info_observale_final.jpg" alt="Infografía Síntesis Observale">
+            <span class="doc-badge-category">Infografía Síntesis</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Infografía: Observatorio de Inclusión</h4>
+            <p class="doc-desc">Resumen visual de las funciones, metodología de trabajo y alianzas del Observatorio en León.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.1 MB)</span>
+              <a href="docs/infografias/info_observale_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-                              </div> 
-                            -->
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
+        <!-- Documento 5 -->
+        <div class="doc-card" data-category="infografia">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/infografias/infografia_1_2_metodologia_final.jpg" alt="Infografía Metodología">
+            <span class="doc-badge-category">Metodología</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Infografía Metodológica MATICES</h4>
+            <p class="doc-desc">Esquema metodológico del sistema de captura, depuración y tratamiento de datos sociales.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.0 MB)</span>
+              <a href="docs/infografias/infografia_1_2_metodologia_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Documento 6 -->
+        <div class="doc-card" data-category="infografia">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/infografias/infografia_1_descriptivo_final.jpg" alt="Infografía Descriptivo Social">
+            <span class="doc-badge-category">Datos Sociales</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Infografía Descriptiva de Exclusión</h4>
+            <p class="doc-desc">Visualización de variables clave de exclusión social y estratificación demográfica en León.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.6 MB)</span>
+              <a href="docs/infografias/infografia_1_descriptivo_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-          <!-- Modal Inicial -->
-          <!--
-          <div class="modal fade" id="invitacion">
-              <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content" id=" fondo-invitacion">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">Cerrar</span>
-                              <span class="sr-only">Cerrar</span>
-                          </button>
-                      </div>
-                      <div class="modal-body text-center">
-                          <img id="logo" src="assets/images/germina3.png" alt="">
-                      </div>
-                      <div class="modal-footer center">
-                        <a href="http://www.pact-project.eu/" title="" target="_blanck"><b>Conoce un poco más del Proyecto PACT >>></b></a>
-                      </div> -->
-                <!--  </div>    /.modal-content -->
-            <!--  </div>   /.modal-dialog -->
-        <!--  </div>   /.modal -->
+        <!-- Documento 7 -->
+        <div class="doc-card" data-category="infografia">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/infografias/infografia_1_descriptivo_largo_final.jpg" alt="Infografía Descriptivo Extendido">
+            <span class="doc-badge-category">Datos Sociales</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Infografía Descriptiva Extendida</h4>
+            <p class="doc-desc">Versión completa con análisis de subdimensiones residenciales, económicas y de apoyo comunitario.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (2.5 MB)</span>
+              <a href="docs/infografias/infografia_1_descriptivo_largo_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Documento 8 -->
+        <div class="doc-card" data-category="infografia">
+          <div class="doc-thumb-wrapper">
+            <img src="docs/infografias/infografia_2_brecha_final.jpg" alt="Infografía Brecha Digital">
+            <span class="doc-badge-category">Brecha Digital</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Infografía: Brecha Digital en León</h4>
+            <p class="doc-desc">Factores de exclusión digital desglosados por equipamiento, capacitación y competencias digitales.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (1.2 MB)</span>
+              <a href="docs/infografias/infografia_2_brecha_final.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Documento 9 -->
+        <div class="doc-card" data-category="seminario">
+          <div class="doc-thumb-wrapper">
+            <img src="assets/images/protada_presentacion_fresno.png" alt="Seminario José Manuel Fresno">
+            <span class="doc-badge-category">Seminarios Germina</span>
+          </div>
+          <div class="doc-card-body">
+            <h4 class="doc-title">Ponencia: Políticas Sociales e Inclusión</h4>
+            <p class="doc-desc">Presentación de José Manuel Fresno para la Universidad de León en el ciclo de conferencias GERMINA.</p>
+            <div class="doc-footer-action">
+              <span style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa fa-file-pdf-o"></i> PDF (608 KB)</span>
+              <a href="docs/ppt_JMFresno_UniLeon_politicasocial.pdf" target="_blank" class="btn-download-doc">Descargar <i class="fa fa-download"></i></a>
+            </div>
+          </div>
+        </div>
 
-          <!--Footer-->
-          <footer id="footer" class="footer">
-              <div class="container text-center">
-                  <div class="row">
-                      <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-                          <div class="main-footer">
-  <!--
-                              <div class="social">
-                                  <a href="#"><i class="fa fa-twitter"></i></a>
-                                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                                  <a href="#"><i class="fa fa-behance"></i></a>
-                                  <a href="#"><i class="fa dribbble fa-dribbble"></i></a>
-                              </div>
-  -->
-                              <p>
-                                Made with <i class="fa fa-heart"></i> by <a target="_blank" href="http://bootstrapthemes.co"> Bootstrap Themes </a>2016. All rights reserved.
-                                </p><p>Iconos diseñados por <a href="https://www.flaticon.es/autores/smashicons" title="Smashicons">Smashicons</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
-                                <p>This web use some images <a href="https://www.freepik.com/free-photo/close-up-of-a-pen-on-a-market-research_868228.htm">Designed by Freepik</a></p>
-                              <p></p>
+      </div>
+    </div>
+  </section>
 
-                          </div>
-                      </div>
-                  </div>
-              </div>
+  <!-- ==========================================================================
+       AFORISMO INSPIRADOR 2
+       ========================================================================== -->
+  <section style="background: var(--bg-surface-alt); padding: 50px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-container" style="max-width: 900px; text-align: center;">
+      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-primary); opacity: 0.7; margin-bottom: 16px; display: inline-block;"></i>
+      <blockquote style="border: none; margin: 0; padding: 0;">
+        <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
+          “Una sociedad no se define como desarrollada por la riqueza que tiene, sino por la pobreza que no tiene.”
+        </p>
+        <footer style="color: var(--text-muted); font-size: 0.95rem;">
+          <strong style="color: var(--brand-primary);">Jorge Majfud</strong> — Revista Ciencia Política (2008)
+        </footer>
+      </blockquote>
+    </div>
+  </section>
 
-          </footer>
+  <!-- ==========================================================================
+       CONTACTO INSTITUCIONAL
+       ========================================================================== -->
+  <section id="contact" class="section-wrapper">
+    <div class="section-container" style="max-width: 800px; text-align: center;">
+      <span class="section-tag">Canal de Comunicación</span>
+      <h2 class="section-title">Contacto y Colaboración</h2>
+      <p class="section-lead">
+        ¿Deseas consultar datos específicos, proponer una colaboración académica o trasladar una consulta técnica al equipo del Observatorio?
+      </p>
 
-          <!--
-          <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-          <script src="assets/js/vendor/bootstrap.min.js"></script>
-        -->
-          <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-          <script src="assets/js/plugins.js"></script>
-          <script src="assets/js/jquery.magnific-popup.js"></script>
+      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px 24px; box-shadow: var(--shadow-sm); margin-top: 32px;">
+        <div style="width: 60px; height: 60px; border-radius: var(--radius-full); background: var(--brand-primary-light); color: var(--brand-primary); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 20px;">
+          <i class="fa fa-envelope-o"></i>
+        </div>
+        <h4 style="font-size: 1.25rem; margin-bottom: 10px;">Equipo Técnico e Investigador</h4>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+          Coordinación técnica Ayuntamiento de León y Facultad de Educación (Universidad de León)
+        </p>
+        <a href="mailto:info.observale@gmail.com?cc=luisalberto.gonzalez@aytoleon.es,mmlopa@unileon.es&amp;subject=Consulta%20Observatorio%20Municipal%20para%20la%20Inclusi%C3%B3n%20Social%20de%20Le%C3%B3n" class="btn-primary-modern" style="padding: 12px 28px;">
+          <i class="fa fa-paper-plane"></i> Enviar Mensaje Directo
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- ==========================================================================
+       PIE DE PÁGINA MODERNO
+       ========================================================================== -->
+  <footer class="modern-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>observa<span style="color: #ff94b4;">le</span> · LEÓN</h4>
+        <p>
+          Observatorio Municipal para la Inclusión Social de León. Plataforma técnica y científica para el análisis y la innovación en políticas sociales.
+        </p>
+        <div style="display: flex; gap: 16px; margin-top: 20px;">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" style="height: 38px; opacity: 0.9;">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" style="height: 38px; opacity: 0.9;">
+        </div>
+      </div>
 
+      <div class="footer-links">
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">¿Qué es el OIS?</a></li>
+          <li><a href="#features">Ejes de Desarrollo</a></li>
+          <li><a href="#experience">Metas</a></li>
+          <li><a href="#estadisticas">Análisis Estadístico</a></li>
+        </ul>
+      </div>
 
-          <script src="assets/js/main.js"></script>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="footer-links">
+        <h5>Recursos</h5>
+        <ul>
+          <li><a href="#portfolio">Proyectos Activos</a></li>
+          <li><a href="#publicaciones">Repositorio de Informes</a></li>
+          <li><a href="docs/InformaObservale.pdf" target="_blank">Informa Observale (PDF)</a></li>
+          <li><a href="estadisticas.html">Panel Estadístico Ampliado</a></li>
+          <li><a href="#contact">Contacto Directo</a></li>
+        </ul>
+      </div>
+    </div>
 
-          <script>
-            $(function() {
-              $('#invitacion').modal();
-            });
-          </script>
+    <div class="footer-bottom">
+      <div>
+        &copy; 2026 Observatorio Municipal para la Inclusión Social de León. Desarrollado en colaboración Ayuntamiento de León &amp; Universidad de León.
+      </div>
+      <div>
+        Accesibilidad WCAG 2.1 AA · Datos Abiertos
+      </div>
+    </div>
+  </footer>
 
-      
-  <iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.1227a5674072e080ffb1ba14ac0c1079.html?origin=https%3A%2F%2Fobservale.unileon.es" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none;" title="Twitter analytics iframe"></iframe></body></html>
+  <!-- Scripts -->
+  <script src="assets/js/vendor/chart.umd.min.js"></script>
+  <script src="assets/js/estadisticas.js"></script>
+</body>
+</html>
