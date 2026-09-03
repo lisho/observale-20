@@ -18,6 +18,15 @@
 <body>
 
   <!-- ==========================================================================
+       FONDO AMBIENTAL ORGÁNICO DINÁMICO (RESPONDE AL SCROLL)
+       ========================================================================== -->
+  <div class="ambient-mesh-bg" id="ambientMeshBg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- ==========================================================================
        BARRA DE NAVEGACIÓN MODERNA STICKY (solo logo, sin texto)
        ========================================================================== -->
   <header class="modern-navbar" id="topNavbar">
@@ -61,6 +70,8 @@
        HERO PRINCIPAL CON LOGOS DE ULE Y AYTO 100% VISIBLES EN PORTADA (SIN SCROLL)
        ========================================================================== -->
   <section id="home" class="hero-creative-section">
+    <!-- Capa de fondo Parallax Independiente -->
+    <div class="hero-parallax-bg" id="heroParallaxBg"></div>
 
     <!-- LOGO UNIÓN EUROPEA Y URL EN FORMATO ORIGINAL -->
     <div class="original-eu-banner">
@@ -114,9 +125,6 @@
         <a href="estadisticas.html" class="btn-hero-stats">
           <i class="fa fa-line-chart"></i> Explorar Espacio Estadístico
         </a>
-        <a href="#publicaciones" class="btn-hero-secondary">
-          <i class="fa fa-file-text-o"></i> Repositorio de Informes
-        </a>
       </div>
 
     </div>
@@ -137,7 +145,6 @@
         </div>
 
         <div class="about-text-content">
-          <span class="section-tag-pill">Marco Institucional</span>
           <h2 class="section-main-title">¿Qué es el Observatorio?</h2>
           <p class="section-lead-text">
             Esta iniciativa se enmarca en la activa cooperación que desde hace años mantienen el <b>Ayuntamiento de León y la Universidad de León</b> en múltiples ámbitos al amparo del Convenio Marco y convenios específicos suscritos entre ambas entidades.
@@ -164,19 +171,26 @@
   </section>
 
   <!-- ==========================================================================
-       AFORISMO INSPIRADOR 1
+       AFORISMO INSPIRADOR 1 (Albert Szent-Györgyi con Fotografía Original)
        ========================================================================== -->
-  <section class="reveal-on-scroll" style="background: var(--bg-surface-alt); padding: 55px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
-    <div class="section-container" style="max-width: 900px; text-align: center;">
-      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-carmine); opacity: 0.75; margin-bottom: 16px; display: inline-block;"></i>
-      <blockquote style="border: none; margin: 0; padding: 0;">
-        <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
-          “Investigar es ver lo que todo el mundo ha visto, y pensar lo que nadie más ha pensado.”
-        </p>
-        <footer style="color: var(--text-muted); font-size: 0.95rem;">
-          <strong style="color: var(--brand-carmine);">Albert Szent-Györgyi</strong> — Premio Nobel de Fisiología y Medicina (1937)
-        </footer>
-      </blockquote>
+  <section class="aphorism-section reveal-on-scroll reveal-zoom-in">
+    <div class="aphorism-container">
+      <div class="aphorism-card-creative">
+        <div class="aphorism-portrait-wrap">
+          <img src="assets/images/man2.png" alt="Albert Szent-Györgyi - Premio Nobel" class="aphorism-portrait-img">
+          <div class="aphorism-portrait-badge">Premio Nobel 1937</div>
+        </div>
+        <div class="aphorism-body">
+          <i class="fa fa-quote-left aphorism-quote-icon"></i>
+          <blockquote class="aphorism-quote-text">
+            “Investigar es ver lo que todo el mundo ha visto, y pensar lo que nadie más ha pensado.”
+          </blockquote>
+          <div class="aphorism-author-info">
+            <strong class="author-name">Albert Szent-Györgyi</strong>
+            <span class="author-role">Fisiólogo y Bioquímico · Premio Nobel de Fisiología y Medicina</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -186,7 +200,6 @@
   <section id="features" class="section-wrapper reveal-on-scroll">
     <div class="section-container">
       <div class="section-header-innovative">
-        <span class="section-tag-pill">Estructura Estratégica</span>
         <h2 class="section-main-title">Ejes de Desarrollo</h2>
         <p class="section-lead-text">
           La creación del Observatorio pivota sobre tres ideas que sirven como los ejes vertebradores de todas sus acciones investigadoras y formativas.
@@ -296,7 +309,6 @@
   <section id="experience" class="section-wrapper reveal-on-scroll" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="section-container">
       <div class="section-header-innovative">
-        <span class="section-tag-pill">Propósito Central</span>
         <h2 class="section-main-title">Metas y Objetivos</h2>
         <p class="section-lead-text">
           Los objetivos generales resumen los logros y compromisos consensuados entre el Ayuntamiento de León y la Universidad de León.
@@ -338,14 +350,13 @@
   <section id="portfolio" class="section-wrapper reveal-on-scroll">
     <div class="section-container">
       <div class="section-header-innovative">
-        <span class="section-tag-pill">Desarrollo Modular</span>
         <h2 class="section-main-title">Proyectos Emblemáticos</h2>
         <p class="section-lead-text">
           El funcionamiento ordinario del Observatorio se organiza mediante proyectos independientes con equipos de trabajo específicos, temporalización propia y objetivos orientados al impacto.
         </p>
       </div>
 
-      <div class="cards-grid-3">
+      <div class="cards-grid-3 reveal-stagger-children">
         <!-- Proyecto 1: Germina -->
         <div class="card-dynamic-hover" style="display: flex; flex-direction: column;">
           <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/burbuja.jpg') center/cover; margin-bottom: 20px; position: relative;">
@@ -354,18 +365,29 @@
             </span>
           </div>
           <h4 style="font-size: 1.3rem; margin-bottom: 10px;">Proyecto: "GERMINA"</h4>
-          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px; flex-grow: 1;">
             Serie de seminarios técnicos con ponentes de referencia en intervención e investigación social para unificar criterios y capacitar a los equipos de trabajo.
           </p>
-          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+
+          <!-- Ponentes Destacados con Fotos Originales e Interactividad Modal -->
+          <div class="germina-speakers-strip" title="Haz clic en cualquier ponente para ver su cartel oficial">
+            <div class="germina-avatars-group">
+              <img src="assets/images/germina1.png" alt="Dr. José Luis García Llamas" class="germina-speaker-thumb open-germina-modal" data-img="assets/images/germina1.png" data-title="Ciclo 1: Dr. D. José Luis García Llamas" data-desc="La Inclusión: de Necesidad a Realidad · 16 de Febrero · Aula Magna Facultad de Educación (Universidad de León)" title="Ver cartel oficial del Dr. José Luis García Llamas">
+              <img src="assets/images/germina2.png" alt="D. Luis Alberto Barriga Martín" class="germina-speaker-thumb open-germina-modal" data-img="assets/images/germina2.png" data-title="Ciclo 2: D. Luis Alberto Barriga Martín" data-desc="Claves para Entender y Abordar la Exclusión Social. El Proyecto P.A.C.T. · 8 de Junio · Aula Magna Facultad de Educación" title="Ver cartel oficial de D. Luis Alberto Barriga Martín">
+              <img src="assets/images/germina3.png" alt="D. José Manuel Fresno García" class="germina-speaker-thumb open-germina-modal" data-img="assets/images/germina3.png" data-title="Ciclo 3: D. José Manuel Fresno García" data-desc="Tendencias en Políticas Sociales en Europa y en España · 15 de Octubre · Aula Magna Facultad de Educación" title="Ver cartel oficial de D. José Manuel Fresno García">
+            </div>
+            <span class="germina-speakers-text"><strong>3 Ciclos</strong> magistrales</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 14px; margin-top: 14px;">
             <span style="font-size: 0.82rem; color: var(--brand-teal); font-weight: 700;"><i class="fa fa-check-circle"></i> Ciclos Completados</span>
             <a href="#publicaciones" style="font-size: 0.85rem; font-weight: 700; color: var(--brand-carmine);">Ver Ponencias <i class="fa fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Proyecto 2: Observale.es -->
+        <!-- Proyecto 2: Observale.es con imagen proyecto1.jpg -->
         <div class="card-dynamic-hover" style="display: flex; flex-direction: column;">
-          <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/calle.jpg') center/cover; margin-bottom: 20px; position: relative;">
+          <div style="height: 160px; border-radius: var(--radius-md); background: url('assets/images/proyecto1.jpg') center/cover; margin-bottom: 20px; position: relative;">
             <span style="position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full);">
               Ecosistema Web
             </span>
@@ -406,7 +428,6 @@
   <section id="publicaciones" class="section-wrapper reveal-on-scroll" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
     <div class="section-container">
       <div class="section-header-innovative">
-        <span class="section-tag-pill">Acceso Abierto</span>
         <h2 class="section-main-title">Publicaciones e Infografías</h2>
         <p class="section-lead-text">
           Descarga directa de todos los informes técnicos, infografías analíticas, monográficos y presentaciones elaboradas por el Observatorio.
@@ -581,19 +602,25 @@
   </section>
 
   <!-- ==========================================================================
-       AFORISMO INSPIRADOR 2
+       AFORISMO INSPIRADOR 2 (Jorge Majfud con Integración Orgánica de man2.jpg)
        ========================================================================== -->
-  <section class="reveal-on-scroll" style="background: var(--bg-surface-alt); padding: 55px 24px; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
-    <div class="section-container" style="max-width: 900px; text-align: center;">
-      <i class="fa fa-quote-left" style="font-size: 2.2rem; color: var(--brand-carmine); opacity: 0.75; margin-bottom: 16px; display: inline-block;"></i>
-      <blockquote style="border: none; margin: 0; padding: 0;">
-        <p style="font-size: 1.35rem; font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 14px;">
-          “Una sociedad no se define como desarrollada por la riqueza que tiene, sino por la pobreza que no tiene.”
-        </p>
-        <footer style="color: var(--text-muted); font-size: 0.95rem;">
-          <strong style="color: var(--brand-carmine);">Jorge Majfud</strong> — Revista Ciencia Política (2008)
-        </footer>
-      </blockquote>
+  <section class="aphorism-section reveal-on-scroll reveal-zoom-in">
+    <div class="aphorism-container">
+      <div class="aphorism-card-organic">
+        <div class="aphorism-organic-media">
+          <img src="assets/images/man2.jpg" alt="Realidad de la Exclusión Social" class="aphorism-organic-portrait">
+        </div>
+        <div class="aphorism-organic-body">
+          <i class="fa fa-quote-left aphorism-quote-icon"></i>
+          <blockquote class="aphorism-quote-text">
+            “Una sociedad no se define como desarrollada por la riqueza que tiene, sino por la pobreza que no tiene.”
+          </blockquote>
+          <div class="aphorism-author-info">
+            <strong class="author-name">Jorge Majfud</strong>
+            <span class="author-role">Ensayista, Escritor y Arquitecto · Revista Ciencia Política (2008)</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -602,7 +629,6 @@
        ========================================================================== -->
   <section id="contact" class="section-wrapper reveal-on-scroll">
     <div class="section-container" style="max-width: 820px; text-align: center;">
-      <span class="section-tag-pill">Canal Directo</span>
       <h2 class="section-main-title">Contacto y Colaboración</h2>
       <p class="section-lead-text">
         ¿Deseas proponer una colaboración académica, consultar datos específicos o contactar con los equipos técnicos del Observatorio?
@@ -671,6 +697,23 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       MODAL LIGHTBOX DE PONENCIAS GERMINA
+       ========================================================================== -->
+  <div id="germinaModal" class="modern-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Cerrar ventana emergente">&times;</button>
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="Cartel de Ponencia Seminario GERMINA" class="modal-img">
+        <div class="modal-caption">
+          <h4 id="modalTitle">Ponencia</h4>
+          <p id="modalDesc">Detalles del seminario</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/estadisticas.js"></script>

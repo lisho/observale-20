@@ -1,8 +1,3 @@
-/**
- * OBSERVALE - Sistema Interactivo y Dinamismo de Scroll
- * Observatorio Municipal para la Inclusión Social de León
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   initScrollProgressBar();
   initRevealOnScroll();
@@ -10,7 +5,156 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initTabs();
   initDocumentExplorer();
+  initOrganicAmbientBackground();
+  initScrollParallax();
+  initGerminaModal();
 });
+
+/* ==========================================================================
+   1. FONDO ORGÁNICO DINÁMICO (TRANSICIÓN DE COLOR AL HACER SCROLL)
+   ========================================================================== */
+function initOrganicAmbientBackground() {
+  const meshBg = document.getElementById('ambientMeshBg');
+  if (!meshBg) return;
+
+  const sectionColorMap = {
+    'home': {
+      light: ['rgba(139, 17, 62, 0.15)', 'rgba(15, 118, 110, 0.14)', 'rgba(30, 41, 59, 0.08)'],
+      dark:  ['rgba(230, 92, 130, 0.22)', 'rgba(45, 212, 191, 0.18)', 'rgba(15, 23, 42, 0.35)']
+    },
+    'about': {
+      light: ['rgba(139, 17, 62, 0.10)', 'rgba(15, 118, 110, 0.15)', 'rgba(203, 213, 225, 0.2)'],
+      dark:  ['rgba(230, 92, 130, 0.16)', 'rgba(45, 212, 191, 0.22)', 'rgba(26, 34, 54, 0.4)']
+    },
+    'features': {
+      light: ['rgba(15, 118, 110, 0.18)', 'rgba(180, 83, 9, 0.12)', 'rgba(139, 17, 62, 0.08)'],
+      dark:  ['rgba(45, 212, 191, 0.25)', 'rgba(245, 158, 11, 0.16)', 'rgba(230, 92, 130, 0.12)']
+    },
+    'experience': {
+      light: ['rgba(30, 41, 59, 0.12)', 'rgba(139, 17, 62, 0.15)', 'rgba(15, 118, 110, 0.12)'],
+      dark:  ['rgba(15, 23, 42, 0.4)', 'rgba(230, 92, 130, 0.2)', 'rgba(45, 212, 191, 0.16)']
+    },
+    'portfolio': {
+      light: ['rgba(180, 83, 9, 0.12)', 'rgba(15, 118, 110, 0.15)', 'rgba(139, 17, 62, 0.1)'],
+      dark:  ['rgba(245, 158, 11, 0.18)', 'rgba(45, 212, 191, 0.2)', 'rgba(230, 92, 130, 0.15)']
+    },
+    'publicaciones': {
+      light: ['rgba(15, 118, 110, 0.14)', 'rgba(230, 92, 130, 0.09)', 'rgba(241, 245, 249, 0.3)'],
+      dark:  ['rgba(45, 212, 191, 0.2)', 'rgba(230, 92, 130, 0.14)', 'rgba(21, 29, 48, 0.5)']
+    },
+    'contact': {
+      light: ['rgba(15, 118, 110, 0.2)', 'rgba(139, 17, 62, 0.18)', 'rgba(11, 17, 32, 0.25)'],
+      dark:  ['rgba(45, 212, 191, 0.26)', 'rgba(230, 92, 130, 0.24)', 'rgba(10, 15, 29, 0.55)']
+    }
+  };
+
+  function applyColors(sectionId) {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const profile = sectionColorMap[sectionId] || sectionColorMap['home'];
+    const colors = isDark ? profile.dark : profile.light;
+
+    document.documentElement.style.setProperty('--ambient-color-1', colors[0]);
+    document.documentElement.style.setProperty('--ambient-color-2', colors[1]);
+    document.documentElement.style.setProperty('--ambient-color-3', colors[2]);
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  if (!sections.length) return;
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        applyColors(id);
+      }
+    });
+  }, {
+    threshold: 0.25,
+    rootMargin: '-10% 0px -40% 0px'
+  });
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // Escuchar cambios de tema para re-aplicar
+  const themeToggle = document.getElementById('themeToggleBtn');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      setTimeout(() => {
+        let activeSection = 'home';
+        sections.forEach(s => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.2) {
+            activeSection = s.getAttribute('id');
+          }
+        });
+        applyColors(activeSection);
+      }, 50);
+    });
+  }
+}
+
+/* ==========================================================================
+   2. MOTOR DE PARALLAX SUAVE AL HACER SCROLL
+   ========================================================================== */
+function initScrollParallax() {
+  const heroBg = document.getElementById('heroParallaxBg');
+  const heroContent = document.querySelector('.hero-creative-content');
+  const euBanner = document.querySelector('.original-eu-banner');
+  const aboutPhoto = document.querySelector('.about-photo-card');
+
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    const heroHeight = window.innerHeight;
+
+    // Solo calcular si estamos en rango visible del hero
+    if (scrollY <= heroHeight * 1.3) {
+      if (heroBg) {
+        heroBg.style.transform = `translate3d(0, ${scrollY * 0.32}px, 0)`;
+      }
+      if (heroContent) {
+        const contentOffset = scrollY * -0.14;
+        const opacity = Math.max(0, 1 - (scrollY / (heroHeight * 0.85)));
+        heroContent.style.transform = `translate3d(0, ${contentOffset}px, 0)`;
+        heroContent.style.opacity = opacity.toFixed(2);
+      }
+      if (euBanner) {
+        euBanner.style.transform = `translate3d(0, ${scrollY * 0.16}px, 0)`;
+      }
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Efecto 3D Tilt interactivo en la imagen de "¿Qué es?"
+  if (aboutPhoto) {
+    aboutPhoto.addEventListener('mousemove', (e) => {
+      const rect = aboutPhoto.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      aboutPhoto.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    aboutPhoto.addEventListener('mouseleave', () => {
+      aboutPhoto.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  }
+}
 
 /* ==========================================================================
    1. BARRA DE PROGRESO DE SCROLL DINÁMICO
@@ -32,7 +176,7 @@ function initScrollProgressBar() {
    2. ANIMACIÓN REVEAL ON SCROLL
    ========================================================================== */
 function initRevealOnScroll() {
-  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger-children');
   if (!revealElements.length) return;
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -43,8 +187,8 @@ function initRevealOnScroll() {
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
   });
 
   revealElements.forEach(el => observer.observe(el));
@@ -186,4 +330,55 @@ function initDocumentExplorer() {
   if (searchInput) {
     searchInput.addEventListener('input', filterDocuments);
   }
+}
+
+/* ==========================================================================
+   7. MODAL LIGHTBOX DE PONENCIAS GERMINA
+   ========================================================================== */
+function initGerminaModal() {
+  const modal = document.getElementById('germinaModal');
+  if (!modal) return;
+
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const closeBtn = modal.querySelector('.modal-close-btn');
+  const backdrop = modal.querySelector('.modal-backdrop');
+  const triggers = document.querySelectorAll('.open-germina-modal');
+
+  function openModal(imgSrc, title, desc) {
+    if (modalImg) modalImg.src = imgSrc;
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalDesc) modalDesc.textContent = desc;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const img = btn.getAttribute('data-img');
+      const title = btn.getAttribute('data-title') || 'Ponencia Magistral';
+      const desc = btn.getAttribute('data-desc') || '';
+      if (img) {
+        openModal(img, title, desc);
+      }
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 }
