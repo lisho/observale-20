@@ -385,7 +385,21 @@ Este apartado recopila las operaciones estadísticas y repositorios oficiales ex
 * **ZAS 6 – Puente Castro:** [`Informe_ZAS_Puente_Castro.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_Puente_Castro.pdf) *(639.4 KB)*
 * **ZAS 7 – San Mamés - San Pedro:** [`Informe_ZAS_San_Mames_-_San_Pedro.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_San_Mames_-_San_Pedro.pdf) *(633.1 KB)*
 
+### A.5. Transparencia Metodológica y Trazabilidad de las Fuentes del Informe
+
+Para garantizar el máximo rigor analítico, se detalla a continuación el origen metodológico de cada componente del presente informe:
+
+1. **Datos Cuantitativos Directos (100% procedentes de los informes de ObservaLE):**
+   * Todas las cifras sociodemográficas y de rentas del municipio de León y de sus 7 ZAS (poblaciones totales, evolución 2019-2023, renta media neta por hogar y persona, composición de fuentes de ingreso entre salarios y pensiones, tasas de hogares unipersonales, índices de Gini, ratios P80/P20 y las tasas de riesgo de pobreza relativa, moderada y severa desglosadas por edad, sexo y nacionalidad).
+2. **Datos de Contextualización Comparativa (Fuentes externas oficiales del INE):**
+   * Las referencias de contexto a nivel nacional y autonómico no incluidas en las tablas locales de los informes municipales (ej. porcentaje medio de hogares unipersonales en España del 27,4% y en Castilla y León del ~31,0%, o la tasa nacional de envejecimiento del ~20,1%), las cuales provienen del **Censo de Población y Viviendas** y de la **Encuesta Continua de Hogares / ECEPOV del INE**.
+3. **Cálculos Absolutos Derivados (Elaboración técnica a partir de las tasas del informe):**
+   * Las estimaciones de volumen poblacional absoluto (ej. ~22.830 personas en pobreza general, ~35.242 personas mayores de 65 años, ~23.225 personas que residen solas, y el desglose de ~17.040 personas españolas vs. ~6.660 extranjeras en situación de vulnerabilidad), obtenidas multiplicando las tasas oficiales del informe por los censos empadronados correspondientes.
+4. **Fundamentación Cualitativa y Sociológica:**
+   * La interpretación causal sobre determinantes estructurales (impacto acumulado de la brecha de género en pensiones de viudedad, trabas administrativas en procesos de homologación de extranjería, ausencia de economías de escala en hogares de una persona y barreras arquitectónicas en el parque edificado antiguo de León) responde al marco de análisis sociocomunitario para la planificación de Servicios Sociales.
+
 ---
+
 
 
 
