@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevealOnScroll();
   initThemeToggle();
   initNavbar();
+  initDynamicNavbarCifras();
   initTabs();
   initDocumentExplorer();
   initOrganicAmbientBackground();
@@ -453,3 +454,53 @@ function initGerminaModal() {
     }
   });
 }
+
+/* ==========================================================================
+   10. ENLACE DINÁMICO EN NAVBAR (SOLO CUANDO EL CUADRO IMPORTANTE DESAPARECE)
+   ========================================================================== */
+function initDynamicNavbarCifras() {
+  const spotlightAlert = document.getElementById('dashTopSpotlightAlert') || document.querySelector('.dash-top-spotlight-alert');
+  const navItem = document.getElementById('navObservaleCifrasItem') || document.querySelector('.nav-cifras-dynamic');
+
+  if (!spotlightAlert || !navItem) return;
+
+  const updateVisibility = () => {
+    const rect = spotlightAlert.getBoundingClientRect();
+    // Si la parte inferior del cuadro "IMPORTANTE" ha pasado por encima de la barra de navegación (~65px)
+    if (rect.bottom <= 65) {
+      navItem.classList.add('is-visible');
+    } else {
+      navItem.classList.remove('is-visible');
+    }
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // isIntersecting es true mientras el cuadro esté en pantalla (o tocando el área debajo del navbar)
+        if (!entry.isIntersecting) {
+          // Comprobar si está por encima del viewport (scroll hacia abajo)
+          const rect = entry.target.getBoundingClientRect();
+          if (rect.top < 65) {
+            navItem.classList.add('is-visible');
+          } else {
+            navItem.classList.remove('is-visible');
+          }
+        } else {
+          navItem.classList.remove('is-visible');
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0,
+      rootMargin: '-65px 0px 0px 0px'
+    });
+
+    observer.observe(spotlightAlert);
+  }
+
+  // Listener de scroll de apoyo para máxima reactividad
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  updateVisibility();
+}
+
