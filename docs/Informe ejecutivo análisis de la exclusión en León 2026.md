@@ -267,6 +267,7 @@ La desigualdad no se distribuye de manera homogénea en el entramado urbano de L
 * **Descentralización y Enfoque de Proximidad por ZAS:** Adaptación de los programas de intervención comunitaria a las realidades socioeconómicas específicas de cada una de las 7 Zonas de Acción Social.
 * **Atención a la "Vulnerabilidad Silenciosa" en Zonas Centrales:** Evitar el sesgo de considerar que la vulnerabilidad se ubica únicamente en barrios periféricos; la precariedad de personas mayores solas y familias monoparentales en distritos céntricos requiere detección activa.
 * **Cohesión Territorial Urbana:** Refuerzo de recursos de mediación vecinal, centros sociales y actividades comunitarias inclusivas que fomenten la interacción y reduzcan la brecha socioespacial.
+* **Monográfico Territorial Detallado:** Para consultar el diagnóstico comparativo exhaustivo, tabla de indicadores y perfiles específicos de cada una de las 7 zonas, consúltese el documento monográfico: [Informe ejecutivo Zonas de Acción Social León 2026.md](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/docs/Informe%20ejecutivo%20Zonas%20de%20Accion%20Social%20Leon%202026.md).
 
 ---
 
@@ -374,7 +375,18 @@ Este apartado recopila las operaciones estadísticas y repositorios oficiales ex
   [https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56](https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56)  
   *Herramienta analítica interactiva del Observatorio Municipal para la Inclusión Social del Ayuntamiento de León y la Universidad de León.*
 
+### A.4. Informes Estadísticos Descargados en Repositorio Local (`Informes estadisticos/`)
+* **Informe Global del Municipio de León:** [`informeLeon.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/informeLeon.pdf) *(601.3 KB)*
+* **ZAS 1 – Centro:** [`Informe_ZAS_Centro.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_Centro.pdf) *(632.5 KB)*
+* **ZAS 2 – El Crucero - La Vega:** [`Informe_ZAS_El_Crucero_-_La_Vega.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_El_Crucero_-_La_Vega.pdf) *(638.1 KB)*
+* **ZAS 3 – El Ejido - Santa Ana:** [`Informe_ZAS_El_Egido_-_Santa_Ana.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_El_Egido_-_Santa_Ana.pdf) *(645.7 KB)*
+* **ZAS 4 – La Armunia:** [`Informe_ZAS_La_Armunia.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_La_Armunia.pdf) *(630.4 KB)*
+* **ZAS 5 – Mariano Andrés:** [`Informe_ZAS_Mariano_Andres.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_Mariano_Andres.pdf) *(632.0 KB)*
+* **ZAS 6 – Puente Castro:** [`Informe_ZAS_Puente_Castro.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_Puente_Castro.pdf) *(639.4 KB)*
+* **ZAS 7 – San Mamés - San Pedro:** [`Informe_ZAS_San_Mames_-_San_Pedro.pdf`](file:///c:/Users/Pruebas%20IA/Documents/MCPs/MCP%20Notebook/observale%2020/Informes%20estadisticos/Informe_ZAS_San_Mames_-_San_Pedro.pdf) *(633.1 KB)*
+
 ---
+
 
 
 
