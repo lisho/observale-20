@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Análisis Estadístico de la Exclusión en León | ObservaLE</title>
-  <meta name="description" content="Espacio de análisis estadístico y visualización de datos sobre la exclusión social en León.">
+  <title>Diagnóstico Cuantitativo y Social de León | ObservaLE</title>
+  <meta name="description" content="Panel de control analítico sobre pobreza, exclusión social, infancia, envejecimiento, desigualdad y servicios sociales en León.">
   
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,10 +14,20 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/modern-theme.css">
-</head>
-<body>
 
-  <!-- Barra de navegación -->
+  <!-- Chart.js para visualizaciones dinámicas -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background: var(--bg-primary); color: var(--text-main); position: relative; min-height: 100vh;">
+
+  <!-- Fondo Ambiental Orgánico Dinámico -->
+  <div class="ambient-mesh-bg" id="ambientMeshBg" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- Barra de navegación Simplificada (Solo botón Volver y Toggle) -->
   <header class="modern-navbar">
     <div class="nav-container">
       <div class="brand-wrapper">
@@ -28,10 +38,16 @@
 
       <nav>
         <ul class="nav-links">
-          <li class="nav-link-item"><a href="index.html"><i class="fa fa-arrow-left"></i> Volver a Portada</a></li>
-          <li class="nav-link-item"><a href="index.html#about">¿Qué es?</a></li>
-          <li class="nav-link-item"><a href="index.html#features">Ejes</a></li>
-          <li class="nav-link-item"><a href="index.html#publicaciones">Publicaciones</a></li>
+          <li class="nav-link-item">
+            <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" style="color: var(--brand-teal); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; margin-right: 18px;" title="Acceder a la plataforma interactiva ObservaLE en Cifras">
+              <i class="fa fa-line-chart"></i> ObservaLE en Cifras <i class="fa fa-external-link" style="font-size: 0.75rem;"></i>
+            </a>
+          </li>
+          <li class="nav-link-item">
+            <a href="index.html" style="color: var(--text-muted); font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fa fa-arrow-left"></i> Volver a Portada
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -43,77 +59,879 @@
     </div>
   </header>
 
-  <!-- Contenido Principal: Lienzo Preparado para Estadísticas -->
-  <main style="margin-top: calc(var(--header-height) + 40px); padding: 0 24px 80px;">
-    <div class="section-container" style="max-width: 1000px;">
+  <!-- Contenido Principal: Panel de Control Integral de Exclusión e Inclusión Social -->
+  <main style="margin-top: calc(var(--header-height) + 25px); padding: 0 20px 80px; position: relative; z-index: 1;">
+    <div class="dashboard-wrapper">
       
-      <!-- Breadcrumb y Cabecera -->
-      <div style="margin-bottom: 36px;">
-        <nav style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
-          <a href="index.html">Inicio</a> &gt; <span style="color: var(--brand-teal); font-weight: 700;">Análisis Estadístico</span>
-        </nav>
-        <h1 style="font-size: clamp(2.1rem, 4.2vw, 3rem); margin-bottom: 14px; font-weight: 900;">
-          Análisis Estadístico de la Exclusión en León
-        </h1>
-        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; max-width: 820px;">
-          Espacio técnico para el diagnóstico cuantitativo, la monitorización continua y la modelización estadística multidimensional de los factores de inclusión y exclusión social en el municipio de León.
-        </p>
+      <!-- Cabecera del Cuadro de Mando -->
+      <div class="dashboard-header-box">
+        <div class="dashboard-title-group">
+          <nav style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 8px;">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Inicio</a> &gt; 
+            <span style="color: var(--brand-teal); font-weight: 700;">Panel de Control Estadístico</span>
+          </nav>
+          <h1>
+            Diagnóstico de Pobreza, Exclusión y Servicios Sociales en León
+            <span class="dashboard-date-badge">(análisis realizado sobre los datos disponibles en Agosto 2026)</span>
+          </h1>
+          <p class="dashboard-subtitle-main">
+            Análisis cuantitativo de los principales factores de vulnerabilidad social identificados en el municipio de León.
+          </p>
+
+          <!-- Elementos de Vulnerabilidad Clave Identificados -->
+          <div class="vulnerability-pills-wrap">
+            <span class="vulnerability-lead-label"><i class="fa fa-crosshairs" style="color: var(--brand-teal);"></i> Focos clave:</span>
+            <span class="vulnerability-pill pill-amber" title="Infancia en riesgo: 28,40% pobreza, 14,50% severa">
+              <i class="fa fa-child"></i> Infancia en riesgo
+            </span>
+            <span class="vulnerability-pill pill-carmine" title="La feminización de la pobreza: 19,00% general y +58% de brecha en mayores">
+              <i class="fa fa-venus"></i> La feminización de la pobreza
+            </span>
+            <span class="vulnerability-pill pill-indigo" title="Los riesgos asociados a la edad y la soledad no deseada: 28,4% mayores y 38,8% hogares unipersonales">
+              <i class="fa fa-heartbeat"></i> Los riesgos asociados a la edad y la soledad no deseada
+            </span>
+            <span class="vulnerability-pill pill-rose" title="Fractura económica en población migrante: 63,90% pobreza (4,2x)">
+              <i class="fa fa-globe"></i> Fractura económica en población migrante
+            </span>
+          </div>
+
+          <!-- Alert de IMPORTANTE: ObservaLE en Cifras -->
+          <div class="dash-alert-important">
+            <div class="dash-alert-content">
+              <div class="dash-alert-icon-box">
+                <i class="fa fa-info-circle"></i>
+              </div>
+              <div class="dash-alert-text-box">
+                <strong>IMPORTANTE:</strong> Para profundizar en los datos y descargar los informes estadísticos, accede a nuestro servicio de 
+                <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" class="dash-alert-link">
+                  ObservaLE en cifras <i class="fa fa-external-link" style="font-size: 0.78rem;"></i>
+                </a>.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Lienzo Limpio y Estructurado en Preparación -->
-      <div style="background: var(--bg-surface-elevated); border: 2px dashed var(--border-medium); border-radius: var(--radius-lg); padding: 70px 32px; text-align: center; box-shadow: var(--shadow-sm); position: relative;">
+      <!-- Matriz Simétrica 3x3 de Scorecards de Datos Relevantes -->
+      <div class="kpi-scorecards-grid">
         
-        <div class="svg-icon-circle" style="width: 76px; height: 76px; font-size: 2.2rem; margin: 0 auto 24px;">
-          <i class="fa fa-database"></i>
-        </div>
-
-        <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">
-          Espacio en Fase de Modelado y Carga de Datos
-        </h3>
-
-        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px; margin: 0 auto 36px; line-height: 1.65;">
-          Este módulo está reservado para la integración de los cuadros de mando, mapas cartográficos por distritos y series temporales que desarrollaremos a partir del modelo <b>MATICES</b> y los datos del Ayuntamiento de León.
-        </p>
-
-        <!-- Ejes conceptuales en preparación -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 760px; margin: 0 auto 40px; text-align: left;">
-          <div style="background: var(--bg-surface-alt); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-            <div style="font-weight: 700; color: var(--brand-carmine); font-size: 0.9rem; margin-bottom: 4px;"><i class="fa fa-briefcase"></i> Dimensión Laboral</div>
-            <small style="color: var(--text-muted);">Empleo y precariedad</small>
+        <!-- Fila 1 - Card 1: Pobreza Infantil -->
+        <div class="kpi-card kpi-card-amber">
+          <div class="kpi-header">
+            <span class="kpi-label">Pobreza Infantil (&lt;18)</span>
+            <div class="kpi-icon-badge kpi-icon-amber"><i class="fa fa-child"></i></div>
           </div>
-          <div style="background: var(--bg-surface-alt); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-            <div style="font-weight: 700; color: var(--brand-teal); font-size: 0.9rem; margin-bottom: 4px;"><i class="fa fa-home"></i> Dimensión Residencial</div>
-            <small style="color: var(--text-muted);">Acceso y suministros</small>
-          </div>
-          <div style="background: var(--bg-surface-alt); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-            <div style="font-weight: 700; color: var(--brand-carmine); font-size: 0.9rem; margin-bottom: 4px;"><i class="fa fa-laptop"></i> Brecha Digital</div>
-            <small style="color: var(--text-muted);">Competencias y trámites</small>
-          </div>
-          <div style="background: var(--bg-surface-alt); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-            <div style="font-weight: 700; color: var(--brand-teal); font-size: 0.9rem; margin-bottom: 4px;"><i class="fa fa-heartbeat"></i> Salud y Cuidados</div>
-            <small style="color: var(--text-muted);">Dependencia y bienestar</small>
+          <div class="kpi-value" style="color: #b45309;">28,40%</div>
+          <p class="kpi-subtitle">
+            <span class="kpi-trend-pill trend-warning">+10,0 pp</span> sobre la media municipal
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-warning"></i> Pobreza Severa Infantil (&lt;40%): <b>14,50%</b>
           </div>
         </div>
 
-        <div>
-          <a href="index.html" class="btn-hero-stats" style="padding: 12px 28px; font-size: 0.95rem;">
-            <i class="fa fa-arrow-left"></i> Volver a la Portada Principal
-          </a>
+        <!-- Fila 1 - Card 2: Riesgo Pobreza General -->
+        <div class="kpi-card kpi-card-carmine">
+          <div class="kpi-header">
+            <span class="kpi-label">Población en Pobreza</span>
+            <div class="kpi-icon-badge kpi-icon-carmine"><i class="fa fa-exclamation-triangle"></i></div>
+          </div>
+          <div class="kpi-value">18,40%</div>
+          <p class="kpi-subtitle">
+            <span>Aprox. <b>22.830 personas</b></span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-female"></i> Brecha: <b>19,0% Mujeres</b> vs 17,6% Hombres
+          </div>
         </div>
 
+        <!-- Fila 1 - Card 3: Brecha en Población Extranjera -->
+        <div class="kpi-card kpi-card-carmine">
+          <div class="kpi-header">
+            <span class="kpi-label">Pobreza en Extranjeros</span>
+            <div class="kpi-icon-badge kpi-icon-carmine"><i class="fa fa-globe"></i></div>
+          </div>
+          <div class="kpi-value" style="color: #e11d48;">63,90%</div>
+          <p class="kpi-subtitle">
+            <span class="kpi-trend-pill trend-warning">4,2 veces mayor</span> vs Españoles (15,0%)
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-shield"></i> Pobreza Severa (&lt;40%): <b>42,00%</b>
+          </div>
+        </div>
+
+        <!-- Fila 2 - Card 4: Envejecimiento Demográfico -->
+        <div class="kpi-card kpi-card-teal">
+          <div class="kpi-header">
+            <span class="kpi-label">Mayores de 65 Años</span>
+            <div class="kpi-icon-badge kpi-icon-teal"><i class="fa fa-user-plus"></i></div>
+          </div>
+          <div class="kpi-value">28,40%</div>
+          <p class="kpi-subtitle">
+            <span><b>35.242 personas</b> en el municipio</span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-users"></i> Ratio: <b>2,6 mayores</b> por cada menor (&lt;15)
+          </div>
+        </div>
+
+        <!-- Fila 2 - Card 5: Hogares Unipersonales y Soledad -->
+        <div class="kpi-card kpi-card-indigo">
+          <div class="kpi-header">
+            <span class="kpi-label">Hogares Unipersonales</span>
+            <div class="kpi-icon-badge kpi-icon-indigo"><i class="fa fa-home"></i></div>
+          </div>
+          <div class="kpi-value">38,80%</div>
+          <p class="kpi-subtitle">
+            <span><b>23.225 personas</b> residen solas</span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-heartbeat"></i> Foco crítico: <b>Soledad no deseada</b>
+          </div>
+        </div>
+
+        <!-- Fila 2 - Card 6: Feminización en la Vejez -->
+        <div class="kpi-card kpi-card-carmine">
+          <div class="kpi-header">
+            <span class="kpi-label">Pobreza Mujeres Mayores</span>
+            <div class="kpi-icon-badge kpi-icon-carmine"><i class="fa fa-venus"></i></div>
+          </div>
+          <div class="kpi-value" style="color: #8b113e;">12,80%</div>
+          <p class="kpi-subtitle">
+            <span class="kpi-trend-pill trend-warning">+58% brecha</span> vs hombres (8,10%)
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-pie-chart"></i> <b>64,4%</b> de la pobreza severa en vejez
+          </div>
+        </div>
+
+        <!-- Fila 3 - Card 7: Desigualdad Gini y Disparidad -->
+        <div class="kpi-card kpi-card-indigo">
+          <div class="kpi-header">
+            <span class="kpi-label">Desigualdad Gini</span>
+            <div class="kpi-icon-badge kpi-icon-indigo"><i class="fa fa-balance-scale"></i></div>
+          </div>
+          <div class="kpi-value">30,80%</div>
+          <p class="kpi-subtitle">
+            <span>Ratio Desigualdad P80/P20: <b>2,70x</b></span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-map-marker"></i> Polarización en distritos centrales
+          </div>
+        </div>
+
+        <!-- Fila 3 - Card 8: Renta Media Neta -->
+        <div class="kpi-card kpi-card-teal">
+          <div class="kpi-header">
+            <span class="kpi-label">Renta Media Hogar</span>
+            <div class="kpi-icon-badge kpi-icon-teal"><i class="fa fa-eur"></i></div>
+          </div>
+          <div class="kpi-value">36.332 €</div>
+          <p class="kpi-subtitle">
+            <span><b>16.689 €</b> de renta media por persona</span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-line-chart"></i> Crecimiento nominal 2019-2023 (+13,5%)
+          </div>
+        </div>
+
+        <!-- Fila 3 - Card 9: Dependencia de Pensiones / Escudo Social -->
+        <div class="kpi-card kpi-card-teal">
+          <div class="kpi-header">
+            <span class="kpi-label">Ingresos por Pensiones</span>
+            <div class="kpi-icon-badge kpi-icon-teal"><i class="fa fa-shield"></i></div>
+          </div>
+          <div class="kpi-value">29,20%</div>
+          <p class="kpi-subtitle">
+            <span>Escudo social protector ante crisis</span>
+          </p>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
+            <i class="fa fa-briefcase"></i> Salarios: <b>53,5%</b> · Prestaciones: <b>4,3%</b>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           BLOQUE DESTACADO: 4 FACTORES CLAVE DE VULNERABILIDAD FUNDAMENTADOS
+           ==================================================================== -->
+      <section class="factors-spotlight-section">
+        <div class="factors-spotlight-header">
+          <div>
+            <h2><i class="fa fa-bullseye" style="color: var(--brand-teal);"></i> Factores Clave de Vulnerabilidad Social en León</h2>
+            <p>Fundamentación cuantitativa y sociocomunitaria de los cuatro vectores prioritarios de exclusión identificados en el informe estadístico municipal.</p>
+          </div>
+        </div>
+
+        <div class="factors-spotlight-grid">
+          
+          <!-- FACTOR 1: Infancia en riesgo -->
+          <article class="factor-card-large border-amber">
+            <div class="factor-card-top">
+              <div class="factor-title-wrap">
+                <h3><i class="fa fa-child" style="color: #b45309;"></i> Infancia en riesgo</h3>
+                <span class="source-badge" style="border-color: rgba(180, 83, 9, 0.3); color: #b45309;">Menores de 18 años</span>
+              </div>
+              <div class="factor-metric-box">
+                <span class="factor-metric-num" style="color: #b45309;">28,40%</span>
+                <span class="factor-metric-label">Tasa de Pobreza Infantil</span>
+              </div>
+            </div>
+
+            <div class="factor-block-content">
+              <ul class="factor-evidence-list">
+                <li>
+                  <i class="fa fa-check-circle" style="color: #b45309;"></i>
+                  <span><strong>Sobrerrepresentación extrema:</strong> La tasa de pobreza infantil (<b style="color: #b45309;">28,40%</b>) supera en <strong>+10,0 puntos porcentuales</strong> a la media general de León (18,40%).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #b45309;"></i>
+                  <span><strong>Intensidad crítica:</strong> El <strong>77,5%</strong> de los menores vulnerables se encuentra en pobreza moderada/profunda (&lt;50% mediana) y el <strong>51,1%</strong> en pobreza severa (&lt;40% mediana, tasa del 14,50%).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #b45309;"></i>
+                  <span><strong>Umbral de subsistencia:</strong> El <strong>23,80%</strong> de los menores vive en hogares con rentas anuales inferiores a 10.000 € y el <strong>14,50%</strong> bajo los 7.500 €/año.</span>
+                </li>
+              </ul>
+              <p style="margin: 0;">
+                <strong>Fundamentación social:</strong> La pobreza infantil es el principal vector de <strong>reproducción intergeneracional de la desigualdad</strong>. Condiciona el rendimiento educativo, genera privación material severa y compromete el desarrollo psicosocial, requiriendo refuerzo de becas escolares, apoyo a familias monomarentales y garantía habitacional.
+              </p>
+            </div>
+          </article>
+
+          <!-- FACTOR 2: La feminización de la pobreza -->
+          <article class="factor-card-large border-carmine">
+            <div class="factor-card-top">
+              <div class="factor-title-wrap">
+                <h3><i class="fa fa-venus" style="color: #8b113e;"></i> La feminización de la pobreza</h3>
+                <span class="source-badge" style="border-color: rgba(139, 17, 62, 0.3); color: #8b113e;">Brecha de Género</span>
+              </div>
+              <div class="factor-metric-box">
+                <span class="factor-metric-num" style="color: #8b113e;">+58,0%</span>
+                <span class="factor-metric-label">Brecha en Mayores (&ge;65)</span>
+              </div>
+            </div>
+
+            <div class="factor-block-content">
+              <ul class="factor-evidence-list">
+                <li>
+                  <i class="fa fa-check-circle" style="color: #8b113e;"></i>
+                  <span><strong>Disparidad general y en la vejez:</strong> La tasa de pobreza femenina global es del <strong>19,00%</strong> (vs 17,60% hombres), disparándose en mayores de 65 años al <b style="color: #8b113e;">12,80% en mujeres frente al 8,10% en hombres</b>.</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #8b113e;"></i>
+                  <span><strong>Concentración en pobreza severa:</strong> Las mujeres mayores representan el <b style="color: #8b113e;">64,4% de todos los casos de pobreza severa</b> en la tercera edad (tasa del 3,80% vs 2,10%, un <strong>+81% mayor</strong>).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #8b113e;"></i>
+                  <span><strong>Bajos ingresos:</strong> El <strong>55,5%</strong> de las personas mayores con ingresos inferiores a 10.000 €/año son mujeres.</span>
+                </li>
+              </ul>
+              <p style="margin: 0;">
+                <strong>Fundamentación social:</strong> Refleja el <strong>impacto acumulativo del ciclo vital femenino</strong>: trayectorias laborales interrumpidas por tareas de cuidados no remuneradas, brecha salarial histórica y alta dependencia de pensiones de viudedad o no contributivas de cuantías reducidas frente a gastos fijos no compartidos.
+              </p>
+            </div>
+          </article>
+
+          <!-- FACTOR 3: Los riesgos asociados a la edad y la soledad no deseada -->
+          <article class="factor-card-large border-indigo">
+            <div class="factor-card-top">
+              <div class="factor-title-wrap">
+                <h3><i class="fa fa-heartbeat" style="color: #1e40af;"></i> Los riesgos asociados a la edad y la soledad no deseada</h3>
+                <span class="source-badge" style="border-color: rgba(30, 64, 175, 0.3); color: #1e40af;">Envejecimiento &amp; Soledad</span>
+              </div>
+              <div class="factor-metric-box">
+                <span class="factor-metric-num" style="color: #1e40af;">38,80%</span>
+                <span class="factor-metric-label">Hogares Unipersonales</span>
+              </div>
+            </div>
+
+            <div class="factor-block-content">
+              <ul class="factor-evidence-list">
+                <li>
+                  <i class="fa fa-check-circle" style="color: #1e40af;"></i>
+                  <span><strong>Pirámide hiperenvejecida:</strong> El <b style="color: #1e40af;">28,40%</b> del padrón de León (<strong>35.242 personas</strong>) tiene 65 o más años, existiendo <strong>2,6 mayores por cada menor de 15 años</strong> (10,8%).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #1e40af;"></i>
+                  <span><strong>Aislamiento residencial masivo:</strong> Hay <b style="color: #1e40af;">23.225 personas que viven solas</b> en el municipio (38,8% de los hogares), superando el <strong>42%</strong> en las Zonas de Acción Social centrales.</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #1e40af;"></i>
+                  <span><strong>Protección y vulnerabilidad:</strong> Aunque las pensiones amortiguan la renta media, el sobreenvejecimiento multiplica la dependencia sobrevenida.</span>
+                </li>
+              </ul>
+              <p style="margin: 0;">
+                <strong>Fundamentación social:</strong> La coexistencia de longevidad avanzada y hogares unipersonales genera un riesgo crítico de <strong>soledad no deseada, deterioro cognitivo silencioso y barreras de accesibilidad</strong> en viviendas antiguas sin ascensor, demandando un modelo integral de teleasistencia y proximidad barrial.
+              </p>
+            </div>
+          </article>
+
+          <!-- FACTOR 4: Fractura económica en población migrante -->
+          <article class="factor-card-large border-rose">
+            <div class="factor-card-top">
+              <div class="factor-title-wrap">
+                <h3><i class="fa fa-globe" style="color: #e11d48;"></i> Fractura económica en población migrante</h3>
+                <span class="source-badge" style="border-color: rgba(225, 29, 72, 0.3); color: #e11d48;">Brecha de Nacionalidad</span>
+              </div>
+              <div class="factor-metric-box">
+                <span class="factor-metric-num" style="color: #e11d48;">63,90%</span>
+                <span class="factor-metric-label">Pobreza Extranjeros (4,2x)</span>
+              </div>
+            </div>
+
+            <div class="factor-block-content">
+              <ul class="factor-evidence-list">
+                <li>
+                  <i class="fa fa-check-circle" style="color: #e11d48;"></i>
+                  <span><strong>Fractura abrumadora:</strong> El <b style="color: #e11d48;">63,90%</b> de la población extranjera está en riesgo de pobreza frente al <strong>15,00%</strong> de la población española (<strong>4,2 veces superior</strong>).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #e11d48;"></i>
+                  <span><strong>Pobreza severa y extrema:</strong> El <strong>42,00%</strong> de los migrantes sufre pobreza severa (&lt;40% mediana, vs 7,90% en españoles) y un <strong>18,10%</strong> extrema (&lt;5.000 €/año, <strong>6,7 veces más</strong>).</span>
+                </li>
+                <li>
+                  <i class="fa fa-check-circle" style="color: #e11d48;"></i>
+                  <span><strong>Falta de renta de subsistencia:</strong> Casi la mitad (<strong>48,40%</strong>) vive con menos de 10.000 € anuales por unidad de consumo.</span>
+                </li>
+              </ul>
+              <p style="margin: 0;">
+                <strong>Fundamentación social:</strong> Representa la <strong>mayor brecha de exclusión estructural de León</strong>. Deriva de dificultades en la regularización y homologación de cualificaciones, sobreocupación en sectores de bajos salarios y discriminación en el mercado del alquiler, situando la inserción sociolaboral como urgencia prioritaria.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Selector de Dimensiones / Pestañas del Cuadro de Mando -->
+      <div class="dash-nav-pills">
+        <button class="dash-pill-btn active" data-target="panelVisionIntegral">
+          <i class="fa fa-th-large"></i> Visión Global
+        </button>
+        <button class="dash-pill-btn" data-target="panelInfancia">
+          <i class="fa fa-child"></i> Infancia en Riesgo (&lt;18)
+        </button>
+        <button class="dash-pill-btn" data-target="panelEnvejecimiento">
+          <i class="fa fa-user-plus"></i> Envejecimiento y Soledad
+        </button>
+        <button class="dash-pill-btn" data-target="panelMigrante">
+          <i class="fa fa-globe"></i> Brecha Migrante
+        </button>
+        <button class="dash-pill-btn" data-target="panelDesigualdad">
+          <i class="fa fa-balance-scale"></i> Desigualdad y Empleo
+        </button>
+        <button class="dash-pill-btn" data-target="panelTerritorial">
+          <i class="fa fa-map-marker"></i> Zonas de Acción Social (ZAS)
+        </button>
+      </div>
+
+      <!-- ====================================================================
+           PANEL 1: VISIÓN GLOBAL Y RESUMEN EJECUTIVO
+           ==================================================================== -->
+      <div id="panelVisionIntegral" class="dash-panel active">
+        
+        <div class="dash-charts-grid-2">
+          
+          <!-- Gráfico: Tasa de Pobreza por Colectivo -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-bar-chart" style="color: #8b113e;"></i> Tasa de Vulnerabilidad y Pobreza Relativa</h3>
+              <span class="source-badge">&lt;60% Mediana</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartVulnerabilidad"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Diagnóstico Integral:</strong> El riesgo de pobreza en León (18,4%) muestra asimetrías severas: la tasa se dispara al <strong>28,4% en menores de edad</strong> y alcanza un crítico <strong>63,9% en personas extranjeras</strong>, mientras que en mayores de 65 años se sitúa en el 10,9% gracias al sistema público de pensiones.
+            </div>
+          </div>
+
+          <!-- Gráfico: Evolución de la Renta Neta -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-area-chart" style="color: #0c6a63;"></i> Evolución de Renta Neta (2019 - 2023)</h3>
+              <span class="source-badge">INE / Distribución Renta</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartRentaEvolucion"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Tendencia Económica:</strong> Incremento gradual de la renta neta por hogar de 32.003 € a 36.332 € (+13,5%), y por persona de 14.286 € a 16.689 € (+16,8%). Sin embargo, la inflación acumulada en suministros básicos y vivienda atenúa la capacidad adquisitiva real de los quintiles más bajos.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fila de Focos Prioritarios para Servicios Sociales -->
+        <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin: 0 0 20px 0; color: var(--text-main); display: flex; align-items: center; gap: 10px;">
+            <i class="fa fa-bullseye" style="color: #0c6a63;"></i> Focos Estratégicos de Intervención en Servicios Sociales Municipales
+          </h3>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+            <div style="background: var(--bg-surface-alt); padding: 18px; border-radius: var(--radius-md); border-left: 4px solid #b45309;">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #b45309; margin: 0 0 6px 0;"><i class="fa fa-child"></i> 1. Infancia y Familias Monoparentales</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                28,4% de pobreza infantil. Prioridad: becas de comedor, ayudas de emergencia social contra la pobreza energética y refuerzo socioeducativo integral.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-surface-alt); padding: 18px; border-radius: var(--radius-md); border-left: 4px solid #0c6a63;">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0c6a63; margin: 0 0 6px 0;"><i class="fa fa-heartbeat"></i> 2. Soledad No Deseada y Cuidados</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                38,2% de hogares unipersonales y 35.242 mayores. Prioridad: teleasistencia avanzada, ayuda a domicilio, acompañamiento comunitario y lucha contra el aislamiento.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-surface-alt); padding: 18px; border-radius: var(--radius-md); border-left: 4px solid #e11d48;">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #e11d48; margin: 0 0 6px 0;"><i class="fa fa-globe"></i> 3. Inclusión Sociolaboral de Migrantes</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                63,9% de vulnerabilidad en población extranjera. Prioridad: mediación intercultural, itinerarios de capacitación, asesoramiento jurídico y acceso a vivienda digna.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-surface-alt); padding: 18px; border-radius: var(--radius-md); border-left: 4px solid #8b113e;">
+              <h4 style="font-size: 1.05rem; font-weight: 800; color: #8b113e; margin: 0 0 6px 0;"><i class="fa fa-female"></i> 4. Feminización de la Pobreza</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                Mayores tasas de pobreza en mujeres tanto en edad activa (19,0%) como en la vejez (12,8% vs 8,1% en varones). Prioridad: conciliación y apoyo a viudedad.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANEL 2: INFANCIA Y MENORES EN RIESGO DE EXCLUSIÓN
+           ==================================================================== -->
+      <div id="panelInfancia" class="dash-panel">
+        
+        <!-- Conclusión Clave Banner -->
+        <div class="dash-analysis-note" style="margin-bottom: 24px; padding: 18px 22px; border-left: 5px solid #b45309; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-left: 5px solid #b45309; border-radius: var(--radius-md);">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <i class="fa fa-info-circle" style="color: #b45309; font-size: 1.4rem; margin-top: 2px;"></i>
+            <div>
+              <strong style="display: block; font-size: 1.05rem; color: #b45309; margin-bottom: 4px;">Conclusión clave:</strong>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
+                El <strong>77,5%</strong> de los niños y adolescentes en situación de vulnerabilidad económica en León se encuentra en niveles de <strong>pobreza moderada o profunda (&lt;50% de la mediana)</strong>, y más de la mitad (<strong>51,1%</strong>) sufre directamente <strong>pobreza severa (&lt;40% de la mediana)</strong>, duplicando la tasa de severidad de la población general adulta.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-charts-grid-2">
+          
+          <!-- Gráfico 1: Infancia vs General -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-bar-chart" style="color: #b45309;"></i> Pobreza Infantil vs Población General</h3>
+              <span class="source-badge">Comparativa de Umbrales</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartInfanciaPobreza"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Riesgo Crítico en la Infancia:</strong> En todos los umbrales analizados, los menores de 18 años sufren tasas que duplican o superan ampliamente la media de la ciudad (14,50% en pobreza severa infantil frente al 8,60% general).
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Proporción Interna de Intensidad -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-pie-chart" style="color: #b45309;"></i> Proporción Interna en Menores en Riesgo de Pobreza</h3>
+              <span class="source-badge">Distribución de Intensidad</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartInfanciaProporcion"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Concentración en Alta Severidad:</strong> El <strong>51,1%</strong> de todos los menores bajo el umbral de pobreza se sitúa en pobreza severa (&lt;40% mediana), y un <strong>26,4%</strong> adicional en pobreza moderada profunda (totalizando 77,5% bajo el 50% de la mediana).
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tabla Matriz de Pobreza y Renta en Menores -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <h3><i class="fa fa-table" style="color: #b45309;"></i> Matriz Detallada de Pobreza y Renta en Menores de 18 Años</h3>
+            <span class="source-badge">Población &lt;18 años (INE / SS.SS León)</span>
+          </div>
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Umbral de Ingresos</th>
+                  <th>Tasa en Menores</th>
+                  <th>Tasa Media Ciudad</th>
+                  <th>Sobrerrepresentación Infantil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Bajo 60% Mediana (Riesgo Pobreza Relativa)</b></td>
+                  <td><b style="color: #b45309;">28,40%</b></td>
+                  <td>18,40%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+54% mayor</span></td>
+                </tr>
+                <tr>
+                  <td><b>Bajo 50% Mediana (Pobreza Moderada / Profunda)</b></td>
+                  <td><b>22,00%</b></td>
+                  <td>12,90%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+70% mayor</span></td>
+                </tr>
+                <tr>
+                  <td><b>Bajo 40% Mediana (Pobreza Severa / Extrema)</b></td>
+                  <td><b>14,50%</b></td>
+                  <td>8,60%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+68% mayor</span></td>
+                </tr>
+                <tr>
+                  <td><b>Ingresos Hogar &lt; 10.000 € / año</b></td>
+                  <td><b>23,80%</b></td>
+                  <td>13,80%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+72% mayor</span></td>
+                </tr>
+                <tr>
+                  <td><b>Ingresos Hogar &lt; 7.500 € / año</b></td>
+                  <td><b>14,50%</b></td>
+                  <td>8,20%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+76% mayor</span></td>
+                </tr>
+                <tr>
+                  <td><b>Ingresos Hogar &lt; 5.000 € / año</b></td>
+                  <td><b>6,80%</b></td>
+                  <td>3,80%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+78% mayor</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANEL 3: ENVEJECIMIENTO, SOLEDAD Y FEMINIZACIÓN DE LA VEJEZ
+           ==================================================================== -->
+      <div id="panelEnvejecimiento" class="dash-panel">
+        
+        <!-- Conclusión Clave Banner -->
+        <div class="dash-analysis-note" style="margin-bottom: 24px; padding: 18px 22px; border-left: 5px solid #8b113e; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-left: 5px solid #8b113e; border-radius: var(--radius-md);">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <i class="fa fa-info-circle" style="color: #8b113e; font-size: 1.4rem; margin-top: 2px;"></i>
+            <div>
+              <strong style="display: block; font-size: 1.05rem; color: #8b113e; margin-bottom: 4px;">Conclusión clave:</strong>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
+                Aunque el sistema público de pensiones actúa como un escudo protector que mantiene la tasa global de pobreza de los mayores de 65 años en el <strong>10,9%</strong> (notablemente inferior a la media de León del 18,4%), la exclusión en la vejez tiene un <strong>marcado rostro femenino y de aislamiento</strong>: el <strong>61,2% de los mayores pobres</strong> y casi dos tercios (<strong>64,4%</strong>) de los que sufren <strong>pobreza severa son mujeres</strong> (con una tasa de pobreza del <strong>12,8% en mujeres frente al 8,1% en hombres</strong>, un <strong>+58% superior</strong>). En una ciudad donde el <strong>28,4% de la población tiene 65 o más años</strong> y casi el <strong>39% de los hogares son unipersonales</strong>, el cruce entre <strong>pensiones mínimas/viudedad y soledad no deseada</strong> constituye el reto asistencial prioritario.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-charts-grid-2">
+          
+          <!-- Gráfico 1: Brecha de Género en Mayores -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-venus-mars" style="color: #8b113e;"></i> Brecha de Género en Pobreza de Mayores (&ge;65)</h3>
+              <span class="source-badge">Feminización de la Vejez</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartMayoresGenero"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Feminización de la Vulnerabilidad:</strong> Las mujeres mayores de 65 años presentan una tasa de pobreza relativa del <strong>12,80% frente al 8,10% en hombres</strong> (+58% de brecha) y acaparan el <strong>64,4% de los casos de pobreza severa</strong> por la persistencia de lagunas de cotización y pensiones de viudedad.
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Estructura Demográfica y Soledad -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-pie-chart" style="color: #0c6a63;"></i> Estructura Etaria y Envejecimiento Demográfico</h3>
+              <span class="source-badge">Censo 2025 (INE)</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartDemografia"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Impacto en Cuidados y Soledad:</strong> Con 35.242 personas mayores (<strong>28,4%</strong> del municipio) y 23.225 hogares unipersonales (<strong>38,8%</strong>), la correlación entre edad avanzada, viudedad femenina y soledad residencial exige una red integral de apoyo comunitario y teleasistencia.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tabla Matriz de Feminización y Polarización en Mayores -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <h3><i class="fa fa-table" style="color: #8b113e;"></i> Matriz de Feminización de la Pobreza y Polarización de Rentas en Mayores (&ge;65 años)</h3>
+            <span class="source-badge">Población &ge;65 años (INE / SS.SS León)</span>
+          </div>
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Indicador de Renta y Umbrales</th>
+                  <th>Mujeres &ge;65 años</th>
+                  <th>Hombres &ge;65 años</th>
+                  <th>Brecha Femenina</th>
+                  <th>Distribución de Género en el Colectivo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Riesgo Pobreza Relativa (&lt;60% Mediana)</b></td>
+                  <td><b style="color: #8b113e;">12,80%</b></td>
+                  <td>8,10%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+58,0% mayor</span></td>
+                  <td><b>61,2% Mujeres</b> / 38,8% Hombres</td>
+                </tr>
+                <tr>
+                  <td><b>Pobreza Moderada (&lt;50% Mediana)</b></td>
+                  <td><b>6,20%</b></td>
+                  <td>4,30%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+44,2% mayor</span></td>
+                  <td><b>59,0% Mujeres</b> / 41,0% Hombres</td>
+                </tr>
+                <tr>
+                  <td><b>Pobreza Severa / Extrema (&lt;40% Mediana)</b></td>
+                  <td><b style="color: #e11d48;">3,80%</b></td>
+                  <td>2,10%</td>
+                  <td><span class="kpi-trend-pill trend-danger">+81,0% mayor</span></td>
+                  <td><b style="color: #e11d48;">64,4% Mujeres</b> *(Casi 2 de cada 3)*</td>
+                </tr>
+                <tr>
+                  <td><b>Renta por Hogar &lt; 10.000 € / año</b></td>
+                  <td><b>7,10%</b></td>
+                  <td>5,70%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+24,6% mayor</span></td>
+                  <td><b>55,5% Mujeres</b> / 44,5% Hombres</td>
+                </tr>
+                <tr>
+                  <td><b>Renta por Hogar &lt; 5.000 € / año (Extrema)</b></td>
+                  <td><b>1,40%</b></td>
+                  <td>1,00%</td>
+                  <td><span class="kpi-trend-pill trend-warning">+40,0% mayor</span></td>
+                  <td><b>58,3% Mujeres</b> / 41,7% Hombres</td>
+                </tr>
+                <tr>
+                  <td><b>Ingresos Altos (&gt; 140% Mediana)</b></td>
+                  <td>34,20%</td>
+                  <td><b>41,80%</b></td>
+                  <td><span class="kpi-trend-pill trend-success">+22,2% hombres</span></td>
+                  <td>55,0% Hombres / 45,0% Mujeres</td>
+                </tr>
+                <tr>
+                  <td><b>Ingresos Muy Altos (&gt; 200% Mediana)</b></td>
+                  <td>12,20%</td>
+                  <td><b>16,40%</b></td>
+                  <td><span class="kpi-trend-pill trend-success">+34,4% hombres</span></td>
+                  <td>57,3% Hombres / 42,7% Mujeres</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANEL 4: BRECHA MIGRANTE Y EXCLUSIÓN ESTRUCTURAL
+           ==================================================================== -->
+      <div id="panelMigrante" class="dash-panel">
+        
+        <div class="dash-charts-grid-2">
+          
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-exchange" style="color: #e11d48;"></i> Brecha de Vulnerabilidad: Extranjeros vs Españoles</h3>
+              <span class="source-badge">INE / Renta</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartBrechaMigrante"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Fractura Estructural:</strong> El 63,9% de la población extranjera se sitúa bajo el umbral de pobreza relativa (frente al 15,0% de la española). El 42,0% sufre pobreza severa y el 18,1% subsiste con menos de 5.000 € anuales por unidad de consumo.
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-table" style="color: #e11d48;"></i> Desglose Detallado de la Brecha de Origen</h3>
+              <span class="source-badge">Población 10.424 hab.</span>
+            </div>
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Indicador de Renta</th>
+                    <th>Española</th>
+                    <th>Extranjera</th>
+                    <th>Factor de Riesgo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Bajo 60% Mediana (Pobreza)</b></td>
+                    <td>15,00%</td>
+                    <td><b style="color: #e11d48;">63,90%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">4,2x mayor</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Bajo 50% Mediana</b></td>
+                    <td>11,20%</td>
+                    <td><b>54,40%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">4,8x mayor</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Bajo 40% Mediana (Severa)</b></td>
+                    <td>7,90%</td>
+                    <td><b>42,00%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">5,3x mayor</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Ingresos &lt; 5.000 € / año</b></td>
+                    <td>2,70%</td>
+                    <td><b>18,10%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">6,7x mayor</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Ingresos &lt; 7.500 € / año</b></td>
+                    <td>6,30%</td>
+                    <td><b>32,50%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">5,1x mayor</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Ingresos &lt; 10.000 € / año</b></td>
+                    <td>11,20%</td>
+                    <td><b>48,40%</b></td>
+                    <td><span class="kpi-trend-pill trend-warning">4,3x mayor</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANEL 5: DESIGUALDAD, FUENTES DE INGRESOS Y EMPLEO
+           ==================================================================== -->
+      <div id="panelDesigualdad" class="dash-panel">
+        
+        <div class="dash-charts-grid-2">
+          
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-pie-chart" style="color: #1e40af;"></i> Fuentes de Ingreso de los Hogares</h3>
+              <span class="source-badge">Distribución %</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartFuentesIngresos"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Estructura de Rentas:</strong> El 53,5% de los ingresos procede de salarios y un 29,2% de pensiones. Las prestaciones por desempleo representan el 1,2% y otras prestaciones de asistencia social el 4,3%.
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa fa-building-o" style="color: #0c6a63;"></i> Ocupación por Sector Económico</h3>
+              <span class="source-badge">47.350 Ocupados</span>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="chartSectores"></canvas>
+            </div>
+            <div class="dash-analysis-note">
+              <strong>Hiperterciarización:</strong> El sector servicios absorbe el 86,5% del empleo (40.946 trabajadores). Los técnicos y directivos medios/altos representan el 40,5%, mientras el 46,7% se concentra en operarios y empleados de nivel bajo.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           PANEL 6: DISTRIBUCIÓN TERRITORIAL (ZONAS DE ACCIÓN SOCIAL)
+           ==================================================================== -->
+      <div id="panelTerritorial" class="dash-panel">
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3><i class="fa fa-map-marker" style="color: #0c6a63;"></i> Desglose Territorial por las 7 Zonas de Acción Social (ZAS) de León</h3>
+            <span class="source-badge">7 ZAS Municipales</span>
+          </div>
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Estratificación Territorial ZAS</th>
+                  <th>Población Residente</th>
+                  <th>Población Ocupada</th>
+                  <th>Hogares Unipersonales</th>
+                  <th>Índice Gini Local</th>
+                  <th>Diagnóstico Sociocomunitario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Zonas de Mayor Volumen (3 ZAS)</b></td>
+                  <td>21.731 ~ 28.074 hab.</td>
+                  <td>7.390 ~ 11.022 ocupados</td>
+                  <td>39,5% ~ 42,0%</td>
+                  <td>30,60% ~ 32,70%</td>
+                  <td>Áreas centrales y de alta densidad con mayor polarización de rentas y soledad no deseada.</td>
+                </tr>
+                <tr>
+                  <td><b>Zonas de Volumen Intermedio (2 ZAS)</b></td>
+                  <td>11.477 ~ 18.620 hab.</td>
+                  <td>5.140 ~ 7.390 ocupados</td>
+                  <td>36,9% ~ 39,5%</td>
+                  <td>28,90% ~ 30,60%</td>
+                  <td>Distritos consolidados con perfil sociodemográfico mixto y niveles medios de renta.</td>
+                </tr>
+                <tr>
+                  <td><b>Zonas Periféricas / Menor Volumen (2 ZAS)</b></td>
+                  <td>8.312 ~ 11.477 hab.</td>
+                  <td>2.796 ~ 5.140 ocupados</td>
+                  <td>36,5% ~ 36,9%</td>
+                  <td>28,10% ~ 28,90%</td>
+                  <td>Mayor homogeneidad de rentas pero menor dinamismo ocupacional y necesidad de transporte social.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dash-analysis-note" style="margin-top: 24px;">
+            <strong>Análisis Espacial:</strong> La intervención desde los Centros de Acción Social (CEAS) del Ayuntamiento de León debe modularse territorialmente: las ZAS centrales requieren programas intensivos de soledad y pobreza infantil oculta, mientras las áreas periféricas precisan inserción sociolaboral y cohesión comunitaria.
+          </div>
+        </div>
       </div>
 
     </div>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Pie de página Institucional -->
   <footer class="modern-footer">
-    <div class="footer-bottom-bar">
-      <div>&copy; 2026 Observatorio Municipal para la Inclusión Social de León · Ayuntamiento &amp; ULE</div>
-      <div><a href="index.html" style="color: #5eead4;">Volver a la Portada Principal</a></div>
+    <div class="footer-bottom-bar" style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>&copy; 2026 Observatorio Municipal para la Inclusión Social de León (ObservaLE) · Ayuntamiento de León &amp; Universidad de León</div>
+      <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" style="color: #2dd4bf; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa fa-line-chart"></i> ObservaLE en Cifras <i class="fa fa-external-link" style="font-size: 0.75rem;"></i>
+        </a>
+        <a href="Informes estadisticos/informeLeon.pdf" target="_blank" style="color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa fa-file-pdf-o"></i> Documento PDF
+        </a>
+        <a href="index.html" style="color: #ffffff; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa fa-arrow-left"></i> Volver a Portada
+        </a>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/js/estadisticas.js"></script>
+  <script src="assets/js/dashboard-charts.js"></script>
 </body>
 </html>

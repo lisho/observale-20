@@ -173,21 +173,23 @@ function initScrollProgressBar() {
 }
 
 /* ==========================================================================
-   2. ANIMACIÓN REVEAL ON SCROLL
+   2. ANIMACIÓN REVEAL ON SCROLL REVERSIBLE Y DINÁMICA
    ========================================================================== */
 function initRevealOnScroll() {
   const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger-children');
   if (!revealElements.length) return;
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('reveal-visible');
-        obs.unobserve(entry.target);
+      } else {
+        // Al salir de pantalla, revierte el estado para re-ejecutar en el próximo scroll
+        entry.target.classList.remove('reveal-visible');
       }
     });
   }, {
-    threshold: 0.1,
+    threshold: 0.12,
     rootMargin: '0px 0px -30px 0px'
   });
 
@@ -290,20 +292,56 @@ function initTabs() {
 }
 
 /* ==========================================================================
-   6. REPOSITORIO DE DOCUMENTOS: FILTROS Y BÚSQUEDA EN TIEMPO REAL
+   6. REPOSITORIO DE DOCUMENTOS: ANIMACIÓN DE MAZO Y FILTROS EN TIEMPO REAL
    ========================================================================== */
 function initDocumentExplorer() {
+  const grid = document.querySelector('.docs-innovative-grid');
   const filterBtns = document.querySelectorAll('.doc-pill-btn');
   const searchInput = document.getElementById('docSearchInput');
   const docCards = document.querySelectorAll('.doc-modern-card');
 
   if (!docCards.length) return;
 
+  function dealVisibleCards() {
+    let visibleIndex = 0;
+    docCards.forEach(card => {
+      if (card.style.display !== 'none') {
+        card.classList.remove('deck-card-dealt');
+        card.style.transitionDelay = `${(visibleIndex * 0.08).toFixed(2)}s`;
+        void card.offsetWidth;
+        card.classList.add('deck-card-dealt');
+        visibleIndex++;
+      }
+    });
+  }
+
+  // Observer reversible para activar y recoger el mazo en scroll
+  if (grid) {
+    const deckObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dealVisibleCards();
+        } else {
+          // Al salir de la vista, las cartas vuelven al mazo apilado
+          docCards.forEach(card => {
+            card.classList.remove('deck-card-dealt');
+          });
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    deckObserver.observe(grid);
+  }
+
   function filterDocuments() {
     const activeBtn = document.querySelector('.doc-pill-btn.active');
     const selectedCategory = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
     const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
 
+    let visibleIndex = 0;
     docCards.forEach(card => {
       const category = card.getAttribute('data-category');
       const text = card.textContent.toLowerCase();
@@ -313,8 +351,14 @@ function initDocumentExplorer() {
 
       if (matchesCategory && matchesSearch) {
         card.style.display = 'flex';
+        card.classList.remove('deck-card-dealt');
+        card.style.transitionDelay = `${(visibleIndex * 0.08).toFixed(2)}s`;
+        void card.offsetWidth;
+        card.classList.add('deck-card-dealt');
+        visibleIndex++;
       } else {
         card.style.display = 'none';
+        card.classList.remove('deck-card-dealt');
       }
     });
   }
