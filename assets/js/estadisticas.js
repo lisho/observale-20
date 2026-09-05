@@ -267,6 +267,33 @@ function initNavbar() {
       });
     });
   }
+
+  // Smooth scroll unificado para navegación y logo
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#top' || href === '#home' || href === '#') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        history.pushState(null, null, ' ');
+      } else if (href && href.length > 1) {
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          const headerHeight = document.querySelector('.modern-navbar')?.offsetHeight || 75;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - headerHeight + 5,
+            behavior: 'smooth'
+          });
+          history.pushState(null, null, href);
+        }
+      }
+    });
+  });
 }
 
 /* ==========================================================================
