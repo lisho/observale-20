@@ -1149,6 +1149,54 @@ a:hover, a:focus-visible {
   margin-left: 14px;
 }
 
+/* Botones de acción en tarjetas de proyectos */
+.btn-project-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-main) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+.btn-project-action .btn-project-action-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.btn-project-action i {
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-project-action:hover {
+  background: var(--brand-teal);
+  color: #ffffff !important;
+  border-color: var(--brand-teal);
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-project-action:hover i.fa-arrow-right,
+.btn-project-action:hover i.fa-external-link {
+  transform: translateX(3px);
+}
+
+.btn-project-action.cifras-variant:hover {
+  background: var(--brand-carmine);
+  border-color: var(--brand-carmine);
+  box-shadow: 0 4px 14px rgba(139, 17, 62, 0.25);
+}
+
 /* ==========================================================================
    SECCIÓN GENERAL & CONTENEDORES
    ========================================================================== */
