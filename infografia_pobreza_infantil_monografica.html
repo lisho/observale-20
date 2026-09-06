@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monográfico: Pobreza, Privación y Exclusión Infantil en León 2023 | ObservaLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #dc2626;
+      --primary-dark: #991b1b;
+      --primary-light: #ef4444;
+      --secondary: #0f172a;
+      --amber: #d97706;
+      --purple: #7c3aed;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    .top-actions {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn-print {
+      background: var(--secondary);
+      color: white;
+      border: none;
+    }
+
+    .btn-print:hover {
+      background: #334155;
+      color: white;
+    }
+
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .poster-header {
+      background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 50%, #991b1b 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .poster-title-area {
+      max-width: 880px;
+    }
+
+    .badge-serie {
+      display: inline-block;
+      color: #fca5a5;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+    }
+
+    .poster-body {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+    }
+
+    /* Definición de Indicadores Conceptuales Infantiles */
+    .glossary-card {
+      grid-column: span 12;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .glossary-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .glossary-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .glossary-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(220, 38, 38, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .glossary-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .glossary-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .glossary-desc strong {
+      color: var(--primary-dark);
+    }
+
+    /* KPIs */
+    .kpi-row {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .kpi-card {
+      background: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+    }
+
+    .kpi-card.red::before {
+      background: #dc2626;
+    }
+
+    .kpi-card.darkred::before {
+      background: #7f1d1d;
+    }
+
+    .kpi-card.amber::before {
+      background: #d97706;
+    }
+
+    .kpi-card.purple::before {
+      background: #7c3aed;
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .kpi-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(220, 38, 38, 0.12);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .kpi-card.amber .kpi-icon {
+      background: rgba(217, 119, 6, 0.12);
+      color: #d97706;
+    }
+
+    .kpi-card.purple .kpi-icon {
+      background: rgba(124, 58, 237, 0.12);
+      color: #7c3aed;
+    }
+
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    /* Section Cards */
+    .card-section {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .col-7 {
+      grid-column: span 7;
+    }
+
+    .col-5 {
+      grid-column: span 5;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(220, 38, 38, 0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Tramos de Pobreza Infantil Tri-Bar */
+    .tribar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .tribar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .tribar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .tribar-tracks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .t-track-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .t-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .t-bar-row {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .t-bar-track {
+      background: #f1f5f9;
+      height: 14px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .t-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .fill-rel {
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+    }
+
+    .fill-sev {
+      background: linear-gradient(90deg, #d97706, #b45309);
+    }
+
+    .fill-ext {
+      background: linear-gradient(90deg, #7c3aed, #6d28d9);
+    }
+
+    .t-num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    /* Fixed income list */
+    .fixed-poverty-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .fp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr 1fr 65px;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.86rem;
+    }
+
+    .fp-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .fp-track {
+      background: #f1f5f9;
+      height: 16px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .fp-fill-10k {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+      border-radius: 4px;
+    }
+
+    .fp-fill-5k {
+      height: 100%;
+      background: linear-gradient(90deg, #ef4444, #b91c1c);
+      border-radius: 4px;
+    }
+
+    /* Monographic Table */
+    .mono-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      margin-top: 10px;
+    }
+
+    .mono-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      padding: 10px 12px;
+      text-align: right;
+      border-bottom: 2px solid var(--border-color);
+      letter-spacing: 0.5px;
+    }
+
+    .mono-table th:first-child {
+      text-align: left;
+    }
+
+    .mono-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: right;
+    }
+
+    .mono-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .mono-table tr.highlight-total {
+      background: #fff1f2;
+      font-weight: 800;
+      border-top: 2px solid #fecdd3;
+      border-bottom: 2px solid #fecdd3;
+    }
+
+    .mono-table tr.highlight-total td {
+      color: var(--primary-dark);
+    }
+
+    /* Gender breakdown */
+    .child-gender-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cg-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .cg-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cg-bar-wrap {
+      display: flex;
+      height: 22px;
+      border-radius: 5px;
+      overflow: hidden;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 22px;
+    }
+
+    .cg-female {
+      background: #db2777;
+    }
+
+    .cg-male {
+      background: #2563eb;
+    }
+
+    /* Takeaways */
+    .takeaways-card {
+      grid-column: span 12;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-left: 6px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .takeaways-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .takeaways-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .takeaways-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .takeaway-item {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #7f1d1d;
+    }
+
+    .takeaway-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .top-actions {
+        display: none;
+      }
+
+      .infographic-poster {
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    @media (max-width: 992px) {
+
+      .col-7,
+      .col-5,
+      .col-6 {
+        grid-column: span 12;
+      }
+
+      .kpi-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .takeaways-list {
+        grid-template-columns: 1fr;
+      }
+
+      .glossary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tribar-tracks {
+        grid-template-columns: 1fr;
+      }
+
+      .fp-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-actions">
+    <div class="nav-tabs">
+      <a href="infografia_1_demografia.html" class="btn-action">
+        <i class="fa-solid fa-users"></i> 1. Demografía
+      </a>
+      <a href="infografia_2_renta_empleo.html" class="btn-action">
+        <i class="fa-solid fa-wallet"></i> 2. Renta y Empleo
+      </a>
+      <a href="infografia_3_pobreza_infancia.html" class="btn-action">
+        <i class="fa-solid fa-scale-balanced"></i> 3. Pobreza (Comparativa)
+      </a>
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="btn-action">
+        <i class="fa-solid fa-venus-mars"></i> 4. Género y Origen
+      </a>
+      <a href="infografia_5_mayores_soledad.html" class="btn-action">
+        <i class="fa-solid fa-person-cane"></i> 5. Monográfico Mayores
+      </a>
+      <a href="infografia_pobreza_infantil_monografica.html" class="btn-action active">
+        <i class="fa-solid fa-child-reaching"></i> 6. Monográfico Infancia
+      </a>
+      <a href="infografia_7_panel_zas.html" class="btn-action">
+        <i class="fa-solid fa-table-columns"></i> 7. Panel ZAS
+      </a>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <a href="estadisticas.html" class="btn-action">
+        <i class="fa-solid fa-arrow-left"></i> Estadísticas
+      </a>
+      <button onclick="window.print()" class="btn-action btn-print">
+        <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="infographic-poster" id="infografia-6">
+
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-shield-heart" style="margin-right: 6px;"></i> ObservaLE • Serie Infográfica nº 6
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">Diagnóstico Monográfico de Exclusión 2023</span>
+        <h1 class="poster-title">Pobreza, Privación y Exclusión Infantil en León</h1>
+        <p class="poster-subtitle">
+          Informe monográfico centrado 100% en la población menor de 18 años: umbrales de severidad (<60%, <50%, <40%),
+            subsistencia en euros y análisis territorial por ZAS. </p>
+      </div>
+    </header>
+
+    <div class="poster-body">
+
+      <!-- Marco Metodológico 100% Infantil -->
+      <section class="glossary-card">
+        <div class="section-title-wrap" style="margin-bottom: 6px;">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #991b1b;"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div>
+              <h2 class="section-title">Marco Metodológico: Indicadores de Pobreza en Menores (&lt;18 años)</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Criterios estadísticos oficiales del INE (Distribución de Renta de los Hogares) aplicados estrictamente
+                a la infancia y adolescencia
+              </p>
+            </div>
+          </div>
+          <span class="section-tag" style="background: #fef2f2; color: #991b1b;">100% Menores de 18 Años</span>
+        </div>
+
+        <div class="glossary-grid">
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-child"></i></div>
+              <h3 class="glossary-title">Pobreza Infantil Relativa (&lt;60%)</h3>
+            </div>
+            <p class="glossary-desc">
+              Porcentaje de <strong>menores de 18 años</strong> que crecen en hogares cuyos ingresos por unidad de
+              consumo están por debajo del <strong>60% de la mediana</strong> de la población. Marca el riesgo oficial
+              de exclusión.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <h3 class="glossary-title">Pobreza Infantil Severa (&lt;50%)</h3>
+            </div>
+            <p class="glossary-desc">
+              Proporción de menores cuyos hogares subsisten con ingresos por debajo de la <strong>mitad exacta de la
+                mediana</strong>. Define situaciones donde el presupuesto no cubre necesidades esenciales continuadas.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-radiation"></i></div>
+              <h3 class="glossary-title">Pobreza Infantil Extrema (&lt;40%)</h3>
+            </div>
+            <p class="glossary-desc">
+              Menores en hogares con ingresos inferiores al <strong>40% de la mediana</strong>. Representa el núcleo más
+              grave de vulnerabilidad infantil y privación material aguda.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-euro-sign"></i></div>
+              <h3 class="glossary-title">Umbral Crítico (&lt;5.000 € / año)</h3>
+            </div>
+            <p class="glossary-desc">
+              Porcentaje de menores que viven con <strong>menos de 416 € mensuales por unidad de consumo</strong>. Mide
+              la privación absoluta directa en términos de alimentación, energía y vivienda.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-wallet"></i></div>
+              <h3 class="glossary-title">Umbral de Precariedad (&lt;10.000 €)</h3>
+            </div>
+            <p class="glossary-desc">
+              Menores cuyos hogares perciben <strong>menos de 10.000 € anuales por unidad de consumo</strong>. Refleja
+              dificultades severas para afrontar imprevistos escolares, sanitarios o de ocio.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-venus-mars"></i></div>
+              <h3 class="glossary-title">Desglose por Sexo del Menor</h3>
+            </div>
+            <p class="glossary-desc">
+              Distribución equitativa de la afectación entre <strong>niños y niñas</strong>, evaluando si existen sesgos
+              de vulnerabilidad específicos en los diferentes tramos de renta.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KPIs 100% Exclusivos de Menores -->
+      <section class="kpi-row">
+
+        <div class="kpi-card red">
+          <div class="kpi-header">
+            <span class="kpi-title">Pobreza Infantil Municipal</span>
+            <div class="kpi-icon"><i class="fa-solid fa-child-reaching"></i></div>
+          </div>
+          <div class="kpi-value">28,40%</div>
+          <div class="kpi-desc">
+            <strong>~4.900 menores</strong> bajo el 60% de la mediana en el municipio de León
+          </div>
+        </div>
+
+        <div class="kpi-card darkred">
+          <div class="kpi-header">
+            <span class="kpi-title">Pobreza Infantil en Armunia</span>
+            <div class="kpi-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">58,90%</div>
+          <div class="kpi-desc">
+            Casi <strong>6 de cada 10 menores</strong> de Armunia está en riesgo de pobreza
+          </div>
+        </div>
+
+        <div class="kpi-card amber">
+          <div class="kpi-header">
+            <span class="kpi-title">Pobreza Infantil Severa (&lt;50%)</span>
+            <div class="kpi-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">15,40%</div>
+          <div class="kpi-desc">
+            De menores en León bajo el 40% de la mediana (<strong>37,20% en Armunia</strong>)
+          </div>
+        </div>
+
+        <div class="kpi-card purple">
+          <div class="kpi-header">
+            <span class="kpi-title">Menores con &lt;5.000 € / año</span>
+            <div class="kpi-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          </div>
+          <div class="kpi-value">6,80%</div>
+          <div class="kpi-desc">
+            Media municipal • Se dispara al <strong>13,40% en Armunia</strong> y <strong>10,80% en El Crucero</strong>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sección 1 (col-12): Gradación de Pobreza Infantil por ZAS (<60%, <50%, <40%) -->
+      <section class="card-section col-12">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #dc2626;"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <h2 class="section-title">Gradación de la Pobreza Infantil por ZAS: Umbrales &lt;60%, &lt;50% y &lt;40%
+              </h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Porcentaje de menores de 18 años según niveles crecientes de severidad económica (INE 2023)
+              </p>
+            </div>
+          </div>
+          <span class="section-tag">Menores de 18 años</span>
+        </div>
+
+        <div class="tribar-list">
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span style="color: #991b1b;">1. Armunia (Alerta Roja Absoluta)</span>
+              <span style="font-size: 0.8rem; color: #991b1b;">Pobreza: 58,9% | Severa: 49,8% | Extrema: 37,2%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana (Riesgo Pobreza)</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 58.9%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">58,90%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana (Severa)</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 49.8%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">49,80%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana (Extrema)</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 37.2%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">37,20%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span style="color: #991b1b;">2. El Crucero - La Vega</span>
+              <span style="font-size: 0.8rem; color: #991b1b;">Pobreza: 44,7% | Severa: 34,0% | Extrema: 23,3%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 44.7%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">44,70%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 34.0%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">34,00%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 23.3%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">23,30%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span>3. Mariano Andrés (Mayor volumen de menores)</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Pobreza: 29,4% | Severa: 22,5% | Extrema:
+                15,9%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 29.4%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">29,40%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 22.5%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">22,50%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 15.9%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">15,90%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Municipio León -->
+          <div class="tribar-item"
+            style="background: #fff1f2; padding: 8px 10px; border-radius: 8px; border: 1px solid #fecdd3;">
+            <div class="tribar-header">
+              <span style="font-weight: 800; color: #991b1b;">TOTAL MUNICIPIO LEÓN (Media de Menores)</span>
+              <span style="font-weight: 800; color: #991b1b; font-size: 0.8rem;">Pobreza: 28,4% | Severa: 22,0% |
+                Extrema: 15,4%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag" style="color: #991b1b; font-weight: 700;">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill" style="width: 28.4%; background: #b91c1c;"></div>
+                  </div>
+                  <span class="t-num" style="color: #991b1b;">28,40%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag" style="color: #991b1b; font-weight: 700;">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill" style="width: 22.0%; background: #d97706;"></div>
+                  </div>
+                  <span class="t-num" style="color: #991b1b;">22,00%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag" style="color: #991b1b; font-weight: 700;">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill" style="width: 15.4%; background: #7c3aed;"></div>
+                  </div>
+                  <span class="t-num" style="color: #991b1b;">15,40%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span>4. El Egido - Santa Ana</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Pobreza: 26,8% | Severa: 20,2% | Extrema:
+                12,3%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 26.8%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">26,80%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 20.2%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">20,20%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 12.3%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">12,30%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span>5. Puente Castro</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Pobreza: 24,4% | Severa: 18,6% | Extrema:
+                12,6%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 24.4%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">24,40%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 18.6%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">18,60%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 12.6%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">12,60%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span>6. San Mamés - San Pedro</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Pobreza: 23,4% | Severa: 17,0% | Extrema:
+                11,2%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 23.4%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">23,40%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 17.0%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">17,00%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 11.2%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">11,20%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tribar-item">
+            <div class="tribar-header">
+              <span style="color: #0369a1;">7. Centro</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Pobreza: 17,4% | Severa: 13,1% | Extrema:
+                8,0%</span>
+            </div>
+            <div class="tribar-tracks">
+              <div class="t-track-col">
+                <span class="t-tag">&lt;60% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-rel" style="width: 17.4%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #dc2626;">17,40%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;50% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-sev" style="width: 13.1%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #d97706;">13,10%</span>
+                </div>
+              </div>
+              <div class="t-track-col">
+                <span class="t-tag">&lt;40% Mediana</span>
+                <div class="t-bar-row">
+                  <div class="t-bar-track">
+                    <div class="t-bar-fill fill-ext" style="width: 8.0%;"></div>
+                  </div>
+                  <span class="t-num" style="color: #7c3aed;">8,00%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Sección 2 (col-7): Umbrales Fijos de Subsistencia en Menores (<5.000 € y <10.000 €) -->
+      <section class="card-section col-7">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #b45309;"><i class="fa-solid fa-coins"></i></div>
+            <h2 class="section-title">Umbrales Fijos en Menores (&lt;10.000 € y &lt;5.000 €)</h2>
+          </div>
+          <span class="section-tag">Subsistencia en Euros</span>
+        </div>
+
+        <div class="fixed-poverty-list">
+
+          <div class="fp-item">
+            <span class="fp-label" style="color: #991b1b; font-weight: 700;">1. Armunia</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 52,0%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 52.0%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 13,4%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 13.4%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 800; color: #991b1b; text-align: right;">52,0%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label" style="color: #991b1b; font-weight: 700;">2. El Crucero - La Vega</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 36,1%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 36.1%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 10,8%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 10.8%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 800; color: #991b1b; text-align: right;">36,1%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label">3. Mariano Andrés</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 23,9%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 23.9%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 6,8%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 6.8%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">23,9%</span>
+          </div>
+
+          <div class="fp-item" style="background: #fff1f2; padding: 4px 6px; border-radius: 6px;">
+            <span class="fp-label" style="font-weight: 800; color: #991b1b;">MEDIA LEÓN</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #991b1b; font-weight: 700;">&lt;10.000 €: 23,8%</span>
+              <div class="fp-track" style="background: #fed7aa;">
+                <div class="fp-fill-10k" style="width: 23.8%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #991b1b; font-weight: 700;">&lt;5.000 €: 6,8%</span>
+              <div class="fp-track" style="background: #fecaca;">
+                <div class="fp-fill-5k" style="width: 6.8%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 800; color: #991b1b; text-align: right;">23,8%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label">4. El Egido - Santa Ana</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 21,8%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 21.8%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 5,9%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 5.9%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">21,8%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label">5. Puente Castro</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 19,9%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 19.9%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 5,1%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 5.1%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">19,9%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label">6. San Mamés - S. Pedro</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 18,2%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 18.2%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 6,3%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 6.3%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">18,2%</span>
+          </div>
+
+          <div class="fp-item">
+            <span class="fp-label">7. Centro</span>
+            <div>
+              <span style="font-size: 0.72rem; color: #b45309; font-weight: 600;">&lt;10.000 €: 13,7%</span>
+              <div class="fp-track">
+                <div class="fp-fill-10k" style="width: 13.7%;"></div>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">&lt;5.000 €: 4,2%</span>
+              <div class="fp-track">
+                <div class="fp-fill-5k" style="width: 4.2%;"></div>
+              </div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">13,7%</span>
+          </div>
+
+        </div>
+
+        <div
+          style="margin-top: 14px; padding: 10px 14px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; font-size: 0.78rem; color: #92400e;">
+          <strong><i class="fa-solid fa-triangle-exclamation"></i> Umbrales Críticos:</strong> En <strong>Armunia más de
+            la mitad (52,0%)</strong> de los niños vive con ingresos familiares inferiores a 10.000 € por unidad de
+          consumo, y 1 de cada 7 con menos de 5.000 €.
+        </div>
+      </section>
+
+      <!-- Sección 3 (col-5): Distribución por Sexo del Menor (Niños vs Niñas) -->
+      <section class="card-section col-5">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #db2777;"><i class="fa-solid fa-venus-mars"></i></div>
+            <h2 class="section-title">Pobreza Infantil por Sexo</h2>
+          </div>
+          <span class="section-tag">Niños vs Niñas</span>
+        </div>
+
+        <div class="child-gender-grid">
+
+          <div class="cg-card">
+            <div class="cg-title">
+              <span>Bajo el 60% de la Mediana</span>
+              <span style="color: #dc2626;">19,0% Niñas vs 17,6% Niños</span>
+            </div>
+            <div class="cg-bar-wrap">
+              <div class="cg-female" style="width: 51.9%;">Niñas: 51,9%</div>
+              <div class="cg-male" style="width: 48.1%;">Niños: 48,1%</div>
+            </div>
+          </div>
+
+          <div class="cg-card">
+            <div class="cg-title">
+              <span>Bajo el 50% de la Mediana (Severa)</span>
+              <span style="color: #d97706;">13,1% Niñas vs 12,7% Niños</span>
+            </div>
+            <div class="cg-bar-wrap">
+              <div class="cg-female" style="width: 50.8%; background: #e11d48;">Niñas: 50,8%</div>
+              <div class="cg-male" style="width: 49.2%; background: #3b82f6;">Niños: 49,2%</div>
+            </div>
+          </div>
+
+          <div class="cg-card">
+            <div class="cg-title">
+              <span>Bajo el 40% de la Mediana (Extrema)</span>
+              <span style="color: #7c3aed;">8,7% Niñas vs 8,4% Niños</span>
+            </div>
+            <div class="cg-bar-wrap">
+              <div class="cg-female" style="width: 50.9%; background: #9333ea;">Niñas: 50,9%</div>
+              <div class="cg-male" style="width: 49.1%; background: #4f46e5;">Niños: 49,1%</div>
+            </div>
+          </div>
+
+          <div class="cg-card">
+            <div class="cg-title">
+              <span>Bajo 10.000 € / Unidad de Consumo</span>
+              <span style="color: var(--text-main);">23,8% Niñas vs 23,7% Niños</span>
+            </div>
+            <div class="cg-bar-wrap">
+              <div class="cg-female" style="width: 50.1%; background: #be185d;">Niñas: 50,1%</div>
+              <div class="cg-male" style="width: 49.9%; background: #1d4ed8;">Niños: 49,9%</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top: 14px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4;">
+          <i class="fa-solid fa-circle-info" style="color: #db2777;"></i> La pobreza infantil en León afecta con una
+          ligera mayor incidencia a las niñas en los tramos de severidad, asociada frecuentemente a hogares
+          monomarentales.
+        </p>
+      </section>
+
+      <!-- Sección 4 (col-12): Tabla Monográfica Integral de la Infancia por ZAS -->
+      <section class="card-section col-12">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #1e293b;"><i class="fa-solid fa-table-list"></i></div>
+            <h2 class="section-title">Matriz Monográfica de Vulnerabilidad Infantil por ZAS (León 2023)</h2>
+          </div>
+          <span class="section-tag" style="background: #e2e8f0; color: #1e293b;">100% Datos Exclusivos de Menores</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="mono-table">
+            <thead>
+              <tr>
+                <th>Zona de Acción Social (ZAS)</th>
+                <th>Menores &lt;18 a. (Est.)</th>
+                <th>Pobreza Relativa (&lt;60%)</th>
+                <th>Pobreza Severa (&lt;50%)</th>
+                <th>Pobreza Extrema (&lt;40%)</th>
+                <th>Ingresos &lt;10.000 €</th>
+                <th>Ingresos &lt;5.000 €</th>
+                <th>Menores en Riesgo (Volumen)</th>
+                <th>Nivel de Prioridad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Armunia</td>
+                <td>~1.400</td>
+                <td style="font-weight: 800; color: #b91c1c;">58,90%</td>
+                <td style="font-weight: 700; color: #b91c1c;">49,80%</td>
+                <td style="font-weight: 700; color: #7c3aed;">37,20%</td>
+                <td style="font-weight: 700; color: #b45309;">52,00%</td>
+                <td style="font-weight: 800; color: #b91c1c;">13,40%</td>
+                <td style="font-weight: 700;">~825 menores</td>
+                <td><span
+                    style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">URGENCIA
+                    MÁXIMA</span></td>
+              </tr>
+              <tr>
+                <td>El Crucero - La Vega</td>
+                <td>~1.650</td>
+                <td style="font-weight: 800; color: #b91c1c;">44,70%</td>
+                <td style="font-weight: 700; color: #b91c1c;">34,00%</td>
+                <td style="font-weight: 700; color: #7c3aed;">23,30%</td>
+                <td style="font-weight: 700; color: #b45309;">36,10%</td>
+                <td style="font-weight: 800; color: #b91c1c;">10,80%</td>
+                <td style="font-weight: 700;">~737 menores</td>
+                <td><span
+                    style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">MUY
+                    ALTA</span></td>
+              </tr>
+              <tr>
+                <td>Mariano Andrés</td>
+                <td>~4.150</td>
+                <td style="font-weight: 700; color: #b91c1c;">29,40%</td>
+                <td>22,50%</td>
+                <td>15,90%</td>
+                <td>23,90%</td>
+                <td>6,80%</td>
+                <td style="font-weight: 800; color: #b91c1c;">~1.220 menores</td>
+                <td><span
+                    style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">ALTA
+                    (MÁX. VOLUMEN)</span></td>
+              </tr>
+              <tr>
+                <td>El Egido - Santa Ana</td>
+                <td>~2.950</td>
+                <td>26,80%</td>
+                <td>20,20%</td>
+                <td>12,30%</td>
+                <td>21,80%</td>
+                <td>5,90%</td>
+                <td>~790 menores</td>
+                <td><span
+                    style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">MEDIA-ALTA</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Puente Castro</td>
+                <td>~3.200</td>
+                <td>24,40%</td>
+                <td>18,60%</td>
+                <td>12,60%</td>
+                <td>19,90%</td>
+                <td>5,10%</td>
+                <td>~780 menores</td>
+                <td><span
+                    style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">MEDIA</span>
+                </td>
+              </tr>
+              <tr>
+                <td>San Mamés - San Pedro</td>
+                <td>~2.500</td>
+                <td>23,40%</td>
+                <td>17,00%</td>
+                <td>11,20%</td>
+                <td>18,20%</td>
+                <td>6,30%</td>
+                <td>~585 menores</td>
+                <td><span
+                    style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">MEDIA</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Centro</td>
+                <td>~1.450</td>
+                <td style="color: #64748b;">17,40%</td>
+                <td style="color: #64748b;">13,10%</td>
+                <td style="color: #64748b;">8,00%</td>
+                <td style="color: #64748b;">13,70%</td>
+                <td style="color: #64748b;">4,20%</td>
+                <td>~252 menores</td>
+                <td><span
+                    style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">BAJA</span>
+                </td>
+              </tr>
+              <tr class="highlight-total">
+                <td>TOTAL MUNICIPIO LEÓN</td>
+                <td>~17.300</td>
+                <td>28,40%</td>
+                <td>22,00%</td>
+                <td>15,40%</td>
+                <td>23,80%</td>
+                <td>6,80%</td>
+                <td>~4.900 menores</td>
+                <td><span
+                    style="background: #dc2626; color: white; padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.72rem;">MARCO
+                    CIUDAD</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Conclusiones Monográficas -->
+      <aside class="takeaways-card">
+        <div class="takeaways-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="takeaways-content">
+          <h3>3 Conclusiones Clave del Monográfico de Infancia</h3>
+          <div class="takeaways-list">
+
+            <div class="takeaway-item">
+              <strong>1. Emergencia Crítica Concentrada en Armunia</strong>
+              El 58,9% de los menores vive en hogares con ingresos bajo el umbral de pobreza, el 49,8% en pobreza severa
+              y más de la mitad (52,0%) subsiste con menos de 10.000 € anuales por unidad de consumo.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>2. Máxima Concentración Absoluta en Mariano Andrés</strong>
+              Aunque la tasa porcentual es del 29,4%, al ser la ZAS más poblada de León, Mariano Andrés alberga al mayor
+              contingente absoluto de menores vulnerables (~1.220 niños y niñas).
+            </div>
+
+            <div class="takeaway-item">
+              <strong>3. Escala y Severidad de la Privación Material</strong>
+              En el conjunto de la capital, más de 1.100 menores (6,80%) viven en situación de privación extrema
+              (&lt;5.000 € anuales / unidad de consumo), exigiendo becas de comedor, apoyo habitacional y refuerzo
+              escolar continuo.
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database"></i>
+        <strong>Fuentes oficiales:</strong> INE, Distribución de Renta de los Hogares (Datos exclusivos de menores de 18
+        años por ZAS, 2023).
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León & Universidad de León
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

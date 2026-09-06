@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infografía 2: Brecha Territorial de Renta y Polarización Laboral | ObservaLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #38bdf8;
+      --secondary: #0f172a;
+      --crimson: #8b1834;
+      --accent: #10b981;
+      --accent-soft: #d1fae5;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    .top-actions {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-action {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .btn-print {
+      background: #0284c7;
+      color: white;
+      border: none;
+    }
+
+    .btn-print:hover {
+      background: #0369a1;
+      color: white;
+    }
+
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .poster-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .poster-title-area { max-width: 880px; }
+
+    .badge-serie {
+      display: inline-block;
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 400;
+    }
+
+    .poster-body {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+    }
+
+    .kpi-row {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .kpi-card {
+      background: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+    }
+
+    .kpi-card.emerald::before { background: #10b981; }
+    .kpi-card.crimson::before { background: #e11d48; }
+    .kpi-card.amber::before { background: #f59e0b; }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .kpi-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(2, 132, 199, 0.12);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .kpi-card.emerald .kpi-icon { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+    .kpi-card.crimson .kpi-icon { background: rgba(225, 29, 72, 0.12); color: #e11d48; }
+    .kpi-card.amber .kpi-icon { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .card-section {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(2, 132, 199, 0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Bars Ranking */
+    .income-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .income-item {
+      display: grid;
+      grid-template-columns: 180px 1fr 105px 85px;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.88rem;
+    }
+
+    .income-track {
+      background: #f1f5f9;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .income-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .fill-blue { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+    .fill-emerald { background: linear-gradient(90deg, #059669, #10b981); }
+    .fill-coral { background: linear-gradient(90deg, #e11d48, #f43f5e); }
+    .fill-navy { background: linear-gradient(90deg, #1e293b, #334155); }
+
+    .diff-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .diff-pos { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .diff-neg { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
+    .diff-base { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+    /* Stacked Income Sources */
+    .stacked-sources {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .source-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .source-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .source-bar {
+      display: flex;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 24px;
+    }
+
+    .seg-salary { background: #0284c7; }
+    .seg-pension { background: #8b5cf6; }
+    .seg-capital { background: #10b981; }
+    .seg-welfare { background: #f59e0b; }
+    .seg-unemp { background: #ef4444; }
+
+    .source-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.78rem;
+    }
+
+    .leg-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .leg-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    /* Polarized Qualification Grid */
+    .polarization-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .polar-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .polar-card.high { border-top: 4px solid #0284c7; }
+    .polar-card.low { border-top: 4px solid #f59e0b; }
+
+    .polar-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .polar-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .polar-metric:last-child { border: none; }
+
+    .takeaways-card {
+      grid-column: span 12;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-left: 6px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .takeaways-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .takeaways-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .takeaways-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .takeaway-item {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #0c4a6e;
+    }
+
+    .takeaway-item strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .top-actions { display: none; }
+      .infographic-poster { box-shadow: none; border: none; }
+    }
+
+    @media (max-width: 992px) {
+      .col-7, .col-5, .col-6 { grid-column: span 12; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .takeaways-list { grid-template-columns: 1fr; }
+      .polarization-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-actions">
+    <div class="nav-tabs">
+      <a href="infografia_1_demografia.html" class="btn-action">
+        <i class="fa-solid fa-users"></i> 1. Demografía
+      </a>
+      <a href="infografia_2_renta_empleo.html" class="btn-action active">
+        <i class="fa-solid fa-wallet"></i> 2. Renta y Empleo
+      </a>
+      <a href="infografia_3_pobreza_infancia.html" class="btn-action">
+        <i class="fa-solid fa-scale-balanced"></i> 3. Pobreza (Comparativa)
+      </a>
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="btn-action">
+        <i class="fa-solid fa-venus-mars"></i> 4. Género y Origen
+      </a>
+      <a href="infografia_5_mayores_soledad.html" class="btn-action">
+        <i class="fa-solid fa-person-cane"></i> 5. Monográfico Mayores
+      </a>
+      <a href="infografia_pobreza_infantil_monografica.html" class="btn-action">
+        <i class="fa-solid fa-child-reaching"></i> 6. Monográfico Infancia
+      </a>
+      <a href="infografia_7_panel_zas.html" class="btn-action">
+        <i class="fa-solid fa-table-columns"></i> 7. Panel ZAS
+      </a>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <a href="estadisticas.html" class="btn-action">
+        <i class="fa-solid fa-arrow-left"></i> Estadísticas
+      </a>
+      <button onclick="window.print()" class="btn-action btn-print">
+        <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="infographic-poster" id="infografia-2">
+    
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> ObservaLE • Serie Infográfica nº 2
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">Rentas y Actividad Económica 2023</span>
+        <h1 class="poster-title">La Brecha Territorial de Renta y la Polarización Laboral</h1>
+        <p class="poster-subtitle">
+          Análisis comparativo de la renta neta por hogar y persona entre las 7 ZAS, dependencia de pensiones y polarización en la cualificación del empleo.
+        </p>
+      </div>
+    </header>
+
+    <div class="poster-body">
+
+      <!-- KPIs -->
+      <section class="kpi-row">
+        
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Renta Media por Hogar</span>
+            <div class="kpi-icon"><i class="fa-solid fa-house-chimney"></i></div>
+          </div>
+          <div class="kpi-value">36.332 €</div>
+          <div class="kpi-desc">
+            Renta neta media en el municipio de León (crecimiento desde 32.003 € en 2019)
+          </div>
+        </div>
+
+        <div class="kpi-card emerald">
+          <div class="kpi-header">
+            <span class="kpi-title">Renta Media por Persona</span>
+            <div class="kpi-icon"><i class="fa-solid fa-user-tag"></i></div>
+          </div>
+          <div class="kpi-value">16.689 €</div>
+          <div class="kpi-desc">
+            Media municipal • Brecha territorial de hasta <strong>+9.971 €</strong> entre zonas
+          </div>
+        </div>
+
+        <div class="kpi-card crimson">
+          <div class="kpi-header">
+            <span class="kpi-title">Brecha Extrema Centro-Armunia</span>
+            <div class="kpi-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+          </div>
+          <div class="kpi-value">+80,0%</div>
+          <div class="kpi-desc">
+            Un vecino del Centro ingresa <strong>22.433 €</strong> frente a los <strong>12.462 €</strong> de Armunia
+          </div>
+        </div>
+
+        <div class="kpi-card amber">
+          <div class="kpi-header">
+            <span class="kpi-title">Población Ocupada</span>
+            <div class="kpi-icon"><i class="fa-solid fa-briefcase"></i></div>
+          </div>
+          <div class="kpi-value">47.350</div>
+          <div class="kpi-desc">
+            <strong>86,5% en Servicios</strong> (40.946 empleos), 7,9% en Industria y 4,9% Construcción
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Ranking de Renta por Persona -->
+      <section class="card-section col-7">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon"><i class="fa-solid fa-euro-sign"></i></div>
+            <h2 class="section-title">Renta Neta Media por Persona (ZAS vs León)</h2>
+          </div>
+          <span class="section-tag">INE 2023</span>
+        </div>
+
+        <div class="income-list">
+          
+          <div class="income-item">
+            <span style="font-weight: 700; color: #0369a1;">1. Centro</span>
+            <div class="income-track">
+              <div class="income-fill fill-blue" style="width: 100%;">22.433 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">22.433 €</span>
+            <span class="diff-badge diff-pos">+34,4%</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 600;">2. Puente Castro</span>
+            <div class="income-track">
+              <div class="income-fill fill-blue" style="width: 76.8%;">17.227 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">17.227 €</span>
+            <span class="diff-badge diff-pos">+3,2%</span>
+          </div>
+
+          <div class="income-item" style="background: #f8fafc; padding: 4px 6px; border-radius: 6px; border: 1px solid #cbd5e1;">
+            <span style="font-weight: 800; color: #0f172a;">MEDIA LEÓN</span>
+            <div class="income-track" style="background: #e2e8f0;">
+              <div class="income-fill fill-navy" style="width: 74.4%;">16.689 €</div>
+            </div>
+            <span style="font-weight: 800; text-align: right;">16.689 €</span>
+            <span class="diff-badge diff-base">Referencia</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 600;">3. San Mamés - S. Pedro</span>
+            <div class="income-track">
+              <div class="income-fill fill-blue" style="width: 73.2%;">16.426 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">16.426 €</span>
+            <span class="diff-badge diff-neg">-1,6%</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 600;">4. Mariano Andrés</span>
+            <div class="income-track">
+              <div class="income-fill fill-blue" style="width: 71.9%;">16.136 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">16.136 €</span>
+            <span class="diff-badge diff-neg">-3,3%</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 600;">5. El Egido - Santa Ana</span>
+            <div class="income-track">
+              <div class="income-fill fill-blue" style="width: 71.8%;">16.102 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right;">16.102 €</span>
+            <span class="diff-badge diff-neg">-3,5%</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 600; color: #b91c1c;">6. El Crucero - La Vega</span>
+            <div class="income-track">
+              <div class="income-fill fill-coral" style="width: 66.0%;">14.805 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right; color: #b91c1c;">14.805 €</span>
+            <span class="diff-badge diff-neg">-11,3%</span>
+          </div>
+
+          <div class="income-item">
+            <span style="font-weight: 700; color: #b91c1c;">7. Armunia</span>
+            <div class="income-track">
+              <div class="income-fill fill-coral" style="width: 55.6%;">12.462 €</div>
+            </div>
+            <span style="font-weight: 700; text-align: right; color: #b91c1c;">12.462 €</span>
+            <span class="diff-badge diff-neg">-25,3%</span>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--border-color); font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+          <span><strong>Renta por hogar:</strong> Centro (47.319 €) vs Armunia (27.871 €)</span>
+          <span style="color: #b91c1c; font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> 5 de las 7 zonas bajo la media municipal</span>
+        </div>
+      </section>
+
+      <!-- Fuentes de Ingreso del Hogar -->
+      <section class="card-section col-5">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #8b5cf6;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h2 class="section-title">Composición del Ingreso</h2>
+          </div>
+          <span class="section-tag">Tipología 2023</span>
+        </div>
+
+        <div class="stacked-sources">
+          
+          <div class="source-row">
+            <div class="source-labels">
+              <span>León (Total Municipio)</span>
+              <span>Salario: 53,5% | Pensiones: 29,2%</span>
+            </div>
+            <div class="source-bar">
+              <div class="seg-salary" style="width: 53.5%;">53,5%</div>
+              <div class="seg-pension" style="width: 29.2%;">29,2%</div>
+              <div class="seg-capital" style="width: 11.8%;">11,8%</div>
+              <div class="seg-welfare" style="width: 4.3%;">4,3%</div>
+              <div class="seg-unemp" style="width: 1.2%;"></div>
+            </div>
+          </div>
+
+          <div class="source-row">
+            <div class="source-labels">
+              <span style="font-weight: 700; color: #0284c7;">Centro (Alta Renta de Capital)</span>
+              <span>Otros ingresos: 22,0%</span>
+            </div>
+            <div class="source-bar">
+              <div class="seg-salary" style="width: 46.0%;">46,0%</div>
+              <div class="seg-pension" style="width: 28.0%;">28,0%</div>
+              <div class="seg-capital" style="width: 22.0%;">22,0%</div>
+              <div class="seg-welfare" style="width: 3.0%;"></div>
+              <div class="seg-unemp" style="width: 1.0%;"></div>
+            </div>
+          </div>
+
+          <div class="source-row">
+            <div class="source-labels">
+              <span style="font-weight: 700; color: #8b5cf6;">El Crucero (Máxima Dependencia Pensión)</span>
+              <span>Pensiones: 35,0%</span>
+            </div>
+            <div class="source-bar">
+              <div class="seg-salary" style="width: 51.0%;">51,0%</div>
+              <div class="seg-pension" style="width: 35.0%;">35,0%</div>
+              <div class="seg-capital" style="width: 7.0%;">7%</div>
+              <div class="seg-welfare" style="width: 5.0%;">5%</div>
+              <div class="seg-unemp" style="width: 2.0%;"></div>
+            </div>
+          </div>
+
+          <div class="source-row">
+            <div class="source-labels">
+              <span style="font-weight: 700; color: #f59e0b;">Armunia (Máxima Dependencia Subsidios)</span>
+              <span>Otras Prestaciones: 8,0%</span>
+            </div>
+            <div class="source-bar">
+              <div class="seg-salary" style="width: 52.0%;">52,0%</div>
+              <div class="seg-pension" style="width: 30.0%;">30,0%</div>
+              <div class="seg-capital" style="width: 8.0%;">8%</div>
+              <div class="seg-welfare" style="width: 8.0%;">8%</div>
+              <div class="seg-unemp" style="width: 2.0%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="source-legend">
+          <div class="leg-item"><div class="leg-dot seg-salary"></div> Salarios</div>
+          <div class="leg-item"><div class="leg-dot seg-pension"></div> Pensiones</div>
+          <div class="leg-item"><div class="leg-dot seg-capital"></div> Rentas Capital / Otros</div>
+          <div class="leg-item"><div class="leg-dot seg-welfare"></div> Prestaciones Sociales</div>
+          <div class="leg-item"><div class="leg-dot seg-unemp"></div> Desempleo</div>
+        </div>
+      </section>
+
+      <!-- Polarización Ocupacional -->
+      <section class="card-section col-12">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #10b981;"><i class="fa-solid fa-user-graduate"></i></div>
+            <h2 class="section-title">Polarización en la Cualificación de la Población Ocupada</h2>
+          </div>
+          <span class="section-tag">INE Censo Anual de Población 2023 (47.350 ocupados)</span>
+        </div>
+
+        <div class="polarization-grid">
+          
+          <div class="polar-card high">
+            <div class="polar-header">
+              <i class="fa-solid fa-award" style="color: #0284c7; font-size: 1.1rem;"></i>
+              <span>Alta Cualificación (Profesionales, Científicos y Técnicos Medios/Altos)</span>
+            </div>
+            <div class="polar-metric">
+              <span><strong>Centro</strong> (Máximo municipal)</span>
+              <span style="font-weight: 800; color: #0369a1;">57,7% (2.968 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>San Mamés - San Pedro</span>
+              <span style="font-weight: 700;">43,7% (3.227 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>Puente Castro</span>
+              <span style="font-weight: 700;">42,2% (3.544 ocupados)</span>
+            </div>
+            <div class="polar-metric" style="background: #e0f2fe; padding: 4px 6px; border-radius: 4px;">
+              <span><strong>MEDIA MUNICIPIO DE LEÓN</strong></span>
+              <span style="font-weight: 800; color: #0369a1;">40,5% (19.183 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>Mariano Andrés</span>
+              <span style="font-weight: 600;">38,8% (4.273 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>El Egido - Santa Ana</span>
+              <span style="font-weight: 600;">37,8% (3.239 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>El Crucero - La Vega</span>
+              <span style="font-weight: 600;">31,7% (1.280 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span><strong>Armunia</strong> (Mínimo municipal)</span>
+              <span style="font-weight: 800; color: #b91c1c;">23,3% (652 ocupados)</span>
+            </div>
+          </div>
+
+          <div class="polar-card low">
+            <div class="polar-header">
+              <i class="fa-solid fa-wrench" style="color: #f59e0b; font-size: 1.1rem;"></i>
+              <span>Operarios de Nivel Bajo y Ocupaciones Elementales</span>
+            </div>
+            <div class="polar-metric">
+              <span><strong>Armunia</strong> (Máxima concentración de empleo vulnerable)</span>
+              <span style="font-weight: 800; color: #b45309;">72,9% (2.037 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>El Crucero - La Vega</span>
+              <span style="font-weight: 800; color: #b45309;">64,1% (2.589 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>El Egido - Santa Ana</span>
+              <span style="font-weight: 700;">58,3% (4.996 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>Mariano Andrés</span>
+              <span style="font-weight: 700;">57,6% (6.346 ocupados)</span>
+            </div>
+            <div class="polar-metric" style="background: #fef3c7; padding: 4px 6px; border-radius: 4px;">
+              <span><strong>MEDIA MUNICIPIO DE LEÓN</strong></span>
+              <span style="font-weight: 800; color: #92400e;">55,8% (26.394 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>Puente Castro</span>
+              <span style="font-weight: 600;">54,4% (4.565 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span>San Mamés - San Pedro</span>
+              <span style="font-weight: 600;">52,5% (3.878 ocupados)</span>
+            </div>
+            <div class="polar-metric">
+              <span><strong>Centro</strong> (Mínima concentración)</span>
+              <span style="font-weight: 800; color: #0369a1;">38,6% (1.983 ocupados)</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Conclusiones -->
+      <aside class="takeaways-card">
+        <div class="takeaways-icon">
+          <i class="fa-solid fa-compass-drafting"></i>
+        </div>
+        <div class="takeaways-content">
+          <h3>3 Conclusiones Económicas Fundamentales</h3>
+          <div class="takeaways-list">
+            
+            <div class="takeaway-item">
+              <strong>1. Brecha de Renta Centro vs Periferia</strong>
+              Un habitante del Centro disfruta de 9.971 € más de renta anual neta que uno de Armunia (80% de brecha). Solo 2 de las 7 zonas de acción social superan la media de la capital.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>2. Polarización de Oportunidades Laborales</strong>
+              Mientras que en el Centro casi 6 de cada 10 ocupados son directivos o titulados superiores, en Armunia el 72,9% desempeña ocupaciones elementales o de bajo nivel operativo.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>3. Disparidad en la Red de Seguridad Social</strong>
+              En barrios como El Crucero las pensiones sustentan el 35,0% del presupuesto familiar. En Armunia, el gasto asistencial en subsidios (8,0%) duplica con creces la media leonesa (4,3%).
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database"></i> 
+        <strong>Fuentes oficiales:</strong> INE, Distribución de Renta de los Hogares (2015-2023) e INE, Censo Anual de Población (Población Ocupada 2021-2023).
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León & Universidad de León
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

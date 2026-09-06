@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monográfico: Vulnerabilidad, Soledad y Envejecimiento en León (≥65 años) | ObservaLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --primary-light: #14b8a6;
+      --secondary: #0f172a;
+      --gold: #d97706;
+      --amber: #b45309;
+      --rose: #e11d48;
+      --pink: #db2777;
+      --blue: #2563eb;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    .top-actions {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .btn-action {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn-print {
+      background: var(--secondary);
+      color: white;
+      border: none;
+    }
+
+    .btn-print:hover {
+      background: #334155;
+      color: white;
+    }
+
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .poster-header {
+      background: linear-gradient(135deg, #042f2e 0%, #0f766e 60%, #115e59 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .poster-title-area { max-width: 900px; }
+
+    .badge-serie {
+      background: #f59e0b;
+      color: #78350f;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: #ccfbf1;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    .poster-body {
+      padding: 36px 48px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    /* Marco Metodológico */
+    .glossary-card {
+      grid-column: span 12;
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .glossary-item {
+      background: white;
+      border: 1px solid #ccfbf1;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .glossary-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .glossary-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #0f766e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .glossary-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #115e59;
+    }
+
+    .glossary-desc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* KPIs */
+    .kpi-row {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .kpi-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .kpi-card.teal { border-top: 4px solid var(--primary); }
+    .kpi-card.gold { border-top: 4px solid var(--gold); }
+    .kpi-card.pink { border-top: 4px solid var(--pink); }
+    .kpi-card.rose { border-top: 4px solid var(--rose); }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .kpi-card.teal .kpi-icon { background: #ccfbf1; color: var(--primary); }
+    .kpi-card.gold .kpi-icon { background: #fef3c7; color: var(--gold); }
+    .kpi-card.pink .kpi-icon { background: #fce7f3; color: var(--pink); }
+    .kpi-card.rose .kpi-icon { background: #ffe4e6; color: var(--rose); }
+
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .kpi-card.teal .kpi-value { color: var(--primary); }
+    .kpi-card.gold .kpi-value { color: var(--gold); }
+    .kpi-card.pink .kpi-value { color: var(--pink); }
+    .kpi-card.rose .kpi-value { color: var(--rose); }
+
+    .kpi-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      margin-top: auto;
+    }
+
+    /* Cards */
+    .card-section {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: #ccfbf1;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Dual Horizontal Bar Comparison (Mayores vs Soledad) */
+    .dual-aging-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .da-item {
+      display: grid;
+      grid-template-columns: 170px 1fr 1fr;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.86rem;
+    }
+
+    .da-name {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .da-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .da-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .da-track {
+      background: #f1f5f9;
+      height: 14px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .da-fill-senior {
+      height: 100%;
+      background: linear-gradient(90deg, #14b8a6, #0f766e);
+      border-radius: 4px;
+    }
+
+    .da-fill-alone {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+      border-radius: 4px;
+    }
+
+    /* Gender Table and Gap styles */
+    .gender-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.81rem;
+      margin-bottom: 16px;
+    }
+
+    .gender-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.70rem;
+      padding: 8px 10px;
+      text-align: right;
+      border-bottom: 2px solid var(--border-color);
+      letter-spacing: 0.5px;
+    }
+
+    .gender-table th:first-child { text-align: left; }
+
+    .gender-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: right;
+    }
+
+    .gender-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .td-total {
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: #f0fdfa;
+    }
+
+    .badge-gap {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.70rem;
+      background: #fce7f3;
+      color: #be185d;
+    }
+
+    .badge-gap.danger {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Gender Gap Bars in Seniors */
+    .gender-seniors-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .gs-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    .gs-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .gs-bar-wrap {
+      display: flex;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 24px;
+    }
+
+    .gs-female { background: #db2777; }
+    .gs-male { background: #2563eb; }
+
+    /* Sources / Pension Shield */
+    .pension-shield-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 14px;
+    }
+
+    .pension-shield-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .pension-shield-text {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #166534;
+    }
+
+    /* Full Matrix Table */
+    .mono-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      margin-top: 10px;
+    }
+
+    .mono-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      padding: 10px 12px;
+      text-align: right;
+      border-bottom: 2px solid var(--border-color);
+      letter-spacing: 0.5px;
+    }
+
+    .mono-table th:first-child { text-align: left; }
+
+    .mono-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-color);
+      text-align: right;
+    }
+
+    .mono-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .mono-table tr.highlight-total {
+      background: #f0fdfa;
+      font-weight: 800;
+      border-top: 2px solid #99f6e4;
+      border-bottom: 2px solid #99f6e4;
+    }
+
+    .mono-table tr.highlight-total td { color: #0f766e; }
+
+    /* Takeaways */
+    .takeaways-card {
+      grid-column: span 12;
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-left: 6px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .takeaways-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .takeaways-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #115e59;
+      margin-bottom: 8px;
+    }
+
+    .takeaways-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .takeaway-item {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #134e4a;
+    }
+
+    .takeaway-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .top-actions { display: none; }
+      .infographic-poster { box-shadow: none; border: none; }
+    }
+
+    @media (max-width: 992px) {
+      .col-7, .col-5, .col-6 { grid-column: span 12; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .takeaways-list { grid-template-columns: 1fr; }
+      .glossary-grid { grid-template-columns: 1fr; }
+      .da-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de acciones superior con navegación unificada -->
+  <div class="top-actions">
+    <div class="nav-tabs">
+      <a href="infografia_1_demografia.html" class="btn-action">
+        <i class="fa-solid fa-users"></i> 1. Demografía
+      </a>
+      <a href="infografia_2_renta_empleo.html" class="btn-action">
+        <i class="fa-solid fa-wallet"></i> 2. Renta y Empleo
+      </a>
+      <a href="infografia_3_pobreza_infancia.html" class="btn-action">
+        <i class="fa-solid fa-scale-balanced"></i> 3. Pobreza (Comparativa)
+      </a>
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="btn-action">
+        <i class="fa-solid fa-venus-mars"></i> 4. Género y Origen
+      </a>
+      <a href="infografia_5_mayores_soledad.html" class="btn-action active">
+        <i class="fa-solid fa-person-cane"></i> 5. Monográfico Mayores
+      </a>
+      <a href="infografia_pobreza_infantil_monografica.html" class="btn-action">
+        <i class="fa-solid fa-child-reaching"></i> 6. Monográfico Infancia
+      </a>
+      <a href="infografia_7_panel_zas.html" class="btn-action">
+        <i class="fa-solid fa-table-columns"></i> 7. Panel ZAS
+      </a>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <a href="estadisticas.html" class="btn-action">
+        <i class="fa-solid fa-arrow-left"></i> Estadísticas
+      </a>
+      <button onclick="window.print()" class="btn-action btn-print">
+        <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="infographic-poster" id="infografia-5">
+    
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-shield-heart" style="margin-right: 6px;"></i> ObservaLE • Monográfico Especial
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">Diagnóstico Monográfico Especial 2025-2026</span>
+        <h1 class="poster-title">Vulnerabilidad, Soledad y Envejecimiento en León</h1>
+        <p class="poster-subtitle">
+          Diagnóstico 100% centrado en la población mayor de 65 años: hogares unipersonales, escudo de las pensiones, brecha de feminización y distribución territorial por ZAS.
+        </p>
+      </div>
+    </header>
+
+    <div class="poster-body">
+
+      <!-- Marco Metodológico 100% Personas Mayores -->
+      <section class="glossary-card">
+        <div class="section-title-wrap" style="margin-bottom: 6px;">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #0f766e;"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div>
+              <h2 class="section-title">Marco Metodológico: Indicadores de Vulnerabilidad en Mayores (≥65 años)</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Conceptos y métricas oficiales del INE para evaluar el bienestar, la soledad y la protección económica en la vejez
+              </p>
+            </div>
+          </div>
+          <span class="section-tag">100% Población ≥65 Años</span>
+        </div>
+
+        <div class="glossary-grid">
+          
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-person-cane"></i></div>
+              <h3 class="glossary-title">Tasa de Envejecimiento (≥65 años)</h3>
+            </div>
+            <p class="glossary-desc">
+              Porcentaje de residentes con <strong>65 o más años</strong> sobre la población empadronada. Mide la intensidad demográfica senior y la necesidad de recursos de proximidad.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-house-user"></i></div>
+              <h3 class="glossary-title">Soledad Residencial (Hogares Unipersonales)</h3>
+            </div>
+            <p class="glossary-desc">
+              Hogares formados por <strong>una sola persona</strong>. En personas mayores es el indicador directo de riesgo de soledad no deseada, falta de redes y necesidad de teleasistencia.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3 class="glossary-title">El Escudo de las Pensiones Públicas</h3>
+            </div>
+            <p class="glossary-desc">
+              Proporción de ingresos del hogar procedentes de <strong>prestaciones de jubilación y viudedad</strong>. Actúa como dique frente a la pobreza de mercado (amortigua la tasa al 10,9%).
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-venus"></i></div>
+              <h3 class="glossary-title">Feminización de la Vulnerabilidad</h3>
+            </div>
+            <p class="glossary-desc">
+              Sobremortalidad masculina y mayor longevidad femenina combinadas con carreras laborales históricamente precarias: genera una <strong>brecha de pobreza del +58%</strong> en mujeres mayores.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <h3 class="glossary-title">Pobreza Severa y Extrema Senior (&lt;50% y &lt;40%)</h3>
+            </div>
+            <p class="glossary-desc">
+              Mayores cuyos ingresos por unidad de consumo se sitúan bajo la mitad o el 40% de la mediana. Refleja pensiones no contributivas mínimas e imposibilidad de costear suministros y cuidados.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <h3 class="glossary-title">Sobrenvejecimiento (Población 80+ años)</h3>
+            </div>
+            <p class="glossary-desc">
+              Segmento de edad avanzada dentro de la población senior. Concentra la mayor dependencia funcional, pluripatología y necesidad de ayuda a domicilio intensiva.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KPIs 100% Exclusivos de Personas Mayores -->
+      <section class="kpi-row">
+        
+        <div class="kpi-card teal">
+          <div class="kpi-header">
+            <span class="kpi-title">Población Mayor de 65 años</span>
+            <div class="kpi-icon"><i class="fa-solid fa-person-cane"></i></div>
+          </div>
+          <div class="kpi-value">35.740</div>
+          <div class="kpi-desc">
+            <strong>28,8% de León</strong> • 1 de cada 3,5 residentes es mayor (Centro lidera con el 33,5%)
+          </div>
+        </div>
+
+        <div class="kpi-card gold">
+          <div class="kpi-header">
+            <span class="kpi-title">Hogares Unipersonales (Soledad)</span>
+            <div class="kpi-icon"><i class="fa-solid fa-house-user"></i></div>
+          </div>
+          <div class="kpi-value">38,2%</div>
+          <div class="kpi-desc">
+            <strong>23.225 personas solas</strong> en León • Sube al 41,0% en Centro y 39,5% en El Egido
+          </div>
+        </div>
+
+        <div class="kpi-card pink">
+          <div class="kpi-header">
+            <span class="kpi-title">Brecha Femenina en la Vejez</span>
+            <div class="kpi-icon"><i class="fa-solid fa-venus"></i></div>
+          </div>
+          <div class="kpi-value">+58,0%</div>
+          <div class="kpi-desc">
+            <strong>12,80% en mujeres mayores</strong> frente a solo 8,10% en hombres mayores (&lt;60% mediana)
+          </div>
+        </div>
+
+        <div class="kpi-card rose">
+          <div class="kpi-header">
+            <span class="kpi-title">Mujeres en Extrema Pobreza</span>
+            <div class="kpi-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">64,4%</div>
+          <div class="kpi-desc">
+            De los mayores bajo el umbral crítico (&lt;40% de la mediana) son mujeres con pensión mínima
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sección 1 (col-6): Envejecimiento y Hogares Unipersonales por ZAS con Totales -->
+      <section class="card-section col-6">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #0f766e;"><i class="fa-solid fa-chart-column"></i></div>
+            <div>
+              <h2 class="section-title">Envejecimiento vs Soledad por ZAS (con Totales)</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Porcentajes y cifras absolutas de mayores (≥65) y hogares de una persona (Censo 2023-2025)
+              </p>
+            </div>
+          </div>
+          <span class="section-tag">ZAS + Total León</span>
+        </div>
+
+        <div class="dual-aging-list">
+          
+          <div class="da-item">
+            <span class="da-name" style="color: #0f766e; font-weight: 700;">1. Centro (Máx. Envej.)</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>33,5% (4.488)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 100%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong style="color: #d97706;">41,0% (2.855)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 100%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name">2. Puente Castro</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>30,8% (6.693)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 91.9%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong>36,9% (3.864)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 90.0%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name" style="color: #b45309;">3. El Egido - Santa Ana</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>30,8% (6.924)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 91.9%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong style="color: #d97706;">39,5% (4.385)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 96.3%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name">4. El Crucero - La Vega</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>30,4% (3.489)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 90.7%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong>37,2% (2.191)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 90.7%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name">5. Mariano Andrés (Máx. Vol.)</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>26,0% (7.299)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 77.6%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong>38,4% (5.541)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 93.7%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name">6. San Mamés - S. Pedro</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>26,0% (4.841)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 77.6%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong>38,8% (3.593)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 94.6%;"></div></div>
+            </div>
+          </div>
+
+          <div class="da-item">
+            <span class="da-name">7. Armunia</span>
+            <div class="da-col">
+              <div class="da-label"><span>Mayores 65+</span><strong>24,8% (2.061)</strong></div>
+              <div class="da-track"><div class="da-fill-senior" style="width: 74.0%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span>Hogares Solos</span><strong>36,7% (1.002)</strong></div>
+              <div class="da-track"><div class="da-fill-alone" style="width: 89.5%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Total Destacado al final de la comparativa -->
+          <div class="da-item" style="background: #f0fdfa; padding: 8px 10px; border-radius: 8px; border: 2px solid #99f6e4; margin-top: 4px;">
+            <span class="da-name" style="font-weight: 800; color: #0f766e;">TOTAL MUNICIPIO LEÓN</span>
+            <div class="da-col">
+              <div class="da-label"><span style="color: #0f766e; font-weight: 700;">Total Mayores 65+</span><strong style="color: #0f766e;">28,8% (35.740 may.)</strong></div>
+              <div class="da-track" style="background: #ccfbf1;"><div class="da-fill-senior" style="width: 86.0%;"></div></div>
+            </div>
+            <div class="da-col">
+              <div class="da-label"><span style="color: #b45309; font-weight: 700;">Total Hogares Solos</span><strong style="color: #b45309;">38,2% (23.225 sol.)</strong></div>
+              <div class="da-track" style="background: #fef3c7;"><div class="da-fill-alone" style="width: 93.2%;"></div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top: 14px; font-size: 0.79rem; color: var(--text-muted); line-height: 1.4;">
+          <i class="fa-solid fa-circle-info" style="color: #0f766e;"></i> <strong>Totales globales:</strong> En León residen <strong>35.740 personas mayores de 65 años</strong> (de 124.091 habitantes) y existen <strong>23.225 hogares unipersonales</strong> (de 60.800 viviendas principales).
+        </p>
+      </section>
+
+      <!-- Sección 2 (col-6): Tabla y Desglose de Brecha de Género en Mayores con TOTALES -->
+      <section class="card-section col-6">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #db2777;"><i class="fa-solid fa-venus-mars"></i></div>
+            <div>
+              <h2 class="section-title">Brecha de Género en Mayores (con Totales)</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Tabla oficial de vulnerabilidad por tramos y sexo en población senior (INE 2023)
+              </p>
+            </div>
+          </div>
+          <span class="section-tag" style="background: #fce7f3; color: #db2777;">Total y Por Sexo</span>
+        </div>
+
+        <!-- Tabla Estructurada con Totales -->
+        <div style="overflow-x: auto;">
+          <table class="gender-table">
+            <thead>
+              <tr>
+                <th>Tramo / Dimensión</th>
+                <th style="background: #f0fdfa; color: #0f766e;">TOTAL Mayores</th>
+                <th style="color: #db2777;">Mujeres (≥65)</th>
+                <th style="color: #2563eb;">Hombres (≥65)</th>
+                <th>Brecha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Población Senior (≥65 a.)</strong></td>
+                <td class="td-total">35.740 (100%)</td>
+                <td style="color: #db2777; font-weight: 700;">20.730 (58,0%)</td>
+                <td style="color: #2563eb; font-weight: 700;">15.010 (42,0%)</td>
+                <td><span class="badge-gap">+38% M</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pobreza Relativa (&lt;60%)</strong></td>
+                <td class="td-total">10,90% (~3.900)</td>
+                <td style="color: #db2777; font-weight: 700;">12,80% (~2.653)</td>
+                <td style="color: #2563eb; font-weight: 700;">8,10% (~1.216)</td>
+                <td><span class="badge-gap danger">+58,0%</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pobreza Severa (&lt;50%)</strong></td>
+                <td class="td-total">5,40% (~1.930)</td>
+                <td style="color: #db2777; font-weight: 700;">6,20% (~1.285)</td>
+                <td style="color: #2563eb; font-weight: 700;">4,30% (~645)</td>
+                <td><span class="badge-gap danger">+44,2%</span></td>
+              </tr>
+              <tr>
+                <td><strong>Pobreza Extrema (&lt;40%)</strong></td>
+                <td class="td-total">3,10% (~1.108)</td>
+                <td style="color: #db2777; font-weight: 700;">3,80% (~788)</td>
+                <td style="color: #2563eb; font-weight: 700;">2,10% (~315)</td>
+                <td><span class="badge-gap danger">+81,0%</span></td>
+              </tr>
+              <tr>
+                <td><strong>Ingresos &lt;10.000 € / UC</strong></td>
+                <td class="td-total">6,50% (~2.323)</td>
+                <td style="color: #db2777; font-weight: 700;">7,10% (~1.472)</td>
+                <td style="color: #2563eb; font-weight: 700;">5,70% (~856)</td>
+                <td><span class="badge-gap">+24,6%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Barras de Proporción Mujeres vs Hombres -->
+        <div class="gender-seniors-grid">
+          
+          <div class="gs-card">
+            <div class="gs-header">
+              <span>Distribución en Pobreza Relativa (<60%)</span>
+              <span style="color: #0f766e; font-weight: 800;">TOTAL: 10,90%</span>
+            </div>
+            <div class="gs-bar-wrap">
+              <div class="gs-female" style="width: 61.2%;">Mujeres: 61,2%</div>
+              <div class="gs-male" style="width: 38.8%;">Hombres: 38,8%</div>
+            </div>
+          </div>
+
+          <div class="gs-card">
+            <div class="gs-header">
+              <span>Distribución en Pobreza Extrema (<40%)</span>
+              <span style="color: #0f766e; font-weight: 800;">TOTAL: 3,10%</span>
+            </div>
+            <div class="gs-bar-wrap">
+              <div class="gs-female" style="width: 64.4%; background: #9d174d;">Mujeres: 64,4%</div>
+              <div class="gs-male" style="width: 35.6%; background: #1e40af;">Hombres: 35,6%</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pension-shield-box">
+          <div class="pension-shield-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div class="pension-shield-text">
+            <strong>La brecha de las pensiones de viudedad:</strong> De los casi 3.900 mayores en situación de pobreza en León, <strong>más de 2.650 son mujeres</strong> (61,2%), concentrando el <strong>64,4% de la pobreza extrema</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 3 (col-12): El Escudo de las Pensiones y Fuentes de Renta -->
+      <section class="card-section col-12">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #15803d;"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h2 class="section-title">El Escudo Protector de las Pensiones en León</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Cómo las transferencias públicas de jubilación contienen la pobreza global pero dejan desprotegidas las rentas mínimas
+              </p>
+            </div>
+          </div>
+          <span class="section-tag" style="background: #dcfce7; color: #15803d;">Protección Social de Rentas</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch;">
+          
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 18px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Peso de las Pensiones</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #15803d; margin: 6px 0;">29,2%</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+              Del total de ingresos brutos de los hogares de la capital proviene directamente de pensiones contributivas y no contributivas.
+            </p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 18px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Pico de Dependencia</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #b45309; margin: 6px 0;">35,0%</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+              En <strong>El Crucero - La Vega</strong>, más de un tercio de la renta del barrio se sostiene por pensiones de personas mayores. En <strong>Armunia</strong> supone el 30,0%.
+            </p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 18px;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tasa Comparada</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #0f766e; margin: 6px 0;">10,90%</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+              Pobreza relativa en mayores de 65 años: casi <strong>3 veces inferior a la infantil (28,40%)</strong> y muy por debajo de la media leonesa (18,40%).
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Sección 4 (col-12): Matriz Monográfica de Personas Mayores por ZAS -->
+      <section class="card-section col-12">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #1e293b;"><i class="fa-solid fa-table-list"></i></div>
+            <h2 class="section-title">Matriz Territorial de Vulnerabilidad y Envejecimiento por ZAS (León 2025)</h2>
+          </div>
+          <span class="section-tag" style="background: #e2e8f0; color: #1e293b;">100% Datos de Mayores por ZAS</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="mono-table">
+            <thead>
+              <tr>
+                <th>Zona de Acción Social (ZAS)</th>
+                <th>Población Total</th>
+                <th>Mayores ≥65 a.</th>
+                <th>Tasa Mayores (%)</th>
+                <th>Hogares 1 pers. (%)</th>
+                <th>Edad Media</th>
+                <th>Riesgo Pobreza Senior</th>
+                <th>Mayores Vulnerables (Est.)</th>
+                <th>Prioridad Sociosanitaria</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Centro</td>
+                <td>13.411</td>
+                <td style="font-weight: 700;">4.488</td>
+                <td style="font-weight: 800; color: #0f766e;">33,5%</td>
+                <td style="font-weight: 800; color: #d97706;">41,0%</td>
+                <td style="font-weight: 700;">51,0 años</td>
+                <td>6,90%</td>
+                <td>~310 mayores</td>
+                <td><span style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">MÁXIMA SOLEDAD</span></td>
+              </tr>
+              <tr>
+                <td>Puente Castro</td>
+                <td>21.731</td>
+                <td style="font-weight: 700;">6.693</td>
+                <td style="font-weight: 700; color: #0f766e;">30,8%</td>
+                <td>36,9%</td>
+                <td>49,0 años</td>
+                <td>8,80%</td>
+                <td>~589 mayores</td>
+                <td><span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">ALTA POBLACIONAL</span></td>
+              </tr>
+              <tr>
+                <td>El Egido - Santa Ana</td>
+                <td>22.500</td>
+                <td style="font-weight: 700;">6.924</td>
+                <td style="font-weight: 700; color: #0f766e;">30,8%</td>
+                <td style="font-weight: 700; color: #d97706;">39,5%</td>
+                <td>49,0 años</td>
+                <td style="font-weight: 700; color: #b45309;">11,20%</td>
+                <td style="font-weight: 700;">~775 mayores</td>
+                <td><span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">CRÍTICA (SOLEDAD + RENTA)</span></td>
+              </tr>
+              <tr>
+                <td>El Crucero - La Vega</td>
+                <td>11.477</td>
+                <td style="font-weight: 700;">3.489</td>
+                <td style="font-weight: 700; color: #0f766e;">30,4%</td>
+                <td>37,2%</td>
+                <td>49,0 años</td>
+                <td style="font-weight: 700; color: #b91c1c;">13,80%</td>
+                <td style="font-weight: 700;">~481 mayores</td>
+                <td><span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">ALTA VULNERABILIDAD</span></td>
+              </tr>
+              <tr>
+                <td>Mariano Andrés</td>
+                <td>28.074</td>
+                <td style="font-weight: 800; color: #0f766e;">7.299</td>
+                <td>26,0%</td>
+                <td>38,4%</td>
+                <td>48,0 años</td>
+                <td style="font-weight: 700; color: #b45309;">12,40%</td>
+                <td style="font-weight: 800; color: #b91c1c;">~905 mayores</td>
+                <td><span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">MÁXIMO VOLUMEN</span></td>
+              </tr>
+              <tr>
+                <td>San Mamés - San Pedro</td>
+                <td>18.620</td>
+                <td style="font-weight: 700;">4.841</td>
+                <td>26,0%</td>
+                <td style="font-weight: 700;">38,8%</td>
+                <td>48,0 años</td>
+                <td>10,60%</td>
+                <td>~513 mayores</td>
+                <td><span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">MEDIA-ALTA</span></td>
+              </tr>
+              <tr>
+                <td>Armunia</td>
+                <td>8.312</td>
+                <td>2.061</td>
+                <td>24,8%</td>
+                <td>36,7%</td>
+                <td style="color: #0d9488; font-weight: 700;">46,0 años</td>
+                <td style="font-weight: 800; color: #b91c1c;">16,20%</td>
+                <td>~334 mayores</td>
+                <td><span style="background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">MÁXIMA TASA POBREZA</span></td>
+              </tr>
+              <tr class="highlight-total">
+                <td>TOTAL MUNICIPIO LEÓN</td>
+                <td>124.091</td>
+                <td>35.740</td>
+                <td>28,8%</td>
+                <td>38,2%</td>
+                <td>48,6 años</td>
+                <td>10,90%</td>
+                <td>~3.900 mayores</td>
+                <td><span style="background: #0f766e; color: white; padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.72rem;">MARCO CIUDAD</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Conclusiones Monográficas de Mayores -->
+      <aside class="takeaways-card">
+        <div class="takeaways-icon">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+        <div class="takeaways-content">
+          <h3>3 Conclusiones Estratégicas para la Tercera Edad en León</h3>
+          <div class="takeaways-list">
+            
+            <div class="takeaway-item">
+              <strong>1. Doble Presión en el Centro y El Egido: Soledad + Envejecimiento</strong>
+              El Centro (33,5% mayores, 41,0% hogares solos) y El Egido - Santa Ana (30,8% mayores, 39,5% hogares solos) presentan la mayor concentración de personas de edad avanzada residiendo sin compañía, requiriendo expansión urgente de teleasistencia y radares comunitarios contra el aislamiento.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>2. La Pobreza en la Vejez tiene Rostro de Mujer Viuda</strong>
+              La brecha de género es rotunda: la tasa de pobreza en mujeres mayores (12,80%) supera en un 58% a la de los hombres (8,10%), y acaparan el 64,4% de los casos de pobreza extrema debido a pensiones de viudedad reducidas combinadas con gastos fijos de vivienda individual.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>3. Volumen Masivo en Mariano Andrés y Vulnerabilidad en Armunia</strong>
+              Aunque Armunia registra la tasa de pobreza senior más alta (16,20%), Mariano Andrés aglutina el mayor contingente absoluto de toda la capital con 7.299 personas mayores y más de 900 de ellas en situación de vulnerabilidad económica.
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database"></i> 
+        <strong>Fuentes oficiales:</strong> INE, Censo de Población Anual 2021-2025; INE, Distribución de Renta de los Hogares (Datos de mayores de 65 años por ZAS, 2023).
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León & Universidad de León
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

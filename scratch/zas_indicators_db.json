@@ -1,0 +1,74 @@
+{
+  "Municipio de León (Total)": {
+    "poblacion": 124091,
+    "renta_persona": 16689,
+    "renta_hogar": 36332,
+    "ocupados": 47350,
+    "tam_medio_hogar": 2.0,
+    "gini": 30.8,
+    "ratio_p80_p20": 2.7
+  },
+  "ZAS Centro": {
+    "poblacion": 13396,
+    "renta_persona": 22433,
+    "renta_hogar": 47319,
+    "ocupados": 5140,
+    "tam_medio_hogar": 2.0,
+    "gini": 31.7,
+    "ratio_p80_p20": 2.7
+  },
+  "ZAS El Crucero": {
+    "poblacion": 11477,
+    "renta_persona": 14805,
+    "renta_hogar": 31748,
+    "ocupados": 4039,
+    "tam_medio_hogar": 2.0,
+    "gini": 28.9,
+    "ratio_p80_p20": 2.5
+  },
+  "ZAS El Ejido": {
+    "poblacion": 22482,
+    "renta_persona": 16102,
+    "renta_hogar": 33383,
+    "ocupados": 8573,
+    "tam_medio_hogar": 2.0,
+    "gini": 28.5,
+    "ratio_p80_p20": 2.5
+  },
+  "ZAS Armunia": {
+    "poblacion": 8312,
+    "renta_persona": 12462,
+    "renta_hogar": 27871,
+    "ocupados": 2796,
+    "tam_medio_hogar": 2.0,
+    "gini": 30.6,
+    "ratio_p80_p20": 2.9
+  },
+  "ZAS Mariano Andrés": {
+    "poblacion": 28073,
+    "renta_persona": 16136,
+    "renta_hogar": 34888,
+    "ocupados": 11021,
+    "tam_medio_hogar": 2.0,
+    "gini": 28.1,
+    "ratio_p80_p20": 2.5
+  },
+  "ZAS Puente Castro": {
+    "poblacion": 21731,
+    "renta_persona": 17227,
+    "renta_hogar": 37540,
+    "ocupados": 8391,
+    "tam_medio_hogar": 2.0,
+    "gini": 28.9,
+    "ratio_p80_p20": 2.6
+  },
+  "ZAS San Mamés": {
+    "poblacion": 18620,
+    "renta_persona": 16426,
+    "renta_hogar": 35890,
+    "ocupados": 7390,
+    "tam_medio_hogar": 2.0,
+    "gini": 28.4,
+    "ratio_p80_p20": 2.6
+  }
+}

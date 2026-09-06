@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infografía 7: Panel de Control Territorial por ZAS de León | ObservaLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #38bdf8;
+      --secondary: #0f172a;
+      --accent: #6366f1;
+      --emerald: #059669;
+      --amber: #d97706;
+      --rose: #e11d48;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    .top-actions {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .btn-action {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .poster-header {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #0369a1 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .poster-title-area { max-width: 900px; }
+
+    .badge-serie {
+      display: inline-block;
+      color: #bae6fd;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    /* Selector de ZAS Bar */
+    .zas-selector-bar {
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .selector-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pills-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill-btn {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-btn:hover {
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      border-color: #7dd3fc;
+    }
+
+    .pill-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+    }
+
+    .pill-btn.matrix-btn {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #334155;
+    }
+
+    .pill-btn.matrix-btn.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .poster-body {
+      padding: 32px 40px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    /* ZAS Hero Summary Card */
+    .zas-hero-card {
+      grid-column: span 12;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .zh-info h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0369a1;
+      line-height: 1.2;
+    }
+
+    .zh-info p {
+      font-size: 0.88rem;
+      color: #0c4a6e;
+      margin-top: 4px;
+    }
+
+    .zh-metrics {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .zh-kpi {
+      background: white;
+      border: 1px solid #bae6fd;
+      border-radius: 12px;
+      padding: 10px 18px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .zh-kpi-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1;
+    }
+
+    .zh-kpi-lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* 4 Dimensions Grid */
+    .dim-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    .dim-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .dim-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dim-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .icon-blue { background: #0284c7; }
+    .icon-emerald { background: #059669; }
+    .icon-purple { background: #7c3aed; }
+    .icon-rose { background: #e11d48; }
+
+    .dim-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .dim-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Data Rows in Dim Card */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .data-item {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .data-item.full-width {
+      grid-column: span 2;
+    }
+
+    .data-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .data-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .data-sub {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .bar-track {
+      background: #e2e8f0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .bar-blue { background: #0284c7; }
+    .bar-emerald { background: #059669; }
+    .bar-purple { background: #7c3aed; }
+    .bar-rose { background: #e11d48; }
+    .bar-amber { background: #d97706; }
+
+    /* Matrix View Table */
+    .matrix-section {
+      grid-column: span 12;
+      display: none;
+    }
+
+    .matrix-section.active {
+      display: block;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .zas-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      text-align: right;
+    }
+
+    .zas-matrix-table th, .zas-matrix-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .zas-matrix-table th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: var(--text-main);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      position: sticky;
+      top: 0;
+    }
+
+    .zas-matrix-table th.th-left, .zas-matrix-table td.td-left {
+      text-align: left;
+    }
+
+    .zas-matrix-table tbody tr:hover {
+      background: #f0f9ff;
+    }
+
+    .zas-matrix-table tr.total-row {
+      background: #f8fafc;
+      font-weight: 800;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .badge-cell {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.76rem;
+    }
+
+    .badge-green { background: #dcfce7; color: #15803d; }
+    .badge-yellow { background: #fef3c7; color: #b45309; }
+    .badge-red { background: #fee2e2; color: #b91c1c; }
+    .badge-blue { background: #e0f2fe; color: #0369a1; }
+
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .top-actions { display: none; }
+      .zas-selector-bar { display: none; }
+      .infographic-poster { box-shadow: none; border: none; }
+    }
+
+    @media (max-width: 992px) {
+      .col-6 { grid-column: span 12; }
+      .data-grid { grid-template-columns: 1fr; }
+      .data-item.full-width { grid-column: span 1; }
+      .zh-metrics { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de acciones superior unificada -->
+  <div class="top-actions">
+    <div class="nav-tabs">
+      <a href="infografia_1_demografia.html" class="btn-action">
+        <i class="fa-solid fa-users"></i> 1. Demografía
+      </a>
+      <a href="infografia_2_renta_empleo.html" class="btn-action">
+        <i class="fa-solid fa-wallet"></i> 2. Renta y Empleo
+      </a>
+      <a href="infografia_3_pobreza_infancia.html" class="btn-action">
+        <i class="fa-solid fa-scale-balanced"></i> 3. Pobreza (Comparativa)
+      </a>
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="btn-action">
+        <i class="fa-solid fa-venus-mars"></i> 4. Género y Origen
+      </a>
+      <a href="infografia_5_mayores_soledad.html" class="btn-action">
+        <i class="fa-solid fa-person-cane"></i> 5. Monográfico Mayores
+      </a>
+      <a href="infografia_pobreza_infantil_monografica.html" class="btn-action">
+        <i class="fa-solid fa-child-reaching"></i> 6. Monográfico Infancia
+      </a>
+      <a href="infografia_7_panel_zas.html" class="btn-action active">
+        <i class="fa-solid fa-table-columns"></i> 7. Panel ZAS
+      </a>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <a href="estadisticas.html" class="btn-action">
+        <i class="fa-solid fa-arrow-left"></i> Estadísticas
+      </a>
+      <button onclick="window.print()" class="btn-action btn-print">
+        <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="infographic-poster" id="infografia-7">
+    
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> ObservaLE • Serie Infográfica nº 7
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">Cuadro de Mando Territorial y Métricas de Inclusión Social</span>
+        <h1 class="poster-title">Panel de Control por Zonas de Acción Social (ZAS)</h1>
+        <p class="poster-subtitle">
+          Radiografía cuantitativa de las 7 ZAS y el Municipio de León: indicadores oficiales de hogares, economía, desigualdad, pobreza infantil y severidad material (INE / ObservaLE).
+        </p>
+      </div>
+    </header>
+
+    <!-- Selector de ZAS -->
+    <div class="zas-selector-bar">
+      <div class="selector-label">
+        <i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Seleccionar Ámbito Territorial:
+      </div>
+      <div class="pills-group">
+        <button class="pill-btn active" onclick="selectZas('total')"><i class="fa-solid fa-city"></i> León Total</button>
+        <button class="pill-btn" onclick="selectZas('centro')">Centro</button>
+        <button class="pill-btn" onclick="selectZas('crucero')">El Crucero</button>
+        <button class="pill-btn" onclick="selectZas('ejido')">El Ejido</button>
+        <button class="pill-btn" onclick="selectZas('armunia')">Armunia</button>
+        <button class="pill-btn" onclick="selectZas('mariano_andres')">Mariano Andrés</button>
+        <button class="pill-btn" onclick="selectZas('puente_castro')">Puente Castro</button>
+        <button class="pill-btn" onclick="selectZas('san_mames')">San Mamés</button>
+        <button class="pill-btn matrix-btn" onclick="showMatrix()"><i class="fa-solid fa-table-list"></i> Matriz Comparativa</button>
+      </div>
+    </div>
+
+    <!-- Vista Ficha Individual -->
+    <div class="poster-body" id="zas-view-content">
+
+      <!-- Hero ZAS -->
+      <div class="zas-hero-card">
+        <div class="zh-info">
+          <h2 id="zh-name">Municipio de León (Total)</h2>
+          <p id="zh-sub">Total Municipal • 7 Zonas de Acción Social</p>
+        </div>
+        <div class="zh-metrics">
+          <div class="zh-kpi">
+            <div class="zh-kpi-val" id="zh-pob">124.091</div>
+            <div class="zh-kpi-lbl">Población Residente</div>
+          </div>
+          <div class="zh-kpi">
+            <div class="zh-kpi-val" id="zh-renta">16.689 €</div>
+            <div class="zh-kpi-lbl">Renta / Persona</div>
+          </div>
+          <div class="zh-kpi">
+            <div class="zh-kpi-val" id="zh-gini">30,80%</div>
+            <div class="zh-kpi-lbl">Índice de Gini</div>
+          </div>
+          <div class="zh-kpi">
+            <div class="zh-kpi-val" id="zh-pob-inf" style="color: #e11d48;">28,40%</div>
+            <div class="zh-kpi-lbl">Pobreza Infantil</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimensión 1: Estructura Social y de los Hogares -->
+      <section class="dim-card col-6">
+        <div class="dim-header">
+          <div class="dim-title-wrap">
+            <div class="dim-icon icon-blue"><i class="fa-solid fa-people-roof"></i></div>
+            <h3 class="dim-title">1. Estructura Social y de Hogares</h3>
+          </div>
+          <span class="dim-badge" style="background: #e0f2fe; color: #0369a1;">Padrón e INE</span>
+        </div>
+
+        <div class="data-grid">
+          
+          <div class="data-item">
+            <span class="data-label">Población por Sexo</span>
+            <div class="data-val" id="d1-sexo-h">56.438 H</div>
+            <div class="data-sub" id="d1-sexo-m">67.653 Mujeres (54,5%)</div>
+            <div class="bar-track"><div class="bar-fill bar-blue" id="d1-sexo-bar" style="width: 54.5%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Hogares Unipersonales</span>
+            <div class="data-val" id="d1-unipersonal">37,40%</div>
+            <div class="data-sub" id="d1-unipersonal-sub">23.225 hogares unipersonales</div>
+            <div class="bar-track"><div class="bar-fill bar-blue" id="d1-unipersonal-bar" style="width: 37.4%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Infancia (&lt;18 Años)</span>
+            <div class="data-val" id="d1-menores">16.035</div>
+            <div class="data-sub" id="d1-menores-sub">12,9% del total de la ZAS</div>
+            <div class="bar-track"><div class="bar-fill bar-blue" id="d1-menores-bar" style="width: 12.9%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Mayores (≥65 Años)</span>
+            <div class="data-val" id="d1-mayores">35.740</div>
+            <div class="data-sub" id="d1-mayores-sub">28,8% (Sobrenv. 80+: 11,0%)</div>
+            <div class="bar-track"><div class="bar-fill bar-blue" id="d1-mayores-bar" style="width: 28.8%;"></div></div>
+          </div>
+
+          <div class="data-item full-width">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="data-label">Población Extranjera</span>
+                <div class="data-val" id="d1-extranjeros">7,60%</div>
+              </div>
+              <div style="text-align: right;">
+                <span class="data-label">Tamaño Medio Hogar</span>
+                <div class="data-val" id="d1-tam-hogar">2,0 pers.</div>
+              </div>
+            </div>
+            <div class="bar-track"><div class="bar-fill bar-blue" id="d1-extranjeros-bar" style="width: 7.6%;"></div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dimensión 2: Economía, Renta y Empleo -->
+      <section class="dim-card col-6">
+        <div class="dim-header">
+          <div class="dim-title-wrap">
+            <div class="dim-icon icon-emerald"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 class="dim-title">2. Economía, Renta y Empleo</h3>
+          </div>
+          <span class="dim-badge" style="background: #dcfce7; color: #15803d;">Distribución de Renta</span>
+        </div>
+
+        <div class="data-grid">
+          
+          <div class="data-item">
+            <span class="data-label">Renta Media por Persona</span>
+            <div class="data-val" id="d2-renta-persona">16.689 €</div>
+            <div class="data-sub" id="d2-renta-persona-dif">Media municipal de referencia</div>
+            <div class="bar-track"><div class="bar-fill bar-emerald" id="d2-renta-p-bar" style="width: 74.4%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Renta Media por Hogar</span>
+            <div class="data-val" id="d2-renta-hogar">36.332 €</div>
+            <div class="data-sub" id="d2-renta-hogar-dif">Unidad de convivencia</div>
+            <div class="bar-track"><div class="bar-fill bar-emerald" id="d2-renta-h-bar" style="width: 76.8%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Población Ocupada</span>
+            <div class="data-val" id="d2-ocupados">47.350</div>
+            <div class="data-sub" id="d2-ocupados-sub">Personas de 16 y más años</div>
+            <div class="bar-track"><div class="bar-fill bar-emerald" id="d2-ocupados-bar" style="width: 100%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Rentas Bajas (&lt;10.000 €)</span>
+            <div class="data-val" id="d2-renta-10k">13,80%</div>
+            <div class="data-sub" id="d2-renta-10k-sub">&lt;5.000 €/año: 3,80%</div>
+            <div class="bar-track"><div class="bar-fill bar-emerald" id="d2-renta-10k-bar" style="width: 13.8%;"></div></div>
+          </div>
+
+          <div class="data-item full-width" style="background: #f0fdf4; border-color: #bbf7d0;">
+            <span class="data-label" style="color: #166534;">Posición Económica Territorial</span>
+            <div style="font-size: 0.8rem; color: #14532d; margin-top: 2px;" id="d2-contexto-eco">
+              La renta per cápita se sitúa en el nivel medio municipal, con una masa laboral activa de 47.350 ocupados.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dimensión 3: Desigualdad y Concentración -->
+      <section class="dim-card col-6">
+        <div class="dim-header">
+          <div class="dim-title-wrap">
+            <div class="dim-icon icon-purple"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3 class="dim-title">3. Indicadores de Desigualdad</h3>
+          </div>
+          <span class="dim-badge" style="background: #f3e8ff; color: #7c3aed;">Gini & Ratio 80/20</span>
+        </div>
+
+        <div class="data-grid">
+          
+          <div class="data-item">
+            <span class="data-label">Índice de Gini</span>
+            <div class="data-val" id="d3-gini">30,80%</div>
+            <div class="data-sub" id="d3-gini-sub">Rango León: 28,1% – 31,7%</div>
+            <div class="bar-track"><div class="bar-fill bar-purple" id="d3-gini-bar" style="width: 61.6%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Ratio P80 / P20</span>
+            <div class="data-val" id="d3-p80">2,70</div>
+            <div class="data-sub" id="d3-p80-sub">Distancia entre 20% sup e inf</div>
+            <div class="bar-track"><div class="bar-fill bar-purple" id="d3-p80-bar" style="width: 54%;"></div></div>
+          </div>
+
+          <div class="data-item full-width">
+            <span class="data-label">Concentración de Renta Relativa</span>
+            <div class="data-sub" style="font-size: 0.8rem; line-height: 1.45;" id="d3-gini-desc">
+              El índice de Gini de 30,80% refleja la dispersión global de ingresos en el municipio de León. En ZAS con mayores ingresos medios (Centro), el Gini alcanza el 31,70%, mientras que en barrios residenciales homogéneos (Mariano Andrés) se reduce al 28,10%.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dimensión 4: Pobreza Infantil y Severidad -->
+      <section class="dim-card col-6">
+        <div class="dim-header">
+          <div class="dim-title-wrap">
+            <div class="dim-icon icon-rose"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="dim-title">4. Pobreza Infantil y Severidad</h3>
+          </div>
+          <span class="dim-badge" style="background: #ffe4e6; color: #e11d48;">Umbrales INE</span>
+        </div>
+
+        <div class="data-grid">
+          
+          <div class="data-item">
+            <span class="data-label">Pobreza Infantil (&lt;18 Años)</span>
+            <div class="data-val" style="color: #e11d48;" id="d4-pob-infantil">28,40%</div>
+            <div class="data-sub" id="d4-pob-infantil-sub">&lt;60% de la mediana nacional (INE)</div>
+            <div class="bar-track"><div class="bar-fill bar-rose" id="d4-pob-inf-bar" style="width: 28.4%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Pobreza General (&lt;60%)</span>
+            <div class="data-val" id="d4-pob-relativa">18,40%</div>
+            <div class="data-sub" id="d4-pob-relativa-sub">Población total bajo el umbral</div>
+            <div class="bar-track"><div class="bar-fill bar-rose" id="d4-pob-rel-bar" style="width: 18.4%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Pobreza Severa (&lt;50%)</span>
+            <div class="data-val" id="d4-pob-severa">12,90%</div>
+            <div class="data-sub">Extrema (&lt;40%): <strong id="d4-pob-extrema">8,60%</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-rose" id="d4-pob-sev-bar" style="width: 12.9%;"></div></div>
+          </div>
+
+          <div class="data-item">
+            <span class="data-label">Pobreza Extranjeros</span>
+            <div class="data-val" id="d4-pob-extranjeros">63,90%</div>
+            <div class="data-sub">Mayores (≥65): <strong id="d4-pob-mayores">10,90%</strong></div>
+            <div class="bar-track"><div class="bar-fill bar-rose" id="d4-pob-ext-bar" style="width: 63.9%;"></div></div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Vista Matriz Comparativa (7 ZAS + Total) -->
+    <div class="matrix-section" id="matrix-view-content" style="padding: 24px 40px;">
+      <div class="table-container">
+        <table class="zas-matrix-table">
+          <thead>
+            <tr>
+              <th class="th-left">Zona de Acción Social (ZAS)</th>
+              <th>Población</th>
+              <th>Renta / Pers.</th>
+              <th>Renta / Hogar</th>
+              <th>Ocupados</th>
+              <th>Hogares Unip.</th>
+              <th>Gini</th>
+              <th>Pobreza Gral.</th>
+              <th>Pobreza Infantil</th>
+              <th>Pobreza Severa</th>
+              <th>Extranjeros</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-tbody">
+            <!-- Renderizado dinámico con JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database"></i> 
+        <strong>Fuentes oficiales:</strong> INE, Censo Anual de Población y Atlas de Distribución de Renta de los Hogares (2023-2025).
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León & Universidad de León
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const zasDb = {
+      "total": {
+            "id": "total",
+            "nombre": "Municipio de León (Total)",
+            "subtitulo": "Total Municipal • 7 Zonas de Acción Social",
+            "poblacion": 124091,
+            "hombres": 56438,
+            "mujeres": 67653,
+            "pct_hombres": 45.48,
+            "pct_mujeres": 54.52,
+            "menores_15": 14394,
+            "pct_menores_15": 11.6,
+            "menores_18": 16035,
+            "pct_menores_18": 12.92,
+            "mayores_65": 35740,
+            "pct_mayores_65": 28.8,
+            "mayores_80": 13650,
+            "pct_mayores_80": 11.0,
+            "pct_extranjeros": 7.6,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 37.4,
+            "hogares_unipersonales": 23225,
+            "renta_persona": 16689,
+            "renta_hogar": 36332,
+            "ocupados": 47350,
+            "gini": 30.8,
+            "ratio_p80_p20": 2.7,
+            "pobreza_relativa": 18.4,
+            "pobreza_infantil": 28.4,
+            "pobreza_severa": 12.9,
+            "pobreza_extrema": 8.6,
+            "pobreza_mayores": 10.9,
+            "rentas_menor_5k": 3.8,
+            "rentas_menor_10k": 13.8,
+            "pobreza_extranjeros": 63.9
+      },
+      "centro": {
+            "id": "centro",
+            "nombre": "ZAS Centro",
+            "subtitulo": "Centro Urbano y Casco Histórico",
+            "poblacion": 13396,
+            "hombres": 5856,
+            "mujeres": 7540,
+            "pct_hombres": 43.71,
+            "pct_mujeres": 56.29,
+            "menores_15": 1232,
+            "pct_menores_15": 9.2,
+            "menores_18": 1460,
+            "pct_menores_18": 10.9,
+            "mayores_65": 4394,
+            "pct_mayores_65": 32.8,
+            "mayores_80": 1902,
+            "pct_mayores_80": 14.2,
+            "pct_extranjeros": 6.2,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 41.0,
+            "hogares_unipersonales": 2746,
+            "renta_persona": 22433,
+            "renta_hogar": 47319,
+            "ocupados": 5140,
+            "gini": 31.7,
+            "ratio_p80_p20": 2.7,
+            "pobreza_relativa": 11.7,
+            "pobreza_infantil": 17.4,
+            "pobreza_severa": 8.2,
+            "pobreza_extrema": 5.2,
+            "pobreza_mayores": 6.9,
+            "rentas_menor_5k": 2.6,
+            "rentas_menor_10k": 8.7,
+            "pobreza_extranjeros": 48.6
+      },
+      "crucero": {
+            "id": "crucero",
+            "nombre": "ZAS El Crucero",
+            "subtitulo": "El Crucero - La Vega",
+            "poblacion": 11477,
+            "hombres": 5265,
+            "mujeres": 6212,
+            "pct_hombres": 45.87,
+            "pct_mujeres": 54.13,
+            "menores_15": 1205,
+            "pct_menores_15": 10.5,
+            "menores_18": 1365,
+            "pct_menores_18": 11.89,
+            "mayores_65": 3569,
+            "pct_mayores_65": 31.1,
+            "mayores_80": 1412,
+            "pct_mayores_80": 12.3,
+            "pct_extranjeros": 9.8,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 36.9,
+            "hogares_unipersonales": 2117,
+            "renta_persona": 14805,
+            "renta_hogar": 31748,
+            "ocupados": 4039,
+            "gini": 28.9,
+            "ratio_p80_p20": 2.5,
+            "pobreza_relativa": 23.2,
+            "pobreza_infantil": 44.7,
+            "pobreza_severa": 16.1,
+            "pobreza_extrema": 10.7,
+            "pobreza_mayores": 14.1,
+            "rentas_menor_5k": 4.9,
+            "rentas_menor_10k": 18.0,
+            "pobreza_extranjeros": 58.2
+      },
+      "ejido": {
+            "id": "ejido",
+            "nombre": "ZAS El Ejido",
+            "subtitulo": "El Ejido - Santa Ana",
+            "poblacion": 22482,
+            "hombres": 10175,
+            "mujeres": 12307,
+            "pct_hombres": 45.26,
+            "pct_mujeres": 54.74,
+            "menores_15": 2563,
+            "pct_menores_15": 11.4,
+            "menores_18": 2878,
+            "pct_menores_18": 12.8,
+            "mayores_65": 6632,
+            "pct_mayores_65": 29.5,
+            "mayores_80": 2585,
+            "pct_mayores_80": 11.5,
+            "pct_extranjeros": 8.1,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 37.6,
+            "hogares_unipersonales": 4227,
+            "renta_persona": 16102,
+            "renta_hogar": 33383,
+            "ocupados": 8573,
+            "gini": 28.5,
+            "ratio_p80_p20": 2.5,
+            "pobreza_relativa": 18.5,
+            "pobreza_infantil": 26.8,
+            "pobreza_severa": 12.5,
+            "pobreza_extrema": 8.0,
+            "pobreza_mayores": 12.7,
+            "rentas_menor_5k": 3.6,
+            "rentas_menor_10k": 13.0,
+            "pobreza_extranjeros": 52.2
+      },
+      "armunia": {
+            "id": "armunia",
+            "nombre": "ZAS Armunia",
+            "subtitulo": "Armunia - Trobajo del Cerecedo - Oteruelo",
+            "poblacion": 8312,
+            "hombres": 4043,
+            "mujeres": 4269,
+            "pct_hombres": 48.64,
+            "pct_mujeres": 51.36,
+            "menores_15": 989,
+            "pct_menores_15": 11.9,
+            "menores_18": 1114,
+            "pct_menores_18": 13.4,
+            "mayores_65": 2286,
+            "pct_mayores_65": 27.5,
+            "mayores_80": 856,
+            "pct_mayores_80": 10.3,
+            "pct_extranjeros": 8.4,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 33.2,
+            "hogares_unipersonales": 1379,
+            "renta_persona": 12462,
+            "renta_hogar": 27871,
+            "ocupados": 2796,
+            "gini": 30.6,
+            "ratio_p80_p20": 2.9,
+            "pobreza_relativa": 31.9,
+            "pobreza_infantil": 58.9,
+            "pobreza_severa": 24.4,
+            "pobreza_extrema": 17.7,
+            "pobreza_mayores": 20.0,
+            "rentas_menor_5k": 6.4,
+            "rentas_menor_10k": 28.4,
+            "pobreza_extranjeros": 63.9
+      },
+      "mariano_andres": {
+            "id": "mariano_andres",
+            "nombre": "ZAS Mariano Andrés",
+            "subtitulo": "Mariano Andrés - Las Ventas - San Esteban",
+            "poblacion": 28073,
+            "hombres": 12812,
+            "mujeres": 15261,
+            "pct_hombres": 45.64,
+            "pct_mujeres": 54.36,
+            "menores_15": 3200,
+            "pct_menores_15": 11.4,
+            "menores_18": 3593,
+            "pct_menores_18": 12.8,
+            "mayores_65": 8141,
+            "pct_mayores_65": 29.0,
+            "mayores_80": 3088,
+            "pct_mayores_80": 11.0,
+            "pct_extranjeros": 8.3,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 37.8,
+            "hogares_unipersonales": 5305,
+            "renta_persona": 16136,
+            "renta_hogar": 34888,
+            "ocupados": 11021,
+            "gini": 28.1,
+            "ratio_p80_p20": 2.5,
+            "pobreza_relativa": 19.0,
+            "pobreza_infantil": 29.4,
+            "pobreza_severa": 13.3,
+            "pobreza_extrema": 9.0,
+            "pobreza_mayores": 11.9,
+            "rentas_menor_5k": 4.0,
+            "rentas_menor_10k": 14.0,
+            "pobreza_extranjeros": 59.7
+      },
+      "puente_castro": {
+            "id": "puente_castro",
+            "nombre": "ZAS Puente Castro",
+            "subtitulo": "Puente Castro - La Lastra - Polígono X",
+            "poblacion": 21731,
+            "hombres": 9827,
+            "mujeres": 11904,
+            "pct_hombres": 45.22,
+            "pct_mujeres": 54.78,
+            "menores_15": 2955,
+            "pct_menores_15": 13.6,
+            "menores_18": 3216,
+            "pct_menores_18": 14.8,
+            "mayores_65": 5215,
+            "pct_mayores_65": 24.0,
+            "mayores_80": 1760,
+            "pct_mayores_80": 8.1,
+            "pct_extranjeros": 6.8,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 34.8,
+            "hogares_unipersonales": 3781,
+            "renta_persona": 17227,
+            "renta_hogar": 37540,
+            "ocupados": 8391,
+            "gini": 28.9,
+            "ratio_p80_p20": 2.6,
+            "pobreza_relativa": 15.8,
+            "pobreza_infantil": 24.4,
+            "pobreza_severa": 11.2,
+            "pobreza_extrema": 7.2,
+            "pobreza_mayores": 10.7,
+            "rentas_menor_5k": 3.3,
+            "rentas_menor_10k": 12.3,
+            "pobreza_extranjeros": 55.7
+      },
+      "san_mames": {
+            "id": "san_mames",
+            "nombre": "ZAS San Mamés",
+            "subtitulo": "San Mamés - San Pedro - La Asunción",
+            "poblacion": 18620,
+            "hombres": 8460,
+            "mujeres": 10160,
+            "pct_hombres": 45.44,
+            "pct_mujeres": 54.56,
+            "menores_15": 2216,
+            "pct_menores_15": 11.9,
+            "menores_18": 2410,
+            "pct_menores_18": 12.94,
+            "mayores_65": 5503,
+            "pct_mayores_65": 29.5,
+            "mayores_80": 2047,
+            "pct_mayores_80": 11.0,
+            "pct_extranjeros": 8.9,
+            "tam_medio_hogar": 2.0,
+            "pct_unipersonales": 39.5,
+            "hogares_unipersonales": 3670,
+            "renta_persona": 16426,
+            "renta_hogar": 35890,
+            "ocupados": 7390,
+            "gini": 28.4,
+            "ratio_p80_p20": 2.6,
+            "pobreza_relativa": 16.3,
+            "pobreza_infantil": 23.4,
+            "pobreza_severa": 11.2,
+            "pobreza_extrema": 7.2,
+            "pobreza_mayores": 10.8,
+            "rentas_menor_5k": 3.8,
+            "rentas_menor_10k": 12.1,
+            "pobreza_extranjeros": 58.6
+      }
+};
+
+    function selectZas(zid) {
+      const z = zasDb[zid];
+      if (!z) return;
+
+      // Update Active Button
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.pill-btn')).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(zid));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Show Single View, Hide Matrix
+      document.getElementById('zas-view-content').style.display = 'grid';
+      document.getElementById('matrix-view-content').classList.remove('active');
+
+      // Hero
+      document.getElementById('zh-name').textContent = z.nombre;
+      document.getElementById('zh-sub').textContent = z.subtitulo;
+      document.getElementById('zh-pob').textContent = z.poblacion.toLocaleString('es-ES');
+      document.getElementById('zh-renta').textContent = z.renta_persona.toLocaleString('es-ES') + ' €';
+      document.getElementById('zh-gini').textContent = z.gini.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('zh-pob-inf').textContent = z.pobreza_infantil.toFixed(2).replace('.', ',') + '%';
+
+      // Dim 1: Demografia
+      document.getElementById('d1-sexo-h').textContent = z.hombres.toLocaleString('es-ES') + ' H';
+      document.getElementById('d1-sexo-m').textContent = z.mujeres.toLocaleString('es-ES') + ' Mujeres (' + z.pct_mujeres.toFixed(1).replace('.', ',') + '%)';
+      document.getElementById('d1-sexo-bar').style.width = z.pct_mujeres + '%';
+
+      document.getElementById('d1-unipersonal').textContent = z.pct_unipersonales.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d1-unipersonal-sub').textContent = z.hogares_unipersonales.toLocaleString('es-ES') + ' hogares unipersonales';
+      document.getElementById('d1-unipersonal-bar').style.width = z.pct_unipersonales + '%';
+
+      document.getElementById('d1-menores').textContent = z.menores_18.toLocaleString('es-ES');
+      document.getElementById('d1-menores-sub').textContent = z.pct_menores_18.toFixed(1).replace('.', ',') + '% del total de la ZAS';
+      document.getElementById('d1-menores-bar').style.width = (z.pct_menores_18 * 4) + '%';
+
+      document.getElementById('d1-mayores').textContent = z.mayores_65.toLocaleString('es-ES');
+      document.getElementById('d1-mayores-sub').textContent = z.pct_mayores_65.toFixed(1).replace('.', ',') + '% (Sobrenv. 80+: ' + z.pct_mayores_80.toFixed(1).replace('.', ',') + '%)';
+      document.getElementById('d1-mayores-bar').style.width = z.pct_mayores_65 + '%';
+
+      document.getElementById('d1-extranjeros').textContent = z.pct_extranjeros.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d1-extranjeros-bar').style.width = (z.pct_extranjeros * 5) + '%';
+      document.getElementById('d1-tam-hogar').textContent = z.tam_medio_hogar.toFixed(1).replace('.', ',') + ' pers.';
+
+      // Dim 2: Economia
+      document.getElementById('d2-renta-persona').textContent = z.renta_persona.toLocaleString('es-ES') + ' €';
+      const difP = ((z.renta_persona - 16689) / 16689 * 100).toFixed(1).replace('.', ',');
+      document.getElementById('d2-renta-persona-dif').textContent = (z.id === 'total') ? 'Media municipal de referencia' : (z.renta_persona >= 16689 ? '+' + difP + '% vs León' : difP + '% vs León');
+      document.getElementById('d2-renta-p-bar').style.width = Math.min(100, (z.renta_persona / 23000 * 100)) + '%';
+
+      document.getElementById('d2-renta-hogar').textContent = z.renta_hogar.toLocaleString('es-ES') + ' €';
+      const difH = ((z.renta_hogar - 36332) / 36332 * 100).toFixed(1).replace('.', ',');
+      document.getElementById('d2-renta-hogar-dif').textContent = (z.id === 'total') ? 'Unidad de convivencia' : (z.renta_hogar >= 36332 ? '+' + difH + '% vs León' : difH + '% vs León');
+      document.getElementById('d2-renta-h-bar').style.width = Math.min(100, (z.renta_hogar / 48000 * 100)) + '%';
+
+      document.getElementById('d2-ocupados').textContent = z.ocupados.toLocaleString('es-ES');
+      document.getElementById('d2-ocupados-sub').textContent = 'Personas de 16 y más años (' + ((z.ocupados / z.poblacion) * 100).toFixed(1).replace('.', ',') + '% pob. total)';
+      document.getElementById('d2-ocupados-bar').style.width = Math.min(100, (z.ocupados / 12000 * 100)) + '%';
+
+      document.getElementById('d2-renta-10k').textContent = z.rentas_menor_10k.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d2-renta-10k-sub').textContent = '<5.000 €/año: ' + z.rentas_menor_5k.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d2-renta-10k-bar').style.width = (z.rentas_menor_10k * 2) + '%';
+
+      if (z.id === 'total') {
+        document.getElementById('d2-contexto-eco').textContent = 'Renta per cápita municipal de 16.689 € y 47.350 ocupados totales distribuidos en las 7 ZAS.';
+      } else {
+        document.getElementById('d2-contexto-eco').textContent = 'La ZAS ' + z.nombre + ' cuenta con ' + z.ocupados.toLocaleString('es-ES') + ' personas ocupadas y una renta media de ' + z.renta_persona.toLocaleString('es-ES') + ' €/persona.';
+      }
+
+      // Dim 3: Desigualdad
+      document.getElementById('d3-gini').textContent = z.gini.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d3-gini-bar').style.width = (z.gini * 2.5) + '%';
+
+      document.getElementById('d3-p80').textContent = z.ratio_p80_p20.toFixed(2).replace('.', ',');
+      document.getElementById('d3-p80-bar').style.width = (z.ratio_p80_p20 * 25) + '%';
+
+      document.getElementById('d3-gini-desc').textContent = 'Índice de Gini del ' + z.gini.toFixed(2).replace('.', ',') + '% y ratio P80/P20 de ' + z.ratio_p80_p20.toFixed(2).replace('.', ',') + ', indicando que los ingresos del 20% más acomodado multiplican por ' + z.ratio_p80_p20.toFixed(2).replace('.', ',') + ' los del 20% con menores ingresos de la zona.';
+
+      // Dim 4: Pobreza
+      document.getElementById('d4-pob-infantil').textContent = z.pobreza_infantil.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d4-pob-inf-bar').style.width = z.pobreza_infantil + '%';
+
+      document.getElementById('d4-pob-relativa').textContent = z.pobreza_relativa.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d4-pob-rel-bar').style.width = z.pobreza_relativa + '%';
+
+      document.getElementById('d4-pob-severa').textContent = z.pobreza_severa.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d4-pob-extrema').textContent = z.pobreza_extrema.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d4-pob-sev-bar').style.width = z.pobreza_severa + '%';
+
+      document.getElementById('d4-pob-extranjeros').textContent = z.pobreza_extranjeros.toFixed(1).replace('.', ',') + '%';
+      document.getElementById('d4-pob-mayores').textContent = z.pobreza_mayores.toFixed(2).replace('.', ',') + '%';
+      document.getElementById('d4-pob-ext-bar').style.width = z.pobreza_extranjeros + '%';
+    }
+
+    function showMatrix() {
+      // Toggle Tabs
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      const mBtn = document.querySelector('.pill-btn.matrix-btn');
+      if (mBtn) mBtn.classList.add('active');
+
+      // Hide Single View, Show Matrix
+      document.getElementById('zas-view-content').style.display = 'none';
+      document.getElementById('matrix-view-content').classList.add('active');
+
+      // Render Matrix Rows
+      const tbody = document.getElementById('matrix-tbody');
+      tbody.innerHTML = '';
+
+      const order = ['centro', 'crucero', 'ejido', 'armunia', 'mariano_andres', 'puente_castro', 'san_mames', 'total'];
+
+      order.forEach(zid => {
+        const z = zasDb[zid];
+        const isTotal = (zid === 'total');
+        const tr = document.createElement('tr');
+        if (isTotal) tr.className = 'total-row';
+
+        const pobBadge = z.pobreza_infantil >= 35 ? 'badge-red' : (z.pobreza_infantil >= 25 ? 'badge-yellow' : 'badge-green');
+        const rentaBadge = z.renta_persona >= 20000 ? 'badge-green' : (z.renta_persona >= 15000 ? 'badge-blue' : 'badge-yellow');
+
+        tr.innerHTML = `
+          <td class="td-left" style="font-weight: 700; color: ${isTotal ? 'var(--primary-dark)' : 'var(--text-main)'};">
+            ${isTotal ? '<i class="fa-solid fa-city"></i> ' : '<i class="fa-solid fa-location-dot" style="color: #0284c7; font-size: 0.75rem;"></i> '} ${z.nombre}
+          </td>
+          <td><strong>${z.poblacion.toLocaleString('es-ES')}</strong></td>
+          <td><span class="badge-cell ${rentaBadge}">${z.renta_persona.toLocaleString('es-ES')} €</span></td>
+          <td>${z.renta_hogar.toLocaleString('es-ES')} €</td>
+          <td>${z.ocupados.toLocaleString('es-ES')}</td>
+          <td>${z.pct_unipersonales.toFixed(1).replace('.', ',')}%</td>
+          <td>${z.gini.toFixed(1).replace('.', ',')}%</td>
+          <td><strong>${z.pobreza_relativa.toFixed(1).replace('.', ',')}%</strong></td>
+          <td><span class="badge-cell ${pobBadge}">${z.pobreza_infantil.toFixed(1).replace('.', ',')}%</span></td>
+          <td>${z.pobreza_severa.toFixed(1).replace('.', ',')}%</td>
+          <td>${z.pct_extranjeros.toFixed(1).replace('.', ',')}%</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Inicializar con León Total
+    window.addEventListener('DOMContentLoaded', () => {
+      selectZas('total');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infografía 4: Feminización de la Vulnerabilidad y Brecha por Nacionalidad en León | ObservaLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #7c3aed;
+      --primary-dark: #5b21b6;
+      --primary-light: #a78bfa;
+      --secondary: #0f172a;
+      --rose: #e11d48;
+      --pink: #db2777;
+      --amber: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+    }
+
+    .top-actions {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .btn-action {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: #f8fafc;
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .poster-header {
+      background: linear-gradient(135deg, #2e1065 0%, #4c1d95 50%, #6d28d9 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .poster-title-area { max-width: 880px; }
+
+    .badge-serie {
+      display: inline-block;
+      color: #c4b5fd;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .poster-body {
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 26px;
+    }
+
+    /* Marco Metodológico */
+    .glossary-card {
+      grid-column: span 12;
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .glossary-item {
+      background: white;
+      border: 1px solid #f3e8ff;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .glossary-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .glossary-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #7c3aed;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+    }
+
+    .glossary-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #5b21b6;
+    }
+
+    .glossary-desc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* KPIs */
+    .kpi-row {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .kpi-card {
+      background: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+    }
+
+    .kpi-card.purple::before { background: #7c3aed; }
+    .kpi-card.rose::before { background: #e11d48; }
+    .kpi-card.amber::before { background: #d97706; }
+    .kpi-card.indigo::before { background: #4338ca; }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .kpi-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(124, 58, 237, 0.12);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .kpi-card.rose .kpi-icon { background: rgba(225, 29, 72, 0.12); color: #e11d48; }
+    .kpi-card.amber .kpi-icon { background: rgba(217, 119, 6, 0.12); color: #d97706; }
+    .kpi-card.indigo .kpi-icon { background: rgba(67, 56, 202, 0.12); color: #4338ca; }
+
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-top: auto;
+    }
+
+    /* Cards */
+    .card-section {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(124, 58, 237, 0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Comparative Table */
+    .compare-table {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .compare-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .compare-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .compare-bars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .comp-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .comp-tag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .comp-bar-row {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comp-track {
+      background: #f1f5f9;
+      height: 16px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .comp-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .comp-fill.fill-foreign { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+    .comp-fill.fill-spanish { background: linear-gradient(90deg, #94a3b8, #64748b); }
+
+    .comp-num {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .num-foreign { color: #7c3aed; }
+    .num-spanish { color: #475569; }
+
+    /* Gender Grid */
+    .gender-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .gender-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .gender-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .gender-bar-wrap {
+      display: flex;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 24px;
+    }
+
+    .gen-female { background: #db2777; }
+    .gen-male { background: #2563eb; }
+
+    /* Takeaways */
+    .takeaways-card {
+      grid-column: span 12;
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 6px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .takeaways-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .takeaways-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .takeaways-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .takeaway-item {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #3b0764;
+    }
+
+    .takeaway-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .top-actions { display: none; }
+      .infographic-poster { box-shadow: none; border: none; }
+    }
+
+    @media (max-width: 992px) {
+      .col-7, .col-5, .col-6 { grid-column: span 12; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .takeaways-list { grid-template-columns: 1fr; }
+      .compare-bars { grid-template-columns: 1fr; }
+      .glossary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de acciones superior con navegación unificada -->
+  <div class="top-actions">
+    <div class="nav-tabs">
+      <a href="infografia_1_demografia.html" class="btn-action">
+        <i class="fa-solid fa-users"></i> 1. Demografía
+      </a>
+      <a href="infografia_2_renta_empleo.html" class="btn-action">
+        <i class="fa-solid fa-wallet"></i> 2. Renta y Empleo
+      </a>
+      <a href="infografia_3_pobreza_infancia.html" class="btn-action">
+        <i class="fa-solid fa-scale-balanced"></i> 3. Pobreza (Comparativa)
+      </a>
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="btn-action active">
+        <i class="fa-solid fa-venus-mars"></i> 4. Género y Origen
+      </a>
+      <a href="infografia_5_mayores_soledad.html" class="btn-action">
+        <i class="fa-solid fa-person-cane"></i> 5. Monográfico Mayores
+      </a>
+      <a href="infografia_pobreza_infantil_monografica.html" class="btn-action">
+        <i class="fa-solid fa-child-reaching"></i> 6. Monográfico Infancia
+      </a>
+      <a href="infografia_7_panel_zas.html" class="btn-action">
+        <i class="fa-solid fa-table-columns"></i> 7. Panel ZAS
+      </a>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <a href="estadisticas.html" class="btn-action">
+        <i class="fa-solid fa-arrow-left"></i> Estadísticas
+      </a>
+      <button onclick="window.print()" class="btn-action btn-print">
+        <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF
+      </button>
+    </div>
+  </div>
+
+  <main class="infographic-poster" id="infografia-4">
+    
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-scale-balanced" style="margin-right: 6px;"></i> ObservaLE • Serie Infográfica nº 4
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">Análisis de Desigualdad Estructural 2023</span>
+        <h1 class="poster-title">Feminización de la Vulnerabilidad y Brecha por Nacionalidad</h1>
+        <p class="poster-subtitle">
+          Análisis de las brechas estructurales en León: la acumulación de factores de género a lo largo del ciclo vital y las barreras sociolaborales y residenciales en la población extranjera.
+        </p>
+      </div>
+    </header>
+
+    <div class="poster-body">
+
+      <!-- Marco Metodológico Estructural -->
+      <section class="glossary-card">
+        <div class="section-title-wrap" style="margin-bottom: 6px;">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #7c3aed;"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div>
+              <h2 class="section-title">Marco Metodológico: Comprensión de las Brechas Estructurales</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Criterios analíticos para evitar generalizaciones reduccionistas y comprender los determinantes materiales de la desigualdad
+              </p>
+            </div>
+          </div>
+          <span class="section-tag">Análisis Estructural</span>
+        </div>
+
+        <div class="glossary-grid">
+          
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="glossary-title">Tasa de Incidencia vs Composición Real</h3>
+            </div>
+            <p class="glossary-desc">
+              La tasa de incidencia (63,90%) mide la <strong>probabilidad de exposición</strong> individual a la precariedad de una persona extranjera. Sin embargo, en volumen total, <strong>más del 70% de las personas vulnerables en León son españolas</strong>.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-venus"></i></div>
+              <h3 class="glossary-title">Feminización en el Ciclo Vital</h3>
+            </div>
+            <p class="glossary-desc">
+              La vulnerabilidad femenina no es un rasgo estático, sino un <strong>proceso acumulativo</strong>: mayor impacto de cuidados en edad laboral, brecha salarial y eclosión en la vejez (+58% en mayores) por pensiones de viudedad.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 class="glossary-title">Segmentación en el Mercado Laboral</h3>
+            </div>
+            <p class="glossary-desc">
+              La brecha por nacionalidad obedece a <strong>trabas administrativas de homologación</strong>, mayor temporalidad y concentración en ocupaciones elementales y servicios básicos peor remunerados.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-coins"></i></div>
+              <h3 class="glossary-title">Concentración en Rentas &lt;10.000 €</h3>
+            </div>
+            <p class="glossary-desc">
+              El <strong>52,40%</strong> de la población de origen extranjero en León subsiste con ingresos inferiores a 10.000 € anuales por unidad de consumo (frente al <strong>13,10%</strong> de españoles), limitando severamente su cobertura de necesidades básicas.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <h3 class="glossary-title">Privación Monetaria Aguda (&lt;5.000 €)</h3>
+            </div>
+            <p class="glossary-desc">
+              Refleja situaciones donde los ingresos familiares no alcanzan los 416 € mensuales por unidad de consumo, multiplicando por 6,7 la presencia de población extranjera frente a la española.
+            </p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-header">
+              <div class="glossary-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+              <h3 class="glossary-title">Intersección de Factores de Riesgo</h3>
+            </div>
+            <p class="glossary-desc">
+              La máxima exclusión no responde a una única etiqueta, sino a la <strong>concurrencia de factores</strong>: ser mujer mayor que vive sola con pensión mínima, o familias monomarentales migrantes con menores a cargo.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KPIs -->
+      <section class="kpi-row">
+        
+        <div class="kpi-card purple">
+          <div class="kpi-header">
+            <span class="kpi-title">Población Extranjera (&lt;60%)</span>
+            <div class="kpi-icon"><i class="fa-solid fa-globe"></i></div>
+          </div>
+          <div class="kpi-value">63,90%</div>
+          <div class="kpi-desc">
+            Bajo el 60% de la mediana • Multiplica por <strong>4,26 veces</strong> la tasa de la población española (15,00%)
+          </div>
+        </div>
+
+        <div class="kpi-card rose">
+          <div class="kpi-header">
+            <span class="kpi-title">Brecha de Género en la Vejez</span>
+            <div class="kpi-icon"><i class="fa-solid fa-venus"></i></div>
+          </div>
+          <div class="kpi-value">+58,0%</div>
+          <div class="kpi-desc">
+            <strong>12,80% en mujeres mayores</strong> frente al 8,10% en hombres mayores en el municipio de León
+          </div>
+        </div>
+
+        <div class="kpi-card amber">
+          <div class="kpi-header">
+            <span class="kpi-title">Privación Extrema (&lt;5.000 €)</span>
+            <div class="kpi-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">18,10%</div>
+          <div class="kpi-desc">
+            De extranjeros en León viven con &lt;5.000 €/año frente al <strong>2,70%</strong> de españoles (<strong>6,7 veces más</strong>)
+          </div>
+        </div>
+
+        <div class="kpi-card indigo">
+          <div class="kpi-header">
+            <span class="kpi-title">Mujeres en Extrema Pobreza Senior</span>
+            <div class="kpi-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          </div>
+          <div class="kpi-value">64,4%</div>
+          <div class="kpi-desc">
+            Del total de personas de ≥65 años en pobreza extrema (&lt;40% de la mediana) son mujeres viudas
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Comparativa Extranjera vs Española -->
+      <section class="card-section col-7">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon"><i class="fa-solid fa-scale-unbalanced-flip"></i></div>
+            <div>
+              <h2 class="section-title">La Brecha por Nacionalidad en León (2023)</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Diferenciales de vulnerabilidad según país de origen en los distintos tramos de renta (INE)
+              </p>
+            </div>
+          </div>
+          <span class="section-tag">INE Umbrales de Renta</span>
+        </div>
+
+        <div class="compare-table">
+          
+          <div class="compare-row">
+            <div class="compare-label">
+              <span>Umbral Relativo de Pobreza (&lt;60% Mediana)</span>
+              <span style="color: #7c3aed; font-size: 0.8rem; font-weight: 800;">Brecha de +48,90 pp</span>
+            </div>
+            <div class="compare-bars">
+              <div class="comp-col">
+                <span class="comp-tag">Población de Origen Extranjero</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-foreign" style="width: 63.9%;"></div></div>
+                  <span class="comp-num num-foreign">63,90%</span>
+                </div>
+              </div>
+              <div class="comp-col">
+                <span class="comp-tag">Población Española</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-spanish" style="width: 15.0%;"></div></div>
+                  <span class="comp-num num-spanish">15,00%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-label">
+              <span>Pobreza Severa (&lt;50% Mediana)</span>
+              <span style="color: #7c3aed; font-size: 0.8rem; font-weight: 800;">Casi 5 veces superior (4,86x)</span>
+            </div>
+            <div class="compare-bars">
+              <div class="comp-col">
+                <span class="comp-tag">Población de Origen Extranjero</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-foreign" style="width: 54.4%;"></div></div>
+                  <span class="comp-num num-foreign">54,40%</span>
+                </div>
+              </div>
+              <div class="comp-col">
+                <span class="comp-tag">Población Española</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-spanish" style="width: 11.2%;"></div></div>
+                  <span class="comp-num num-spanish">11,20%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-label">
+              <span>Pobreza Extrema (&lt;40% Mediana)</span>
+              <span style="color: #7c3aed; font-size: 0.8rem; font-weight: 800;">4,88 veces superior</span>
+            </div>
+            <div class="compare-bars">
+              <div class="comp-col">
+                <span class="comp-tag">Población de Origen Extranjero</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-foreign" style="width: 42.0%;"></div></div>
+                  <span class="comp-num num-foreign">42,00%</span>
+                </div>
+              </div>
+              <div class="comp-col">
+                <span class="comp-tag">Población Española</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-spanish" style="width: 8.6%;"></div></div>
+                  <span class="comp-num num-spanish">8,60%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-label">
+              <span>Umbral Fijo Crítico (&lt;5.000 € / Unidad de Consumo)</span>
+              <span style="color: #e11d48; font-weight: 800; font-size: 0.8rem;">6,70 veces superior</span>
+            </div>
+            <div class="compare-bars">
+              <div class="comp-col">
+                <span class="comp-tag">Población de Origen Extranjero</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill" style="width: 18.1%; background: #e11d48;"></div></div>
+                  <span class="comp-num" style="color: #e11d48;">18,10%</span>
+                </div>
+              </div>
+              <div class="comp-col">
+                <span class="comp-tag">Población Española</span>
+                <div class="comp-bar-row">
+                  <div class="comp-track"><div class="comp-fill fill-spanish" style="width: 2.7%;"></div></div>
+                  <span class="comp-num num-spanish">2,70%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 16px; padding: 12px 14px; background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.45;">
+          <strong><i class="fa-solid fa-city" style="color: var(--primary);"></i> Concentración territorial por ZAS:</strong>
+          En Zonas de Acción Social como <strong>El Crucero</strong> y <strong>San Mamés</strong> más del 50% de la población extranjera se sitúa en tramos de ingresos inferiores a 10.000 € anuales por unidad de consumo, coincidiendo con las áreas de menor renta media por persona del municipio.
+        </div>
+      </section>
+
+      <!-- Género y Feminización -->
+      <section class="card-section col-5">
+        <div class="section-title-wrap">
+          <div class="section-heading">
+            <div class="section-icon" style="background: #db2777;"><i class="fa-solid fa-venus"></i></div>
+            <div>
+              <h2 class="section-title">Feminización de la Pobreza</h2>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                Impacto de género acumulado en la vejez (≥65 años)
+              </p>
+            </div>
+          </div>
+          <span class="section-tag" style="background: #fce7f3; color: #db2777;">Mujeres vs Hombres</span>
+        </div>
+
+        <div class="gender-grid">
+          
+          <div class="gender-card">
+            <div class="gender-header">
+              <span>Pobreza Relativa (&lt;60% Mediana)</span>
+              <span style="color: #db2777;">12,8% M vs 8,1% H (+58%)</span>
+            </div>
+            <div class="gender-bar-wrap">
+              <div class="gen-female" style="width: 61.2%;">Mujeres: 61,2%</div>
+              <div class="gen-male" style="width: 38.8%;">Hombres: 38,8%</div>
+            </div>
+            <p style="font-size: 0.76rem; color: var(--text-muted); margin-top: 6px;">
+              Más de 6 de cada 10 mayores de 65 años bajo el umbral de pobreza en la capital leonesa son mujeres.
+            </p>
+          </div>
+
+          <div class="gender-card" style="background: #fff1f2; border-color: #fecdd3;">
+            <div class="gender-header" style="color: #9f1239;">
+              <span>Pobreza Extrema en Mayores (&lt;40% Mediana)</span>
+              <span>3,8% M vs 2,1% H (+81%)</span>
+            </div>
+            <div class="gender-bar-wrap">
+              <div class="gen-female" style="width: 64.4%; background: #e11d48;">Mujeres: 64,4%</div>
+              <div class="gen-male" style="width: 35.6%; background: #475569;">Hombres: 35,6%</div>
+            </div>
+            <p style="font-size: 0.76rem; color: #881337; margin-top: 6px;">
+              En el nivel de mayor privación material, casi dos tercios de los mayores afectados son mujeres.
+            </p>
+          </div>
+
+          <div class="gender-card" style="background: #f8fafc; border-color: var(--border-color);">
+            <div class="gender-header" style="color: var(--text-main);">
+              <span>Ingresos &lt;10.000 € en Mayores</span>
+              <span>7,1% M vs 5,7% H</span>
+            </div>
+            <div class="gender-bar-wrap">
+              <div class="gen-female" style="width: 55.5%; background: #ec4899;">Mujeres: 55,5%</div>
+              <div class="gen-male" style="width: 44.5%; background: #64748b;">Hombres: 44,5%</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 14px; font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; background: #fffbeb; padding: 10px 12px; border-radius: 8px; border: 1px solid #fde68a;">
+          <i class="fa-solid fa-circle-info" style="color: #b45309;"></i> <strong>Factores causales:</strong> La brecha en la vejez no es fortuita: deriva de carreras laborales interrumpidas por cuidados familiares no remunerados y la inferior cuantía de las pensiones de viudedad en hogares de una sola persona.
+        </div>
+      </section>
+
+      <!-- Conclusiones -->
+      <aside class="takeaways-card">
+        <div class="takeaways-icon">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <div class="takeaways-content">
+          <h3>3 Conclusiones Clave para la Equidad y Cohesión en León</h3>
+          <div class="takeaways-list">
+            
+            <div class="takeaway-item">
+              <strong>1. Polarización de Rentas por Nacionalidad</strong>
+              El 63,9% de pobreza de ingresos en la población extranjera y el 18,1% en privación extrema (&lt;5.000 €) reflejan una intensa polarización frente a la población española (15,0% y 2,7%), acumulándose mayoritariamente en tramos de renta inferiores a 10.000 € anuales por unidad de consumo.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>2. La Desigualdad de Género Eclosiona en la Tercera Edad</strong>
+              A lo largo de la vida activa las mujeres asumen mayor carga de cuidados y precariedad; al llegar a los 65 años, la tasa de pobreza severa femenina (3,8%) casi duplica la masculina (2,1%) y concentra al 64,4% de los mayores en privación extrema, demandando complementos para pensiones mínimas y apoyo a la soledad.
+            </div>
+
+            <div class="takeaway-item">
+              <strong>3. Interseccionalidad sin Estigmatizaciones</strong>
+              La mayor vulnerabilidad social en León no se explica por categorías aisladas, sino por la concurrencia simultánea de factores cuantitativos: residir en ZAS de menor renta media municipal, ingresos procedentes de pensiones reducidas de viudedad y sobrecargas familiares en hogares monomarentales.
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database"></i> 
+        <strong>Fuentes oficiales:</strong> INE, Distribución de Renta de los Hogares (Desglose por Nacionalidad y Sexo, 2023).
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León & Universidad de León
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
