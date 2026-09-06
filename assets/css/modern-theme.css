@@ -2917,4 +2917,576 @@ a:hover, a:focus-visible {
   flex-shrink: 0;
 }
 
+/* ==========================================================================
+   ESPACIO DE ANÁLISIS ESTADÍSTICO - NAVBAR COMÚN UNIFICADA & MATRIZ DE TARJETAS
+   ========================================================================== */
+
+/* 1. Barra de Navegación Unificada del Espacio Estadístico */
+.stats-unified-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  transition: all var(--transition-fast);
+}
+
+[data-theme="dark"] .stats-unified-header {
+  background: rgba(15, 23, 42, 0.92);
+  border-bottom-color: var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stats-unified-nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stats-nav-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.stats-nav-brand-group:hover {
+  text-decoration: none;
+  color: var(--brand-teal);
+}
+
+.stats-nav-brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.stats-nav-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-nav-brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.stats-nav-brand-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-teal);
+}
+
+/* Enlaces centrales de navegación */
+.stats-nav-center-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-nav-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.stats-nav-item-btn:hover {
+  background: var(--bg-surface-alt);
+  color: var(--text-main);
+  border-color: var(--border-subtle);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.stats-nav-item-btn.active {
+  background: var(--brand-teal);
+  color: #ffffff !important;
+  border-color: var(--brand-teal);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.3);
+}
+
+.stats-nav-item-btn.active i {
+  color: #ffffff !important;
+}
+
+/* Menú desplegable para las 7 infografías en la barra */
+.stats-nav-dropdown-wrap {
+  position: relative;
+}
+
+.stats-dropdown-menu-box {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  padding: 8px;
+  min-width: 260px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1100;
+  transition: all 0.2s ease;
+}
+
+.stats-nav-dropdown-wrap:hover .stats-dropdown-menu-box,
+.stats-nav-dropdown-wrap:focus-within .stats-dropdown-menu-box {
+  display: flex;
+  transform: translateX(-50%) translateY(0);
+}
+
+.stats-dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.stats-dropdown-link:hover {
+  background: var(--bg-surface-alt);
+  color: var(--brand-teal);
+  text-decoration: none;
+}
+
+.stats-dropdown-link.active {
+  background: var(--brand-teal-light);
+  color: var(--brand-teal) !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .stats-dropdown-link.active {
+  background: rgba(45, 212, 191, 0.15);
+  color: var(--brand-teal) !important;
+}
+
+/* Acciones a la derecha en la barra */
+.stats-nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stats-btn-cifras-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(139, 17, 62, 0.1) 0%, rgba(139, 17, 62, 0.05) 100%);
+  border: 1px solid rgba(139, 17, 62, 0.25);
+  border-radius: var(--radius-sm);
+  color: var(--brand-carmine) !important;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.stats-btn-cifras-link:hover {
+  background: var(--brand-carmine);
+  color: #ffffff !important;
+  border-color: var(--brand-carmine);
+  box-shadow: 0 4px 12px rgba(139, 17, 62, 0.25);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.stats-btn-portal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 13px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.stats-btn-portal-back:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+  border-color: var(--border-medium);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Franja secundaria de acceso rápido entre infografías (Sub-barra horizontal) */
+.stats-subnav-strip {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 20px;
+}
+
+.stats-subnav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stats-subnav-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stats-subnav-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-subnav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.stats-subnav-link:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.stats-subnav-link.active {
+  background: var(--brand-teal);
+  color: #ffffff !important;
+  border-color: var(--brand-teal);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   2. MATRIZ DE TARJETAS CON ICONOS GIGANTES (ESTILO EXPLORER / FIGMA)
+   ========================================================================== */
+.matrix-hub-hero {
+  text-align: center;
+  max-width: 860px;
+  margin: 40px auto 48px;
+  padding: 0 20px;
+}
+
+.matrix-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--brand-teal-light);
+  color: var(--brand-teal);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .matrix-hero-tag {
+  background: rgba(45, 212, 191, 0.15);
+}
+
+.matrix-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.matrix-hero-desc {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Contenedor Grid de la Matriz */
+.matrix-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+@media (max-width: 1200px) {
+  .matrix-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .matrix-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  .matrix-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Tarjeta individual con Icono Gigante */
+.matrix-card-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+.matrix-card-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-teal);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1), 0 0 24px rgba(15, 118, 110, 0.15);
+}
+
+[data-theme="dark"] .matrix-card-item {
+  background: #131b2e;
+  border-color: #243049;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .matrix-card-item:hover {
+  border-color: var(--brand-teal);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(45, 212, 191, 0.2);
+}
+
+/* Área visual superior de la tarjeta (Canvas con Icono Gigante) */
+.matrix-card-top {
+  height: 180px;
+  background: #eef3f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .matrix-card-top {
+  background: #1a243a;
+}
+
+/* Halo concéntrico suave de fondo (círculo del icono como en la referencia) */
+.matrix-card-halo {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: #dbe4ee;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+  z-index: 1;
+}
+
+[data-theme="dark"] .matrix-card-halo {
+  background: #23304c;
+}
+
+.matrix-card-item:hover .matrix-card-halo {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: #d0dde9;
+}
+
+[data-theme="dark"] .matrix-card-item:hover .matrix-card-halo {
+  background: #2b3b5e;
+}
+
+/* Icono Gigante de Alto Impacto */
+.matrix-card-icon {
+  font-size: 3.8rem;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.matrix-card-item:hover .matrix-card-icon {
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* Variantes temáticas de color para iconos */
+.matrix-icon-carmine { color: #8B113E; }
+.matrix-icon-teal { color: #0f766e; }
+.matrix-icon-blue { color: #1e40af; }
+.matrix-icon-indigo { color: #4338ca; }
+.matrix-icon-amber { color: #b45309; }
+.matrix-icon-purple { color: #6d28d9; }
+.matrix-icon-rose { color: #be123c; }
+.matrix-icon-emerald { color: #047857; }
+
+[data-theme="dark"] .matrix-icon-carmine { color: #e65c82; }
+[data-theme="dark"] .matrix-icon-teal { color: #2dd4bf; }
+[data-theme="dark"] .matrix-icon-blue { color: #60a5fa; }
+[data-theme="dark"] .matrix-icon-indigo { color: #818cf8; }
+[data-theme="dark"] .matrix-icon-amber { color: #fbbf24; }
+[data-theme="dark"] .matrix-icon-purple { color: #a78bfa; }
+[data-theme="dark"] .matrix-icon-rose { color: #fb7185; }
+[data-theme="dark"] .matrix-icon-emerald { color: #34d399; }
+
+/* Badge de categoría en la esquina superior */
+.matrix-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--text-main);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  z-index: 3;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .matrix-card-badge {
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Área inferior de la tarjeta (Título y contenido) */
+.matrix-card-bottom {
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--bg-surface);
+  text-align: center;
+}
+
+[data-theme="dark"] .matrix-card-bottom {
+  background: #131b2e;
+}
+
+.matrix-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color var(--transition-fast);
+}
+
+.matrix-card-item:hover .matrix-card-title {
+  color: var(--brand-teal);
+}
+
+.matrix-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.matrix-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brand-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.matrix-card-item:hover .matrix-card-cta {
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .stats-nav-center-links {
+    display: none;
+  }
+}
+
 
