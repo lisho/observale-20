@@ -1027,20 +1027,6 @@
 
   </main>
 
-  <script>
-    (function() {
-      const sidebar = document.getElementById('statsSidebarDock');
-      const toggleBtn = document.getElementById('sidebarToggleBtn');
-      const toggleIcon = document.getElementById('sidebarToggleIcon');
-      if (sidebar && toggleBtn) {
-        toggleBtn.addEventListener('click', function() {
-          const isExpanded = sidebar.classList.toggle('expanded');
-          if (toggleIcon) {
-            toggleIcon.className = isExpanded ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-          }
-        });
-      }
-    })();
-  </script>
+  <script src="assets/js/sidebar-dock.js"></script>
 </body>
 </html>

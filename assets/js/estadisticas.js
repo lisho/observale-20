@@ -504,3 +504,97 @@ function initDynamicNavbarCifras() {
   updateVisibility();
 }
 
+/* ==========================================================================
+   5. BARRA LATERAL (SIDEBAR DOCK) RESPONSIVE CONTROLLER
+   ========================================================================== */
+(function() {
+  function checkSidebar() {
+    const sidebar = document.getElementById('statsSidebarDock');
+    if (!sidebar) return;
+
+    // Asegurar backdrop
+    let backdrop = document.querySelector('.sidebar-mobile-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'sidebar-mobile-backdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(backdrop);
+    }
+
+    // Asegurar FAB móvil
+    let fab = document.querySelector('.sidebar-mobile-fab');
+    if (!fab) {
+      fab = document.createElement('button');
+      fab.type = 'button';
+      fab.className = 'sidebar-mobile-fab';
+      fab.setAttribute('aria-label', 'Abrir menú de navegación');
+      fab.setAttribute('title', 'Navegación del Espacio Estadístico');
+      fab.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      document.body.appendChild(fab);
+    }
+
+    const toggleBtn = document.getElementById('sidebarToggleBtn');
+    const toggleIcon = document.getElementById('sidebarToggleIcon');
+
+    function openSidebar() {
+      sidebar.classList.add('expanded');
+      backdrop.classList.add('active');
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-xmark';
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('expanded');
+      backdrop.classList.remove('active');
+      if (toggleIcon) toggleIcon.className = 'fa-solid fa-bars';
+    }
+
+    function toggleSidebar() {
+      if (sidebar.classList.contains('expanded')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    if (toggleBtn && !toggleBtn.dataset.bound) {
+      toggleBtn.dataset.bound = 'true';
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleSidebar();
+      });
+    }
+
+    if (fab && !fab.dataset.bound) {
+      fab.dataset.bound = 'true';
+      fab.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleSidebar();
+      });
+    }
+
+    if (backdrop && !backdrop.dataset.bound) {
+      backdrop.dataset.bound = 'true';
+      backdrop.addEventListener('click', closeSidebar);
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && sidebar.classList.contains('expanded')) {
+        closeSidebar();
+      }
+    });
+
+    sidebar.querySelectorAll('a.sidebar-square-btn').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 992) closeSidebar();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkSidebar);
+  } else {
+    checkSidebar();
+  }
+})();
+
+
