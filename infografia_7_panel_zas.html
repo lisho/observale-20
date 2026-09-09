@@ -889,6 +889,25 @@
         </div>
       </section>
 
+      <!-- Cuadro de Diagnóstico Sociocomunitario Territorial -->
+      <section class="dim-card col-12" id="zas-diag-section" style="margin-top: 4px; background: #ffffff; border: 1.5px solid var(--border-color); border-radius: 16px;">
+        <div class="dim-header" style="margin-bottom: 14px; padding-bottom: 12px;">
+          <div class="dim-title-wrap">
+            <div class="dim-icon" style="background: #0f172a;"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3 class="dim-title">Diagnóstico Sociocomunitario</h3>
+          </div>
+          <span class="dim-badge" id="diag-badge" style="background: #f1f5f9; color: #475569;">Evaluación Territorial</span>
+        </div>
+
+        <div id="diag-alert-container">
+          <!-- Alerta de exclusión interseccional dinámica para Armunia, Crucero y San Mamés -->
+        </div>
+
+        <div id="diag-text-content" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">
+          <!-- Texto de síntesis territorial -->
+        </div>
+      </section>
+
     </div>
 
     <!-- Vista Matriz Comparativa (7 ZAS + Total) -->
@@ -1307,6 +1326,60 @@
       document.getElementById('d4-pob-extranjeros').textContent = z.pobreza_extranjeros.toFixed(1).replace('.', ',') + '%';
       document.getElementById('d4-pob-mayores').textContent = z.pobreza_mayores.toFixed(2).replace('.', ',') + '%';
       document.getElementById('d4-pob-ext-bar').style.width = z.pobreza_extranjeros + '%';
+
+      // Diagnóstico Sociocomunitario
+      const alertContainer = document.getElementById('diag-alert-container');
+      const textContent = document.getElementById('diag-text-content');
+      const diagBadge = document.getElementById('diag-badge');
+
+      const interseccionalZas = ['armunia', 'crucero', 'san_mames'];
+      if (interseccionalZas.includes(z.id)) {
+        alertContainer.innerHTML = `
+          <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-left: 5px solid #e11d48; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start;">
+            <div style="font-size: 1.25rem; color: #e11d48; line-height: 1; flex-shrink: 0; margin-top: 2px;">⚠️</div>
+            <div>
+              <div style="font-weight: 800; color: #9f1239; font-size: 0.88rem; margin-bottom: 3px;">
+                Riesgo de Exclusión Interseccional
+              </div>
+              <div style="font-size: 0.83rem; color: #374151; line-height: 1.5;">
+                Coincidencia de alta presencia de población extranjera (&gt;60% en pobreza), concentración de ingresos &lt;10.000 €/año y elevadas tasas de pobreza infantil, requiriendo itinerarios integrados de inserción sociolaboral y apoyo a familias monomarentales.
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        alertContainer.innerHTML = '';
+      }
+
+      // Textos descriptivos complementarios por ZAS
+      const diagTextos = {
+        'total': 'El municipio de León refleja una dualidad socioespacial significativa: un escudo protector de pensiones que contiene la pobreza en personas mayores (13,90%), frente a una acusada brecha generacional donde la pobreza infantil alcanza el 28,40% (~4.900 menores). Las mayores urgencias territoriales se polarizan en La Armunia (58,90% infantil) y El Crucero (44,70%), en contraste con la estabilidad de rentas del Centro (17,40%).',
+        'centro': 'El distrito Centro presenta la mayor renta per cápita de la ciudad (22.433 €, +34,4% sobre la media) y la menor tasa de pobreza infantil (17,40%). No obstante, ostenta el índice de Gini más alto de León (31,70%), reflejando una marcada polarización de ingresos interna, junto a una alta proporción de hogares unipersonales (41,0%) concentrados en personas mayores.',
+        'crucero': 'El Crucero - La Vega combina una elevada tasa de pobreza infantil (44,70%) con una fuerte concentración de rentas bajas (18,00% con &lt;10.000 € y 4,90% en privación aguda &lt;5.000 €). Con una renta media de 14.805 €/persona (-11,3% vs media), la zona demanda dispositivos reforzados de mediación comunitaria, vivienda social y soporte integral a hogares monoparentales.',
+        'ejido': 'El Ejido - Santa Ana alberga a 22.482 residentes, configurándose como un área residencial intermedia con renta per cápita de 16.102 € y un 26,80% de pobreza infantil. Su índice de Gini contenido (28,50%) evidencia homogeneidad salarial en un entorno de envejecimiento demográfico consolidado (29,50% de mayores de 65 años).',
+        'armunia': 'La ZAS Armunia presenta el cuadro de mayor vulnerabilidad socioeconómica de la capital: renta per cápita un 25,3% inferior a la media municipal (12.462 €), una tasa de pobreza general del 31,90% y una emergencia infantil sin parangón en León del 58,90% (con 37,20% en extrema pobreza &lt;40% de la mediana). Constituye la máxima prioridad para planes de choque sociocomunitarios.',
+        'mariano_andres': 'Mariano Andrés concentra el mayor volumen absoluto de población en riesgo de exclusión de León: alberga a ~1.220 menores en pobreza y ~5.300 hogares unipersonales. Presenta la estructura salarial más homogénea del municipio (Gini de 28,10%, el más bajo de León) y una renta media de 16.136 € por habitante.',
+        'puente_castro': 'Puente Castro - La Lastra - Polígono X es la ZAS con mayor dinamismo generacional y perfil más joven de la ciudad (14,80% de menores y 24,00% de mayores). Su renta media asciende a 17.227 € (+3,2% sobre la media) y mantiene tasas de pobreza infantil (24,40%) y general (15,80%) moderadas en el contexto capitalino.',
+        'san_mames': 'San Mamés - San Pedro reúne una alta densidad poblacional con un 8,90% de residentes extranjeros y un 39,50% de hogares unipersonales. Aunque su renta media se sitúa en 16.426 €, la confluencia de bolsas de privación infantil (23,40%) y fragilidad en unidades monomarentales requiere itinerarios integrados de apoyo social activo.'
+      };
+
+      const diagBadges = {
+        'total': { label: 'Visión Integral Municipal', bg: '#e0f2fe', color: '#0369a1' },
+        'centro': { label: 'Alta Renta & Envejecimiento', bg: '#f1f5f9', color: '#334155' },
+        'crucero': { label: 'Alerta Interseccional Alta', bg: '#fee2e2', color: '#991b1b' },
+        'ejido': { label: 'Equilibrio Territorial Medio', bg: '#f0fdf4', color: '#166534' },
+        'armunia': { label: 'Urgencia Máxima Interseccional', bg: '#fee2e2', color: '#991b1b' },
+        'mariano_andres': { label: 'Máximo Volumen Poblacional', bg: '#f3e8ff', color: '#6b21a8' },
+        'puente_castro': { label: 'Expansión Familiar Joven', bg: '#dcfce7', color: '#15803d' },
+        'san_mames': { label: 'Alerta Interseccional Comunitaria', bg: '#fef3c7', color: '#92400e' }
+      };
+
+      textContent.innerHTML = diagTextos[z.id] || '';
+      if (diagBadges[z.id]) {
+        diagBadge.textContent = diagBadges[z.id].label;
+        diagBadge.style.background = diagBadges[z.id].bg;
+        diagBadge.style.color = diagBadges[z.id].color;
+      }
     }
 
     function showMatrix() {
