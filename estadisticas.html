@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -12,24 +12,228 @@
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- Hojas de estilo -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- Fuentes Google: Outfit & Plus Jakarta Sans (Idénticas a las Infografías) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo (Mismas que las Infografías: Sin Bootstrap) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/modern-theme.css">
+
+  <style>
+    :root {
+      --primary: #8b1834;
+      --primary-dark: #630d22;
+      --primary-light: #ab2143;
+      --secondary: #1e293b;
+      --accent: #d97706;
+      --accent-soft: #fef3c7;
+      --child-red: #ef4444;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #ffffff;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 16px -2px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 30px 15px;
+      min-height: 100vh;
+    }
+
+    /* Contenedor tipo Póster de Infografía (Mismo ancho 1200px que las 7 infografías) */
+    .infographic-poster {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Cabecera distintiva en carmín/granate degradado */
+    .poster-header {
+      background: linear-gradient(135deg, #700f28 0%, #9e1b3d 60%, #520b1e 100%);
+      color: white;
+      padding: 36px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-header::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-logos img {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .observale-tag {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .poster-title-area {
+      max-width: 960px;
+    }
+
+    .badge-serie {
+      display: inline-block;
+      color: #fef08a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .poster-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .poster-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      line-height: 1.55;
+      max-width: 850px;
+    }
+
+    /* Cuerpo del Póster */
+    .poster-body {
+      padding: 40px;
+      background: #ffffff;
+    }
+
+    /* Pie del Póster */
+    .poster-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 22px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-source {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-stamp {
+      font-weight: 600;
+      color: var(--primary-light);
+    }
+
+    /* Grid de tarjetas adaptado */
+    .matrix-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    @media (max-width: 1200px) {
+      .matrix-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .poster-header {
+        padding: 26px 28px;
+      }
+      .poster-title {
+        font-size: 1.85rem;
+      }
+      .poster-body {
+        padding: 24px 20px;
+      }
+      .poster-footer {
+        padding: 18px 20px;
+      }
+      .matrix-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .matrix-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
-<body class="has-sidebar-dock" style="background: var(--bg-primary); color: var(--text-main); position: relative; min-height: 100vh; display: flex; flex-direction: column;">
-
-  <!-- Fondo Ambiental Orgánico Dinámico -->
-  <div class="ambient-mesh-bg" id="ambientMeshBg" aria-hidden="true">
-    <div class="ambient-blob blob-1"></div>
-    <div class="ambient-blob blob-2"></div>
-    <div class="ambient-blob blob-3"></div>
-  </div>
+<body class="has-sidebar-dock">
 
   <!-- ==========================================================================
        BARRA LATERAL COLAPSABLE (SIDEBAR DOCK) - BOTONES CUADRADOS CON ICONO
+       (IDÉNTICA A LAS 7 INFOGRAFÍAS)
        ========================================================================== -->
   <aside class="stats-sidebar-dock" id="statsSidebarDock" aria-label="Navegación del Espacio Estadístico">
     <!-- Cabecera del Sidebar con Toggle -->
@@ -115,12 +319,6 @@
         <span class="sidebar-btn-label">observale.es</span>
       </a>
 
-      <!-- Botón Tema Claro / Oscuro -->
-      <button type="button" id="themeToggleBtn" class="sidebar-square-btn" data-title="Cambiar tema claro / oscuro" title="Cambiar tema" aria-label="Cambiar tema claro u oscuro">
-        <i class="fa-solid fa-moon"></i>
-        <span class="sidebar-btn-label">Modo Color</span>
-      </button>
-
       <!-- Botón Imprimir / PDF -->
       <button type="button" onclick="window.print()" class="sidebar-square-btn sidebar-btn-print" data-title="Imprimir / Guardar en PDF" title="Imprimir / PDF">
         <i class="fa-solid fa-print"></i>
@@ -131,27 +329,39 @@
   </aside>
 
   <!-- ==========================================================================
-       CONTENIDO PRINCIPAL: HERO Y MATRIZ DE TARJETAS CON ICONOS GIGANTES
+       CONTENEDOR PÓSTER DE ANÁLISIS ESTADÍSTICO (COHERENTE CON INFOGRAFÍAS)
        ========================================================================== -->
-  <main style="flex-grow: 1; padding-bottom: 80px; position: relative; z-index: 1;">
+  <main class="infographic-poster">
 
-    <!-- Hero Introductorio del Espacio Estadístico -->
-    <section class="matrix-hub-hero">
-      <span class="matrix-hero-tag">
-        <i class="fa fa-database"></i> Sistema de Información Social de León
-      </span>
-      <h1 class="matrix-hero-title">Espacio de Análisis Estadístico</h1>
-      <p class="matrix-hero-desc">
-        Consulta el diagnóstico cuantitativo y las infografías analíticas del municipio de León. Un marco estructurado para la medición de la exclusión social, la renta, el envejecimiento y la infancia en el territorio.
-      </p>
-    </section>
+    <!-- Cabecera Institucional en Carmín/Granate con los 3 logos oficiales -->
+    <header class="poster-header">
+      <div class="header-top">
+        <div class="header-logos">
+          <img src="assets/images/logo.png" alt="ObservaLE Logo" onerror="this.style.display='none'">
+          <img src="assets/images/aytologo.png" alt="Ayuntamiento de León" onerror="this.style.display='none'">
+          <img src="assets/images/unilogo.png" alt="Universidad de León" onerror="this.style.display='none'">
+        </div>
+        <div class="observale-tag">
+          <i class="fa-solid fa-shapes" style="margin-right: 6px;"></i> ObservaLE • Espacio Estadístico
+        </div>
+      </div>
+      <div class="poster-title-area">
+        <span class="badge-serie">ESPACIO DE ANÁLISIS ESTADÍSTICO • CATÁLOGO MONOGRÁFICO</span>
+        <h1 class="poster-title">Espacio de Análisis Estadístico</h1>
+        <p class="poster-subtitle">
+          Diagnóstico cuantitativo, indicadores territoriales y serie analítica del municipio de León. Un marco estructurado para la medición de la exclusión social, la renta, el envejecimiento y la infancia.
+        </p>
+      </div>
+    </header>
 
-    <!-- Banner Destacado: Acceso a ObservaLE en Cifras -->
-    <div style="max-width: 1400px; margin: 0 auto 36px; padding: 0 20px;">
-      <div class="dash-top-spotlight-alert" role="alert">
+    <!-- Cuerpo del Póster -->
+    <div class="poster-body">
+
+      <!-- Banner Destacado: Acceso a ObservaLE en Cifras -->
+      <div class="dash-top-spotlight-alert" role="alert" style="margin-bottom: 32px;">
         <div class="dash-top-spotlight-left">
           <div class="dash-top-spotlight-icon">
-            <i class="fa fa-line-chart"></i>
+            <i class="fa-solid fa-chart-line"></i>
           </div>
           <div class="dash-top-spotlight-body">
             <div class="dash-top-spotlight-tag">
@@ -161,7 +371,7 @@
             <p class="dash-top-spotlight-text">
               Para generar tablas personalizadas, cruzar microdatos censales y descargar informes detallados, visita
               <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" class="dash-top-spotlight-inline-link">
-                <strong>ObservaLE en Cifras</strong> <i class="fa fa-external-link" style="font-size: 0.85em;"></i>
+                <strong>ObservaLE en Cifras</strong> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85em;"></i>
               </a>.
             </p>
           </div>
@@ -169,215 +379,193 @@
         <div class="dash-top-spotlight-right">
           <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" class="btn-top-spotlight-cta">
             <span>Acceder a ObservaLE en Cifras</span>
-            <i class="fa fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
+
+      <!-- Barra de Identificación de Sección -->
+      <div style="margin-bottom: 26px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-bottom: 2px solid var(--border-color); padding-bottom: 14px;">
+        <div>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin: 0;">
+            <i class="fa-solid fa-shapes" style="color: var(--primary); margin-right: 8px;"></i> Catálogo de Infografías e Informes
+          </h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 4px 0 0;">
+            Selecciona cualquiera de los módulos para acceder a su póster monográfico o al cuadro de mando integral.
+          </p>
+        </div>
+        <span style="font-size: 0.82rem; font-weight: 700; background: var(--bg-page); color: var(--text-muted); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border-color);">
+          8 Módulos Disponibles
+        </span>
+      </div>
+
+      <!-- Matriz de Tarjetas con Iconos Gigantes -->
+      <section class="matrix-cards-grid" aria-label="Módulos de análisis e infografías">
+
+        <!-- TARJETA 1: RESUMEN DEL ANÁLISIS ESTADÍSTICO -->
+        <a href="resumen_estadistico.html" class="matrix-card-item" title="Ver Resumen del Análisis Estadístico">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Diagnóstico Global</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-chart-pie matrix-card-icon matrix-icon-teal"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">Resumen del Análisis Estadístico</h2>
+            <p class="matrix-card-desc">
+              Cuadro de mando integral con gráficos interactivos, pirámides demográficas, distribución de rentas y factores de vulnerabilidad en León.
+            </p>
+            <span class="matrix-card-cta">
+              Explorar Resumen <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 2: 1. DEMOGRAFÍA -->
+        <a href="infografia_1_demografia.html" class="matrix-card-item" title="Ver Infografía 1: Demografía">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Serie nº 1</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-users matrix-card-icon matrix-icon-blue"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">1. Demografía</h2>
+            <p class="matrix-card-desc">
+              Evolución de la población (2019-2023), censo municipal 2025, pirámide de edad y distribución territorial por ZAS.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 3: 2. RENTA Y EMPLEO -->
+        <a href="infografia_2_renta_empleo.html" class="matrix-card-item" title="Ver Infografía 2: Renta y Empleo">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Serie nº 2</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-wallet matrix-card-icon matrix-icon-emerald"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">2. Renta y Empleo</h2>
+            <p class="matrix-card-desc">
+              Renta media por hogar y persona, salarios frente a pensiones, brecha territorial y análisis de pérdida de poder adquisitivo.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 4: 3. POBREZA (COMPARATIVA) -->
+        <a href="infografia_3_pobreza_infancia.html" class="matrix-card-item" title="Ver Infografía 3: Pobreza (Comparativa)">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Serie nº 3</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-scale-balanced matrix-card-icon matrix-icon-carmine"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">3. Pobreza (Comparativa)</h2>
+            <p class="matrix-card-desc">
+              Tasas de riesgo de pobreza relativa, moderada y severa calculadas sobre la mediana nacional del INE y comparativa distrital.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 5: 4. GÉNERO Y ORIGEN -->
+        <a href="infografia_4_vulnerabilidad_origen_genero.html" class="matrix-card-item" title="Ver Infografía 4: Género y Origen">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Serie nº 4</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-venus-mars matrix-card-icon matrix-icon-purple"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">4. Género y Origen</h2>
+            <p class="matrix-card-desc">
+              Feminización de la pobreza, brecha de género en ingresos y fractura socioeconómica en población de origen extranjero.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 6: 5. MONOGRÁFICO MAYORES -->
+        <a href="infografia_5_mayores_soledad.html" class="matrix-card-item" title="Ver Infografía 5: Monográfico Mayores">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Monográfico nº 5</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-person-cane matrix-card-icon matrix-icon-indigo"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">5. Monográfico Mayores</h2>
+            <p class="matrix-card-desc">
+              Envejecimiento avanzado, hogares unipersonales sénior, factores de soledad no deseada y el papel protector de las pensiones.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 7: 6. MONOGRÁFICO INFANCIA -->
+        <a href="infografia_pobreza_infantil_monografica.html" class="matrix-card-item" title="Ver Infografía 6: Monográfico Infancia">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Monográfico nº 6</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-child-reaching matrix-card-icon matrix-icon-amber"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">6. Monográfico Infancia</h2>
+            <p class="matrix-card-desc">
+              Tasa de riesgo del 28,40% en menores de 16 años, pobreza severa infantil y vulnerabilidad estructural en hogares familiares.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- TARJETA 8: 7. PANEL ZAS -->
+        <a href="infografia_7_panel_zas.html" class="matrix-card-item" title="Ver Infografía 7: Panel de Control Territorial ZAS">
+          <div class="matrix-card-top">
+            <span class="matrix-card-badge">Panel nº 7</span>
+            <div class="matrix-card-halo"></div>
+            <i class="fa-solid fa-table-columns matrix-card-icon matrix-icon-rose"></i>
+          </div>
+          <div class="matrix-card-bottom">
+            <h2 class="matrix-card-title">7. Panel ZAS</h2>
+            <p class="matrix-card-desc">
+              Panel interactivo territorial por Zonas de Acción Social con selector interactivo y matriz comparativa multivariable.
+            </p>
+            <span class="matrix-card-cta">
+              Ver Infografía <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+      </section>
+
     </div>
 
-    <!-- ========================================================================
-         MATRIZ DE TARJETAS CON ICONOS GIGANTES (ESTILO EXPLORER)
-         ======================================================================== -->
-    <section class="matrix-cards-grid" aria-label="Módulos de análisis e infografías">
-
-      <!-- TARJETA 1: RESUMEN DEL ANÁLISIS ESTADÍSTICO -->
-      <a href="resumen_estadistico.html" class="matrix-card-item" title="Ver Resumen del Análisis Estadístico">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Diagnóstico Global</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-tachometer matrix-card-icon matrix-icon-teal"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">Resumen del Análisis Estadístico</h2>
-          <p class="matrix-card-desc">
-            Cuadro de mando integral con gráficos interactivos, pirámides demográficas, distribución de rentas y factores de vulnerabilidad en León.
-          </p>
-          <span class="matrix-card-cta">
-            Explorar Resumen <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 2: 1. DEMOGRAFÍA -->
-      <a href="infografia_1_demografia.html" class="matrix-card-item" title="Ver Infografía 1: Demografía">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Serie nº 1</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-users matrix-card-icon matrix-icon-blue"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">1. Demografía</h2>
-          <p class="matrix-card-desc">
-            Evolución de la población (2019-2023), censo municipal 2025, pirámide de edad y distribución territorial por ZAS.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 3: 2. RENTA Y EMPLEO -->
-      <a href="infografia_2_renta_empleo.html" class="matrix-card-item" title="Ver Infografía 2: Renta y Empleo">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Serie nº 2</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-money matrix-card-icon matrix-icon-emerald"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">2. Renta y Empleo</h2>
-          <p class="matrix-card-desc">
-            Renta media por hogar y persona, salarios frente a pensiones, brecha territorial y análisis de pérdida de poder adquisitivo.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 4: 3. POBREZA (COMPARATIVA) -->
-      <a href="infografia_3_pobreza_infancia.html" class="matrix-card-item" title="Ver Infografía 3: Pobreza (Comparativa)">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Serie nº 3</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-balance-scale matrix-card-icon matrix-icon-carmine"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">3. Pobreza (Comparativa)</h2>
-          <p class="matrix-card-desc">
-            Tasas de riesgo de pobreza relativa, moderada y severa calculadas sobre la mediana nacional del INE y comparativa distrital.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 5: 4. GÉNERO Y ORIGEN -->
-      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="matrix-card-item" title="Ver Infografía 4: Género y Origen">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Serie nº 4</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-globe matrix-card-icon matrix-icon-purple"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">4. Género y Origen</h2>
-          <p class="matrix-card-desc">
-            Feminización de la pobreza, brecha de género en ingresos y fractura socioeconómica en población de origen extranjero.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 6: 5. MONOGRÁFICO MAYORES -->
-      <a href="infografia_5_mayores_soledad.html" class="matrix-card-item" title="Ver Infografía 5: Monográfico Mayores">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Monográfico nº 5</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-heartbeat matrix-card-icon matrix-icon-indigo"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">5. Monográfico Mayores</h2>
-          <p class="matrix-card-desc">
-            Envejecimiento avanzado, hogares unipersonales sénior, factores de soledad no deseada y el papel protector de las pensiones.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 7: 6. MONOGRÁFICO INFANCIA -->
-      <a href="infografia_pobreza_infantil_monografica.html" class="matrix-card-item" title="Ver Infografía 6: Monográfico Infancia">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Monográfico nº 6</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-child matrix-card-icon matrix-icon-amber"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">6. Monográfico Infancia</h2>
-          <p class="matrix-card-desc">
-            Tasa de riesgo del 28,40% en menores de 16 años, pobreza severa infantil y vulnerabilidad estructural en hogares familiares.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-      <!-- TARJETA 8: 7. PANEL ZAS -->
-      <a href="infografia_7_panel_zas.html" class="matrix-card-item" title="Ver Infografía 7: Panel de Control Territorial ZAS">
-        <div class="matrix-card-top">
-          <span class="matrix-card-badge">Panel nº 7</span>
-          <div class="matrix-card-halo"></div>
-          <i class="fa fa-th-large matrix-card-icon matrix-icon-rose"></i>
-        </div>
-        <div class="matrix-card-bottom">
-          <h2 class="matrix-card-title">7. Panel ZAS</h2>
-          <p class="matrix-card-desc">
-            Panel interactivo territorial por Zonas de Acción Social con selector interactivo y matriz comparativa multivariable.
-          </p>
-          <span class="matrix-card-cta">
-            Ver Infografía <i class="fa fa-arrow-right"></i>
-          </span>
-        </div>
-      </a>
-
-    </section>
+    <!-- Pie del Póster (Idéntico a las Infografías) -->
+    <footer class="poster-footer">
+      <div class="footer-source">
+        <i class="fa-solid fa-database" style="color: var(--primary);"></i>
+        <span><strong>Fuentes oficiales:</strong> INE (Censo de Población, Padrón y Atlas de Renta), Sistema de Información Social de León.</span>
+      </div>
+      <div class="footer-stamp">
+        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León &amp; Universidad de León
+      </div>
+    </footer>
 
   </main>
 
-  <!-- ==========================================================================
-       PIE DE PÁGINA INSTITUCIONAL
-       ========================================================================== -->
-  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 30px 20px; text-align: center; margin-top: auto;">
-    <div style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-      <div style="display: flex; align-items: center; gap: 14px;">
-        <img src="assets/images/logo.png" alt="ObservaLE" style="height: 32px; width: auto;" onerror="this.style.display='none'">
-        <span style="font-size: 0.85rem; color: var(--text-muted);">
-          &copy; 2026 <strong>ObservaLE</strong> • Universidad de León &amp; Ayuntamiento de León
-        </span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <a href="index.html" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-decoration: none;">
-          <i class="fa fa-home"></i> Portada observale.es
-        </a>
-        <span style="color: var(--border-medium);">|</span>
-        <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; font-weight: 700; color: var(--brand-teal); text-decoration: none;">
-          <i class="fa fa-line-chart"></i> ObservaLE en Cifras <i class="fa fa-external-link" style="font-size: 0.75rem;"></i>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts para cambio de tema y barra lateral colapsable -->
+  <!-- Script de la Barra Lateral Colapsable (Idéntico a las 7 Infografías) -->
   <script>
-    // Inicialización del botón de tema claro/oscuro
     (function() {
-      const savedTheme = localStorage.getItem('observale-theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeIcon(savedTheme);
-
-      const themeToggleBtn = document.getElementById('themeToggleBtn');
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', newTheme);
-          localStorage.setItem('observale-theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-      }
-
-      function updateThemeIcon(theme) {
-        const icon = document.querySelector('#themeToggleBtn i');
-        if (icon) {
-          icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        }
-      }
-
-      // Toggle para barra lateral colapsable
       const sidebar = document.getElementById('statsSidebarDock');
       const toggleBtn = document.getElementById('sidebarToggleBtn');
       const toggleIcon = document.getElementById('sidebarToggleIcon');
@@ -391,6 +579,5 @@
       }
     })();
   </script>
-
 </body>
 </html>
