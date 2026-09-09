@@ -3489,4 +3489,335 @@ a:hover, a:focus-visible {
   }
 }
 
+/* ==========================================================================
+   BARRA LATERAL COLAPSABLE (SIDEBAR DOCK) - BOTONES CUADRADOS CON ICONO
+   ========================================================================== */
+
+/* Estructura del Dock Lateral */
+.stats-sidebar-dock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 76px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-right: 1px solid var(--border-subtle);
+  box-shadow: 2px 0 18px rgba(15, 23, 42, 0.06);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+[data-theme="dark"] .stats-sidebar-dock {
+  background: rgba(15, 23, 42, 0.95);
+  border-right-color: #243049;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Estado Expandido */
+.stats-sidebar-dock.expanded {
+  width: 250px;
+  box-shadow: 8px 0 32px rgba(15, 23, 42, 0.15);
+  align-items: stretch;
+  padding: 14px 14px;
+}
+
+/* Cabecera del Sidebar con Botón Toggle */
+.sidebar-dock-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.stats-sidebar-dock.expanded .sidebar-dock-header {
+  justify-content: space-between;
+  padding-left: 4px;
+}
+
+.sidebar-brand-mini {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.stats-sidebar-dock.expanded .sidebar-brand-mini {
+  display: inline-flex;
+}
+
+.sidebar-brand-mini img {
+  height: 28px;
+  width: auto;
+}
+
+.sidebar-brand-mini span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.sidebar-toggle-btn {
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--brand-teal);
+  color: #ffffff;
+  border-color: var(--brand-teal);
+  transform: scale(1.05);
+}
+
+/* Grupos y Listas de Botones Cuadrados */
+.sidebar-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.stats-sidebar-dock.expanded .sidebar-buttons-group {
+  align-items: stretch;
+}
+
+/* Botón Cuadrado con Icono (Inspirado en la captura y acceso a estadísticas) */
+.sidebar-square-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .sidebar-square-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+.sidebar-square-btn i {
+  font-size: 1.15rem;
+  transition: transform var(--transition-fast);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .sidebar-square-btn i {
+  color: #cbd5e1;
+}
+
+.sidebar-square-btn:hover {
+  background: #f8fafc;
+  border-color: var(--brand-teal);
+  color: var(--brand-teal);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.1);
+}
+
+.sidebar-square-btn:hover i {
+  color: var(--brand-teal);
+  transform: scale(1.15);
+}
+
+[data-theme="dark"] .sidebar-square-btn:hover {
+  background: #283548;
+  border-color: var(--brand-teal);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .sidebar-square-btn:hover i {
+  color: var(--brand-teal);
+}
+
+/* Estado ACTIVO del Botón (Pizarra oscura #1e293b idéntico a la captura) */
+.sidebar-square-btn.active {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 14px rgba(30, 41, 59, 0.4);
+}
+
+.sidebar-square-btn.active i {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .sidebar-square-btn.active {
+  background: var(--brand-teal) !important;
+  border-color: var(--brand-teal) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(45, 212, 191, 0.35);
+}
+
+/* Rótulo de texto en modo colapsado vs expandido */
+.sidebar-btn-label {
+  display: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.stats-sidebar-dock.expanded .sidebar-square-btn {
+  width: 100%;
+  height: 44px;
+  justify-content: flex-start;
+  padding: 0 14px;
+  border-radius: 10px;
+}
+
+.stats-sidebar-dock.expanded .sidebar-btn-label {
+  display: inline-block;
+}
+
+/* Tooltip Flotante al posar el cursor en modo colapsado */
+.sidebar-square-btn::after {
+  content: attr(data-title);
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 1200;
+}
+
+.sidebar-square-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+.stats-sidebar-dock.expanded .sidebar-square-btn::after {
+  display: none !important;
+}
+
+/* Separador de Bloques */
+.sidebar-divider {
+  width: 70%;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 10px 0;
+}
+
+.stats-sidebar-dock.expanded .sidebar-divider {
+  width: 100%;
+}
+
+/* Variantes especiales de botones */
+.sidebar-btn-cifras {
+  border-color: rgba(139, 17, 62, 0.3) !important;
+  color: var(--brand-carmine) !important;
+}
+
+.sidebar-btn-cifras i {
+  color: var(--brand-carmine) !important;
+}
+
+.sidebar-btn-cifras:hover {
+  background: var(--brand-carmine) !important;
+  border-color: var(--brand-carmine) !important;
+  color: #ffffff !important;
+}
+
+.sidebar-btn-cifras:hover i {
+  color: #ffffff !important;
+}
+
+.sidebar-btn-print {
+  background: #0c6a63 !important;
+  border-color: #0c6a63 !important;
+  color: #ffffff !important;
+}
+
+.sidebar-btn-print i {
+  color: #ffffff !important;
+}
+
+.sidebar-btn-print:hover {
+  background: #084c47 !important;
+  border-color: #084c47 !important;
+}
+
+/* Margen de adaptación para páginas con Sidebar en escritorio */
+@media (min-width: 992px) {
+  body.has-sidebar-dock {
+    padding-left: 88px !important;
+  }
+}
+
+/* Reglas de Impresión: ocultar sidebar y eliminar márgenes */
+@media print {
+  .stats-sidebar-dock {
+    display: none !important;
+  }
+  body.has-sidebar-dock {
+    padding-left: 0 !important;
+  }
+}
+
+/* Responsive para pantallas móviles (<768px): botón flotante y dock colapsado */
+@media (max-width: 768px) {
+  .stats-sidebar-dock {
+    width: 60px;
+    padding: 10px 6px;
+  }
+  .sidebar-square-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+  .stats-sidebar-dock.expanded {
+    width: 220px;
+  }
+  body.has-sidebar-dock {
+    padding-left: 70px !important;
+  }
+}
+
 

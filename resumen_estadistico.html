@@ -14,6 +14,7 @@
 
   <!-- Hojas de estilo -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/modern-theme.css">
 
@@ -21,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body style="background: var(--bg-primary); color: var(--text-main); position: relative; min-height: 100vh;">
+<body class="has-sidebar-dock" style="background: var(--bg-primary); color: var(--text-main); position: relative; min-height: 100vh;">
 
   <!-- Fondo Ambiental Orgánico Dinámico -->
   <div class="ambient-mesh-bg" id="ambientMeshBg" aria-hidden="true">
@@ -31,83 +32,94 @@
   </div>
 
   <!-- ==========================================================================
-       NAVBAR COMÚN DEL ESPACIO DE ANÁLISIS ESTADÍSTICO
+       BARRA LATERAL COLAPSABLE (SIDEBAR DOCK) - BOTONES CUADRADOS CON ICONO
        ========================================================================== -->
-  <header class="stats-unified-header">
-    <div class="stats-unified-nav-container">
-      
-      <!-- Marca institucional e identificación de sección -->
-      <a href="estadisticas.html" class="stats-nav-brand-group" title="Ir al Hub de Análisis Estadístico">
-        <img src="assets/images/LOGO4.svg" alt="Logo ObservaLE" class="stats-nav-brand-logo">
-        <div class="stats-nav-brand-text">
-          <span class="stats-nav-brand-title">Análisis Estadístico</span>
-          <span class="stats-nav-brand-sub">ObservaLE • León</span>
-        </div>
+  <aside class="stats-sidebar-dock" id="statsSidebarDock" aria-label="Navegación del Espacio Estadístico">
+    <!-- Cabecera del Sidebar con Toggle -->
+    <div class="sidebar-dock-header">
+      <a href="estadisticas.html" class="sidebar-brand-mini" title="Hub de Análisis Estadístico">
+        <img src="assets/images/LOGO4.svg" alt="ObservaLE" onerror="this.src='assets/images/logo.png'">
+        <span>ObservaLE</span>
+      </a>
+      <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" title="Expandir / Colapsar menú" aria-label="Alternar menú lateral">
+        <i class="fa-solid fa-bars" id="sidebarToggleIcon"></i>
+      </button>
+    </div>
+
+    <!-- Grupo de Navegación Principal -->
+    <div class="sidebar-buttons-group">
+      <!-- Hub / Índice -->
+      <a href="estadisticas.html" class="sidebar-square-btn" data-title="Hub / Índice de Secciones" title="Hub / Índice">
+        <i class="fa-solid fa-th-large"></i>
+        <span class="sidebar-btn-label">Hub / Índice</span>
       </a>
 
-      <!-- Navegación central común -->
-      <ul class="stats-nav-center-links">
-        <li>
-          <a href="estadisticas.html" class="stats-nav-item-btn" title="Hub e Índice del Espacio Estadístico">
-            <i class="fa fa-th-large"></i> <span>Índice / Hub</span>
-          </a>
-        </li>
-        <li>
-          <a href="resumen_estadistico.html" class="stats-nav-item-btn active" title="Resumen Cuantitativo General">
-            <i class="fa fa-tachometer"></i> <span>Resumen General</span>
-          </a>
-        </li>
-        <li class="stats-nav-dropdown-wrap">
-          <a href="infografia_1_demografia.html" class="stats-nav-item-btn" title="Explorar infografías temáticas">
-            <i class="fa fa-pie-chart"></i> <span>Infografías (1 a 7)</span> <i class="fa fa-angle-down" style="font-size: 0.75rem;"></i>
-          </a>
-          <div class="stats-dropdown-menu-box">
-            <a href="infografia_1_demografia.html" class="stats-dropdown-link"><i class="fa fa-users"></i> 1. Demografía</a>
-            <a href="infografia_2_renta_empleo.html" class="stats-dropdown-link"><i class="fa fa-money"></i> 2. Renta y Empleo</a>
-            <a href="infografia_3_pobreza_infancia.html" class="stats-dropdown-link"><i class="fa fa-balance-scale"></i> 3. Pobreza (Comparativa)</a>
-            <a href="infografia_4_vulnerabilidad_origen_genero.html" class="stats-dropdown-link"><i class="fa fa-globe"></i> 4. Género y Origen</a>
-            <a href="infografia_5_mayores_soledad.html" class="stats-dropdown-link"><i class="fa fa-heartbeat"></i> 5. Monográfico Mayores</a>
-            <a href="infografia_pobreza_infantil_monografica.html" class="stats-dropdown-link"><i class="fa fa-child"></i> 6. Monográfico Infancia</a>
-            <a href="infografia_7_panel_zas.html" class="stats-dropdown-link"><i class="fa fa-th"></i> 7. Panel Territorial ZAS</a>
-          </div>
-        </li>
-      </ul>
+      <!-- Resumen General (ACTIVO) -->
+      <a href="resumen_estadistico.html" class="sidebar-square-btn active" data-title="Resumen del Análisis Estadístico" title="Resumen General">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span class="sidebar-btn-label">Resumen General</span>
+      </a>
 
-      <!-- Acciones a la derecha: ObservaLE en Cifras, Volver a observale.es y Theme Toggle -->
-      <div class="stats-nav-right-actions">
-        <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" class="stats-btn-cifras-link" title="Abrir plataforma interactiva ObservaLE en Cifras">
-          <i class="fa fa-line-chart"></i> <span>ObservaLE en Cifras</span> <i class="fa fa-external-link" style="font-size: 0.75rem;"></i>
-        </a>
-        <a href="index.html" class="stats-btn-portal-back" title="Volver a la portada de observale.es">
-          <i class="fa fa-arrow-left"></i> <span>observale.es</span>
-        </a>
-        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Cambiar tema claro u oscuro">
-          <i class="fa fa-moon-o"></i>
-        </button>
-      </div>
+      <div class="sidebar-divider"></div>
+
+      <!-- 1. Demografía -->
+      <a href="infografia_1_demografia.html" class="sidebar-square-btn" data-title="1. Demografía" title="1. Demografía">
+        <i class="fa-solid fa-users"></i>
+        <span class="sidebar-btn-label">1. Demografía</span>
+      </a>
+
+      <!-- 2. Renta y Empleo -->
+      <a href="infografia_2_renta_empleo.html" class="sidebar-square-btn" data-title="2. Renta y Empleo" title="2. Renta y Empleo">
+        <i class="fa-solid fa-wallet"></i>
+        <span class="sidebar-btn-label">2. Renta y Empleo</span>
+      </a>
+
+      <!-- 3. Pobreza (Comparativa) -->
+      <a href="infografia_3_pobreza_infancia.html" class="sidebar-square-btn" data-title="3. Pobreza (Comparativa)" title="3. Pobreza">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <span class="sidebar-btn-label">3. Pobreza</span>
+      </a>
+
+      <!-- 4. Género y Origen -->
+      <a href="infografia_4_vulnerabilidad_origen_genero.html" class="sidebar-square-btn" data-title="4. Género y Origen" title="4. Género y Origen">
+        <i class="fa-solid fa-venus-mars"></i>
+        <span class="sidebar-btn-label">4. Género y Origen</span>
+      </a>
+
+      <!-- 5. Monográfico Mayores -->
+      <a href="infografia_5_mayores_soledad.html" class="sidebar-square-btn" data-title="5. Monográfico Mayores" title="5. Mayores">
+        <i class="fa-solid fa-person-cane"></i>
+        <span class="sidebar-btn-label">5. Mayores</span>
+      </a>
+
+      <!-- 6. Monográfico Infancia -->
+      <a href="infografia_pobreza_infantil_monografica.html" class="sidebar-square-btn" data-title="6. Monográfico Infancia" title="6. Infancia">
+        <i class="fa-solid fa-child-reaching"></i>
+        <span class="sidebar-btn-label">6. Infancia</span>
+      </a>
+
+      <!-- 7. Panel ZAS -->
+      <a href="infografia_7_panel_zas.html" class="sidebar-square-btn" data-title="7. Panel Territorial ZAS" title="7. Panel ZAS">
+        <i class="fa-solid fa-table-columns"></i>
+        <span class="sidebar-btn-label">7. Panel ZAS</span>
+      </a>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- ObservaLE en Cifras -->
+      <a href="https://observatorio.portalestadistico.com/?pn=observale&pc=KZS56" target="_blank" rel="noopener noreferrer" class="sidebar-square-btn sidebar-btn-cifras" data-title="ObservaLE en Cifras (Portal Estadístico)" title="ObservaLE en Cifras">
+        <i class="fa-solid fa-chart-line"></i>
+        <span class="sidebar-btn-label">ObservaLE en Cifras</span>
+      </a>
+
+      <!-- Volver a observale.es -->
+      <a href="index.html" class="sidebar-square-btn" data-title="Volver a la portada de observale.es" title="observale.es">
+        <i class="fa-solid fa-house"></i>
+        <span class="sidebar-btn-label">observale.es</span>
+      </a>
 
     </div>
-  </header>
-
-  <!-- ==========================================================================
-       SUB-BARRA HORIZONTAL RÁPIDA DE INFOGRAFÍAS (ACCESO DIRECTO 1 A 7)
-       ========================================================================== -->
-  <nav class="stats-subnav-strip" aria-label="Acceso directo a infografías">
-    <div class="stats-subnav-container">
-      <span class="stats-subnav-label"><i class="fa fa-compass" style="color: var(--brand-teal);"></i> Acceso Rápido:</span>
-      <ul class="stats-subnav-pills">
-        <li><a href="estadisticas.html" class="stats-subnav-link"><i class="fa fa-th-large"></i> Hub</a></li>
-        <li><a href="resumen_estadistico.html" class="stats-subnav-link active"><i class="fa fa-tachometer"></i> Resumen</a></li>
-        <li><a href="infografia_1_demografia.html" class="stats-subnav-link"><i class="fa fa-users"></i> 1. Demografía</a></li>
-        <li><a href="infografia_2_renta_empleo.html" class="stats-subnav-link"><i class="fa fa-money"></i> 2. Renta y Empleo</a></li>
-        <li><a href="infografia_3_pobreza_infancia.html" class="stats-subnav-link"><i class="fa fa-balance-scale"></i> 3. Pobreza</a></li>
-        <li><a href="infografia_4_vulnerabilidad_origen_genero.html" class="stats-subnav-link"><i class="fa fa-globe"></i> 4. Género y Origen</a></li>
-        <li><a href="infografia_5_mayores_soledad.html" class="stats-subnav-link"><i class="fa fa-heartbeat"></i> 5. Mayores</a></li>
-        <li><a href="infografia_pobreza_infantil_monografica.html" class="stats-subnav-link"><i class="fa fa-child"></i> 6. Infancia</a></li>
-        <li><a href="infografia_7_panel_zas.html" class="stats-subnav-link"><i class="fa fa-th"></i> 7. Panel ZAS</a></li>
-      </ul>
-    </div>
-  </nav>
+  </aside>
 
   <!-- Contenido Principal: Panel de Control Integral de Exclusión e Inclusión Social -->
   <main style="padding: 30px 20px 80px; position: relative; z-index: 1;">
@@ -1139,6 +1151,21 @@
   <!-- Scripts -->
   <script src="assets/js/estadisticas.js"></script>
   <script src="assets/js/dashboard-charts.js"></script>
+  <script>
+    (function() {
+      const sidebar = document.getElementById('statsSidebarDock');
+      const toggleBtn = document.getElementById('sidebarToggleBtn');
+      const toggleIcon = document.getElementById('sidebarToggleIcon');
+      if (sidebar && toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+          const isExpanded = sidebar.classList.toggle('expanded');
+          if (toggleIcon) {
+            toggleIcon.className = isExpanded ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
