@@ -452,7 +452,7 @@
     /* Gini / Extreme poverty matrix */
     .poverty-severity-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
@@ -573,6 +573,10 @@
       .takeaways-list { grid-template-columns: 1fr; }
       .dual-tracks { grid-template-columns: 1fr; }
       .glossary-grid { grid-template-columns: 1fr; }
+      .poverty-severity-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .poverty-severity-grid { grid-template-columns: 1fr; }
     }
   </style>
 <body class="has-sidebar-dock">
@@ -807,9 +811,9 @@
             <span class="kpi-title">Efecto Protector Senior</span>
             <div class="kpi-icon"><i class="fa-solid fa-shield-halved"></i></div>
           </div>
-          <div class="kpi-value">10,90%</div>
+          <div class="kpi-value">13,90%</div>
           <div class="kpi-desc">
-            Pobreza en mayores de 65 años (casi <strong>3 veces inferior</strong> a la pobreza infantil)
+            Pobreza en mayores de 65 años (la mitad que la pobreza infantil)
           </div>
         </div>
 
@@ -827,7 +831,7 @@
       </section>
 
       <!-- Comparativa Dual: Pobreza Infantil vs Pobreza General por ZAS -->
-      <section class="card-section col-7">
+      <section class="card-section col-12">
         <div class="section-title-wrap">
           <div class="section-heading">
             <div class="section-icon"><i class="fa-solid fa-chart-bar"></i></div>
@@ -1021,14 +1025,12 @@
               </div>
             </div>
           </div>
-            </div>
-          </div>
 
         </div>
       </section>
 
       <!-- Severidad y Cohesión -->
-      <section class="card-section col-5">
+      <section class="card-section col-12">
         <div class="section-title-wrap">
           <div class="section-heading">
             <div class="section-icon" style="background: #7f1d1d;"><i class="fa-solid fa-arrows-to-dot"></i></div>
@@ -1067,7 +1069,7 @@
 
         <div style="margin-top: 18px; padding: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; font-size: 0.82rem; color: #166534;">
           <strong><i class="fa-solid fa-circle-check"></i> El escudo de las pensiones:</strong>
-          En mayores de 65 años, la pobreza cae al <strong>10,90%</strong> municipal (y 6,90% en Centro). Las pensiones públicas actúan como el principal dique de contención de la exclusión social en León.
+          En mayores de 65 años, la pobreza relativa se sitúa en el <strong>13,90%</strong> municipal (frente al 6,90% del Centro). Las pensiones públicas actúan como el principal dique de contención de la exclusión social en León.
         </div>
       </section>
 
@@ -1087,7 +1089,7 @@
 
             <div class="takeaway-item">
               <strong>2. La Brecha Generacional de la Vulnerabilidad</strong>
-              La pobreza infantil (28,4%) triplica la tasa de las personas mayores de 65 años (10,9%). Las familias con hijos concentran la mayor presión económica de la ciudad.
+              La tasa de pobreza infantil (28,40%) duplica la tasa de las personas mayores de 65 años (13,90%), concentrando las familias con hijos la mayor presión económica de la ciudad.
             </div>
 
             <div class="takeaway-item">
