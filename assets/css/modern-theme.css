@@ -3820,4 +3820,11 @@ a:hover, a:focus-visible {
   }
 }
 
+/* Forzar color blanco puro en títulos principales de póster (Infografías y Espacio Estadístico) */
+.poster-header .poster-title,
+.poster-title {
+  color: #ffffff !important;
+}
+
+
 
