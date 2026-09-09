@@ -139,7 +139,7 @@ function initDashboardCharts() {
         labels: ['Población Total', 'Hombres', 'Mujeres', 'Menores (<18)', 'Mayores (65+)', 'Españoles', 'Extranjeros'],
         datasets: [{
           label: '% Bajo el 60% de la Mediana (Riesgo Pobreza)',
-          data: [18.4, 17.6, 19.0, 28.4, 10.9, 15.0, 63.9],
+          data: [18.4, 17.6, 19.0, 28.4, 13.9, 15.0, 63.9],
           backgroundColor: [
             '#0c6a63',
             '#0284c7',
@@ -363,7 +363,7 @@ function initDashboardCharts() {
     chartIngresos = new Chart(ctxIngresos, {
       type: 'doughnut',
       data: {
-        labels: ['Salarios (53,5%)', 'Pensiones (29,2%)', 'Otros Ingresos (11,8%)', 'Otras Prestaciones (4,3%)', 'Desempleo (1,2%)'],
+        labels: ['Salarios (53,5%)', 'Pensiones (29,2%)', 'Otros Ingresos / Rentas de Capital (11,8%)', 'Otras Prestaciones Sociales (4,3%)', 'Prestaciones por Desempleo (1,2%)'],
         datasets: [{
           data: [53.5, 29.2, 11.8, 4.3, 1.2],
           backgroundColor: [

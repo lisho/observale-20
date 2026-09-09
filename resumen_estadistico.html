@@ -336,7 +336,7 @@
     <div class="poster-body">
 
       <!-- Cuadro Destacado IMPORTANTE: Acceso a ObservaLE en Cifras al Inicio -->
-      <div class="dash-top-spotlight-alert" role="alert" id="dashTopSpotlightAlert" style="margin-bottom: 28px;">
+      <div class="dash-top-spotlight-alert" role="alert" id="dashTopSpotlightAlert" style="margin-bottom: 20px;">
         <div class="dash-top-spotlight-left">
           <div class="dash-top-spotlight-icon">
             <i class="fa-solid fa-chart-line"></i>
@@ -364,6 +364,14 @@
         </div>
       </div>
 
+      <!-- Aviso Metodológico Institucional -->
+      <div class="methodological-notice" style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid var(--primary); border-radius: 10px; padding: 14px 18px; margin-bottom: 24px; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); display: flex; align-items: flex-start; gap: 12px;">
+        <i class="fa-solid fa-circle-info" style="color: var(--primary); font-size: 1.15rem; margin-top: 2px;"></i>
+        <div>
+          <strong style="color: var(--text-main);">Nota metodológica:</strong> Las cifras de este documento reflejan los datos agregados del Municipio de León (124.091 habitantes). Las disparidades y brechas socioeconómicas internas se analizan de forma desagregada en los informes de cada Zona de Acción Social (ZAS).
+        </div>
+      </div>
+
       <!-- Barra de navegación contextual y Focos Clave de Vulnerabilidad -->
       <div style="margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
         <div class="vulnerability-pills-wrap" style="margin: 0;">
@@ -376,7 +384,7 @@
           <span class="vulnerability-pill pill-carmine" title="La feminización de la pobreza: 19,00% general y +58% de brecha en mayores">
             <i class="fa-solid fa-venus"></i> Feminización de la pobreza
           </span>
-          <span class="vulnerability-pill pill-indigo" title="Los riesgos asociados a la edad y la soledad no deseada: 28,4% mayores y 38,8% hogares unipersonales">
+          <span class="vulnerability-pill pill-indigo" title="Los riesgos asociados a la edad y la soledad no deseada: 28,4% mayores y 38,00% hogares unipersonales">
             <i class="fa-solid fa-person-cane"></i> Mayores y soledad
           </span>
           <span class="vulnerability-pill pill-rose" title="Fractura económica en población migrante: 63,90% pobreza (4,2x)">
@@ -399,13 +407,14 @@
           </div>
           <div class="kpi-value" style="color: #b45309;">28,40%</div>
           <p class="kpi-subtitle">
-            <span class="kpi-trend-pill trend-warning">+10,0 pp</span> sobre la media municipal
+            <span class="kpi-trend-pill trend-warning">&lt;60% mediana</span> (+10,0 pp sobre la media)
           </p>
-          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
-            <i class="fa fa-warning"></i> Pobreza Severa Infantil (&lt;40%): <b>14,50%</b>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.45;">
+            <div><i class="fa fa-warning" style="color: #d97706;"></i> Pobreza severa relativa (&lt;40% mediana): <b>14,50%</b></div>
+            <div><i class="fa fa-eur" style="color: #d97706;"></i> Umbral monetario fijo (&lt;7.500 €/año): <b>14,50%</b></div>
           </div>
           <div class="kpi-explanation">
-            <strong>¿Qué significa?</strong> Casi 3 de cada 10 menores viven bajo el umbral de pobreza (&lt;60% de la mediana), con más del 50% en pobreza severa; es el mayor foco de desigualdad intergeneracional.
+            <strong>¿Qué significa?</strong> 28,40% en pobreza relativa (&lt;60% de la mediana). En intensidad crítica: 14,50% en pobreza severa relativa (&lt;40%) y 14,50% bajo umbral monetario fijo (&lt;7.500 €/año).
           </div>
         </div>
 
@@ -469,15 +478,15 @@
             <span class="kpi-label">Hogares Unipersonales</span>
             <div class="kpi-icon-badge kpi-icon-indigo"><i class="fa fa-home"></i></div>
           </div>
-          <div class="kpi-value">38,80%</div>
+          <div class="kpi-value">38,00%</div>
           <p class="kpi-subtitle">
-            <span><b>23.225 personas</b> residen solas</span>
+            <span><b>23.104 hogares</b> de un total de <b>60.800</b></span>
           </p>
           <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
             <i class="fa fa-heartbeat"></i> Foco crítico: <b>Soledad no deseada</b>
           </div>
           <div class="kpi-explanation">
-            <strong>¿Qué significa?</strong> Casi 4 de cada 10 hogares son de una persona (23.225 leoneses). Concentra mayor riesgo de soledad involuntaria en mayores y eleva el impacto de los gastos fijos de vivienda.
+            <strong>¿Qué significa?</strong> El 38,00% de los hogares de León son unipersonales (sobre un total municipal de 60.800 hogares). Concentra mayor riesgo de aislamiento en personas mayores y eleva el impacto de gastos fijos.
           </div>
         </div>
 
@@ -545,11 +554,12 @@
           <p class="kpi-subtitle">
             <span>Escudo social protector ante crisis</span>
           </p>
-          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted);">
-            <i class="fa fa-briefcase"></i> Salarios: <b>53,5%</b> · Prestaciones: <b>4,3%</b>
+          <div style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.45;">
+            <div><i class="fa fa-briefcase"></i> Salarios: <b>53,5%</b> · Pensiones: <b>29,2%</b></div>
+            <div><i class="fa fa-coins"></i> Otros/Capital: <b>11,8%</b> · Prestaciones: <b>4,3%</b> · Desempleo: <b>1,2%</b></div>
           </div>
           <div class="kpi-explanation">
-            <strong>¿Qué significa?</strong> Casi el 30% de la renta de la ciudad procede de pensiones públicas. Actúa como escudo estabilizador y sostén familiar frente a la precariedad del empleo juvenil.
+            <strong>¿Qué significa?</strong> Estructura completa (100%): Salarios 53,5%, Pensiones 29,2%, Otros ingresos/capital 11,8%, Prestaciones sociales 4,3% y Desempleo 1,2%. Las pensiones actúan como sostén familiar ante la precariedad juvenil.
           </div>
         </div>
 
@@ -593,16 +603,12 @@
                     media general de León (18,40%).</span>
                 </li>
                 <li>
-                  <i class="fa fa-check-circle" style="color: #b45309;"></i>
-                  <span><strong>Intensidad crítica:</strong> El <strong>77,5%</strong> de los menores vulnerables se
-                    encuentra en pobreza moderada/profunda (&lt;50% mediana) y el <strong>51,1%</strong> en pobreza
-                    severa (&lt;40% mediana, tasa del 14,50%).</span>
+                  <i class="fa-check-circle fa" style="color: #b45309;"></i>
+                  <span><strong>Intensidad crítica relativa:</strong> El <strong>77,5%</strong> de los menores vulnerables se encuentra en pobreza moderada/profunda (&lt;50% mediana) y el <strong>51,1%</strong> en <strong>pobreza severa relativa (&lt;40% de la mediana)</strong>, con una tasa del <b style="color: #b45309;">14,50%</b>.</span>
                 </li>
                 <li>
-                  <i class="fa fa-check-circle" style="color: #b45309;"></i>
-                  <span><strong>Umbral de subsistencia:</strong> El <strong>23,80%</strong> de los menores vive en
-                    hogares con rentas anuales inferiores a 10.000 € y el <strong>14,50%</strong> bajo los 7.500
-                    €/año.</span>
+                  <i class="fa-check-circle fa" style="color: #b45309;"></i>
+                  <span><strong>Umbrales monetarios fijos de subsistencia:</strong> El <strong>23,80%</strong> de los menores vive en hogares bajo los 10.000 €/año y el <b style="color: #b45309;">14,50%</b> se sitúa bajo el <strong>umbral monetario fijo de 7.500 €/año</strong> (con un 6,80% bajo 5.000 €/año).</span>
                 </li>
               </ul>
               <p style="margin: 0;">
@@ -667,7 +673,7 @@
                   &amp; Soledad</span>
               </div>
               <div class="factor-metric-box">
-                <span class="factor-metric-num" style="color: #1e40af;">38,80%</span>
+                <span class="factor-metric-num" style="color: #1e40af;">38,00%</span>
                 <span class="factor-metric-label">Hogares Unipersonales</span>
               </div>
             </div>
@@ -682,9 +688,7 @@
                 </li>
                 <li>
                   <i class="fa fa-check-circle" style="color: #1e40af;"></i>
-                  <span><strong>Aislamiento residencial masivo:</strong> Hay <b style="color: #1e40af;">23.225 personas
-                      que viven solas</b> en el municipio (38,8% de los hogares), superando el <strong>42%</strong> en
-                    las Zonas de Acción Social centrales.</span>
+                  <span><strong>Aislamiento residencial masivo:</strong> El <b style="color: #1e40af;">38,00% de los hogares</b> del municipio (<strong>23.104 hogares</strong> de un total municipal de <strong>60.800</strong>) son unipersonales, superando el <strong>42%</strong> en las Zonas de Acción Social centrales.</span>
                 </li>
                 <li>
                   <i class="fa fa-check-circle" style="color: #1e40af;"></i>
@@ -788,8 +792,7 @@
             <div class="dash-analysis-note">
               <strong>Diagnóstico Integral:</strong> El riesgo de pobreza en León (18,4%) muestra asimetrías severas: la
               tasa se dispara al <strong>28,4% en menores de edad</strong> y alcanza un crítico <strong>63,9% en
-                personas extranjeras</strong>, mientras que en mayores de 65 años se sitúa en el 10,9% gracias al
-              sistema público de pensiones.
+                personas extranjeras</strong>, mientras que en mayores de 65 años se sitúa en el <strong>13,90%</strong> en pobreza relativa (&lt;60% de la mediana) gracias a la base del sistema público de pensiones.
             </div>
           </div>
 
@@ -836,7 +839,7 @@
               <h4 style="font-size: 1.05rem; font-weight: 800; color: #0c6a63; margin: 0 0 6px 0;"><i
                   class="fa fa-heartbeat"></i> 2. Soledad No Deseada y Cuidados</h4>
               <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
-                38,2% de hogares unipersonales y 35.242 mayores. Prioridad: teleasistencia avanzada, ayuda a domicilio,
+                38,00% de hogares unipersonales (23.104 de 60.800) y 35.242 mayores. Prioridad: teleasistencia avanzada, ayuda a domicilio,
                 acompañamiento comunitario y lucha contra el aislamiento.
               </p>
             </div>
@@ -944,37 +947,37 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><b>Bajo 60% Mediana (Riesgo Pobreza Relativa)</b></td>
+                  <td><b>Pobreza Relativa (&lt;60% Mediana)</b></td>
                   <td><b style="color: #b45309;">28,40%</b></td>
                   <td>18,40%</td>
                   <td><span class="kpi-trend-pill trend-warning">+54% mayor</span></td>
                 </tr>
                 <tr>
-                  <td><b>Bajo 50% Mediana (Pobreza Moderada / Profunda)</b></td>
+                  <td><b>Pobreza Moderada / Profunda (&lt;50% Mediana)</b></td>
                   <td><b>22,00%</b></td>
                   <td>12,90%</td>
                   <td><span class="kpi-trend-pill trend-warning">+70% mayor</span></td>
                 </tr>
                 <tr>
-                  <td><b>Bajo 40% Mediana (Pobreza Severa / Extrema)</b></td>
-                  <td><b>14,50%</b></td>
+                  <td><b>Pobreza Severa Relativa (&lt;40% Mediana)</b></td>
+                  <td><b style="color: #b45309;">14,50%</b></td>
                   <td>8,60%</td>
                   <td><span class="kpi-trend-pill trend-warning">+68% mayor</span></td>
                 </tr>
                 <tr>
-                  <td><b>Ingresos Hogar &lt; 10.000 € / año</b></td>
+                  <td><b>Umbral Monetario Fijo: Ingresos Hogar &lt; 10.000 € / año</b></td>
                   <td><b>23,80%</b></td>
                   <td>13,80%</td>
                   <td><span class="kpi-trend-pill trend-warning">+72% mayor</span></td>
                 </tr>
                 <tr>
-                  <td><b>Ingresos Hogar &lt; 7.500 € / año</b></td>
-                  <td><b>14,50%</b></td>
+                  <td><b>Umbral Monetario Fijo: Ingresos Hogar &lt; 7.500 € / año</b></td>
+                  <td><b style="color: #b45309;">14,50%</b></td>
                   <td>8,20%</td>
                   <td><span class="kpi-trend-pill trend-warning">+76% mayor</span></td>
                 </tr>
                 <tr>
-                  <td><b>Ingresos Hogar &lt; 5.000 € / año</b></td>
+                  <td><b>Umbral Monetario Fijo: Ingresos Hogar &lt; 5.000 € / año</b></td>
                   <td><b>6,80%</b></td>
                   <td>3,80%</td>
                   <td><span class="kpi-trend-pill trend-warning">+78% mayor</span></td>
@@ -1000,14 +1003,13 @@
               <strong style="display: block; font-size: 1.05rem; color: #8b113e; margin-bottom: 4px;">Conclusión
                 clave:</strong>
               <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
-                Aunque el sistema público de pensiones actúa como un escudo protector que mantiene la tasa global de
-                pobreza de los mayores de 65 años en el <strong>10,9%</strong> (notablemente inferior a la media de León
-                del 18,4%), la exclusión en la vejez tiene un <strong>marcado rostro femenino y de aislamiento</strong>:
+                Aunque el sistema público de pensiones actúa como un escudo protector, la tasa oficial de
+                pobreza relativa en mayores de 65 años se sitúa en el <strong>13,90%</strong> (&lt;60% de la mediana, corrigiendo la referencia previa del 10,90% que correspondía a mayores con rentas altas &gt;200% de la mediana). Asimismo, la exclusión en la vejez tiene un <strong>marcado rostro femenino y de aislamiento</strong>:
                 el <strong>61,2% de los mayores pobres</strong> y casi dos tercios (<strong>64,4%</strong>) de los que
                 sufren <strong>pobreza severa son mujeres</strong> (con una tasa de pobreza del <strong>12,8% en mujeres
                   frente al 8,1% en hombres</strong>, un <strong>+58% superior</strong>). En una ciudad donde el
-                <strong>28,4% de la población tiene 65 o más años</strong> y casi el <strong>39% de los hogares son
-                  unipersonales</strong>, el cruce entre <strong>pensiones mínimas/viudedad y soledad no
+                <strong>28,4% de la población tiene 65 o más años</strong> y el <strong>38,00% de los hogares son
+                  unipersonales</strong> (23.104 de un total municipal de 60.800), el cruce entre <strong>pensiones mínimas/viudedad y soledad no
                   deseada</strong> constituye el reto asistencial prioritario.
               </p>
             </div>
@@ -1046,7 +1048,7 @@
             </div>
             <div class="dash-analysis-note">
               <strong>Impacto en Cuidados y Soledad:</strong> Con 35.242 personas mayores (<strong>28,4%</strong> del
-              municipio) y 23.225 hogares unipersonales (<strong>38,8%</strong>), la correlación entre edad avanzada,
+              municipio) y 23.104 hogares unipersonales (<strong>38,00%</strong> de los 60.800 hogares de León), la correlación entre edad avanzada,
               viudedad femenina y soledad residencial exige una red integral de apoyo comunitario y teleasistencia.
             </div>
           </div>
@@ -1228,9 +1230,7 @@
               <canvas id="chartFuentesIngresos"></canvas>
             </div>
             <div class="dash-analysis-note">
-              <strong>Estructura de Rentas:</strong> El 53,5% de los ingresos procede de salarios y un 29,2% de
-              pensiones. Las prestaciones por desempleo representan el 1,2% y otras prestaciones de asistencia social el
-              4,3%.
+              <strong>Estructura de Rentas (Suma 100%):</strong> Los <b>salarios</b> representan el <b>53,5%</b>, las <b>pensiones</b> el <b>29,2%</b>, <b>otros ingresos y rentas del capital</b> el <b>11,8%</b>, <b>otras prestaciones sociales</b> el <b>4,3%</b> y las <b>prestaciones por desempleo</b> el <b>1,2%</b> de los ingresos totales de los hogares leoneses.
             </div>
           </div>
 
@@ -1316,13 +1316,19 @@
     </div>
 
     <!-- Pie del Póster (Idéntico a las Infografías) -->
-    <footer class="poster-footer">
-      <div class="footer-source">
-        <i class="fa-solid fa-database" style="color: var(--primary);"></i>
-        <span><strong>Fuentes oficiales:</strong> INE (Atlas de Distribución de Renta, Padrón y Censo), Sistema de Información Social de León.</span>
+    <footer class="poster-footer" style="flex-direction: column; align-items: stretch; gap: 14px;">
+      <div style="background: rgba(139, 24, 52, 0.04); border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 6px; font-size: 0.82rem; line-height: 1.5; color: var(--text-muted);">
+        <i class="fa-solid fa-circle-info" style="color: var(--primary); margin-right: 6px;"></i>
+        <strong>Nota metodológica:</strong> Las cifras de este documento reflejan los datos agregados del Municipio de León (124.091 habitantes). Las disparidades y brechas socioeconómicas internas se analizan de forma desagregada en los informes de cada Zona de Acción Social (ZAS).
       </div>
-      <div class="footer-stamp">
-        Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León &amp; Universidad de León
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%;">
+        <div class="footer-source">
+          <i class="fa-solid fa-database" style="color: var(--primary);"></i>
+          <span><strong>Fuentes oficiales:</strong> INE (Atlas de Distribución de Renta, Padrón y Censo), Sistema de Información Social de León.</span>
+        </div>
+        <div class="footer-stamp">
+          Observatorio Municipal para la Inclusión Social de León (ObservaLE) • Ayto. de León &amp; Universidad de León
+        </div>
       </div>
     </footer>
 
